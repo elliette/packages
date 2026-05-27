@@ -5,6 +5,7 @@
 import 'dart:io';
 
 import 'package:test/test.dart';
+import '../templates/typography_template.dart';
 import 'test_fixtures/test_templates.dart';
 
 void main() {
@@ -83,6 +84,22 @@ void main() {
         expect(m3Template.materialLib, generatedDir);
         expect(m3ExpressiveTemplate.materialLib, '$generatedDir/material_3_expressive');
       }
+    });
+
+    test('TypographyTemplate generates expected text themes from typescale.dart', () {
+      const template = TypographyTemplate();
+      final String contents = template.generateContents();
+      expect(contents, contains('abstract final class _M3Typography'));
+      expect(contents, contains('static const TextTheme englishLike = TextTheme('));
+      expect(contents, contains('static const TextTheme dense = TextTheme('));
+      expect(contents, contains('static const TextTheme tall = TextTheme('));
+      expect(contents, contains('displayLarge: TextStyle('));
+      expect(contents, contains("debugLabel: 'englishLike displayLarge 2026'"));
+      expect(contents, contains('fontSize: 57.0'));
+      expect(contents, contains('fontWeight: FontWeight.w400'));
+      expect(contents, contains('letterSpacing: -0.25'));
+      expect(contents, contains('height: 1.12'));
+      expect(contents, contains('textBaseline: TextBaseline.alphabetic'));
     });
   });
 }
