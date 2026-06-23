@@ -5,6 +5,8 @@
 import 'dart:io';
 
 import 'package:meta/meta.dart';
+import '../data/color_role.dart';
+import '../data/shape_struct.dart';
 
 enum _MaterialVersion { material3, material3Expressive }
 
@@ -27,6 +29,9 @@ abstract class M3ETokenTemplate extends TokenTemplate {
 @visibleForTesting
 abstract class TokenTemplate {
   const TokenTemplate();
+
+  String get colorSchemePrefix => '_colors.';
+  String get textThemePrefix => '_textTheme.';
 
   /// The copyright header prepended to all generated defaults files.
   static const String _copyrightHeader = '''
@@ -150,5 +155,65 @@ abstract class TokenTemplate {
     if (verbose) {
       stdout.writeln('Done generating $fileName.');
     }
+  }
+
+  String shape(ShapeStruct shape, [String prefix = 'const ']) {
+    switch (shape.family) {
+      case 'SHAPE_FAMILY_ROUNDED_CORNERS':
+        final double topLeft = shape.topLeft;
+        final double topRight = shape.topRight;
+        final double bottomLeft = shape.bottomLeft;
+        final double bottomRight = shape.bottomRight;
+        if (topLeft == topRight && topLeft == bottomLeft && topLeft == bottomRight) {
+          if (topLeft == 0) {
+            return '${prefix}RoundedRectangleBorder()';
+          }
+          return '${prefix}RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular($topLeft)))';
+        }
+        if (topLeft == topRight && bottomLeft == bottomRight) {
+          return '${prefix}RoundedRectangleBorder(borderRadius: BorderRadius.vertical('
+              '${topLeft > 0 ? 'top: Radius.circular($topLeft)' : ''}'
+              '${topLeft > 0 && bottomLeft > 0 ? ',' : ''}'
+              '${bottomLeft > 0 ? 'bottom: Radius.circular($bottomLeft)' : ''}'
+              '))';
+        }
+        return '${prefix}RoundedRectangleBorder(borderRadius: '
+            'BorderRadius.only('
+            'topLeft: Radius.circular(${shape.topLeft}), '
+            'topRight: Radius.circular(${shape.topRight}), '
+            'bottomLeft: Radius.circular(${shape.bottomLeft}), '
+            'bottomRight: Radius.circular(${shape.bottomRight})))';
+      case 'SHAPE_FAMILY_CIRCULAR':
+        return '${prefix}StadiumBorder()';
+    }
+    stderr.writeln('Unsupported shape family type: ${shape.family}');
+    return '';
+  }
+
+  String color(TokenColorRole role) {
+    return '$colorSchemePrefix${role.name}';
+  }
+
+  String colorOrTransparent(TokenColorRole? role) {
+    if (role == null) {
+      return 'Colors.transparent';
+    }
+    return '$colorSchemePrefix${role.name}';
+  }
+
+  String componentColor(TokenColorRole role, [double? opacity]) {
+    if (opacity == null) {
+      return '$colorSchemePrefix${role.name}';
+    }
+    return '$colorSchemePrefix${role.name}.withOpacity($opacity)';
+  }
+
+  String border(TokenColorRole color, {double? width, double? opacity}) {
+    var colorString = '$colorSchemePrefix${color.name}';
+    if (opacity != null) {
+      colorString += '.withOpacity($opacity)';
+    }
+    final widthString = (width != null && width != 1.0) ? ', width: $width' : '';
+    return 'BorderSide(color: $colorString$widthString)';
   }
 }
