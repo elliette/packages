@@ -8,6 +8,7 @@
 library;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' show ScriptCategory;
 import 'package:flutter/painting.dart';
 
 import 'color_scheme.dart';
@@ -28,25 +29,7 @@ import 'text_theme.dart';
 /// `ScriptCategory.dense` scripts - for text styles that are smaller than the
 /// title style - are one unit larger than they are for
 /// `ScriptCategory.englishLike` scripts.
-enum ScriptCategory {
-  /// The languages of Western, Central, and Eastern Europe and much of
-  /// Africa are typically written in the Latin alphabet. Vietnamese is a
-  /// notable exception in that, while it uses a localized form of the Latin
-  /// writing system, its accented glyphs can be much taller than those
-  /// found in Western European languages. The Greek and Cyrillic writing
-  /// systems are very similar to Latin.
-  englishLike,
-
-  /// Language scripts that require extra line height to accommodate larger
-  /// glyphs, including Chinese, Japanese, and Korean.
-  dense,
-
-  /// Language scripts that require extra line height to accommodate
-  /// larger glyphs, including South and Southeast Asian and
-  /// Middle-Eastern languages, like Arabic, Hindi, Telugu, Thai, and
-  /// Vietnamese.
-  tall,
-}
+export 'package:flutter/material.dart' show ScriptCategory;
 
 /// The color and geometry [TextTheme]s for Material apps.
 ///
