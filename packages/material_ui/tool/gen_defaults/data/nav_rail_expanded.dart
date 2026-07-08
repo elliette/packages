@@ -2,15 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.14
 
-import 'color_role.dart';
 import 'shape_struct.dart';
 
 class TokenNavRailExpanded {
-  /// md.comp.nav-rail.expanded.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surface;
-
   /// md.comp.nav-rail.expanded.container.elevation
   static const double containerElevation = 0.00;
 
@@ -28,9 +24,6 @@ class TokenNavRailExpanded {
 
   /// md.comp.nav-rail.expanded.container.width.minimum
   static const double containerWidthMinimum = 220.00;
-
-  /// md.comp.nav-rail.expanded.modal.container.color
-  static const TokenColorRole modalContainerColor = TokenColorRole.surfaceContainer;
 
   /// md.comp.nav-rail.expanded.modal.container.elevation
   static const double modalContainerElevation = 3.00;
