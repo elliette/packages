@@ -1,0 +1,40 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.0.14
+
+class TokenDialogDarkHighContrast {
+  /// md.comp.dialog.action.focus.label-text.color
+  static const String actionFocusLabelTextColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.focus.state-layer.color
+  static const String actionFocusStateLayerColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.hover.label-text.color
+  static const String actionHoverLabelTextColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.hover.state-layer.color
+  static const String actionHoverStateLayerColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.label-text.color
+  static const String actionLabelTextColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.pressed.label-text.color
+  static const String actionPressedLabelTextColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.action.pressed.state-layer.color
+  static const String actionPressedStateLayerColor = '0xFFF6EDFF';
+
+  /// md.comp.dialog.container.color
+  static const String containerColor = '0xFF2B2930';
+
+  /// md.comp.dialog.headline.color
+  static const String headlineColor = '0xFFFFFFFF';
+
+  /// md.comp.dialog.supporting-text.color
+  static const String supportingTextColor = '0xFFFFFFFF';
+
+  /// md.comp.dialog.with-icon.icon.color
+  static const String withIconIconColor = '0xFFF6EDFF';
+}

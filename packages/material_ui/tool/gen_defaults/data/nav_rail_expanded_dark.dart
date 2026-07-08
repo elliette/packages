@@ -1,0 +1,13 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.0.14
+
+class TokenNavRailExpandedDark {
+  /// md.comp.nav-rail.expanded.container.color
+  static const String containerColor = '0xFF141218';
+
+  /// md.comp.nav-rail.expanded.modal.container.color
+  static const String modalContainerColor = '0xFF211F26';
+}

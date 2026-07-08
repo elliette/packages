@@ -1,0 +1,133 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.0.14
+
+class TokenSwitchDarkMediumContrast {
+  /// md.comp.switch.disabled.selected.handle.color
+  static const String disabledSelectedHandleColor = '0xFF141218';
+
+  /// md.comp.switch.disabled.selected.icon.color
+  static const String disabledSelectedIconColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.disabled.selected.track.color
+  static const String disabledSelectedTrackColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.disabled.unselected.handle.color
+  static const String disabledUnselectedHandleColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.disabled.unselected.icon.color
+  static const String disabledUnselectedIconColor = '0xFF36343B';
+
+  /// md.comp.switch.disabled.unselected.track.color
+  static const String disabledUnselectedTrackColor = '0xFF36343B';
+
+  /// md.comp.switch.disabled.unselected.track.outline.color
+  static const String disabledUnselectedTrackOutlineColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.focus.indicator.color
+  static const String focusIndicatorColor = '0xFFE8DEF8';
+
+  /// md.comp.switch.selected.focus.handle.color
+  static const String selectedFocusHandleColor = '0xFF9A82DB';
+
+  /// md.comp.switch.selected.focus.icon.color
+  static const String selectedFocusIconColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.focus.state-layer.color
+  static const String selectedFocusStateLayerColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.focus.track.color
+  static const String selectedFocusTrackColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.handle.color
+  static const String selectedHandleColor = '0xFF21005D';
+
+  /// md.comp.switch.selected.hover.handle.color
+  static const String selectedHoverHandleColor = '0xFF9A82DB';
+
+  /// md.comp.switch.selected.hover.icon.color
+  static const String selectedHoverIconColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.hover.state-layer.color
+  static const String selectedHoverStateLayerColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.hover.track.color
+  static const String selectedHoverTrackColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.icon.color
+  static const String selectedIconColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.pressed.handle.color
+  static const String selectedPressedHandleColor = '0xFF9A82DB';
+
+  /// md.comp.switch.selected.pressed.icon.color
+  static const String selectedPressedIconColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.pressed.state-layer.color
+  static const String selectedPressedStateLayerColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.pressed.track.color
+  static const String selectedPressedTrackColor = '0xFFEADDFF';
+
+  /// md.comp.switch.selected.track.color
+  static const String selectedTrackColor = '0xFFEADDFF';
+
+  /// md.comp.switch.unselected.focus.handle.color
+  static const String unselectedFocusHandleColor = '0xFFE7E0EC';
+
+  /// md.comp.switch.unselected.focus.icon.color
+  static const String unselectedFocusIconColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.focus.state-layer.color
+  static const String unselectedFocusStateLayerColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.unselected.focus.track.color
+  static const String unselectedFocusTrackColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.focus.track.outline.color
+  static const String unselectedFocusTrackOutlineColor = '0xFFAEA9B4';
+
+  /// md.comp.switch.unselected.handle.color
+  static const String unselectedHandleColor = '0xFFAEA9B4';
+
+  /// md.comp.switch.unselected.hover.handle.color
+  static const String unselectedHoverHandleColor = '0xFFE7E0EC';
+
+  /// md.comp.switch.unselected.hover.icon.color
+  static const String unselectedHoverIconColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.hover.state-layer.color
+  static const String unselectedHoverStateLayerColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.unselected.hover.track.color
+  static const String unselectedHoverTrackColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.hover.track.outline.color
+  static const String unselectedHoverTrackOutlineColor = '0xFFAEA9B4';
+
+  /// md.comp.switch.unselected.icon.color
+  static const String unselectedIconColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.pressed.handle.color
+  static const String unselectedPressedHandleColor = '0xFFE7E0EC';
+
+  /// md.comp.switch.unselected.pressed.icon.color
+  static const String unselectedPressedIconColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.pressed.state-layer.color
+  static const String unselectedPressedStateLayerColor = '0xFFFFFFFF';
+
+  /// md.comp.switch.unselected.pressed.track.color
+  static const String unselectedPressedTrackColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.pressed.track.outline.color
+  static const String unselectedPressedTrackOutlineColor = '0xFFAEA9B4';
+
+  /// md.comp.switch.unselected.track.color
+  static const String unselectedTrackColor = '0xFF36343B';
+
+  /// md.comp.switch.unselected.track.outline.color
+  static const String unselectedTrackOutlineColor = '0xFFAEA9B4';
+}

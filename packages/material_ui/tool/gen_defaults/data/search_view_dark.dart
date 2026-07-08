@@ -1,0 +1,28 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.0.14
+
+class TokenSearchViewDark {
+  /// md.comp.search-view.contained.background.color
+  static const String containedBackgroundColor = '0xFF1D1B20';
+
+  /// md.comp.search-view.container.color
+  static const String containerColor = '0xFF2B2930';
+
+  /// md.comp.search-view.divider.color
+  static const String dividerColor = '0xFF938F99';
+
+  /// md.comp.search-view.header.input-text.color
+  static const String headerInputTextColor = '0xFFE6E0E9';
+
+  /// md.comp.search-view.header.leading-icon.color
+  static const String headerLeadingIconColor = '0xFFE6E0E9';
+
+  /// md.comp.search-view.header.supporting-text.color
+  static const String headerSupportingTextColor = '0xFFCAC4D0';
+
+  /// md.comp.search-view.header.trailing-icon.color
+  static const String headerTrailingIconColor = '0xFFCAC4D0';
+}
