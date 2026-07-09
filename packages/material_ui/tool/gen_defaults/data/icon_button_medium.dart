@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -45,12 +45,6 @@ class TokenIconButtonMedium {
 
   /// md.comp.icon-button.medium.outlined.outline.width
   static const double outlinedOutlineWidth = 1.00;
-
-  /// md.comp.icon-button.medium.pressed.container.corner-size.motion.spring.damping
-  static const double pressedContainerCornerSizeMotionSpringDamping = 0.60;
-
-  /// md.comp.icon-button.medium.pressed.container.corner-size.motion.spring.stiffness
-  static const double pressedContainerCornerSizeMotionSpringStiffness = 800.00;
 
   /// md.comp.icon-button.medium.pressed.container.shape
   static const ShapeStruct pressedContainerShape = ShapeStruct(

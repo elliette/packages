@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -36,21 +36,6 @@ class TokenBannersBasic {
 
   /// md.comp.banners.basic.body-text.trailing-space
   static const double bodyTextTrailingSpace = 48.00;
-
-  /// md.comp.banners.basic.body-text.type
-  static const String bodyTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.banners.basic.body-text.type
-  static const double bodyTextTypeFontSize = 14.00;
-
-  /// md.comp.banners.basic.body-text.type
-  static const double bodyTextTypeFontWeight = 400;
-
-  /// md.comp.banners.basic.body-text.type
-  static const double bodyTextTypeLetterSpacing = 0.25;
-
-  /// md.comp.banners.basic.body-text.type
-  static const double bodyTextTypeLineHeight = 20.00;
 
   /// md.comp.banners.basic.bottom-space
   static const double bottomSpace = 4.00;

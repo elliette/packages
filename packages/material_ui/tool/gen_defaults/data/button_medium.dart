@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -34,32 +34,11 @@ class TokenButtonMedium {
   /// md.comp.button.medium.icon.size
   static const double iconSize = 24.00;
 
-  /// md.comp.button.medium.label-text
-  static const String labelTextFontFamily = 'Roboto';
-
-  /// md.comp.button.medium.label-text
-  static const double labelTextFontSize = 16.00;
-
-  /// md.comp.button.medium.label-text
-  static const double labelTextFontWeight = 500;
-
-  /// md.comp.button.medium.label-text
-  static const double labelTextLetterSpacing = 0.15;
-
-  /// md.comp.button.medium.label-text
-  static const double labelTextLineHeight = 24.00;
-
   /// md.comp.button.medium.leading-space
   static const double leadingSpace = 24.00;
 
   /// md.comp.button.medium.outlined.outline.width
   static const double outlinedOutlineWidth = 1.00;
-
-  /// md.comp.button.medium.pressed.container.corner-size.motion.spring.damping
-  static const double pressedContainerCornerSizeMotionSpringDamping = 0.60;
-
-  /// md.comp.button.medium.pressed.container.corner-size.motion.spring.stiffness
-  static const double pressedContainerCornerSizeMotionSpringStiffness = 800.00;
 
   /// md.comp.button.medium.pressed.container.shape
   static const ShapeStruct pressedContainerShape = ShapeStruct(

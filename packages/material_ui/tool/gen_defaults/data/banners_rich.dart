@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -36,21 +36,6 @@ class TokenBannersRich {
 
   /// md.comp.banners.rich.body-text.trailing-space
   static const double bodyTextTrailingSpace = 48.00;
-
-  /// md.comp.banners.rich.body-text.type
-  static const String bodyTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.banners.rich.body-text.type
-  static const double bodyTextTypeFontSize = 14.00;
-
-  /// md.comp.banners.rich.body-text.type
-  static const double bodyTextTypeFontWeight = 400;
-
-  /// md.comp.banners.rich.body-text.type
-  static const double bodyTextTypeLetterSpacing = 0.25;
-
-  /// md.comp.banners.rich.body-text.type
-  static const double bodyTextTypeLineHeight = 20.00;
 
   /// md.comp.banners.rich.bottom-space
   static const double bottomSpace = 12.00;
@@ -114,21 +99,6 @@ class TokenBannersRich {
 
   /// md.comp.banners.rich.title-text.trailing-space
   static const double titleTextTrailingSpace = 0.00;
-
-  /// md.comp.banners.rich.title-text.type
-  static const String titleTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.banners.rich.title-text.type
-  static const double titleTextTypeFontSize = 14.00;
-
-  /// md.comp.banners.rich.title-text.type
-  static const double titleTextTypeFontWeight = 500;
-
-  /// md.comp.banners.rich.title-text.type
-  static const double titleTextTypeLetterSpacing = 0.25;
-
-  /// md.comp.banners.rich.title-text.type
-  static const double titleTextTypeLineHeight = 20.00;
 
   /// md.comp.banners.rich.top-space
   static const double topSpace = 12.00;

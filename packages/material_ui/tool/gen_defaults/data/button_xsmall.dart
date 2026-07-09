@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -29,37 +29,16 @@ class TokenButtonXsmall {
   );
 
   /// md.comp.button.xsmall.icon-label-space
-  static const double iconLabelSpace = 8.00;
+  static const double iconLabelSpace = 4.00;
 
   /// md.comp.button.xsmall.icon.size
   static const double iconSize = 20.00;
-
-  /// md.comp.button.xsmall.label-text
-  static const String labelTextFontFamily = 'Roboto';
-
-  /// md.comp.button.xsmall.label-text
-  static const double labelTextFontSize = 14.00;
-
-  /// md.comp.button.xsmall.label-text
-  static const double labelTextFontWeight = 500;
-
-  /// md.comp.button.xsmall.label-text
-  static const double labelTextLetterSpacing = 0.10;
-
-  /// md.comp.button.xsmall.label-text
-  static const double labelTextLineHeight = 20.00;
 
   /// md.comp.button.xsmall.leading-space
   static const double leadingSpace = 12.00;
 
   /// md.comp.button.xsmall.outlined.outline.width
   static const double outlinedOutlineWidth = 1.00;
-
-  /// md.comp.button.xsmall.pressed.container.corner-size.motion.spring.damping
-  static const double pressedContainerCornerSizeMotionSpringDamping = 0.60;
-
-  /// md.comp.button.xsmall.pressed.container.corner-size.motion.spring.stiffness
-  static const double pressedContainerCornerSizeMotionSpringStiffness = 800.00;
 
   /// md.comp.button.xsmall.pressed.container.shape
   static const ShapeStruct pressedContainerShape = ShapeStruct(

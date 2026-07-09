@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 class TokenNavRailItemVertical {
   /// md.comp.nav-rail.item.vertical.active-indicator.height
@@ -13,21 +13,6 @@ class TokenNavRailItemVertical {
 
   /// md.comp.nav-rail.item.vertical.icon-label-space
   static const double iconLabelSpace = 4.00;
-
-  /// md.comp.nav-rail.item.vertical.label-text.font
-  static const String labelTextFontFontFamily = 'Roboto';
-
-  /// md.comp.nav-rail.item.vertical.label-text.font
-  static const double labelTextFontFontSize = 12.00;
-
-  /// md.comp.nav-rail.item.vertical.label-text.font
-  static const double labelTextFontFontWeight = 500;
-
-  /// md.comp.nav-rail.item.vertical.label-text.font
-  static const double labelTextFontLetterSpacing = 0.50;
-
-  /// md.comp.nav-rail.item.vertical.label-text.font
-  static const double labelTextFontLineHeight = 16.00;
 
   /// md.comp.nav-rail.item.vertical.leading-space
   static const double leadingSpace = 16.00;

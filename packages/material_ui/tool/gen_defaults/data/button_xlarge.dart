@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'shape_struct.dart';
 
@@ -34,32 +34,11 @@ class TokenButtonXlarge {
   /// md.comp.button.xlarge.icon.size
   static const double iconSize = 40.00;
 
-  /// md.comp.button.xlarge.label-text
-  static const String labelTextFontFamily = 'Roboto';
-
-  /// md.comp.button.xlarge.label-text
-  static const double labelTextFontSize = 32.00;
-
-  /// md.comp.button.xlarge.label-text
-  static const double labelTextFontWeight = 400;
-
-  /// md.comp.button.xlarge.label-text
-  static const double labelTextLetterSpacing = 0.00;
-
-  /// md.comp.button.xlarge.label-text
-  static const double labelTextLineHeight = 40.00;
-
   /// md.comp.button.xlarge.leading-space
   static const double leadingSpace = 64.00;
 
   /// md.comp.button.xlarge.outlined.outline.width
   static const double outlinedOutlineWidth = 3.00;
-
-  /// md.comp.button.xlarge.pressed.container.corner-size.motion.spring.damping
-  static const double pressedContainerCornerSizeMotionSpringDamping = 0.60;
-
-  /// md.comp.button.xlarge.pressed.container.corner-size.motion.spring.stiffness
-  static const double pressedContainerCornerSizeMotionSpringStiffness = 800.00;
 
   /// md.comp.button.xlarge.pressed.container.shape
   static const ShapeStruct pressedContainerShape = ShapeStruct(

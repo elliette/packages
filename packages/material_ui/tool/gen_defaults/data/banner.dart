@@ -2,15 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
-import 'color_role.dart';
 import 'shape_struct.dart';
 
 class TokenBanner {
-  /// md.comp.banner.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerLow;
-
   /// md.comp.banner.container.elevation
   static const double containerElevation = 1.00;
 
@@ -40,27 +36,6 @@ class TokenBanner {
 
   /// md.comp.banner.mobile.with-two-lines.with-image.container.height
   static const double mobileWithTwoLinesWithImageContainerHeight = 120.00;
-
-  /// md.comp.banner.supporting-text.color
-  static const TokenColorRole supportingTextColor = TokenColorRole.onSurfaceVariant;
-
-  /// md.comp.banner.supporting-text.font
-  static const String supportingTextFont = 'Roboto';
-
-  /// md.comp.banner.supporting-text.type
-  static const String supportingTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.banner.supporting-text.type
-  static const double supportingTextTypeFontSize = 14.00;
-
-  /// md.comp.banner.supporting-text.type
-  static const double supportingTextTypeFontWeight = 400;
-
-  /// md.comp.banner.supporting-text.type
-  static const double supportingTextTypeLetterSpacing = 0.25;
-
-  /// md.comp.banner.supporting-text.type
-  static const double supportingTextTypeLineHeight = 20.00;
 
   /// md.comp.banner.with-image.image.shape
   static const ShapeStruct withImageImageShape = ShapeStruct(
