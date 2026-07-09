@@ -1,0 +1,40 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.0.15
+
+import 'color_role.dart';
+
+class TokenSnackbarLightMediumContrast {
+  /// md.comp.snackbar.icon.color
+  static const TokenColorRole iconColor = TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.focus.icon.color
+  static const TokenColorRole iconFocusIconColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.focus.state-layer.color
+  static const TokenColorRole iconFocusStateLayerColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.hover.icon.color
+  static const TokenColorRole iconHoverIconColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.hover.state-layer.color
+  static const TokenColorRole iconHoverStateLayerColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.pressed.icon.color
+  static const TokenColorRole iconPressedIconColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.icon.pressed.state-layer.color
+  static const TokenColorRole iconPressedStateLayerColor =
+      TokenColorRole.inverseOnSurface;
+
+  /// md.comp.snackbar.supporting-text.color
+  static const TokenColorRole supportingTextColor =
+      TokenColorRole.inverseOnSurface;
+}
