@@ -2,65 +2,60 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.15
 
 import 'color_role.dart';
 
 class TokenFabMenuTertiaryContainer {
   /// md.comp.fab-menu.tertiary-container.list-item.container.color
-  static const TokenColorRole listItemContainerColor = TokenColorRole.tertiaryContainer;
+  static const TokenColorRole listItemContainerColor =
+      TokenColorRole.tertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.container.shadow-color
-  static const TokenColorRole listItemContainerShadowColor = TokenColorRole.shadow;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.focused.container.elevation
-  static const double listItemFocusedContainerElevation = 6.00;
+  static const TokenColorRole listItemContainerShadowColor =
+      TokenColorRole.shadow;
 
   /// md.comp.fab-menu.tertiary-container.list-item.focused.icon.color
-  static const TokenColorRole listItemFocusedIconColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemFocusedIconColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.focused.label-text.color
-  static const TokenColorRole listItemFocusedLabelTextColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemFocusedLabelTextColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.focused.state-layer.color
-  static const TokenColorRole listItemFocusedStateLayerColor = TokenColorRole.onTertiaryContainer;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.focused.state-layer.opacity
-  static const double listItemFocusedStateLayerOpacity = 0.10;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.hovered.container.elevation
-  static const double listItemHoveredContainerElevation = 8.00;
+  static const TokenColorRole listItemFocusedStateLayerColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.hovered.icon.color
-  static const TokenColorRole listItemHoveredIconColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemHoveredIconColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.hovered.label-text.color
-  static const TokenColorRole listItemHoveredLabelTextColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemHoveredLabelTextColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.hovered.state-layer.color
-  static const TokenColorRole listItemHoveredStateLayerColor = TokenColorRole.onTertiaryContainer;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.hovered.state-layer.opacity
-  static const double listItemHoveredStateLayerOpacity = 0.08;
+  static const TokenColorRole listItemHoveredStateLayerColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.icon.color
-  static const TokenColorRole listItemIconColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemIconColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.label-text.color
-  static const TokenColorRole listItemLabelTextColor = TokenColorRole.onTertiaryContainer;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.pressed.container.elevation
-  static const double listItemPressedContainerElevation = 6.00;
+  static const TokenColorRole listItemLabelTextColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.pressed.icon.color
-  static const TokenColorRole listItemPressedIconColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemPressedIconColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.pressed.label-text.color
-  static const TokenColorRole listItemPressedLabelTextColor = TokenColorRole.onTertiaryContainer;
+  static const TokenColorRole listItemPressedLabelTextColor =
+      TokenColorRole.onTertiaryContainer;
 
   /// md.comp.fab-menu.tertiary-container.list-item.pressed.state-layer.color
-  static const TokenColorRole listItemPressedStateLayerColor = TokenColorRole.onTertiaryContainer;
-
-  /// md.comp.fab-menu.tertiary-container.list-item.pressed.state-layer.opacity
-  static const double listItemPressedStateLayerOpacity = 0.10;
+  static const TokenColorRole listItemPressedStateLayerColor =
+      TokenColorRole.onTertiaryContainer;
 }
