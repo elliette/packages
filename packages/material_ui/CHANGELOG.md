@@ -1,5 +1,6 @@
-## NEXT
+## 0.0.2+1
 
+* Migrated bottom_app_bar M3 defaults to new gen_defaults template.
 * Updates minimum supported SDK version to Flutter 3.38/Dart 3.10.
 
 ## 0.0.1
