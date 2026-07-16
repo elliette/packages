@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenSnackbar {
   /// md.comp.snackbar.action.focus.label-text.color
@@ -35,14 +35,28 @@ class TokenSnackbar {
   static const TokenColorRole actionLabelTextColor =
       TokenColorRole.inversePrimary;
 
+  /// md.comp.snackbar.action.label-text.font
+  static const TypescaleStruct actionLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.snackbar.action.label-text.line-height
+  static const TypescaleStruct actionLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.snackbar.action.label-text.size
+  static const TypescaleStruct actionLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.snackbar.action.label-text.tracking
+  static const TypescaleStruct actionLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.snackbar.action.label-text.type
-  static const TypescaleStruct actionLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct actionLabelTextType = TokenTypescale.labelLarge;
+
+  /// md.comp.snackbar.action.label-text.weight
+  static const TypescaleStruct actionLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.snackbar.action.pressed.label-text.color
   static const TokenColorRole actionPressedLabelTextColor =
@@ -116,14 +130,28 @@ class TokenSnackbar {
   static const TokenColorRole supportingTextColor =
       TokenColorRole.inverseOnSurface;
 
+  /// md.comp.snackbar.supporting-text.font
+  static const TypescaleStruct supportingTextFont =
+      TokenTypescale.bodyMediumFont;
+
+  /// md.comp.snackbar.supporting-text.line-height
+  static const TypescaleStruct supportingTextLineHeight =
+      TokenTypescale.bodyMediumLineHeight;
+
+  /// md.comp.snackbar.supporting-text.size
+  static const TypescaleStruct supportingTextSize =
+      TokenTypescale.bodyMediumSize;
+
+  /// md.comp.snackbar.supporting-text.tracking
+  static const TypescaleStruct supportingTextTracking =
+      TokenTypescale.bodyMediumTracking;
+
   /// md.comp.snackbar.supporting-text.type
-  static const TypescaleStruct supportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 400,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct supportingTextType = TokenTypescale.bodyMedium;
+
+  /// md.comp.snackbar.supporting-text.weight
+  static const TypescaleStruct supportingTextWeight =
+      TokenTypescale.bodyMediumWeight;
 
   /// md.comp.snackbar.with-single-line.container.height
   static const double withSingleLineContainerHeight = 48.00;

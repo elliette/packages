@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenSheetSide {
   /// md.comp.sheet.side.detached.container.shape
@@ -83,14 +83,28 @@ class TokenSheetSide {
   static const TokenColorRole dockedHeadlineColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.sheet.side.docked.headline.font
+  static const TypescaleStruct dockedHeadlineFont =
+      TokenTypescale.titleLargeFont;
+
+  /// md.comp.sheet.side.docked.headline.line-height
+  static const TypescaleStruct dockedHeadlineLineHeight =
+      TokenTypescale.titleLargeLineHeight;
+
+  /// md.comp.sheet.side.docked.headline.size
+  static const TypescaleStruct dockedHeadlineSize =
+      TokenTypescale.titleLargeSize;
+
+  /// md.comp.sheet.side.docked.headline.tracking
+  static const TypescaleStruct dockedHeadlineTracking =
+      TokenTypescale.titleLargeTracking;
+
   /// md.comp.sheet.side.docked.headline.type
-  static const TypescaleStruct dockedHeadlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 22.00,
-    fontWeight: 400,
-    lineHeight: 28.00,
-    letterSpacing: 0.00,
-  );
+  static const TypescaleStruct dockedHeadlineType = TokenTypescale.titleLarge;
+
+  /// md.comp.sheet.side.docked.headline.weight
+  static const TypescaleStruct dockedHeadlineWeight =
+      TokenTypescale.titleLargeWeight;
 
   /// md.comp.sheet.side.docked.modal.container.color
   static const TokenColorRole dockedModalContainerColor =

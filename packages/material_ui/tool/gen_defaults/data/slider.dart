@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
+import 'typescale.dart';
 
 class TokenSlider {
   /// md.comp.slider.active.handle.color
@@ -206,4 +207,24 @@ class TokenSlider {
   /// md.comp.slider.value-indicator.label.label-text.color
   static const TokenColorRole valueIndicatorLabelLabelTextColor =
       TokenColorRole.inverseOnSurface;
+
+  /// md.comp.slider.value-indicator.label.label-text.font
+  static const TypescaleStruct valueIndicatorLabelLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.slider.value-indicator.label.label-text.line-height
+  static const TypescaleStruct valueIndicatorLabelLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.slider.value-indicator.label.label-text.size
+  static const TypescaleStruct valueIndicatorLabelLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.slider.value-indicator.label.label-text.tracking
+  static const TypescaleStruct valueIndicatorLabelLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
+  /// md.comp.slider.value-indicator.label.label-text.weight
+  static const TypescaleStruct valueIndicatorLabelLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 }

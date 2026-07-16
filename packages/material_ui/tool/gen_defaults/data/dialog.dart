@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenDialog {
   /// md.comp.dialog.action.focus.label-text.color
@@ -34,14 +34,28 @@ class TokenDialog {
   /// md.comp.dialog.action.label-text.color
   static const TokenColorRole actionLabelTextColor = TokenColorRole.primary;
 
+  /// md.comp.dialog.action.label-text.font
+  static const TypescaleStruct actionLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.dialog.action.label-text.line-height
+  static const TypescaleStruct actionLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.dialog.action.label-text.size
+  static const TypescaleStruct actionLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.dialog.action.label-text.tracking
+  static const TypescaleStruct actionLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.dialog.action.label-text.type
-  static const TypescaleStruct actionLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct actionLabelTextType = TokenTypescale.labelLarge;
+
+  /// md.comp.dialog.action.label-text.weight
+  static const TypescaleStruct actionLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.dialog.action.pressed.label-text.color
   static const TokenColorRole actionPressedLabelTextColor =
@@ -73,27 +87,53 @@ class TokenDialog {
   /// md.comp.dialog.headline.color
   static const TokenColorRole headlineColor = TokenColorRole.onSurface;
 
+  /// md.comp.dialog.headline.font
+  static const TypescaleStruct headlineFont = TokenTypescale.headlineSmallFont;
+
+  /// md.comp.dialog.headline.line-height
+  static const TypescaleStruct headlineLineHeight =
+      TokenTypescale.headlineSmallLineHeight;
+
+  /// md.comp.dialog.headline.size
+  static const TypescaleStruct headlineSize = TokenTypescale.headlineSmallSize;
+
+  /// md.comp.dialog.headline.tracking
+  static const TypescaleStruct headlineTracking =
+      TokenTypescale.headlineSmallTracking;
+
   /// md.comp.dialog.headline.type
-  static const TypescaleStruct headlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 24.00,
-    fontWeight: 400,
-    lineHeight: 32.00,
-    letterSpacing: 0.00,
-  );
+  static const TypescaleStruct headlineType = TokenTypescale.headlineSmall;
+
+  /// md.comp.dialog.headline.weight
+  static const TypescaleStruct headlineWeight =
+      TokenTypescale.headlineSmallWeight;
 
   /// md.comp.dialog.supporting-text.color
   static const TokenColorRole supportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.dialog.supporting-text.font
+  static const TypescaleStruct supportingTextFont =
+      TokenTypescale.bodyMediumFont;
+
+  /// md.comp.dialog.supporting-text.line-height
+  static const TypescaleStruct supportingTextLineHeight =
+      TokenTypescale.bodyMediumLineHeight;
+
+  /// md.comp.dialog.supporting-text.size
+  static const TypescaleStruct supportingTextSize =
+      TokenTypescale.bodyMediumSize;
+
+  /// md.comp.dialog.supporting-text.tracking
+  static const TypescaleStruct supportingTextTracking =
+      TokenTypescale.bodyMediumTracking;
+
   /// md.comp.dialog.supporting-text.type
-  static const TypescaleStruct supportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 400,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct supportingTextType = TokenTypescale.bodyMedium;
+
+  /// md.comp.dialog.supporting-text.weight
+  static const TypescaleStruct supportingTextWeight =
+      TokenTypescale.bodyMediumWeight;
 
   /// md.comp.dialog.with-icon.icon.color
   static const TokenColorRole withIconIconColor = TokenColorRole.secondary;

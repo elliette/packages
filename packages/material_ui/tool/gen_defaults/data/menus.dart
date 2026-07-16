@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
+import 'typescale.dart';
 
 class TokenMenus {
   /// md.comp.menus.active.container.shape
@@ -200,6 +201,26 @@ class TokenMenus {
   /// md.comp.menus.menu-item.height
   static const double menuItemHeight = 44.00;
 
+  /// md.comp.menus.menu-item.label-text.font
+  static const TypescaleStruct menuItemLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.menus.menu-item.label-text.line-height
+  static const TypescaleStruct menuItemLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.menus.menu-item.label-text.size
+  static const TypescaleStruct menuItemLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.menus.menu-item.label-text.tracking
+  static const TypescaleStruct menuItemLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
+  /// md.comp.menus.menu-item.label-text.weight
+  static const TypescaleStruct menuItemLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
+
   /// md.comp.menus.menu-item.last-child.inner-corner.corner-size
   static const ShapeStruct menuItemLastChildInnerCornerCornerSize = ShapeStruct(
     family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
@@ -242,6 +263,26 @@ class TokenMenus {
     bottomRight: 4.00,
   );
 
+  /// md.comp.menus.menu-item.supporting-text.font
+  static const TypescaleStruct menuItemSupportingTextFont =
+      TokenTypescale.bodySmallFont;
+
+  /// md.comp.menus.menu-item.supporting-text.line-height
+  static const TypescaleStruct menuItemSupportingTextLineHeight =
+      TokenTypescale.bodySmallLineHeight;
+
+  /// md.comp.menus.menu-item.supporting-text.size
+  static const TypescaleStruct menuItemSupportingTextSize =
+      TokenTypescale.bodySmallSize;
+
+  /// md.comp.menus.menu-item.supporting-text.tracking
+  static const TypescaleStruct menuItemSupportingTextTracking =
+      TokenTypescale.bodySmallTracking;
+
+  /// md.comp.menus.menu-item.supporting-text.weight
+  static const TypescaleStruct menuItemSupportingTextWeight =
+      TokenTypescale.bodySmallWeight;
+
   /// md.comp.menus.menu-item.top-space
   static const double menuItemTopSpace = 8.00;
 
@@ -250,4 +291,24 @@ class TokenMenus {
 
   /// md.comp.menus.menu-item.trailing-space
   static const double menuItemTrailingSpace = 16.00;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.font
+  static const TypescaleStruct menuItemTrailingSupportingTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.line-height
+  static const TypescaleStruct menuItemTrailingSupportingTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.size
+  static const TypescaleStruct menuItemTrailingSupportingTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.tracking
+  static const TypescaleStruct menuItemTrailingSupportingTextTracking =
+      TokenTypescale.labelLargeTracking;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.weight
+  static const TypescaleStruct menuItemTrailingSupportingTextWeight =
+      TokenTypescale.labelLargeWeight;
 }

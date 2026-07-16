@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenOutlinedTextField {
   /// md.comp.outlined-text-field.caret.color
@@ -182,6 +182,13 @@ class TokenOutlinedTextField {
   /// md.comp.outlined-text-field.input-text.color
   static const TokenColorRole inputTextColor = TokenColorRole.onSurface;
 
+  /// md.comp.outlined-text-field.input-text.font
+  static const TypescaleStruct inputTextFont = TokenTypescale.bodyLargeFont;
+
+  /// md.comp.outlined-text-field.input-text.line-height
+  static const TypescaleStruct inputTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
   /// md.comp.outlined-text-field.input-text.placeholder.color
   static const TokenColorRole inputTextPlaceholderColor =
       TokenColorRole.onSurfaceVariant;
@@ -190,30 +197,53 @@ class TokenOutlinedTextField {
   static const TokenColorRole inputTextPrefixColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-text-field.input-text.size
+  static const TypescaleStruct inputTextSize = TokenTypescale.bodyLargeSize;
+
   /// md.comp.outlined-text-field.input-text.suffix.color
   static const TokenColorRole inputTextSuffixColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-text-field.input-text.tracking
+  static const TypescaleStruct inputTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.outlined-text-field.input-text.type
-  static const TypescaleStruct inputTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct inputTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.outlined-text-field.input-text.weight
+  static const TypescaleStruct inputTextWeight = TokenTypescale.bodyLargeWeight;
 
   /// md.comp.outlined-text-field.label-text.color
   static const TokenColorRole labelTextColor = TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-text-field.label-text.font
+  static const TypescaleStruct labelTextFont = TokenTypescale.bodyLargeFont;
+
+  /// md.comp.outlined-text-field.label-text.line-height
+  static const TypescaleStruct labelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.outlined-text-field.label-text.populated.line-height
+  static const TypescaleStruct labelTextPopulatedLineHeight =
+      TokenTypescale.bodySmallLineHeight;
+
+  /// md.comp.outlined-text-field.label-text.populated.size
+  static const TypescaleStruct labelTextPopulatedSize =
+      TokenTypescale.bodySmallSize;
+
+  /// md.comp.outlined-text-field.label-text.size
+  static const TypescaleStruct labelTextSize = TokenTypescale.bodyLargeSize;
+
+  /// md.comp.outlined-text-field.label-text.tracking
+  static const TypescaleStruct labelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.outlined-text-field.label-text.type
-  static const TypescaleStruct labelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct labelTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.outlined-text-field.label-text.weight
+  static const TypescaleStruct labelTextWeight = TokenTypescale.bodyLargeWeight;
 
   /// md.comp.outlined-text-field.leading-icon.color
   static const TokenColorRole leadingIconColor =
@@ -232,14 +262,28 @@ class TokenOutlinedTextField {
   static const TokenColorRole supportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-text-field.supporting-text.font
+  static const TypescaleStruct supportingTextFont =
+      TokenTypescale.bodySmallFont;
+
+  /// md.comp.outlined-text-field.supporting-text.line-height
+  static const TypescaleStruct supportingTextLineHeight =
+      TokenTypescale.bodySmallLineHeight;
+
+  /// md.comp.outlined-text-field.supporting-text.size
+  static const TypescaleStruct supportingTextSize =
+      TokenTypescale.bodySmallSize;
+
+  /// md.comp.outlined-text-field.supporting-text.tracking
+  static const TypescaleStruct supportingTextTracking =
+      TokenTypescale.bodySmallTracking;
+
   /// md.comp.outlined-text-field.supporting-text.type
-  static const TypescaleStruct supportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 400,
-    lineHeight: 16.00,
-    letterSpacing: 0.40,
-  );
+  static const TypescaleStruct supportingTextType = TokenTypescale.bodySmall;
+
+  /// md.comp.outlined-text-field.supporting-text.weight
+  static const TypescaleStruct supportingTextWeight =
+      TokenTypescale.bodySmallWeight;
 
   /// md.comp.outlined-text-field.trailing-icon.color
   static const TokenColorRole trailingIconColor =

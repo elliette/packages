@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenNavigationBar {
   /// md.comp.navigation-bar.active.focus.icon.color
@@ -58,6 +58,10 @@ class TokenNavigationBar {
 
   /// md.comp.navigation-bar.active.label-text.color
   static const TokenColorRole activeLabelTextColor = TokenColorRole.onSurface;
+
+  /// md.comp.navigation-bar.active.label-text.weight
+  static const TypescaleStruct activeLabelTextWeight =
+      TokenTypescale.labelMediumWeightProminent;
 
   /// md.comp.navigation-bar.active.pressed.icon.color
   static const TokenColorRole activePressedIconColor =
@@ -149,14 +153,26 @@ class TokenNavigationBar {
   static const TokenColorRole inactivePressedStateLayerColor =
       TokenColorRole.onSurface;
 
+  /// md.comp.navigation-bar.label-text.font
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelMediumFont;
+
+  /// md.comp.navigation-bar.label-text.line-height
+  static const TypescaleStruct labelTextLineHeight =
+      TokenTypescale.labelMediumLineHeight;
+
+  /// md.comp.navigation-bar.label-text.size
+  static const TypescaleStruct labelTextSize = TokenTypescale.labelMediumSize;
+
+  /// md.comp.navigation-bar.label-text.tracking
+  static const TypescaleStruct labelTextTracking =
+      TokenTypescale.labelMediumTracking;
+
   /// md.comp.navigation-bar.label-text.type
-  static const TypescaleStruct labelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct labelTextType = TokenTypescale.labelMedium;
+
+  /// md.comp.navigation-bar.label-text.weight
+  static const TypescaleStruct labelTextWeight =
+      TokenTypescale.labelMediumWeight;
 
   /// md.comp.navigation-bar.pressed.state-layer.opacity
   static const double pressedStateLayerOpacity = 0.10;

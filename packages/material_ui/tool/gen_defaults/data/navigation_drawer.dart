@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenNavigationDrawer {
   /// md.comp.navigation-drawer.active.focus.icon.color
@@ -60,6 +60,10 @@ class TokenNavigationDrawer {
   static const TokenColorRole activeLabelTextColor =
       TokenColorRole.onSecondaryContainer;
 
+  /// md.comp.navigation-drawer.active.label-text.weight
+  static const TypescaleStruct activeLabelTextWeight =
+      TokenTypescale.labelLargeWeightProminent;
+
   /// md.comp.navigation-drawer.active.pressed.icon.color
   static const TokenColorRole activePressedIconColor =
       TokenColorRole.onSecondaryContainer;
@@ -111,14 +115,25 @@ class TokenNavigationDrawer {
   /// md.comp.navigation-drawer.headline.color
   static const TokenColorRole headlineColor = TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.navigation-drawer.headline.font
+  static const TypescaleStruct headlineFont = TokenTypescale.titleSmallFont;
+
+  /// md.comp.navigation-drawer.headline.line-height
+  static const TypescaleStruct headlineLineHeight =
+      TokenTypescale.titleSmallLineHeight;
+
+  /// md.comp.navigation-drawer.headline.size
+  static const TypescaleStruct headlineSize = TokenTypescale.titleSmallSize;
+
+  /// md.comp.navigation-drawer.headline.tracking
+  static const TypescaleStruct headlineTracking =
+      TokenTypescale.titleSmallTracking;
+
   /// md.comp.navigation-drawer.headline.type
-  static const TypescaleStruct headlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct headlineType = TokenTypescale.titleSmall;
+
+  /// md.comp.navigation-drawer.headline.weight
+  static const TypescaleStruct headlineWeight = TokenTypescale.titleSmallWeight;
 
   /// md.comp.navigation-drawer.hover.state-layer.opacity
   static const double hoverStateLayerOpacity = 0.08;
@@ -168,27 +183,53 @@ class TokenNavigationDrawer {
   static const TokenColorRole inactivePressedStateLayerColor =
       TokenColorRole.onSecondaryContainer;
 
+  /// md.comp.navigation-drawer.label-text.font
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelLargeFont;
+
+  /// md.comp.navigation-drawer.label-text.line-height
+  static const TypescaleStruct labelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.navigation-drawer.label-text.size
+  static const TypescaleStruct labelTextSize = TokenTypescale.labelLargeSize;
+
+  /// md.comp.navigation-drawer.label-text.tracking
+  static const TypescaleStruct labelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.navigation-drawer.label-text.type
-  static const TypescaleStruct labelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct labelTextType = TokenTypescale.labelLarge;
+
+  /// md.comp.navigation-drawer.label-text.weight
+  static const TypescaleStruct labelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.navigation-drawer.large-badge-label.color
   static const TokenColorRole largeBadgeLabelColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.navigation-drawer.large-badge-label.font
+  static const TypescaleStruct largeBadgeLabelFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.navigation-drawer.large-badge-label.line-height
+  static const TypescaleStruct largeBadgeLabelLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.navigation-drawer.large-badge-label.size
+  static const TypescaleStruct largeBadgeLabelSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.navigation-drawer.large-badge-label.tracking
+  static const TypescaleStruct largeBadgeLabelTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.navigation-drawer.large-badge-label.type
-  static const TypescaleStruct largeBadgeLabelType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct largeBadgeLabelType = TokenTypescale.labelLarge;
+
+  /// md.comp.navigation-drawer.large-badge-label.weight
+  static const TypescaleStruct largeBadgeLabelWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.navigation-drawer.modal.container.color
   static const TokenColorRole modalContainerColor =

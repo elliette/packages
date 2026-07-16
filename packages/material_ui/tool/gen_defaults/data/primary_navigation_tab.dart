@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenPrimaryNavigationTab {
   /// md.comp.primary-navigation-tab.active.focus.state-layer.color
@@ -162,12 +162,27 @@ class TokenPrimaryNavigationTab {
   static const TokenColorRole withLabelTextInactivePressedLabelTextColor =
       TokenColorRole.onSurface;
 
+  /// md.comp.primary-navigation-tab.with-label-text.label-text.font
+  static const TypescaleStruct withLabelTextLabelTextFont =
+      TokenTypescale.titleSmallFont;
+
+  /// md.comp.primary-navigation-tab.with-label-text.label-text.line-height
+  static const TypescaleStruct withLabelTextLabelTextLineHeight =
+      TokenTypescale.titleSmallLineHeight;
+
+  /// md.comp.primary-navigation-tab.with-label-text.label-text.size
+  static const TypescaleStruct withLabelTextLabelTextSize =
+      TokenTypescale.titleSmallSize;
+
+  /// md.comp.primary-navigation-tab.with-label-text.label-text.tracking
+  static const TypescaleStruct withLabelTextLabelTextTracking =
+      TokenTypescale.titleSmallTracking;
+
   /// md.comp.primary-navigation-tab.with-label-text.label-text.type
-  static const TypescaleStruct withLabelTextLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct withLabelTextLabelTextType =
+      TokenTypescale.titleSmall;
+
+  /// md.comp.primary-navigation-tab.with-label-text.label-text.weight
+  static const TypescaleStruct withLabelTextLabelTextWeight =
+      TokenTypescale.titleSmallWeight;
 }

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenTimePicker {
   /// md.comp.time-picker.clock-dial.color
@@ -16,14 +16,29 @@ class TokenTimePicker {
   /// md.comp.time-picker.clock-dial.container.size
   static const double clockDialContainerSize = 256.00;
 
+  /// md.comp.time-picker.clock-dial.label-text.font
+  static const TypescaleStruct clockDialLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.time-picker.clock-dial.label-text.line-height
+  static const TypescaleStruct clockDialLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.time-picker.clock-dial.label-text.size
+  static const TypescaleStruct clockDialLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.time-picker.clock-dial.label-text.tracking
+  static const TypescaleStruct clockDialLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.time-picker.clock-dial.label-text.type
-  static const TypescaleStruct clockDialLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct clockDialLabelTextType =
+      TokenTypescale.bodyLarge;
+
+  /// md.comp.time-picker.clock-dial.label-text.weight
+  static const TypescaleStruct clockDialLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.time-picker.clock-dial.selected.label-text.color
   static const TokenColorRole clockDialSelectedLabelTextColor =
@@ -100,14 +115,26 @@ class TokenTimePicker {
   /// md.comp.time-picker.headline.color
   static const TokenColorRole headlineColor = TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.time-picker.headline.font
+  static const TypescaleStruct headlineFont = TokenTypescale.labelMediumFont;
+
+  /// md.comp.time-picker.headline.line-height
+  static const TypescaleStruct headlineLineHeight =
+      TokenTypescale.labelMediumLineHeight;
+
+  /// md.comp.time-picker.headline.size
+  static const TypescaleStruct headlineSize = TokenTypescale.labelMediumSize;
+
+  /// md.comp.time-picker.headline.tracking
+  static const TypescaleStruct headlineTracking =
+      TokenTypescale.labelMediumTracking;
+
   /// md.comp.time-picker.headline.type
-  static const TypescaleStruct headlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct headlineType = TokenTypescale.labelMedium;
+
+  /// md.comp.time-picker.headline.weight
+  static const TypescaleStruct headlineWeight =
+      TokenTypescale.labelMediumWeight;
 
   /// md.comp.time-picker.period-selector.container.shape
   static const ShapeStruct periodSelectorContainerShape = ShapeStruct(
@@ -130,14 +157,29 @@ class TokenTimePicker {
   /// md.comp.time-picker.period-selector.hover.state-layer.opacity
   static const double periodSelectorHoverStateLayerOpacity = 0.08;
 
+  /// md.comp.time-picker.period-selector.label-text.font
+  static const TypescaleStruct periodSelectorLabelTextFont =
+      TokenTypescale.titleMediumFont;
+
+  /// md.comp.time-picker.period-selector.label-text.line-height
+  static const TypescaleStruct periodSelectorLabelTextLineHeight =
+      TokenTypescale.titleMediumLineHeight;
+
+  /// md.comp.time-picker.period-selector.label-text.size
+  static const TypescaleStruct periodSelectorLabelTextSize =
+      TokenTypescale.titleMediumSize;
+
+  /// md.comp.time-picker.period-selector.label-text.tracking
+  static const TypescaleStruct periodSelectorLabelTextTracking =
+      TokenTypescale.titleMediumTracking;
+
   /// md.comp.time-picker.period-selector.label-text.type
-  static const TypescaleStruct periodSelectorLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 500,
-    lineHeight: 24.00,
-    letterSpacing: 0.15,
-  );
+  static const TypescaleStruct periodSelectorLabelTextType =
+      TokenTypescale.titleMedium;
+
+  /// md.comp.time-picker.period-selector.label-text.weight
+  static const TypescaleStruct periodSelectorLabelTextWeight =
+      TokenTypescale.titleMediumWeight;
 
   /// md.comp.time-picker.period-selector.outline.color
   static const TokenColorRole periodSelectorOutlineColor =
@@ -239,14 +281,29 @@ class TokenTimePicker {
   /// md.comp.time-picker.time-selector.hover.state-layer.opacity
   static const double timeSelectorHoverStateLayerOpacity = 0.08;
 
+  /// md.comp.time-picker.time-selector.label-text.font
+  static const TypescaleStruct timeSelectorLabelTextFont =
+      TokenTypescale.displayLargeFont;
+
+  /// md.comp.time-picker.time-selector.label-text.line-height
+  static const TypescaleStruct timeSelectorLabelTextLineHeight =
+      TokenTypescale.displayLargeLineHeight;
+
+  /// md.comp.time-picker.time-selector.label-text.size
+  static const TypescaleStruct timeSelectorLabelTextSize =
+      TokenTypescale.displayLargeSize;
+
+  /// md.comp.time-picker.time-selector.label-text.tracking
+  static const TypescaleStruct timeSelectorLabelTextTracking =
+      TokenTypescale.displayLargeTracking;
+
   /// md.comp.time-picker.time-selector.label-text.type
-  static const TypescaleStruct timeSelectorLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 57.00,
-    fontWeight: 400,
-    lineHeight: 64.00,
-    letterSpacing: -0.25,
-  );
+  static const TypescaleStruct timeSelectorLabelTextType =
+      TokenTypescale.displayLarge;
+
+  /// md.comp.time-picker.time-selector.label-text.weight
+  static const TypescaleStruct timeSelectorLabelTextWeight =
+      TokenTypescale.displayLargeWeight;
 
   /// md.comp.time-picker.time-selector.pressed.state-layer.opacity
   static const double timeSelectorPressedStateLayerOpacity = 0.10;
@@ -287,14 +344,29 @@ class TokenTimePicker {
   static const TokenColorRole timeSelectorSeparatorColor =
       TokenColorRole.onSurface;
 
+  /// md.comp.time-picker.time-selector.separator.font
+  static const TypescaleStruct timeSelectorSeparatorFont =
+      TokenTypescale.displayLargeFont;
+
+  /// md.comp.time-picker.time-selector.separator.line-height
+  static const TypescaleStruct timeSelectorSeparatorLineHeight =
+      TokenTypescale.displayLargeLineHeight;
+
+  /// md.comp.time-picker.time-selector.separator.size
+  static const TypescaleStruct timeSelectorSeparatorSize =
+      TokenTypescale.displayLargeSize;
+
+  /// md.comp.time-picker.time-selector.separator.tracking
+  static const TypescaleStruct timeSelectorSeparatorTracking =
+      TokenTypescale.displayLargeTracking;
+
   /// md.comp.time-picker.time-selector.separator.type
-  static const TypescaleStruct timeSelectorSeparatorType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 57.00,
-    fontWeight: 400,
-    lineHeight: 64.00,
-    letterSpacing: -0.25,
-  );
+  static const TypescaleStruct timeSelectorSeparatorType =
+      TokenTypescale.displayLarge;
+
+  /// md.comp.time-picker.time-selector.separator.weight
+  static const TypescaleStruct timeSelectorSeparatorWeight =
+      TokenTypescale.displayLargeWeight;
 
   /// md.comp.time-picker.time-selector.unselected.container.color
   static const TokenColorRole timeSelectorUnselectedContainerColor =

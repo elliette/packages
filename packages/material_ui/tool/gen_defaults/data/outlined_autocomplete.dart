@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenOutlinedAutocomplete {
   /// md.comp.outlined-autocomplete.menu.cascading-menu-indicator.icon.color
@@ -243,27 +243,65 @@ class TokenOutlinedAutocomplete {
   static const TokenColorRole textFieldInputTextColor =
       TokenColorRole.onSurface;
 
+  /// md.comp.outlined-autocomplete.text-field.input-text.font
+  static const TypescaleStruct textFieldInputTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.outlined-autocomplete.text-field.input-text.line-height
+  static const TypescaleStruct textFieldInputTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.outlined-autocomplete.text-field.input-text.size
+  static const TypescaleStruct textFieldInputTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.outlined-autocomplete.text-field.input-text.tracking
+  static const TypescaleStruct textFieldInputTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.outlined-autocomplete.text-field.input-text.type
-  static const TypescaleStruct textFieldInputTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct textFieldInputTextType =
+      TokenTypescale.bodyLarge;
+
+  /// md.comp.outlined-autocomplete.text-field.input-text.weight
+  static const TypescaleStruct textFieldInputTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.outlined-autocomplete.text-field.label-text.color
   static const TokenColorRole textFieldLabelTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-autocomplete.text-field.label-text.font
+  static const TypescaleStruct textFieldLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.line-height
+  static const TypescaleStruct textFieldLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.populated.line-height
+  static const TypescaleStruct textFieldLabelTextPopulatedLineHeight =
+      TokenTypescale.bodySmallLineHeight;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.populated.size
+  static const TypescaleStruct textFieldLabelTextPopulatedSize =
+      TokenTypescale.bodySmallSize;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.size
+  static const TypescaleStruct textFieldLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.tracking
+  static const TypescaleStruct textFieldLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.outlined-autocomplete.text-field.label-text.type
-  static const TypescaleStruct textFieldLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct textFieldLabelTextType =
+      TokenTypescale.bodyLarge;
+
+  /// md.comp.outlined-autocomplete.text-field.label-text.weight
+  static const TypescaleStruct textFieldLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.outlined-autocomplete.text-field.leading-icon.color
   static const TokenColorRole textFieldLeadingIconColor =
@@ -282,14 +320,29 @@ class TokenOutlinedAutocomplete {
   static const TokenColorRole textFieldSupportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.outlined-autocomplete.text-field.supporting-text.font
+  static const TypescaleStruct textFieldSupportingTextFont =
+      TokenTypescale.bodySmallFont;
+
+  /// md.comp.outlined-autocomplete.text-field.supporting-text.line-height
+  static const TypescaleStruct textFieldSupportingTextLineHeight =
+      TokenTypescale.bodySmallLineHeight;
+
+  /// md.comp.outlined-autocomplete.text-field.supporting-text.size
+  static const TypescaleStruct textFieldSupportingTextSize =
+      TokenTypescale.bodySmallSize;
+
+  /// md.comp.outlined-autocomplete.text-field.supporting-text.tracking
+  static const TypescaleStruct textFieldSupportingTextTracking =
+      TokenTypescale.bodySmallTracking;
+
   /// md.comp.outlined-autocomplete.text-field.supporting-text.type
-  static const TypescaleStruct textFieldSupportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 400,
-    lineHeight: 16.00,
-    letterSpacing: 0.40,
-  );
+  static const TypescaleStruct textFieldSupportingTextType =
+      TokenTypescale.bodySmall;
+
+  /// md.comp.outlined-autocomplete.text-field.supporting-text.weight
+  static const TypescaleStruct textFieldSupportingTextWeight =
+      TokenTypescale.bodySmallWeight;
 
   /// md.comp.outlined-autocomplete.text-field.trailing-icon.color
   static const TokenColorRole textFieldTrailingIconColor =

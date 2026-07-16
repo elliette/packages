@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenInputChip {
   /// md.comp.input-chip.container.elevation
@@ -56,14 +56,26 @@ class TokenInputChip {
   /// md.comp.input-chip.focus.indicator.thickness
   static const double focusIndicatorThickness = 3.00;
 
+  /// md.comp.input-chip.label-text.font
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelLargeFont;
+
+  /// md.comp.input-chip.label-text.line-height
+  static const TypescaleStruct labelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.input-chip.label-text.size
+  static const TypescaleStruct labelTextSize = TokenTypescale.labelLargeSize;
+
+  /// md.comp.input-chip.label-text.tracking
+  static const TypescaleStruct labelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.input-chip.label-text.type
-  static const TypescaleStruct labelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct labelTextType = TokenTypescale.labelLarge;
+
+  /// md.comp.input-chip.label-text.weight
+  static const TypescaleStruct labelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.input-chip.selected.container.color
   static const TokenColorRole selectedContainerColor =

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenDatePickerDocked {
   /// md.comp.date-picker.docked.container.color
@@ -52,14 +52,26 @@ class TokenDatePickerDocked {
   /// md.comp.date-picker.docked.date.hover.state-layer.opacity
   static const double dateHoverStateLayerOpacity = 0.08;
 
+  /// md.comp.date-picker.docked.date.label-text.font
+  static const TypescaleStruct dateLabelTextFont = TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.docked.date.label-text.line-height
+  static const TypescaleStruct dateLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.docked.date.label-text.size
+  static const TypescaleStruct dateLabelTextSize = TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.docked.date.label-text.tracking
+  static const TypescaleStruct dateLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.docked.date.label-text.type
-  static const TypescaleStruct dateLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct dateLabelTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.docked.date.label-text.weight
+  static const TypescaleStruct dateLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.date-picker.docked.date.pressed.state-layer.opacity
   static const double datePressedStateLayerOpacity = 0.10;
@@ -214,14 +226,29 @@ class TokenDatePickerDocked {
   static const TokenColorRole menuButtonLabelTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.date-picker.docked.menu-button.label-text.font
+  static const TypescaleStruct menuButtonLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.date-picker.docked.menu-button.label-text.line-height
+  static const TypescaleStruct menuButtonLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.date-picker.docked.menu-button.label-text.size
+  static const TypescaleStruct menuButtonLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.date-picker.docked.menu-button.label-text.tracking
+  static const TypescaleStruct menuButtonLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.date-picker.docked.menu-button.label-text.type
-  static const TypescaleStruct menuButtonLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct menuButtonLabelTextType =
+      TokenTypescale.labelLarge;
+
+  /// md.comp.date-picker.docked.menu-button.label-text.weight
+  static const TypescaleStruct menuButtonLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.date-picker.docked.menu-button.pressed.icon.color
   static const TokenColorRole menuButtonPressedIconColor =
@@ -267,14 +294,29 @@ class TokenDatePickerDocked {
   static const TokenColorRole menuListItemLabelTextColor =
       TokenColorRole.onSurface;
 
+  /// md.comp.date-picker.docked.menu.list-item.label-text.font
+  static const TypescaleStruct menuListItemLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.docked.menu.list-item.label-text.line-height
+  static const TypescaleStruct menuListItemLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.docked.menu.list-item.label-text.size
+  static const TypescaleStruct menuListItemLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.docked.menu.list-item.label-text.tracking
+  static const TypescaleStruct menuListItemLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.docked.menu.list-item.label-text.type
-  static const TypescaleStruct menuListItemLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct menuListItemLabelTextType =
+      TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.docked.menu.list-item.label-text.weight
+  static const TypescaleStruct menuListItemLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.date-picker.docked.menu.list-item.pressed.label-text.color
   static const TokenColorRole menuListItemPressedLabelTextColor =
@@ -313,12 +355,26 @@ class TokenDatePickerDocked {
   /// md.comp.date-picker.docked.weekdays.label-text.color
   static const TokenColorRole weekdaysLabelTextColor = TokenColorRole.onSurface;
 
+  /// md.comp.date-picker.docked.weekdays.label-text.font
+  static const TypescaleStruct weekdaysLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.docked.weekdays.label-text.line-height
+  static const TypescaleStruct weekdaysLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.docked.weekdays.label-text.size
+  static const TypescaleStruct weekdaysLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.docked.weekdays.label-text.tracking
+  static const TypescaleStruct weekdaysLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.docked.weekdays.label-text.type
-  static const TypescaleStruct weekdaysLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct weekdaysLabelTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.docked.weekdays.label-text.weight
+  static const TypescaleStruct weekdaysLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 }

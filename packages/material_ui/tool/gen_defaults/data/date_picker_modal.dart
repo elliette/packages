@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenDatePickerModal {
   /// md.comp.date-picker.modal.container.color
@@ -52,14 +52,26 @@ class TokenDatePickerModal {
   /// md.comp.date-picker.modal.date.hover.state-layer.opacity
   static const double dateHoverStateLayerOpacity = 0.08;
 
+  /// md.comp.date-picker.modal.date.label-text.font
+  static const TypescaleStruct dateLabelTextFont = TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.modal.date.label-text.line-height
+  static const TypescaleStruct dateLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.modal.date.label-text.size
+  static const TypescaleStruct dateLabelTextSize = TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.modal.date.label-text.tracking
+  static const TypescaleStruct dateLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.modal.date.label-text.type
-  static const TypescaleStruct dateLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct dateLabelTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.modal.date.label-text.weight
+  static const TypescaleStruct dateLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.date-picker.modal.date.pressed.state-layer.opacity
   static const double datePressedStateLayerOpacity = 0.10;
@@ -147,27 +159,57 @@ class TokenDatePickerModal {
   static const TokenColorRole headerHeadlineColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.date-picker.modal.header.headline.font
+  static const TypescaleStruct headerHeadlineFont =
+      TokenTypescale.headlineLargeFont;
+
+  /// md.comp.date-picker.modal.header.headline.line-height
+  static const TypescaleStruct headerHeadlineLineHeight =
+      TokenTypescale.headlineLargeLineHeight;
+
+  /// md.comp.date-picker.modal.header.headline.size
+  static const TypescaleStruct headerHeadlineSize =
+      TokenTypescale.headlineLargeSize;
+
+  /// md.comp.date-picker.modal.header.headline.tracking
+  static const TypescaleStruct headerHeadlineTracking =
+      TokenTypescale.headlineLargeTracking;
+
   /// md.comp.date-picker.modal.header.headline.type
-  static const TypescaleStruct headerHeadlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 32.00,
-    fontWeight: 400,
-    lineHeight: 40.00,
-    letterSpacing: 0.00,
-  );
+  static const TypescaleStruct headerHeadlineType =
+      TokenTypescale.headlineLarge;
+
+  /// md.comp.date-picker.modal.header.headline.weight
+  static const TypescaleStruct headerHeadlineWeight =
+      TokenTypescale.headlineLargeWeight;
 
   /// md.comp.date-picker.modal.header.supporting-text.color
   static const TokenColorRole headerSupportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.date-picker.modal.header.supporting-text.font
+  static const TypescaleStruct headerSupportingTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.date-picker.modal.header.supporting-text.line-height
+  static const TypescaleStruct headerSupportingTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.date-picker.modal.header.supporting-text.size
+  static const TypescaleStruct headerSupportingTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.date-picker.modal.header.supporting-text.tracking
+  static const TypescaleStruct headerSupportingTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.date-picker.modal.header.supporting-text.type
-  static const TypescaleStruct headerSupportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct headerSupportingTextType =
+      TokenTypescale.labelLarge;
+
+  /// md.comp.date-picker.modal.header.supporting-text.weight
+  static const TypescaleStruct headerSupportingTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.date-picker.modal.range-selection.active-indicator.container.color
   static const TokenColorRole rangeSelectionActiveIndicatorContainerColor =
@@ -226,40 +268,83 @@ class TokenDatePickerModal {
   /// md.comp.date-picker.modal.range-selection.header.container.height
   static const double rangeSelectionHeaderContainerHeight = 128.00;
 
+  /// md.comp.date-picker.modal.range-selection.header.headline.font
+  static const TypescaleStruct rangeSelectionHeaderHeadlineFont =
+      TokenTypescale.titleLargeFont;
+
+  /// md.comp.date-picker.modal.range-selection.header.headline.line-height
+  static const TypescaleStruct rangeSelectionHeaderHeadlineLineHeight =
+      TokenTypescale.titleLargeLineHeight;
+
+  /// md.comp.date-picker.modal.range-selection.header.headline.size
+  static const TypescaleStruct rangeSelectionHeaderHeadlineSize =
+      TokenTypescale.titleLargeSize;
+
+  /// md.comp.date-picker.modal.range-selection.header.headline.tracking
+  static const TypescaleStruct rangeSelectionHeaderHeadlineTracking =
+      TokenTypescale.titleLargeTracking;
+
   /// md.comp.date-picker.modal.range-selection.header.headline.type
   static const TypescaleStruct rangeSelectionHeaderHeadlineType =
-      TypescaleStruct(
-        fontFamily: 'Roboto',
-        fontSize: 22.00,
-        fontWeight: 400,
-        lineHeight: 28.00,
-        letterSpacing: 0.00,
-      );
+      TokenTypescale.titleLarge;
+
+  /// md.comp.date-picker.modal.range-selection.header.headline.weight
+  static const TypescaleStruct rangeSelectionHeaderHeadlineWeight =
+      TokenTypescale.titleLargeWeight;
 
   /// md.comp.date-picker.modal.range-selection.month.subhead.color
   static const TokenColorRole rangeSelectionMonthSubheadColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.date-picker.modal.range-selection.month.subhead.font
+  static const TypescaleStruct rangeSelectionMonthSubheadFont =
+      TokenTypescale.titleSmallFont;
+
+  /// md.comp.date-picker.modal.range-selection.month.subhead.line-height
+  static const TypescaleStruct rangeSelectionMonthSubheadLineHeight =
+      TokenTypescale.titleSmallLineHeight;
+
+  /// md.comp.date-picker.modal.range-selection.month.subhead.size
+  static const TypescaleStruct rangeSelectionMonthSubheadSize =
+      TokenTypescale.titleSmallSize;
+
+  /// md.comp.date-picker.modal.range-selection.month.subhead.tracking
+  static const TypescaleStruct rangeSelectionMonthSubheadTracking =
+      TokenTypescale.titleSmallTracking;
+
   /// md.comp.date-picker.modal.range-selection.month.subhead.type
-  static const TypescaleStruct rangeSelectionMonthSubheadType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct rangeSelectionMonthSubheadType =
+      TokenTypescale.titleSmall;
+
+  /// md.comp.date-picker.modal.range-selection.month.subhead.weight
+  static const TypescaleStruct rangeSelectionMonthSubheadWeight =
+      TokenTypescale.titleSmallWeight;
 
   /// md.comp.date-picker.modal.weekdays.label-text.color
   static const TokenColorRole weekdaysLabelTextColor = TokenColorRole.onSurface;
 
+  /// md.comp.date-picker.modal.weekdays.label-text.font
+  static const TypescaleStruct weekdaysLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.modal.weekdays.label-text.line-height
+  static const TypescaleStruct weekdaysLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.modal.weekdays.label-text.size
+  static const TypescaleStruct weekdaysLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.modal.weekdays.label-text.tracking
+  static const TypescaleStruct weekdaysLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.modal.weekdays.label-text.type
-  static const TypescaleStruct weekdaysLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct weekdaysLabelTextType = TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.modal.weekdays.label-text.weight
+  static const TypescaleStruct weekdaysLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.date-picker.modal.year-selection.year.container.height
   static const double yearSelectionYearContainerHeight = 36.00;
@@ -273,14 +358,29 @@ class TokenDatePickerModal {
   /// md.comp.date-picker.modal.year-selection.year.hover.state-layer.opacity
   static const double yearSelectionYearHoverStateLayerOpacity = 0.08;
 
+  /// md.comp.date-picker.modal.year-selection.year.label-text.font
+  static const TypescaleStruct yearSelectionYearLabelTextFont =
+      TokenTypescale.bodyLargeFont;
+
+  /// md.comp.date-picker.modal.year-selection.year.label-text.line-height
+  static const TypescaleStruct yearSelectionYearLabelTextLineHeight =
+      TokenTypescale.bodyLargeLineHeight;
+
+  /// md.comp.date-picker.modal.year-selection.year.label-text.size
+  static const TypescaleStruct yearSelectionYearLabelTextSize =
+      TokenTypescale.bodyLargeSize;
+
+  /// md.comp.date-picker.modal.year-selection.year.label-text.tracking
+  static const TypescaleStruct yearSelectionYearLabelTextTracking =
+      TokenTypescale.bodyLargeTracking;
+
   /// md.comp.date-picker.modal.year-selection.year.label-text.type
-  static const TypescaleStruct yearSelectionYearLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct yearSelectionYearLabelTextType =
+      TokenTypescale.bodyLarge;
+
+  /// md.comp.date-picker.modal.year-selection.year.label-text.weight
+  static const TypescaleStruct yearSelectionYearLabelTextWeight =
+      TokenTypescale.bodyLargeWeight;
 
   /// md.comp.date-picker.modal.year-selection.year.pressed.state-layer.opacity
   static const double yearSelectionYearPressedStateLayerOpacity = 0.10;

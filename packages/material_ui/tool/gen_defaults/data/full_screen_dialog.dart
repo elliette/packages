@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenFullScreenDialog {
   /// md.comp.full-screen-dialog.container.color
@@ -50,14 +50,29 @@ class TokenFullScreenDialog {
   static const TokenColorRole headerActionLabelTextColor =
       TokenColorRole.primary;
 
+  /// md.comp.full-screen-dialog.header.action.label-text.font
+  static const TypescaleStruct headerActionLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.full-screen-dialog.header.action.label-text.line-height
+  static const TypescaleStruct headerActionLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.full-screen-dialog.header.action.label-text.size
+  static const TypescaleStruct headerActionLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.full-screen-dialog.header.action.label-text.tracking
+  static const TypescaleStruct headerActionLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.full-screen-dialog.header.action.label-text.type
-  static const TypescaleStruct headerActionLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct headerActionLabelTextType =
+      TokenTypescale.labelLarge;
+
+  /// md.comp.full-screen-dialog.header.action.label-text.weight
+  static const TypescaleStruct headerActionLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.full-screen-dialog.header.action.pressed.label-text.color
   static const TokenColorRole headerActionPressedLabelTextColor =
@@ -82,14 +97,28 @@ class TokenFullScreenDialog {
   /// md.comp.full-screen-dialog.header.headline.color
   static const TokenColorRole headerHeadlineColor = TokenColorRole.onSurface;
 
+  /// md.comp.full-screen-dialog.header.headline.font
+  static const TypescaleStruct headerHeadlineFont =
+      TokenTypescale.titleLargeFont;
+
+  /// md.comp.full-screen-dialog.header.headline.line-height
+  static const TypescaleStruct headerHeadlineLineHeight =
+      TokenTypescale.titleLargeLineHeight;
+
+  /// md.comp.full-screen-dialog.header.headline.size
+  static const TypescaleStruct headerHeadlineSize =
+      TokenTypescale.titleLargeSize;
+
+  /// md.comp.full-screen-dialog.header.headline.tracking
+  static const TypescaleStruct headerHeadlineTracking =
+      TokenTypescale.titleLargeTracking;
+
   /// md.comp.full-screen-dialog.header.headline.type
-  static const TypescaleStruct headerHeadlineType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 22.00,
-    fontWeight: 400,
-    lineHeight: 28.00,
-    letterSpacing: 0.00,
-  );
+  static const TypescaleStruct headerHeadlineType = TokenTypescale.titleLarge;
+
+  /// md.comp.full-screen-dialog.header.headline.weight
+  static const TypescaleStruct headerHeadlineWeight =
+      TokenTypescale.titleLargeWeight;
 
   /// md.comp.full-screen-dialog.header.icon.color
   static const TokenColorRole headerIconColor = TokenColorRole.onSurface;

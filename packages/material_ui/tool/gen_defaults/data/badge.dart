@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenBadge {
   /// md.comp.badge.color
@@ -18,14 +18,28 @@ class TokenBadge {
   /// md.comp.badge.large.label-text.color
   static const TokenColorRole largeLabelTextColor = TokenColorRole.onError;
 
+  /// md.comp.badge.large.label-text.font
+  static const TypescaleStruct largeLabelTextFont =
+      TokenTypescale.labelSmallFont;
+
+  /// md.comp.badge.large.label-text.line-height
+  static const TypescaleStruct largeLabelTextLineHeight =
+      TokenTypescale.labelSmallLineHeight;
+
+  /// md.comp.badge.large.label-text.size
+  static const TypescaleStruct largeLabelTextSize =
+      TokenTypescale.labelSmallSize;
+
+  /// md.comp.badge.large.label-text.tracking
+  static const TypescaleStruct largeLabelTextTracking =
+      TokenTypescale.labelSmallTracking;
+
   /// md.comp.badge.large.label-text.type
-  static const TypescaleStruct largeLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 11.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct largeLabelTextType = TokenTypescale.labelSmall;
+
+  /// md.comp.badge.large.label-text.weight
+  static const TypescaleStruct largeLabelTextWeight =
+      TokenTypescale.labelSmallWeight;
 
   /// md.comp.badge.large.shape
   static const ShapeStruct largeShape = ShapeStruct(

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenRichTooltip {
   /// md.comp.rich-tooltip.action.focus.label-text.color
@@ -34,14 +34,28 @@ class TokenRichTooltip {
   /// md.comp.rich-tooltip.action.label-text.color
   static const TokenColorRole actionLabelTextColor = TokenColorRole.primary;
 
+  /// md.comp.rich-tooltip.action.label-text.font
+  static const TypescaleStruct actionLabelTextFont =
+      TokenTypescale.labelLargeFont;
+
+  /// md.comp.rich-tooltip.action.label-text.line-height
+  static const TypescaleStruct actionLabelTextLineHeight =
+      TokenTypescale.labelLargeLineHeight;
+
+  /// md.comp.rich-tooltip.action.label-text.size
+  static const TypescaleStruct actionLabelTextSize =
+      TokenTypescale.labelLargeSize;
+
+  /// md.comp.rich-tooltip.action.label-text.tracking
+  static const TypescaleStruct actionLabelTextTracking =
+      TokenTypescale.labelLargeTracking;
+
   /// md.comp.rich-tooltip.action.label-text.type
-  static const TypescaleStruct actionLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct actionLabelTextType = TokenTypescale.labelLarge;
+
+  /// md.comp.rich-tooltip.action.label-text.weight
+  static const TypescaleStruct actionLabelTextWeight =
+      TokenTypescale.labelLargeWeight;
 
   /// md.comp.rich-tooltip.action.pressed.label-text.color
   static const TokenColorRole actionPressedLabelTextColor =
@@ -75,25 +89,50 @@ class TokenRichTooltip {
   /// md.comp.rich-tooltip.subhead.color
   static const TokenColorRole subheadColor = TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.rich-tooltip.subhead.font
+  static const TypescaleStruct subheadFont = TokenTypescale.titleSmallFont;
+
+  /// md.comp.rich-tooltip.subhead.line-height
+  static const TypescaleStruct subheadLineHeight =
+      TokenTypescale.titleSmallLineHeight;
+
+  /// md.comp.rich-tooltip.subhead.size
+  static const TypescaleStruct subheadSize = TokenTypescale.titleSmallSize;
+
+  /// md.comp.rich-tooltip.subhead.tracking
+  static const TypescaleStruct subheadTracking =
+      TokenTypescale.titleSmallTracking;
+
   /// md.comp.rich-tooltip.subhead.type
-  static const TypescaleStruct subheadType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct subheadType = TokenTypescale.titleSmall;
+
+  /// md.comp.rich-tooltip.subhead.weight
+  static const TypescaleStruct subheadWeight = TokenTypescale.titleSmallWeight;
 
   /// md.comp.rich-tooltip.supporting-text.color
   static const TokenColorRole supportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
+  /// md.comp.rich-tooltip.supporting-text.font
+  static const TypescaleStruct supportingTextFont =
+      TokenTypescale.bodyMediumFont;
+
+  /// md.comp.rich-tooltip.supporting-text.line-height
+  static const TypescaleStruct supportingTextLineHeight =
+      TokenTypescale.bodyMediumLineHeight;
+
+  /// md.comp.rich-tooltip.supporting-text.size
+  static const TypescaleStruct supportingTextSize =
+      TokenTypescale.bodyMediumSize;
+
+  /// md.comp.rich-tooltip.supporting-text.tracking
+  static const TypescaleStruct supportingTextTracking =
+      TokenTypescale.bodyMediumTracking;
+
   /// md.comp.rich-tooltip.supporting-text.type
-  static const TypescaleStruct supportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 400,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct supportingTextType = TokenTypescale.bodyMedium;
+
+  /// md.comp.rich-tooltip.supporting-text.weight
+  static const TypescaleStruct supportingTextWeight =
+      TokenTypescale.bodyMediumWeight;
 }
