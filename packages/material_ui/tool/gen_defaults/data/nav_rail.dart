@@ -22,16 +22,13 @@ class TokenNavRail {
   static const double itemActiveHoveredStateLayerOpacity = 0.08;
 
   /// md.comp.nav-rail.item.active.icon.color
-  static const TokenColorRole itemActiveIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole itemActiveIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.nav-rail.item.active.indicator.color
-  static const TokenColorRole itemActiveIndicatorColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole itemActiveIndicatorColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.nav-rail.item.active.label-text.color
-  static const TokenColorRole itemActiveLabelTextColor =
-      TokenColorRole.secondary;
+  static const TokenColorRole itemActiveLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.nav-rail.item.active.pressed.state-layer.color
   static const TokenColorRole itemActivePressedStateLayerColor =
@@ -49,12 +46,10 @@ class TokenNavRail {
       TokenColorRole.onSecondaryContainer;
 
   /// md.comp.nav-rail.item.inactive.icon.color
-  static const TokenColorRole itemInactiveIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole itemInactiveIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.label-text.color
-  static const TokenColorRole itemInactiveLabelTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole itemInactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.pressed.state-layer.color
   static const TokenColorRole itemInactivePressedStateLayerColor =

@@ -69,14 +69,13 @@ class TokenMenus {
   static const double horizontalIconOnlyMenuItemLeadingSpace = 16.00;
 
   /// md.comp.menus.horizontal.icon-only.menu-item.selected.shape
-  static const ShapeStruct horizontalIconOnlyMenuItemSelectedShape =
-      ShapeStruct(
-        family: 'SHAPE_FAMILY_CIRCULAR',
-        topLeft: 0.00,
-        topRight: 0.00,
-        bottomLeft: 0.00,
-        bottomRight: 0.00,
-      );
+  static const ShapeStruct horizontalIconOnlyMenuItemSelectedShape = ShapeStruct(
+    family: 'SHAPE_FAMILY_CIRCULAR',
+    topLeft: 0.00,
+    topRight: 0.00,
+    bottomLeft: 0.00,
+    bottomRight: 0.00,
+  );
 
   /// md.comp.menus.horizontal.icon-only.menu-item.top-space
   static const double horizontalIconOnlyMenuItemTopSpace = 16.00;
@@ -169,14 +168,13 @@ class TokenMenus {
   static const double menuItemBottomSpace = 8.00;
 
   /// md.comp.menus.menu-item.first-child.inner-corner.corner-size
-  static const ShapeStruct menuItemFirstChildInnerCornerCornerSize =
-      ShapeStruct(
-        family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-        topLeft: 4.00,
-        topRight: 4.00,
-        bottomLeft: 4.00,
-        bottomRight: 4.00,
-      );
+  static const ShapeStruct menuItemFirstChildInnerCornerCornerSize = ShapeStruct(
+    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
+    topLeft: 4.00,
+    topRight: 4.00,
+    bottomLeft: 4.00,
+    bottomRight: 4.00,
+  );
 
   /// md.comp.menus.menu-item.first-child.shape
   static const ShapeStruct menuItemFirstChildShape = ShapeStruct(
@@ -188,8 +186,7 @@ class TokenMenus {
   );
 
   /// md.comp.menus.menu-item.focus.indicator.color
-  static const TokenColorRole menuItemFocusIndicatorColor =
-      TokenColorRole.secondary;
+  static const TokenColorRole menuItemFocusIndicatorColor = TokenColorRole.secondary;
 
   /// md.comp.menus.menu-item.focus.indicator.outline.offset
   static const double menuItemFocusIndicatorOutlineOffset = -3.00;

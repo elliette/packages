@@ -36,8 +36,7 @@ class TokenSlider {
   static const double activeHandleWidth = 4.00;
 
   /// md.comp.slider.active.stop-indicator.container.color
-  static const TokenColorRole activeStopIndicatorContainerColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole activeStopIndicatorContainerColor = TokenColorRole.onPrimary;
 
   /// md.comp.slider.active.stop-indicator.container.opacity
   static const double activeStopIndicatorContainerOpacity = 1.00;
@@ -80,8 +79,7 @@ class TokenSlider {
       TokenColorRole.inverseOnSurface;
 
   /// md.comp.slider.disabled.active.track.color
-  static const TokenColorRole disabledActiveTrackColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledActiveTrackColor = TokenColorRole.onSurface;
 
   /// md.comp.slider.disabled.active.track.opacity
   static const double disabledActiveTrackOpacity = 0.38;
@@ -100,8 +98,7 @@ class TokenSlider {
       TokenColorRole.onSurface;
 
   /// md.comp.slider.disabled.inactive.track.color
-  static const TokenColorRole disabledInactiveTrackColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledInactiveTrackColor = TokenColorRole.onSurface;
 
   /// md.comp.slider.disabled.inactive.track.opacity
   static const double disabledInactiveTrackOpacity = 0.12;
@@ -113,8 +110,7 @@ class TokenSlider {
   static const double focusHandleWidth = 2.00;
 
   /// md.comp.slider.focus.inactive.track.color
-  static const TokenColorRole focusInactiveTrackColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole focusInactiveTrackColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.slider.handle.color
   static const TokenColorRole handleColor = TokenColorRole.primary;
@@ -145,8 +141,7 @@ class TokenSlider {
   static const double inactiveStopIndicatorContainerOpacity = 1.00;
 
   /// md.comp.slider.inactive.track.color
-  static const TokenColorRole inactiveTrackColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole inactiveTrackColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.slider.inactive.track.height
   static const double inactiveTrackHeight = 16.00;
@@ -170,16 +165,13 @@ class TokenSlider {
   static const double pressedHandleWidth = 2.00;
 
   /// md.comp.slider.pressed.inactive.track.color
-  static const TokenColorRole pressedInactiveTrackColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole pressedInactiveTrackColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.slider.stop-indicator.color
-  static const TokenColorRole stopIndicatorColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole stopIndicatorColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.slider.stop-indicator.color-selected
-  static const TokenColorRole stopIndicatorColorSelected =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole stopIndicatorColorSelected = TokenColorRole.onPrimary;
 
   /// md.comp.slider.stop-indicator.shape
   static const ShapeStruct stopIndicatorShape = ShapeStruct(
@@ -200,10 +192,8 @@ class TokenSlider {
   static const double valueIndicatorActiveBottomSpace = 12.00;
 
   /// md.comp.slider.value-indicator.container.color
-  static const TokenColorRole valueIndicatorContainerColor =
-      TokenColorRole.inverseSurface;
+  static const TokenColorRole valueIndicatorContainerColor = TokenColorRole.inverseSurface;
 
   /// md.comp.slider.value-indicator.label.label-text.color
-  static const TokenColorRole valueIndicatorLabelLabelTextColor =
-      TokenColorRole.inverseOnSurface;
+  static const TokenColorRole valueIndicatorLabelLabelTextColor = TokenColorRole.inverseOnSurface;
 }

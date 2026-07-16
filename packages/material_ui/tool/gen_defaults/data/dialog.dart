@@ -10,23 +10,19 @@ import 'typescale_struct.dart';
 
 class TokenDialog {
   /// md.comp.dialog.action.focus.label-text.color
-  static const TokenColorRole actionFocusLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionFocusLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.focus.state-layer.color
-  static const TokenColorRole actionFocusStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionFocusStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.focus.state-layer.opacity
   static const double actionFocusStateLayerOpacity = 0.10;
 
   /// md.comp.dialog.action.hover.label-text.color
-  static const TokenColorRole actionHoverLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionHoverLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.hover.state-layer.color
-  static const TokenColorRole actionHoverStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionHoverStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.hover.state-layer.opacity
   static const double actionHoverStateLayerOpacity = 0.08;
@@ -44,19 +40,16 @@ class TokenDialog {
   );
 
   /// md.comp.dialog.action.pressed.label-text.color
-  static const TokenColorRole actionPressedLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionPressedLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.pressed.state-layer.color
-  static const TokenColorRole actionPressedStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole actionPressedStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.pressed.state-layer.opacity
   static const double actionPressedStateLayerOpacity = 0.10;
 
   /// md.comp.dialog.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.dialog.container.elevation
   static const double containerElevation = 6.00;
@@ -83,8 +76,7 @@ class TokenDialog {
   );
 
   /// md.comp.dialog.supporting-text.color
-  static const TokenColorRole supportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole supportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.dialog.supporting-text.type
   static const TypescaleStruct supportingTextType = TypescaleStruct(

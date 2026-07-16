@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenExtendedFabSurface {
   /// md.comp.extended-fab.surface.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.extended-fab.surface.container.elevation
   static const double containerElevation = 6.00;
@@ -89,8 +88,7 @@ class TokenExtendedFabSurface {
   );
 
   /// md.comp.extended-fab.surface.lowered.container.color
-  static const TokenColorRole loweredContainerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole loweredContainerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.extended-fab.surface.lowered.container.elevation
   static const double loweredContainerElevation = 1.00;

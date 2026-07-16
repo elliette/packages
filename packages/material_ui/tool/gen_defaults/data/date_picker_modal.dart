@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenDatePickerModal {
   /// md.comp.date-picker.modal.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.date-picker.modal.container.elevation
   static const double containerElevation = 6.00;
@@ -65,24 +64,19 @@ class TokenDatePickerModal {
   static const double datePressedStateLayerOpacity = 0.10;
 
   /// md.comp.date-picker.modal.date.selected.container.color
-  static const TokenColorRole dateSelectedContainerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole dateSelectedContainerColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.selected.focus.state-layer.color
-  static const TokenColorRole dateSelectedFocusStateLayerColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole dateSelectedFocusStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.date.selected.hover.state-layer.color
-  static const TokenColorRole dateSelectedHoverStateLayerColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole dateSelectedHoverStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.date.selected.label-text.color
-  static const TokenColorRole dateSelectedLabelTextColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole dateSelectedLabelTextColor = TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.date.selected.pressed.state-layer.color
-  static const TokenColorRole dateSelectedPressedStateLayerColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole dateSelectedPressedStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.date.state-layer.height
   static const double dateStateLayerHeight = 40.00;
@@ -100,38 +94,31 @@ class TokenDatePickerModal {
   static const double dateStateLayerWidth = 40.00;
 
   /// md.comp.date-picker.modal.date.today.container.outline.color
-  static const TokenColorRole dateTodayContainerOutlineColor =
-      TokenColorRole.primary;
+  static const TokenColorRole dateTodayContainerOutlineColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.today.container.outline.width
   static const double dateTodayContainerOutlineWidth = 1.00;
 
   /// md.comp.date-picker.modal.date.today.focus.state-layer.color
-  static const TokenColorRole dateTodayFocusStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole dateTodayFocusStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.today.hover.state-layer.color
-  static const TokenColorRole dateTodayHoverStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole dateTodayHoverStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.today.label-text.color
   static const TokenColorRole dateTodayLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.today.pressed.state-layer.color
-  static const TokenColorRole dateTodayPressedStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole dateTodayPressedStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.date.unselected.focus.state-layer.color
-  static const TokenColorRole dateUnselectedFocusStateLayerColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole dateUnselectedFocusStateLayerColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.date.unselected.hover.state-layer.color
-  static const TokenColorRole dateUnselectedHoverStateLayerColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole dateUnselectedHoverStateLayerColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.date.unselected.label-text.color
-  static const TokenColorRole dateUnselectedLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole dateUnselectedLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.date-picker.modal.date.unselected.pressed.state-layer.color
   static const TokenColorRole dateUnselectedPressedStateLayerColor =
@@ -144,8 +131,7 @@ class TokenDatePickerModal {
   static const double headerContainerWidth = 360.00;
 
   /// md.comp.date-picker.modal.header.headline.color
-  static const TokenColorRole headerHeadlineColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerHeadlineColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.header.headline.type
   static const TypescaleStruct headerHeadlineType = TypescaleStruct(
@@ -157,8 +143,7 @@ class TokenDatePickerModal {
   );
 
   /// md.comp.date-picker.modal.header.supporting-text.color
-  static const TokenColorRole headerSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.header.supporting-text.type
   static const TypescaleStruct headerSupportingTextType = TypescaleStruct(
@@ -177,14 +162,13 @@ class TokenDatePickerModal {
   static const double rangeSelectionActiveIndicatorContainerHeight = 40.00;
 
   /// md.comp.date-picker.modal.range-selection.active-indicator.container.shape
-  static const ShapeStruct rangeSelectionActiveIndicatorContainerShape =
-      ShapeStruct(
-        family: 'SHAPE_FAMILY_CIRCULAR',
-        topLeft: 0.00,
-        topRight: 0.00,
-        bottomLeft: 0.00,
-        bottomRight: 0.00,
-      );
+  static const ShapeStruct rangeSelectionActiveIndicatorContainerShape = ShapeStruct(
+    family: 'SHAPE_FAMILY_CIRCULAR',
+    topLeft: 0.00,
+    topRight: 0.00,
+    bottomLeft: 0.00,
+    bottomRight: 0.00,
+  );
 
   /// md.comp.date-picker.modal.range-selection.container.elevation
   static const double rangeSelectionContainerElevation = 0.00;
@@ -227,18 +211,16 @@ class TokenDatePickerModal {
   static const double rangeSelectionHeaderContainerHeight = 128.00;
 
   /// md.comp.date-picker.modal.range-selection.header.headline.type
-  static const TypescaleStruct rangeSelectionHeaderHeadlineType =
-      TypescaleStruct(
-        fontFamily: 'Roboto',
-        fontSize: 22.00,
-        fontWeight: 400,
-        lineHeight: 28.00,
-        letterSpacing: 0.00,
-      );
+  static const TypescaleStruct rangeSelectionHeaderHeadlineType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 22.00,
+    fontWeight: 400,
+    lineHeight: 28.00,
+    letterSpacing: 0.00,
+  );
 
   /// md.comp.date-picker.modal.range-selection.month.subhead.color
-  static const TokenColorRole rangeSelectionMonthSubheadColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole rangeSelectionMonthSubheadColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.range-selection.month.subhead.type
   static const TypescaleStruct rangeSelectionMonthSubheadType = TypescaleStruct(
@@ -286,8 +268,7 @@ class TokenDatePickerModal {
   static const double yearSelectionYearPressedStateLayerOpacity = 0.10;
 
   /// md.comp.date-picker.modal.year-selection.year.selected.container.color
-  static const TokenColorRole yearSelectionYearSelectedContainerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole yearSelectionYearSelectedContainerColor = TokenColorRole.primary;
 
   /// md.comp.date-picker.modal.year-selection.year.selected.focus.state-layer.color
   static const TokenColorRole yearSelectionYearSelectedFocusStateLayerColor =
@@ -298,8 +279,7 @@ class TokenDatePickerModal {
       TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.year-selection.year.selected.label-text.color
-  static const TokenColorRole yearSelectionYearSelectedLabelTextColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole yearSelectionYearSelectedLabelTextColor = TokenColorRole.onPrimary;
 
   /// md.comp.date-picker.modal.year-selection.year.selected.pressed.state-layer.color
   static const TokenColorRole yearSelectionYearSelectedPressedStateLayerColor =
@@ -333,7 +313,6 @@ class TokenDatePickerModal {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.year-selection.year.unselected.pressed.state-layer.color
-  static const TokenColorRole
-  yearSelectionYearUnselectedPressedStateLayerColor =
+  static const TokenColorRole yearSelectionYearUnselectedPressedStateLayerColor =
       TokenColorRole.onSurfaceVariant;
 }

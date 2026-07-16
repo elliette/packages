@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenSearchView {
   /// md.comp.search-view.contained.background.color
-  static const TokenColorRole containedBackgroundColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole containedBackgroundColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.search-view.contained.docked.bar-results.gap
   static const double containedDockedBarResultsGap = 2.00;
@@ -47,8 +46,7 @@ class TokenSearchView {
   static const double containedTrailingMargin = 12.00;
 
   /// md.comp.search-view.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.search-view.container.elevation
   static const double containerElevation = 6.00;
@@ -96,8 +94,7 @@ class TokenSearchView {
   static const TokenColorRole headerLeadingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.search-view.header.supporting-text.color
-  static const TokenColorRole headerSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-view.header.supporting-text.type
   static const TypescaleStruct headerSupportingTextType = TypescaleStruct(
@@ -109,8 +106,7 @@ class TokenSearchView {
   );
 
   /// md.comp.search-view.header.trailing-icon.color
-  static const TokenColorRole headerTrailingIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerTrailingIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-view.leading-icon.leading-icon-label-space
   static const double leadingIconLeadingIconLabelSpace = 16.00;

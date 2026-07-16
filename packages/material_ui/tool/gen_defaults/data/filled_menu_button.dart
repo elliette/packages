@@ -34,8 +34,7 @@ class TokenFilledMenuButton {
   static const double disabledLabelTextOpacity = 0.38;
 
   /// md.comp.filled-menu-button.disabled.trailing-icon.color
-  static const TokenColorRole disabledTrailingIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledTrailingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.filled-menu-button.disabled.trailing-icon.opacity
   static const double disabledTrailingIconOpacity = 0.38;
@@ -101,8 +100,7 @@ class TokenFilledMenuButton {
   static const double pressedStateLayerOpacity = 0.10;
 
   /// md.comp.filled-menu-button.pressed.trailing-icon.color
-  static const TokenColorRole pressedTrailingIconColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole pressedTrailingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.shape
   static const ShapeStruct shape = ShapeStruct(
@@ -120,28 +118,23 @@ class TokenFilledMenuButton {
   static const double trailingIconSize = 18.00;
 
   /// md.comp.filled-menu-button.with-icon.disabled.leading-icon.color
-  static const TokenColorRole withIconDisabledLeadingIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole withIconDisabledLeadingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.filled-menu-button.with-icon.disabled.leading-icon.opacity
   static const double withIconDisabledLeadingIconOpacity = 0.38;
 
   /// md.comp.filled-menu-button.with-icon.focus.leading-icon.color
-  static const TokenColorRole withIconFocusLeadingIconColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole withIconFocusLeadingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.hover.leading-icon.color
-  static const TokenColorRole withIconHoverLeadingIconColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole withIconHoverLeadingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.leading-icon.color
-  static const TokenColorRole withIconLeadingIconColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole withIconLeadingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.leading-icon.size
   static const double withIconLeadingIconSize = 18.00;
 
   /// md.comp.filled-menu-button.with-icon.pressed.leading-icon.color
-  static const TokenColorRole withIconPressedLeadingIconColor =
-      TokenColorRole.onPrimary;
+  static const TokenColorRole withIconPressedLeadingIconColor = TokenColorRole.onPrimary;
 }

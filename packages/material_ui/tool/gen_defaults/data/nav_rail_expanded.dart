@@ -30,8 +30,7 @@ class TokenNavRailExpanded {
   static const double containerWidthMinimum = 220.00;
 
   /// md.comp.nav-rail.expanded.modal.container.color
-  static const TokenColorRole modalContainerColor =
-      TokenColorRole.surfaceContainer;
+  static const TokenColorRole modalContainerColor = TokenColorRole.surfaceContainer;
 
   /// md.comp.nav-rail.expanded.modal.container.elevation
   static const double modalContainerElevation = 3.00;

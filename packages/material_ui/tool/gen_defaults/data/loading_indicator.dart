@@ -15,12 +15,10 @@ class TokenLoadingIndicator {
   static const double activeIndicatorSize = 38.00;
 
   /// md.comp.loading-indicator.contained.active-indicator.color
-  static const TokenColorRole containedActiveIndicatorColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole containedActiveIndicatorColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.loading-indicator.contained.container.color
-  static const TokenColorRole containedContainerColor =
-      TokenColorRole.primaryContainer;
+  static const TokenColorRole containedContainerColor = TokenColorRole.primaryContainer;
 
   /// md.comp.loading-indicator.container.height
   static const double containerHeight = 48.00;

@@ -20,16 +20,13 @@ class TokenExtendedFabPrimaryContainer {
   static const double focusedContainerElevation = 6.00;
 
   /// md.comp.extended-fab.primary-container.focused.icon.color
-  static const TokenColorRole focusedIconColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole focusedIconColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.focused.label-text.color
-  static const TokenColorRole focusedLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole focusedLabelTextColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.focused.state-layer.color
-  static const TokenColorRole focusedStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole focusedStateLayerColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.focused.state-layer.opacity
   static const double focusedStateLayerOpacity = 0.10;
@@ -38,16 +35,13 @@ class TokenExtendedFabPrimaryContainer {
   static const double hoveredContainerElevation = 8.00;
 
   /// md.comp.extended-fab.primary-container.hovered.icon.color
-  static const TokenColorRole hoveredIconColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole hoveredIconColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.hovered.label-text.color
-  static const TokenColorRole hoveredLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole hoveredLabelTextColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.hovered.state-layer.color
-  static const TokenColorRole hoveredStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole hoveredStateLayerColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.hovered.state-layer.opacity
   static const double hoveredStateLayerOpacity = 0.08;
@@ -56,23 +50,19 @@ class TokenExtendedFabPrimaryContainer {
   static const TokenColorRole iconColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.label-text.color
-  static const TokenColorRole labelTextColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole labelTextColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.pressed.container.elevation
   static const double pressedContainerElevation = 6.00;
 
   /// md.comp.extended-fab.primary-container.pressed.icon.color
-  static const TokenColorRole pressedIconColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole pressedIconColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.pressed.label-text.color
-  static const TokenColorRole pressedLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole pressedLabelTextColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.pressed.state-layer.color
-  static const TokenColorRole pressedStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole pressedStateLayerColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.extended-fab.primary-container.pressed.state-layer.opacity
   static const double pressedStateLayerOpacity = 0.10;

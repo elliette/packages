@@ -9,8 +9,7 @@ import 'shape_struct.dart';
 
 class TokenElevatedCard {
   /// md.comp.elevated-card.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.elevated-card.container.elevation
   static const double containerElevation = 1.00;

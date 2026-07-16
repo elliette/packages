@@ -9,8 +9,7 @@ import 'shape_struct.dart';
 
 class TokenFabSurface {
   /// md.comp.fab.surface.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.fab.surface.container.elevation
   static const double containerElevation = 6.00;
@@ -73,8 +72,7 @@ class TokenFabSurface {
   static const double iconSize = 24.00;
 
   /// md.comp.fab.surface.lowered.container.color
-  static const TokenColorRole loweredContainerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole loweredContainerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.fab.surface.lowered.container.elevation
   static const double loweredContainerElevation = 1.00;

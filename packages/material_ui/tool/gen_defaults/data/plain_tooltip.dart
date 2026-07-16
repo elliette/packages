@@ -22,8 +22,7 @@ class TokenPlainTooltip {
   );
 
   /// md.comp.plain-tooltip.supporting-text.color
-  static const TokenColorRole supportingTextColor =
-      TokenColorRole.inverseOnSurface;
+  static const TokenColorRole supportingTextColor = TokenColorRole.inverseOnSurface;
 
   /// md.comp.plain-tooltip.supporting-text.type
   static const TypescaleStruct supportingTextType = TypescaleStruct(

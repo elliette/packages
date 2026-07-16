@@ -9,8 +9,7 @@ import 'shape_struct.dart';
 
 class TokenFilledCard {
   /// md.comp.filled-card.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHighest;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHighest;
 
   /// md.comp.filled-card.container.elevation
   static const double containerElevation = 0.00;

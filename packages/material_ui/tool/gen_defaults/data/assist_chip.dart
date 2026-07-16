@@ -40,19 +40,16 @@ class TokenAssistChip {
   static const double draggedStateLayerOpacity = 0.16;
 
   /// md.comp.assist-chip.elevated.container.color
-  static const TokenColorRole elevatedContainerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole elevatedContainerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.assist-chip.elevated.container.elevation
   static const double elevatedContainerElevation = 1.00;
 
   /// md.comp.assist-chip.elevated.container.shadow-color
-  static const TokenColorRole elevatedContainerShadowColor =
-      TokenColorRole.shadow;
+  static const TokenColorRole elevatedContainerShadowColor = TokenColorRole.shadow;
 
   /// md.comp.assist-chip.elevated.disabled.container.color
-  static const TokenColorRole elevatedDisabledContainerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole elevatedDisabledContainerColor = TokenColorRole.onSurface;
 
   /// md.comp.assist-chip.elevated.disabled.container.elevation
   static const double elevatedDisabledContainerElevation = 0.00;
@@ -73,8 +70,7 @@ class TokenAssistChip {
   static const double flatContainerElevation = 0.00;
 
   /// md.comp.assist-chip.flat.disabled.outline.color
-  static const TokenColorRole flatDisabledOutlineColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole flatDisabledOutlineColor = TokenColorRole.onSurface;
 
   /// md.comp.assist-chip.flat.disabled.outline.opacity
   static const double flatDisabledOutlineOpacity = 0.12;
@@ -137,8 +133,7 @@ class TokenAssistChip {
   static const double pressedStateLayerOpacity = 0.10;
 
   /// md.comp.assist-chip.with-icon.disabled.icon.color
-  static const TokenColorRole withIconDisabledIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole withIconDisabledIconColor = TokenColorRole.onSurface;
 
   /// md.comp.assist-chip.with-icon.disabled.icon.opacity
   static const double withIconDisabledIconOpacity = 0.38;

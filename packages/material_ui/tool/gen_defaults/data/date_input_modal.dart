@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenDateInputModal {
   /// md.comp.date-input.modal.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.date-input.modal.container.elevation
   static const double containerElevation = 6.00;
@@ -38,8 +37,7 @@ class TokenDateInputModal {
   static const double headerContainerWidth = 328.00;
 
   /// md.comp.date-input.modal.header.headline.color
-  static const TokenColorRole headerHeadlineColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerHeadlineColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-input.modal.header.headline.type
   static const TypescaleStruct headerHeadlineType = TypescaleStruct(
@@ -51,8 +49,7 @@ class TokenDateInputModal {
   );
 
   /// md.comp.date-input.modal.header.supporting-text.color
-  static const TokenColorRole headerSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-input.modal.header.supporting-text.type
   static const TypescaleStruct headerSupportingTextType = TypescaleStruct(

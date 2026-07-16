@@ -9,8 +9,7 @@ import 'shape_struct.dart';
 
 class TokenSheetBottom {
   /// md.comp.sheet.bottom.docked.container.color
-  static const TokenColorRole dockedContainerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole dockedContainerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.sheet.bottom.docked.container.shape
   static const ShapeStruct dockedContainerShape = ShapeStruct(
@@ -22,8 +21,7 @@ class TokenSheetBottom {
   );
 
   /// md.comp.sheet.bottom.docked.drag-handle.color
-  static const TokenColorRole dockedDragHandleColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole dockedDragHandleColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.sheet.bottom.docked.drag-handle.height
   static const double dockedDragHandleHeight = 4.00;

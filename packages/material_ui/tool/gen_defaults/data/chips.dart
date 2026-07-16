@@ -34,15 +34,13 @@ class TokenChips {
   static const double disabledLabelTextOpacity = 0.38;
 
   /// md.comp.chips.disabled.leading-icon.color
-  static const TokenColorRole disabledLeadingIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledLeadingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.chips.disabled.leading-icon.opacity
   static const double disabledLeadingIconOpacity = 0.38;
 
   /// md.comp.chips.disabled.trailing-icon.color
-  static const TokenColorRole disabledTrailingIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledTrailingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.chips.disabled.trailing-icon.opacity
   static const double disabledTrailingIconOpacity = 0.38;
@@ -105,12 +103,10 @@ class TokenChips {
   );
 
   /// md.comp.chips.selected.container.color
-  static const TokenColorRole selectedContainerColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole selectedContainerColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.chips.selected.disabled.container.color
-  static const TokenColorRole selectedDisabledContainerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole selectedDisabledContainerColor = TokenColorRole.onSurface;
 
   /// md.comp.chips.selected.disabled.container.opacity
   static const double selectedDisabledContainerOpacity = 0.12;
@@ -125,12 +121,10 @@ class TokenChips {
   static const double selectedHoveredStateLayerOpacity = 0.08;
 
   /// md.comp.chips.selected.label-text.color
-  static const TokenColorRole selectedLabelTextColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedLabelTextColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.chips.selected.leading-icon.color
-  static const TokenColorRole selectedLeadingIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedLeadingIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.chips.selected.outline.width
   static const double selectedOutlineWidth = 0.00;
@@ -148,12 +142,10 @@ class TokenChips {
   );
 
   /// md.comp.chips.selected.state-layer.color
-  static const TokenColorRole selectedStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedStateLayerColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.chips.selected.trailing-icon.color
-  static const TokenColorRole selectedTrailingIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedTrailingIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.chips.state-layer.opacity
   static const double stateLayerOpacity = 0.00;
@@ -162,8 +154,7 @@ class TokenChips {
   static const double trailingIconSize = 18.00;
 
   /// md.comp.chips.unselected.disabled.outline.color
-  static const TokenColorRole unselectedDisabledOutlineColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole unselectedDisabledOutlineColor = TokenColorRole.onSurface;
 
   /// md.comp.chips.unselected.disabled.outline.opacity
   static const double unselectedDisabledOutlineOpacity = 0.10;
@@ -178,16 +169,13 @@ class TokenChips {
   static const double unselectedHoveredStateLayerOpacity = 0.08;
 
   /// md.comp.chips.unselected.label-text.color
-  static const TokenColorRole unselectedLabelTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole unselectedLabelTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.chips.unselected.leading-icon.color
-  static const TokenColorRole unselectedLeadingIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole unselectedLeadingIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.chips.unselected.outline.color
-  static const TokenColorRole unselectedOutlineColor =
-      TokenColorRole.outlineVariant;
+  static const TokenColorRole unselectedOutlineColor = TokenColorRole.outlineVariant;
 
   /// md.comp.chips.unselected.outline.width
   static const double unselectedOutlineWidth = 1.00;
@@ -205,12 +193,10 @@ class TokenChips {
   );
 
   /// md.comp.chips.unselected.state-layer.color
-  static const TokenColorRole unselectedStateLayerColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole unselectedStateLayerColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.chips.unselected.trailing-icon.color
-  static const TokenColorRole unselectedTrailingIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole unselectedTrailingIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.chips.with-avatar.padding.leading
   static const double withAvatarPaddingLeading = 4.00;

@@ -55,8 +55,7 @@ class TokenSearchBar {
   static const double containedTrailingSpace = 4.00;
 
   /// md.comp.search-bar.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.search-bar.container.elevation
   static const double containerElevation = 6.00;
@@ -89,8 +88,7 @@ class TokenSearchBar {
   static const double hoverStateLayerOpacity = 0.08;
 
   /// md.comp.search-bar.hover.supporting-text.color
-  static const TokenColorRole hoverSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole hoverSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-bar.icon.size
   static const double iconSize = 24.00;
@@ -123,12 +121,10 @@ class TokenSearchBar {
   static const double pressedStateLayerOpacity = 0.10;
 
   /// md.comp.search-bar.pressed.supporting-text.color
-  static const TokenColorRole pressedSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole pressedSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-bar.supporting-text.color
-  static const TokenColorRole supportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole supportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-bar.supporting-text.type
   static const TypescaleStruct supportingTextType = TypescaleStruct(
@@ -140,8 +136,7 @@ class TokenSearchBar {
   );
 
   /// md.comp.search-bar.trailing-icon.color
-  static const TokenColorRole trailingIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole trailingIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-bar.trailing-icon.label-trailing-icon-space
   static const double trailingIconLabelTrailingIconSpace = 16.00;

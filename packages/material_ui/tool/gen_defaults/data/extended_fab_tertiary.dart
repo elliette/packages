@@ -26,8 +26,7 @@ class TokenExtendedFabTertiary {
   static const TokenColorRole focusedLabelTextColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.focused.state-layer.color
-  static const TokenColorRole focusedStateLayerColor =
-      TokenColorRole.onTertiary;
+  static const TokenColorRole focusedStateLayerColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.focused.state-layer.opacity
   static const double focusedStateLayerOpacity = 0.10;
@@ -42,8 +41,7 @@ class TokenExtendedFabTertiary {
   static const TokenColorRole hoveredLabelTextColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.hovered.state-layer.color
-  static const TokenColorRole hoveredStateLayerColor =
-      TokenColorRole.onTertiary;
+  static const TokenColorRole hoveredStateLayerColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.hovered.state-layer.opacity
   static const double hoveredStateLayerOpacity = 0.08;
@@ -64,8 +62,7 @@ class TokenExtendedFabTertiary {
   static const TokenColorRole pressedLabelTextColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.pressed.state-layer.color
-  static const TokenColorRole pressedStateLayerColor =
-      TokenColorRole.onTertiary;
+  static const TokenColorRole pressedStateLayerColor = TokenColorRole.onTertiary;
 
   /// md.comp.extended-fab.tertiary.pressed.state-layer.opacity
   static const double pressedStateLayerOpacity = 0.10;

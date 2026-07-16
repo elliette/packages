@@ -24,8 +24,7 @@ class TokenDataTable {
   static const double footerContainerHeight = 52.00;
 
   /// md.comp.data-table.footer.supporting-text.color
-  static const TokenColorRole footerSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole footerSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.data-table.header.container.color
   static const TokenColorRole headerContainerColor = TokenColorRole.surface;
@@ -34,16 +33,13 @@ class TokenDataTable {
   static const double headerContainerHeight = 56.00;
 
   /// md.comp.data-table.header.headline.color
-  static const TokenColorRole headerHeadlineColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole headerHeadlineColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.data-table.header.hover.headline.color
-  static const TokenColorRole headerHoverHeadlineColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole headerHoverHeadlineColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.header.hover.sorting.icon-button.color
-  static const TokenColorRole headerHoverSortingIconButtonColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole headerHoverSortingIconButtonColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.outline.color
   static const TokenColorRole outlineColor = TokenColorRole.outlineVariant;
@@ -55,8 +51,7 @@ class TokenDataTable {
   static const double rowItemContainerHeight = 52.00;
 
   /// md.comp.data-table.row-item.disabled.label-text.color
-  static const TokenColorRole rowItemDisabledLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole rowItemDisabledLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.row-item.disabled.label-text.opacity
   static const double rowItemDisabledLabelTextOpacity = 0.38;
@@ -65,8 +60,7 @@ class TokenDataTable {
   static const TokenColorRole rowItemLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.row-item.outline.color
-  static const TokenColorRole rowItemOutlineColor =
-      TokenColorRole.outlineVariant;
+  static const TokenColorRole rowItemOutlineColor = TokenColorRole.outlineVariant;
 
   /// md.comp.data-table.row-item.outline.width
   static const double rowItemOutlineWidth = 1.00;
@@ -76,19 +70,16 @@ class TokenDataTable {
       TokenColorRole.surfaceContainerHighest;
 
   /// md.comp.data-table.row-item.selected.hover.state-layer.color
-  static const TokenColorRole rowItemSelectedHoverStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole rowItemSelectedHoverStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.row-item.selected.hover.state-layer.opacity
   static const double rowItemSelectedHoverStateLayerOpacity = 0.08;
 
   /// md.comp.data-table.row-item.unselected.container.color
-  static const TokenColorRole rowItemUnselectedContainerColor =
-      TokenColorRole.surface;
+  static const TokenColorRole rowItemUnselectedContainerColor = TokenColorRole.surface;
 
   /// md.comp.data-table.row-item.unselected.hover.state-layer.color
-  static const TokenColorRole rowItemUnselectedHoverStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole rowItemUnselectedHoverStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.data-table.row-item.unselected.hover.state-layer.opacity
   static const double rowItemUnselectedHoverStateLayerOpacity = 0.08;

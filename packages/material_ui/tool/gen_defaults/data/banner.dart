@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenBanner {
   /// md.comp.banner.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.banner.container.elevation
   static const double containerElevation = 1.00;
@@ -44,8 +43,7 @@ class TokenBanner {
   static const double mobileWithTwoLinesWithImageContainerHeight = 120.00;
 
   /// md.comp.banner.supporting-text.color
-  static const TokenColorRole supportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole supportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.banner.supporting-text.type
   static const TypescaleStruct supportingTextType = TypescaleStruct(

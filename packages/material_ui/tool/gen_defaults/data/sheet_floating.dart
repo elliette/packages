@@ -9,8 +9,7 @@ import 'shape_struct.dart';
 
 class TokenSheetFloating {
   /// md.comp.sheet.floating.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerLow;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerLow;
 
   /// md.comp.sheet.floating.container.elevation
   static const double containerElevation = 1.00;

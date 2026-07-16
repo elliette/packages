@@ -10,36 +10,28 @@ import 'typescale_struct.dart';
 
 class TokenNavigationBar {
   /// md.comp.navigation-bar.active.focus.icon.color
-  static const TokenColorRole activeFocusIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeFocusIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.navigation-bar.active.focus.label-text.color
-  static const TokenColorRole activeFocusLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activeFocusLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.focus.state-layer.color
-  static const TokenColorRole activeFocusStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activeFocusStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.hover.icon.color
-  static const TokenColorRole activeHoverIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeHoverIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.navigation-bar.active.hover.label-text.color
-  static const TokenColorRole activeHoverLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activeHoverLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.hover.state-layer.color
-  static const TokenColorRole activeHoverStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activeHoverStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.icon.color
-  static const TokenColorRole activeIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.navigation-bar.active-indicator.color
-  static const TokenColorRole activeIndicatorColor =
-      TokenColorRole.secondaryContainer;
+  static const TokenColorRole activeIndicatorColor = TokenColorRole.secondaryContainer;
 
   /// md.comp.navigation-bar.active-indicator.height
   static const double activeIndicatorHeight = 32.00;
@@ -60,16 +52,13 @@ class TokenNavigationBar {
   static const TokenColorRole activeLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.pressed.icon.color
-  static const TokenColorRole activePressedIconColor =
-      TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activePressedIconColor = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.navigation-bar.active.pressed.label-text.color
-  static const TokenColorRole activePressedLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activePressedLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.active.pressed.state-layer.color
-  static const TokenColorRole activePressedStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole activePressedStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.container.color
   static const TokenColorRole containerColor = TokenColorRole.surfaceContainer;
@@ -111,43 +100,34 @@ class TokenNavigationBar {
   static const TokenColorRole inactiveFocusIconColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.focus.label-text.color
-  static const TokenColorRole inactiveFocusLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactiveFocusLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.focus.state-layer.color
-  static const TokenColorRole inactiveFocusStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactiveFocusStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.hover.icon.color
   static const TokenColorRole inactiveHoverIconColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.hover.label-text.color
-  static const TokenColorRole inactiveHoverLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactiveHoverLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.hover.state-layer.color
-  static const TokenColorRole inactiveHoverStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactiveHoverStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.icon.color
-  static const TokenColorRole inactiveIconColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole inactiveIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.label-text.color
-  static const TokenColorRole inactiveLabelTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole inactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.pressed.icon.color
-  static const TokenColorRole inactivePressedIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedIconColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.pressed.label-text.color
-  static const TokenColorRole inactivePressedLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.inactive.pressed.state-layer.color
-  static const TokenColorRole inactivePressedStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.navigation-bar.label-text.type
   static const TypescaleStruct labelTextType = TypescaleStruct(

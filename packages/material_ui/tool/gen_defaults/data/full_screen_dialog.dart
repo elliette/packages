@@ -25,30 +25,25 @@ class TokenFullScreenDialog {
   );
 
   /// md.comp.full-screen-dialog.header.action.focus.label-text.color
-  static const TokenColorRole headerActionFocusLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionFocusLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.focus.state-layer.color
-  static const TokenColorRole headerActionFocusStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionFocusStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.focus.state-layer.opacity
   static const double headerActionFocusStateLayerOpacity = 0.10;
 
   /// md.comp.full-screen-dialog.header.action.hover.label-text.color
-  static const TokenColorRole headerActionHoverLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionHoverLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.hover.state-layer.color
-  static const TokenColorRole headerActionHoverStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionHoverStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.hover.state-layer.opacity
   static const double headerActionHoverStateLayerOpacity = 0.08;
 
   /// md.comp.full-screen-dialog.header.action.label-text.color
-  static const TokenColorRole headerActionLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.label-text.type
   static const TypescaleStruct headerActionLabelTextType = TypescaleStruct(
@@ -60,12 +55,10 @@ class TokenFullScreenDialog {
   );
 
   /// md.comp.full-screen-dialog.header.action.pressed.label-text.color
-  static const TokenColorRole headerActionPressedLabelTextColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionPressedLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.pressed.state-layer.color
-  static const TokenColorRole headerActionPressedStateLayerColor =
-      TokenColorRole.primary;
+  static const TokenColorRole headerActionPressedStateLayerColor = TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.pressed.state-layer.opacity
   static const double headerActionPressedStateLayerOpacity = 0.10;
@@ -98,8 +91,7 @@ class TokenFullScreenDialog {
   static const double headerIconSize = 24.00;
 
   /// md.comp.full-screen-dialog.header.on-scroll.container.color
-  static const TokenColorRole headerOnScrollContainerColor =
-      TokenColorRole.surfaceContainer;
+  static const TokenColorRole headerOnScrollContainerColor = TokenColorRole.surfaceContainer;
 
   /// md.comp.full-screen-dialog.header.on-scroll.container.elevation
   static const double headerOnScrollContainerElevation = 3.00;

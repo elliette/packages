@@ -10,8 +10,7 @@ import 'typescale_struct.dart';
 
 class TokenTimeInput {
   /// md.comp.time-input.container.color
-  static const TokenColorRole containerColor =
-      TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
 
   /// md.comp.time-input.container.elevation
   static const double containerElevation = 6.00;
@@ -77,8 +76,7 @@ class TokenTimeInput {
   );
 
   /// md.comp.time-input.period-selector.outline.color
-  static const TokenColorRole periodSelectorOutlineColor =
-      TokenColorRole.outline;
+  static const TokenColorRole periodSelectorOutlineColor = TokenColorRole.outline;
 
   /// md.comp.time-input.period-selector.outline.width
   static const double periodSelectorOutlineWidth = 1.00;
@@ -147,8 +145,7 @@ class TokenTimeInput {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-input.time-input-field.container.color
-  static const TokenColorRole timeInputFieldContainerColor =
-      TokenColorRole.surfaceContainerHighest;
+  static const TokenColorRole timeInputFieldContainerColor = TokenColorRole.surfaceContainerHighest;
 
   /// md.comp.time-input.time-input-field.container.height
   static const double timeInputFieldContainerHeight = 72.00;
@@ -166,34 +163,28 @@ class TokenTimeInput {
   static const double timeInputFieldContainerWidth = 96.00;
 
   /// md.comp.time-input.time-input-field.focus.container.color
-  static const TokenColorRole timeInputFieldFocusContainerColor =
-      TokenColorRole.primaryContainer;
+  static const TokenColorRole timeInputFieldFocusContainerColor = TokenColorRole.primaryContainer;
 
   /// md.comp.time-input.time-input-field.focus.label-text.color
-  static const TokenColorRole timeInputFieldFocusLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+  static const TokenColorRole timeInputFieldFocusLabelTextColor = TokenColorRole.onPrimaryContainer;
 
   /// md.comp.time-input.time-input-field.focus.outline.color
-  static const TokenColorRole timeInputFieldFocusOutlineColor =
-      TokenColorRole.primary;
+  static const TokenColorRole timeInputFieldFocusOutlineColor = TokenColorRole.primary;
 
   /// md.comp.time-input.time-input-field.focus.outline.width
   static const double timeInputFieldFocusOutlineWidth = 2.00;
 
   /// md.comp.time-input.time-input-field.hover.label-text.color
-  static const TokenColorRole timeInputFieldHoverLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole timeInputFieldHoverLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.time-input.time-input-field.hover.state-layer.color
-  static const TokenColorRole timeInputFieldHoverStateLayerColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole timeInputFieldHoverStateLayerColor = TokenColorRole.onSurface;
 
   /// md.comp.time-input.time-input-field.hover.state-layer.opacity
   static const double timeInputFieldHoverStateLayerOpacity = 0.08;
 
   /// md.comp.time-input.time-input-field.label-text.color
-  static const TokenColorRole timeInputFieldLabelTextColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole timeInputFieldLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.time-input.time-input-field.label-text.type
   static const TypescaleStruct timeInputFieldLabelTextType = TypescaleStruct(
@@ -205,8 +196,7 @@ class TokenTimeInput {
   );
 
   /// md.comp.time-input.time-input-field.separator.color
-  static const TokenColorRole timeInputFieldSeparatorColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole timeInputFieldSeparatorColor = TokenColorRole.onSurface;
 
   /// md.comp.time-input.time-input-field.separator.type
   static const TypescaleStruct timeInputFieldSeparatorType = TypescaleStruct(
@@ -218,16 +208,14 @@ class TokenTimeInput {
   );
 
   /// md.comp.time-input.time-input-field.supporting-text.color
-  static const TokenColorRole timeInputFieldSupportingTextColor =
-      TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole timeInputFieldSupportingTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-input.time-input-field.supporting-text.type
-  static const TypescaleStruct timeInputFieldSupportingTextType =
-      TypescaleStruct(
-        fontFamily: 'Roboto',
-        fontSize: 12.00,
-        fontWeight: 400,
-        lineHeight: 16.00,
-        letterSpacing: 0.40,
-      );
+  static const TypescaleStruct timeInputFieldSupportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 12.00,
+    fontWeight: 400,
+    lineHeight: 16.00,
+    letterSpacing: 0.40,
+  );
 }

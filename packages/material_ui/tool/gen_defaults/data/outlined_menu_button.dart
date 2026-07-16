@@ -25,8 +25,7 @@ class TokenOutlinedMenuButton {
   static const TokenColorRole disabledOutlineColor = TokenColorRole.onSurface;
 
   /// md.comp.outlined-menu-button.disabled.trailing-icon.color
-  static const TokenColorRole disabledTrailingIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole disabledTrailingIconColor = TokenColorRole.onSurface;
 
   /// md.comp.outlined-menu-button.disabled.trailing-icon.opacity
   static const double disabledTrailingIconOpacity = 0.38;
@@ -119,19 +118,16 @@ class TokenOutlinedMenuButton {
   static const double trailingIconSize = 18.00;
 
   /// md.comp.outlined-menu-button.with-icon.disabled.icon.color
-  static const TokenColorRole withIconDisabledIconColor =
-      TokenColorRole.onSurface;
+  static const TokenColorRole withIconDisabledIconColor = TokenColorRole.onSurface;
 
   /// md.comp.outlined-menu-button.with-icon.disabled.icon.opacity
   static const double withIconDisabledIconOpacity = 0.38;
 
   /// md.comp.outlined-menu-button.with-icon.focus.leading-icon.color
-  static const TokenColorRole withIconFocusLeadingIconColor =
-      TokenColorRole.primary;
+  static const TokenColorRole withIconFocusLeadingIconColor = TokenColorRole.primary;
 
   /// md.comp.outlined-menu-button.with-icon.hover.leading-icon.color
-  static const TokenColorRole withIconHoverLeadingIconColor =
-      TokenColorRole.primary;
+  static const TokenColorRole withIconHoverLeadingIconColor = TokenColorRole.primary;
 
   /// md.comp.outlined-menu-button.with-icon.leading-icon.color
   static const TokenColorRole withIconLeadingIconColor = TokenColorRole.primary;
@@ -140,6 +136,5 @@ class TokenOutlinedMenuButton {
   static const double withIconLeadingIconSize = 18.00;
 
   /// md.comp.outlined-menu-button.with-icon.pressed.leading-icon.color
-  static const TokenColorRole withIconPressedLeadingIconColor =
-      TokenColorRole.primary;
+  static const TokenColorRole withIconPressedLeadingIconColor = TokenColorRole.primary;
 }
