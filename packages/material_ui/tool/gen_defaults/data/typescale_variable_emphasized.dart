@@ -2,276 +2,249 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.59
+
+import 'typeface.dart';
+import 'typescale_struct.dart';
 
 class TokenTypescaleVariableEmphasized {
-  /// md.sys.typescale.variable.emphasized.body-large.font
-  static const String bodyLargeFont = 'Roboto Flex';
-
   /// md.sys.typescale.variable.emphasized.body-large
-  static const String bodyLargeFontFamily = 'Roboto Flex';
+  static const TypescaleStruct bodyLarge = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 16.00,
+    fontWeight: 500,
+    lineHeight: 24.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.body-large',
+  );
 
-  /// md.sys.typescale.variable.emphasized.body-large
-  static const double bodyLargeFontSize = 16.00;
+  /// md.sys.typescale.variable.emphasized.body-large.rond
+  static const double bodyLargeRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.body-large
-  static const double bodyLargeFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.body-large
-  static const double bodyLargeLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.body-large
-  static const double bodyLargeLineHeight = 24.00;
-
-  /// md.sys.typescale.variable.emphasized.body-medium.font
-  static const String bodyMediumFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.body-large.wght
+  static const double bodyLargeWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.body-medium
-  static const String bodyMediumFontFamily = 'Roboto Flex';
+  static const TypescaleStruct bodyMedium = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.body-medium',
+  );
 
-  /// md.sys.typescale.variable.emphasized.body-medium
-  static const double bodyMediumFontSize = 14.00;
+  /// md.sys.typescale.variable.emphasized.body-medium.rond
+  static const double bodyMediumRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.body-medium
-  static const double bodyMediumFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.body-medium
-  static const double bodyMediumLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.body-medium
-  static const double bodyMediumLineHeight = 20.00;
-
-  /// md.sys.typescale.variable.emphasized.body-small.font
-  static const String bodySmallFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.body-medium.wght
+  static const double bodyMediumWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.body-small
-  static const String bodySmallFontFamily = 'Roboto Flex';
+  static const TypescaleStruct bodySmall = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 12.00,
+    fontWeight: 500,
+    lineHeight: 16.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.body-small',
+  );
 
-  /// md.sys.typescale.variable.emphasized.body-small
-  static const double bodySmallFontSize = 12.00;
+  /// md.sys.typescale.variable.emphasized.body-small.rond
+  static const double bodySmallRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.body-small
-  static const double bodySmallFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.body-small
-  static const double bodySmallLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.body-small
-  static const double bodySmallLineHeight = 16.00;
-
-  /// md.sys.typescale.variable.emphasized.display-large.font
-  static const String displayLargeFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.body-small.wght
+  static const double bodySmallWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.display-large
-  static const String displayLargeFontFamily = 'Roboto Flex';
+  static const TypescaleStruct displayLarge = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 57.00,
+    fontWeight: 500,
+    lineHeight: 64.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.display-large',
+  );
 
-  /// md.sys.typescale.variable.emphasized.display-large
-  static const double displayLargeFontSize = 57.00;
+  /// md.sys.typescale.variable.emphasized.display-large.rond
+  static const double displayLargeRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.display-large
-  static const double displayLargeFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.display-large
-  static const double displayLargeLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.display-large
-  static const double displayLargeLineHeight = 64.00;
-
-  /// md.sys.typescale.variable.emphasized.display-medium.font
-  static const String displayMediumFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.display-large.wght
+  static const double displayLargeWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.display-medium
-  static const String displayMediumFontFamily = 'Roboto Flex';
+  static const TypescaleStruct displayMedium = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 45.00,
+    fontWeight: 500,
+    lineHeight: 52.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.display-medium',
+  );
 
-  /// md.sys.typescale.variable.emphasized.display-medium
-  static const double displayMediumFontSize = 45.00;
+  /// md.sys.typescale.variable.emphasized.display-medium.rond
+  static const double displayMediumRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.display-medium
-  static const double displayMediumFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.display-medium
-  static const double displayMediumLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.display-medium
-  static const double displayMediumLineHeight = 52.00;
-
-  /// md.sys.typescale.variable.emphasized.display-small.font
-  static const String displaySmallFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.display-medium.wght
+  static const double displayMediumWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.display-small
-  static const String displaySmallFontFamily = 'Roboto Flex';
+  static const TypescaleStruct displaySmall = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 36.00,
+    fontWeight: 500,
+    lineHeight: 44.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.display-small',
+  );
 
-  /// md.sys.typescale.variable.emphasized.display-small
-  static const double displaySmallFontSize = 36.00;
+  /// md.sys.typescale.variable.emphasized.display-small.rond
+  static const double displaySmallRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.display-small
-  static const double displaySmallFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.display-small
-  static const double displaySmallLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.display-small
-  static const double displaySmallLineHeight = 44.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-large.font
-  static const String headlineLargeFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.display-small.wght
+  static const double displaySmallWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.headline-large
-  static const String headlineLargeFontFamily = 'Roboto Flex';
+  static const TypescaleStruct headlineLarge = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 32.00,
+    fontWeight: 500,
+    lineHeight: 40.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.headline-large',
+  );
 
-  /// md.sys.typescale.variable.emphasized.headline-large
-  static const double headlineLargeFontSize = 32.00;
+  /// md.sys.typescale.variable.emphasized.headline-large.rond
+  static const double headlineLargeRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.headline-large
-  static const double headlineLargeFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.headline-large
-  static const double headlineLargeLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-large
-  static const double headlineLargeLineHeight = 40.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-medium.font
-  static const String headlineMediumFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.headline-large.wght
+  static const double headlineLargeWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.headline-medium
-  static const String headlineMediumFontFamily = 'Roboto Flex';
+  static const TypescaleStruct headlineMedium = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 28.00,
+    fontWeight: 500,
+    lineHeight: 36.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.headline-medium',
+  );
 
-  /// md.sys.typescale.variable.emphasized.headline-medium
-  static const double headlineMediumFontSize = 28.00;
+  /// md.sys.typescale.variable.emphasized.headline-medium.rond
+  static const double headlineMediumRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.headline-medium
-  static const double headlineMediumFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.headline-medium
-  static const double headlineMediumLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-medium
-  static const double headlineMediumLineHeight = 36.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-small.font
-  static const String headlineSmallFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.headline-medium.wght
+  static const double headlineMediumWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.headline-small
-  static const String headlineSmallFontFamily = 'Roboto Flex';
+  static const TypescaleStruct headlineSmall = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 24.00,
+    fontWeight: 500,
+    lineHeight: 32.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.headline-small',
+  );
 
-  /// md.sys.typescale.variable.emphasized.headline-small
-  static const double headlineSmallFontSize = 24.00;
+  /// md.sys.typescale.variable.emphasized.headline-small.rond
+  static const double headlineSmallRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.headline-small
-  static const double headlineSmallFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.headline-small
-  static const double headlineSmallLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.headline-small
-  static const double headlineSmallLineHeight = 32.00;
-
-  /// md.sys.typescale.variable.emphasized.label-large.font
-  static const String labelLargeFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.headline-small.wght
+  static const double headlineSmallWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.label-large
-  static const String labelLargeFontFamily = 'Roboto Flex';
+  static const TypescaleStruct labelLarge = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 14.00,
+    fontWeight: 600,
+    lineHeight: 20.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.label-large',
+  );
 
-  /// md.sys.typescale.variable.emphasized.label-large
-  static const double labelLargeFontSize = 14.00;
+  /// md.sys.typescale.variable.emphasized.label-large.rond
+  static const double labelLargeRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.label-large
-  static const double labelLargeFontWeight = 600;
-
-  /// md.sys.typescale.variable.emphasized.label-large
-  static const double labelLargeLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.label-large
-  static const double labelLargeLineHeight = 20.00;
-
-  /// md.sys.typescale.variable.emphasized.label-medium.font
-  static const String labelMediumFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.label-large.wght
+  static const double labelLargeWght = TokenTypeface.variableWghtSemibold;
 
   /// md.sys.typescale.variable.emphasized.label-medium
-  static const String labelMediumFontFamily = 'Roboto Flex';
+  static const TypescaleStruct labelMedium = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 12.00,
+    fontWeight: 600,
+    lineHeight: 16.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.label-medium',
+  );
 
-  /// md.sys.typescale.variable.emphasized.label-medium
-  static const double labelMediumFontSize = 12.00;
+  /// md.sys.typescale.variable.emphasized.label-medium.rond
+  static const double labelMediumRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.label-medium
-  static const double labelMediumFontWeight = 600;
-
-  /// md.sys.typescale.variable.emphasized.label-medium
-  static const double labelMediumLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.label-medium
-  static const double labelMediumLineHeight = 16.00;
-
-  /// md.sys.typescale.variable.emphasized.label-small.font
-  static const String labelSmallFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.label-medium.wght
+  static const double labelMediumWght = TokenTypeface.variableWghtSemibold;
 
   /// md.sys.typescale.variable.emphasized.label-small
-  static const String labelSmallFontFamily = 'Roboto Flex';
+  static const TypescaleStruct labelSmall = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 11.00,
+    fontWeight: 600,
+    lineHeight: 16.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.label-small',
+  );
 
-  /// md.sys.typescale.variable.emphasized.label-small
-  static const double labelSmallFontSize = 11.00;
+  /// md.sys.typescale.variable.emphasized.label-small.rond
+  static const double labelSmallRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.label-small
-  static const double labelSmallFontWeight = 600;
-
-  /// md.sys.typescale.variable.emphasized.label-small
-  static const double labelSmallLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.label-small
-  static const double labelSmallLineHeight = 16.00;
-
-  /// md.sys.typescale.variable.emphasized.title-large.font
-  static const String titleLargeFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.label-small.wght
+  static const double labelSmallWght = TokenTypeface.variableWghtSemibold;
 
   /// md.sys.typescale.variable.emphasized.title-large
-  static const String titleLargeFontFamily = 'Roboto Flex';
+  static const TypescaleStruct titleLarge = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 22.00,
+    fontWeight: 500,
+    lineHeight: 28.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.title-large',
+  );
 
-  /// md.sys.typescale.variable.emphasized.title-large
-  static const double titleLargeFontSize = 22.00;
+  /// md.sys.typescale.variable.emphasized.title-large.rond
+  static const double titleLargeRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.title-large
-  static const double titleLargeFontWeight = 500;
-
-  /// md.sys.typescale.variable.emphasized.title-large
-  static const double titleLargeLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.title-large
-  static const double titleLargeLineHeight = 28.00;
-
-  /// md.sys.typescale.variable.emphasized.title-medium.font
-  static const String titleMediumFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.title-large.wght
+  static const double titleLargeWght = TokenTypeface.variableWghtMedium;
 
   /// md.sys.typescale.variable.emphasized.title-medium
-  static const String titleMediumFontFamily = 'Roboto Flex';
+  static const TypescaleStruct titleMedium = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 16.00,
+    fontWeight: 600,
+    lineHeight: 24.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.title-medium',
+  );
 
-  /// md.sys.typescale.variable.emphasized.title-medium
-  static const double titleMediumFontSize = 16.00;
+  /// md.sys.typescale.variable.emphasized.title-medium.rond
+  static const double titleMediumRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.title-medium
-  static const double titleMediumFontWeight = 600;
-
-  /// md.sys.typescale.variable.emphasized.title-medium
-  static const double titleMediumLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.title-medium
-  static const double titleMediumLineHeight = 24.00;
-
-  /// md.sys.typescale.variable.emphasized.title-small.font
-  static const String titleSmallFont = 'Roboto Flex';
+  /// md.sys.typescale.variable.emphasized.title-medium.wght
+  static const double titleMediumWght = TokenTypeface.variableWghtSemibold;
 
   /// md.sys.typescale.variable.emphasized.title-small
-  static const String titleSmallFontFamily = 'Roboto Flex';
+  static const TypescaleStruct titleSmall = TypescaleStruct(
+    fontFamily: 'Roboto Flex',
+    fontSize: 14.00,
+    fontWeight: 600,
+    lineHeight: 20.00,
+    letterSpacing: 0.00,
+    textStyle: 'variable.emphasized.title-small',
+  );
 
-  /// md.sys.typescale.variable.emphasized.title-small
-  static const double titleSmallFontSize = 14.00;
+  /// md.sys.typescale.variable.emphasized.title-small.rond
+  static const double titleSmallRond = TokenTypeface.emphasizedRond;
 
-  /// md.sys.typescale.variable.emphasized.title-small
-  static const double titleSmallFontWeight = 600;
-
-  /// md.sys.typescale.variable.emphasized.title-small
-  static const double titleSmallLetterSpacing = 0.00;
-
-  /// md.sys.typescale.variable.emphasized.title-small
-  static const double titleSmallLineHeight = 20.00;
+  /// md.sys.typescale.variable.emphasized.title-small.wght
+  static const double titleSmallWght = TokenTypeface.variableWghtSemibold;
 }

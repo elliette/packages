@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.59
 
 import 'color_role.dart';
 import 'shape_struct.dart';
+import 'typescale.dart';
 
 class TokenMenus {
   /// md.comp.menus.active.container.shape
@@ -69,13 +70,14 @@ class TokenMenus {
   static const double horizontalIconOnlyMenuItemLeadingSpace = 16.00;
 
   /// md.comp.menus.horizontal.icon-only.menu-item.selected.shape
-  static const ShapeStruct horizontalIconOnlyMenuItemSelectedShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const ShapeStruct horizontalIconOnlyMenuItemSelectedShape =
+      ShapeStruct(
+        family: 'SHAPE_FAMILY_CIRCULAR',
+        topLeft: 0.00,
+        topRight: 0.00,
+        bottomLeft: 0.00,
+        bottomRight: 0.00,
+      );
 
   /// md.comp.menus.horizontal.icon-only.menu-item.top-space
   static const double horizontalIconOnlyMenuItemTopSpace = 16.00;
@@ -168,13 +170,14 @@ class TokenMenus {
   static const double menuItemBottomSpace = 8.00;
 
   /// md.comp.menus.menu-item.first-child.inner-corner.corner-size
-  static const ShapeStruct menuItemFirstChildInnerCornerCornerSize = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 4.00,
-    topRight: 4.00,
-    bottomLeft: 4.00,
-    bottomRight: 4.00,
-  );
+  static const ShapeStruct menuItemFirstChildInnerCornerCornerSize =
+      ShapeStruct(
+        family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
+        topLeft: 4.00,
+        topRight: 4.00,
+        bottomLeft: 4.00,
+        bottomRight: 4.00,
+      );
 
   /// md.comp.menus.menu-item.first-child.shape
   static const ShapeStruct menuItemFirstChildShape = ShapeStruct(
@@ -186,7 +189,8 @@ class TokenMenus {
   );
 
   /// md.comp.menus.menu-item.focus.indicator.color
-  static const TokenColorRole menuItemFocusIndicatorColor = TokenColorRole.secondary;
+  static const TokenColorRole menuItemFocusIndicatorColor =
+      TokenColorRole.secondary;
 
   /// md.comp.menus.menu-item.focus.indicator.outline.offset
   static const double menuItemFocusIndicatorOutlineOffset = -3.00;
@@ -198,7 +202,24 @@ class TokenMenus {
   static const double menuItemHeight = 44.00;
 
   /// md.comp.menus.menu-item.label-text.font
-  static const String menuItemLabelTextFont = 'Roboto';
+  static const String menuItemLabelTextFont =
+      TokenTypescale.labelLarge.fontFamily;
+
+  /// md.comp.menus.menu-item.label-text.line-height
+  static const double menuItemLabelTextLineHeight =
+      TokenTypescale.labelLarge.lineHeight;
+
+  /// md.comp.menus.menu-item.label-text.size
+  static const double menuItemLabelTextSize =
+      TokenTypescale.labelLarge.fontSize;
+
+  /// md.comp.menus.menu-item.label-text.tracking
+  static const double menuItemLabelTextTracking =
+      TokenTypescale.labelLarge.letterSpacing;
+
+  /// md.comp.menus.menu-item.label-text.weight
+  static const double menuItemLabelTextWeight =
+      TokenTypescale.labelLarge.fontWeight;
 
   /// md.comp.menus.menu-item.last-child.inner-corner.corner-size
   static const ShapeStruct menuItemLastChildInnerCornerCornerSize = ShapeStruct(
@@ -243,7 +264,24 @@ class TokenMenus {
   );
 
   /// md.comp.menus.menu-item.supporting-text.font
-  static const String menuItemSupportingTextFont = 'Roboto';
+  static const String menuItemSupportingTextFont =
+      TokenTypescale.bodySmall.fontFamily;
+
+  /// md.comp.menus.menu-item.supporting-text.line-height
+  static const double menuItemSupportingTextLineHeight =
+      TokenTypescale.bodySmall.lineHeight;
+
+  /// md.comp.menus.menu-item.supporting-text.size
+  static const double menuItemSupportingTextSize =
+      TokenTypescale.bodySmall.fontSize;
+
+  /// md.comp.menus.menu-item.supporting-text.tracking
+  static const double menuItemSupportingTextTracking =
+      TokenTypescale.bodySmall.letterSpacing;
+
+  /// md.comp.menus.menu-item.supporting-text.weight
+  static const double menuItemSupportingTextWeight =
+      TokenTypescale.bodySmall.fontWeight;
 
   /// md.comp.menus.menu-item.top-space
   static const double menuItemTopSpace = 8.00;
@@ -255,5 +293,22 @@ class TokenMenus {
   static const double menuItemTrailingSpace = 16.00;
 
   /// md.comp.menus.menu-item.trailing-supporting-text.font
-  static const String menuItemTrailingSupportingTextFont = 'Roboto';
+  static const String menuItemTrailingSupportingTextFont =
+      TokenTypescale.labelLarge.fontFamily;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.line-height
+  static const double menuItemTrailingSupportingTextLineHeight =
+      TokenTypescale.labelLarge.lineHeight;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.size
+  static const double menuItemTrailingSupportingTextSize =
+      TokenTypescale.labelLarge.fontSize;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.tracking
+  static const double menuItemTrailingSupportingTextTracking =
+      TokenTypescale.labelLarge.letterSpacing;
+
+  /// md.comp.menus.menu-item.trailing-supporting-text.weight
+  static const double menuItemTrailingSupportingTextWeight =
+      TokenTypescale.labelLarge.fontWeight;
 }
