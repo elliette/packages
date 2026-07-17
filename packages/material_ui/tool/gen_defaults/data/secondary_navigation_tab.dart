@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.59
 
 import 'color_role.dart';
 import 'shape_struct.dart';
+import 'typescale.dart';
 
 class TokenSecondaryNavigationTab {
   /// md.comp.secondary-navigation-tab.active-indicator.color
@@ -66,25 +67,11 @@ class TokenSecondaryNavigationTab {
   static const double hoverStateLayerOpacity = 0.08;
 
   /// md.comp.secondary-navigation-tab.inactive.label-text.color
-  static const TokenColorRole inactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
-
-  /// md.comp.secondary-navigation-tab.label-text.font
-  static const String labelTextFont = 'Roboto';
+  static const TokenColorRole inactiveLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.secondary-navigation-tab.label-text.type
-  static const String labelTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeFontSize = 14.00;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeFontWeight = 500;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeLetterSpacing = 0.10;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeLineHeight = 20.00;
+  static const TypescaleStruct labelTextType = TokenTypescale.titleSmall;
 
   /// md.comp.secondary-navigation-tab.pressed.label-text.color
   static const TokenColorRole pressedLabelTextColor = TokenColorRole.onSurface;
@@ -96,7 +83,8 @@ class TokenSecondaryNavigationTab {
   static const double pressedStateLayerOpacity = 0.10;
 
   /// md.comp.secondary-navigation-tab.with-icon.active.icon.color
-  static const TokenColorRole withIconActiveIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconActiveIconColor =
+      TokenColorRole.onSurface;
 
   /// md.comp.secondary-navigation-tab.with-icon.focus.icon.color
   static const TokenColorRole withIconFocusIconColor = TokenColorRole.onSurface;
@@ -108,8 +96,10 @@ class TokenSecondaryNavigationTab {
   static const double withIconIconSize = 24.00;
 
   /// md.comp.secondary-navigation-tab.with-icon.inactive.icon.color
-  static const TokenColorRole withIconInactiveIconColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole withIconInactiveIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.secondary-navigation-tab.with-icon.pressed.icon.color
-  static const TokenColorRole withIconPressedIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconPressedIconColor =
+      TokenColorRole.onSurface;
 }
