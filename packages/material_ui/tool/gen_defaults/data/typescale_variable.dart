@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.0.15
+// Version: 38.0.58
 
 import 'typescale_struct.dart';
 
@@ -14,6 +14,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 24.00,
     letterSpacing: 0.00,
+    textStyle: 'bodyLarge',
   );
 
   /// md.sys.typescale.variable.body-medium
@@ -23,6 +24,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 20.00,
     letterSpacing: 0.00,
+    textStyle: 'bodyMedium',
   );
 
   /// md.sys.typescale.variable.body-small
@@ -32,6 +34,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 16.00,
     letterSpacing: 0.00,
+    textStyle: 'bodySmall',
   );
 
   /// md.sys.typescale.variable.display-large
@@ -41,6 +44,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 64.00,
     letterSpacing: 0.00,
+    textStyle: 'displayLarge',
   );
 
   /// md.sys.typescale.variable.display-medium
@@ -50,6 +54,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 52.00,
     letterSpacing: 0.00,
+    textStyle: 'displayMedium',
   );
 
   /// md.sys.typescale.variable.display-small
@@ -59,6 +64,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 44.00,
     letterSpacing: 0.00,
+    textStyle: 'displaySmall',
   );
 
   /// md.sys.typescale.variable.headline-large
@@ -68,6 +74,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 40.00,
     letterSpacing: 0.00,
+    textStyle: 'headlineLarge',
   );
 
   /// md.sys.typescale.variable.headline-medium
@@ -77,6 +84,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 36.00,
     letterSpacing: 0.00,
+    textStyle: 'headlineMedium',
   );
 
   /// md.sys.typescale.variable.headline-small
@@ -86,6 +94,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 32.00,
     letterSpacing: 0.00,
+    textStyle: 'headlineSmall',
   );
 
   /// md.sys.typescale.variable.label-large
@@ -95,6 +104,7 @@ class TokenTypescaleVariable {
     fontWeight: 500,
     lineHeight: 20.00,
     letterSpacing: 0.00,
+    textStyle: 'labelLarge',
   );
 
   /// md.sys.typescale.variable.label-medium
@@ -104,6 +114,7 @@ class TokenTypescaleVariable {
     fontWeight: 500,
     lineHeight: 16.00,
     letterSpacing: 0.00,
+    textStyle: 'labelMedium',
   );
 
   /// md.sys.typescale.variable.label-small
@@ -113,6 +124,7 @@ class TokenTypescaleVariable {
     fontWeight: 500,
     lineHeight: 16.00,
     letterSpacing: 0.00,
+    textStyle: 'labelSmall',
   );
 
   /// md.sys.typescale.variable.title-large
@@ -122,6 +134,7 @@ class TokenTypescaleVariable {
     fontWeight: 400,
     lineHeight: 28.00,
     letterSpacing: 0.00,
+    textStyle: 'titleLarge',
   );
 
   /// md.sys.typescale.variable.title-medium
@@ -131,6 +144,7 @@ class TokenTypescaleVariable {
     fontWeight: 500,
     lineHeight: 24.00,
     letterSpacing: 0.00,
+    textStyle: 'titleMedium',
   );
 
   /// md.sys.typescale.variable.title-small
@@ -140,5 +154,6 @@ class TokenTypescaleVariable {
     fontWeight: 500,
     lineHeight: 20.00,
     letterSpacing: 0.00,
+    textStyle: 'titleSmall',
   );
 }
