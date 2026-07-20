@@ -2,15 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.0.59
 
-import 'color_role.dart';
 import 'shape_struct.dart';
 
 class TokenSheetFloating {
-  /// md.comp.sheet.floating.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerLow;
-
   /// md.comp.sheet.floating.container.elevation
   static const double containerElevation = 1.00;
 
