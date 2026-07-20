@@ -4,4 +4,4 @@
 
 // Version: 38.0.59
 
-class TokenColor {}
+class TokenColorMediumContrast {}
