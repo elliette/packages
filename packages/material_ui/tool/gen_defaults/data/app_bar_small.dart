@@ -5,7 +5,6 @@
 // Version: 38.1.0
 
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenAppBarSmall {
   /// md.comp.app-bar.small.container.height
@@ -24,29 +23,11 @@ class TokenAppBarSmall {
   );
 
   /// md.comp.app-bar.small.search.label-text.font
-  static const TypescaleStruct searchLabelTextFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct searchLabelTextFont = TokenTypescale.titleLarge;
 
   /// md.comp.app-bar.small.subtitle.font
-  static const TypescaleStruct subtitleFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct subtitleFont = TokenTypescale.titleLarge;
 
   /// md.comp.app-bar.small.title.font
-  static const TypescaleStruct titleFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 22.00,
-    fontWeight: 400,
-    lineHeight: 28.00,
-    letterSpacing: 0.00,
-  );
+  static const TypescaleStruct titleFont = TokenTypescale.titleLarge;
 }

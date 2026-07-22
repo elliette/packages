@@ -5,7 +5,6 @@
 // Version: 38.1.0
 
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenExtendedFabSmall {
   /// md.comp.extended-fab.small.container.height
@@ -27,13 +26,7 @@ class TokenExtendedFabSmall {
   static const double iconSize = 24.00;
 
   /// md.comp.extended-fab.small.label-text
-  static const TypescaleStruct labelText = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 500,
-    lineHeight: 24.00,
-    letterSpacing: 0.15,
-  );
+  static const TypescaleStruct labelText = TokenTypescale.titleMedium;
 
   /// md.comp.extended-fab.small.leading-space
   static const double leadingSpace = 16.00;

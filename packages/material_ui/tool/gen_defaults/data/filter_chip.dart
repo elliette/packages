@@ -6,7 +6,6 @@
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenFilterChip {
   /// md.comp.filter-chip.container.height
@@ -127,13 +126,8 @@ class TokenFilterChip {
   static const double focusIndicatorThickness = 3.00;
 
   /// md.comp.filter-chip.label-text.type
-  static const TypescaleStruct labelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct labelTextType =
+      TokenTypescale.labelLargeLineHeight;
 
   /// md.comp.filter-chip.selected.dragged.label-text.color
   static const TokenColorRole selectedDraggedLabelTextColor =

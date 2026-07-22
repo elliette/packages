@@ -6,7 +6,6 @@
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenOutlinedSelect {
   /// md.comp.outlined-select.menu.cascading-menu-indicator.icon.color
@@ -49,13 +48,8 @@ class TokenOutlinedSelect {
       TokenColorRole.onSurface;
 
   /// md.comp.outlined-select.menu.list-item.label-text.type
-  static const TypescaleStruct menuListItemLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.10,
-  );
+  static const TypescaleStruct menuListItemLabelTextType =
+      TokenTypescale.labelLargeLineHeight;
 
   /// md.comp.outlined-select.menu.list-item.selected.container.color
   static const TokenColorRole menuListItemSelectedContainerColor =
@@ -277,26 +271,16 @@ class TokenOutlinedSelect {
       TokenColorRole.onSurface;
 
   /// md.comp.outlined-select.text-field.input-text.type
-  static const TypescaleStruct textFieldInputTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct textFieldInputTextType =
+      TokenTypescale.labelLargeLineHeight;
 
   /// md.comp.outlined-select.text-field.label-text.color
   static const TokenColorRole textFieldLabelTextColor =
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.outlined-select.text-field.label-text.type
-  static const TypescaleStruct textFieldLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 16.00,
-    fontWeight: 400,
-    lineHeight: 24.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct textFieldLabelTextType =
+      TokenTypescale.labelLargeLineHeight;
 
   /// md.comp.outlined-select.text-field.leading-icon.color
   static const TokenColorRole textFieldLeadingIconColor =
@@ -316,13 +300,8 @@ class TokenOutlinedSelect {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.outlined-select.text-field.supporting-text.type
-  static const TypescaleStruct textFieldSupportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 400,
-    lineHeight: 16.00,
-    letterSpacing: 0.40,
-  );
+  static const TypescaleStruct textFieldSupportingTextType =
+      TokenTypescale.labelLargeLineHeight;
 
   /// md.comp.outlined-select.text-field.trailing-icon.color
   static const TokenColorRole textFieldTrailingIconColor =

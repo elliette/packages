@@ -6,7 +6,6 @@
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenBadge {
   /// md.comp.badge.color
@@ -19,13 +18,8 @@ class TokenBadge {
   static const TokenColorRole largeLabelTextColor = TokenColorRole.onError;
 
   /// md.comp.badge.large.label-text.type
-  static const TypescaleStruct largeLabelTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 11.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct largeLabelTextType =
+      TokenTypescale.labelSmallLineHeight;
 
   /// md.comp.badge.large.shape
   static const ShapeStruct largeShape = ShapeStruct(

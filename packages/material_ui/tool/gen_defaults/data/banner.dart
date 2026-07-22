@@ -6,7 +6,6 @@
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
 
 class TokenBanner {
   /// md.comp.banner.container.color
@@ -48,13 +47,8 @@ class TokenBanner {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.banner.supporting-text.type
-  static const TypescaleStruct supportingTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 400,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct supportingTextType =
+      TokenTypescale.bodyMediumFont;
 
   /// md.comp.banner.with-image.image.shape
   static const ShapeStruct withImageImageShape = ShapeStruct(
