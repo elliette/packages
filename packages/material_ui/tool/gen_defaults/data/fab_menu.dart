@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'shape_struct.dart';
 
@@ -56,19 +56,7 @@ class TokenFabMenu {
   static const double menuItemIconSize = 24.00;
 
   /// md.comp.fab-menu.menu-item.label-text
-  static const String menuItemLabelTextFontFamily = 'Roboto';
-
-  /// md.comp.fab-menu.menu-item.label-text
-  static const double menuItemLabelTextFontSize = 16.00;
-
-  /// md.comp.fab-menu.menu-item.label-text
-  static const double menuItemLabelTextFontWeight = 500;
-
-  /// md.comp.fab-menu.menu-item.label-text
-  static const double menuItemLabelTextLetterSpacing = 0.15;
-
-  /// md.comp.fab-menu.menu-item.label-text
-  static const double menuItemLabelTextLineHeight = 24.00;
+  static const TypescaleStruct menuItemLabelText = TokenTypescale.titleMedium;
 
   /// md.comp.fab-menu.menu-item.leading-space
   static const double menuItemLeadingSpace = 24.00;

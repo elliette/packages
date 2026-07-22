@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 class TokenNavRailItemHorizontal {
   /// md.comp.nav-rail.item.horizontal.active-indicator.height
@@ -18,17 +18,5 @@ class TokenNavRailItemHorizontal {
   static const double iconLabelSpace = 8.00;
 
   /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const String labelTextFontFontFamily = 'Roboto';
-
-  /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const double labelTextFontFontSize = 14.00;
-
-  /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const double labelTextFontFontWeight = 500;
-
-  /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const double labelTextFontLetterSpacing = 0.10;
-
-  /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const double labelTextFontLineHeight = 20.00;
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelLarge;
 }
