@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'shape_struct.dart';
 
@@ -26,19 +26,7 @@ class TokenExtendedFabMedium {
   static const double iconSize = 28.00;
 
   /// md.comp.extended-fab.medium.label-text
-  static const String labelTextFontFamily = 'Roboto';
-
-  /// md.comp.extended-fab.medium.label-text
-  static const double labelTextFontSize = 22.00;
-
-  /// md.comp.extended-fab.medium.label-text
-  static const double labelTextFontWeight = 400;
-
-  /// md.comp.extended-fab.medium.label-text
-  static const double labelTextLetterSpacing = 0.00;
-
-  /// md.comp.extended-fab.medium.label-text
-  static const double labelTextLineHeight = 28.00;
+  static const TypescaleStruct labelText = TokenTypescale.titleLarge;
 
   /// md.comp.extended-fab.medium.leading-space
   static const double leadingSpace = 26.00;
