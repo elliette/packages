@@ -2,53 +2,60 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
-import 'shape_struct.dart';
 
 class TokenFilledMenuButton {
   /// md.comp.filled-menu-button.container.color
-  static const TokenColorRole containerColor = TokenColorRole.primary;
+  static const TokenColorRole containerColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.container.elevation
-  static const double containerElevation = 0.00;
+  static const TokenColorRole containerElevation = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.container.height
-  static const double containerHeight = 40.00;
+  static const TokenColorRole containerHeight = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.container.color
-  static const TokenColorRole disabledContainerColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledContainerColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.container.elevation
-  static const double disabledContainerElevation = 0.00;
+  static const TokenColorRole disabledContainerElevation =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.container.opacity
-  static const double disabledContainerOpacity = 0.12;
+  static const TokenColorRole disabledContainerOpacity =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.label-text.color
-  static const TokenColorRole disabledLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledLabelTextColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.label-text.opacity
-  static const double disabledLabelTextOpacity = 0.38;
+  static const TokenColorRole disabledLabelTextOpacity =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.trailing-icon.color
-  static const TokenColorRole disabledTrailingIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledTrailingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.disabled.trailing-icon.opacity
-  static const double disabledTrailingIconOpacity = 0.38;
+  static const TokenColorRole disabledTrailingIconOpacity =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.container.elevation
-  static const double focusContainerElevation = 0.00;
+  static const TokenColorRole focusContainerElevation =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.indicator.color
-  static const TokenColorRole focusIndicatorColor = TokenColorRole.secondary;
+  static const TokenColorRole focusIndicatorColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.indicator.outline.offset
-  static const double focusIndicatorOutlineOffset = 2.00;
+  static const TokenColorRole focusIndicatorOutlineOffset =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.indicator.thickness
-  static const double focusIndicatorThickness = 3.00;
+  static const TokenColorRole focusIndicatorThickness =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.label-text.color
   static const TokenColorRole focusLabelTextColor = TokenColorRole.onPrimary;
@@ -57,13 +64,14 @@ class TokenFilledMenuButton {
   static const TokenColorRole focusStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.state-layer.opacity
-  static const double focusStateLayerOpacity = 0.10;
+  static const TokenColorRole focusStateLayerOpacity = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.focus.trailing-icon.color
   static const TokenColorRole focusTrailingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.hover.container.elevation
-  static const double hoverContainerElevation = 1.00;
+  static const TokenColorRole hoverContainerElevation =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.hover.label-text.color
   static const TokenColorRole hoverLabelTextColor = TokenColorRole.onPrimary;
@@ -72,7 +80,7 @@ class TokenFilledMenuButton {
   static const TokenColorRole hoverStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.hover.state-layer.opacity
-  static const double hoverStateLayerOpacity = 0.08;
+  static const TokenColorRole hoverStateLayerOpacity = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.hover.trailing-icon.color
   static const TokenColorRole hoverTrailingIconColor = TokenColorRole.onPrimary;
@@ -81,22 +89,22 @@ class TokenFilledMenuButton {
   static const TokenColorRole labelTextColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.label-text.font
-  static const String labelTextFont = 'Roboto';
+  static const TokenColorRole labelTextFont = TokenColorRole.onPrimary;
+
+  /// md.comp.filled-menu-button.label-text.line-height
+  static const TokenColorRole labelTextLineHeight = TokenColorRole.onPrimary;
+
+  /// md.comp.filled-menu-button.label-text.size
+  static const TokenColorRole labelTextSize = TokenColorRole.onPrimary;
+
+  /// md.comp.filled-menu-button.label-text.tracking
+  static const TokenColorRole labelTextTracking = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.label-text.type
-  static const String labelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole labelTextType = TokenColorRole.onPrimary;
 
-  /// md.comp.filled-menu-button.label-text.type
-  static const double labelTextTypeFontSize = 14.00;
-
-  /// md.comp.filled-menu-button.label-text.type
-  static const double labelTextTypeFontWeight = 500;
-
-  /// md.comp.filled-menu-button.label-text.type
-  static const double labelTextTypeLetterSpacing = 0.10;
-
-  /// md.comp.filled-menu-button.label-text.type
-  static const double labelTextTypeLineHeight = 20.00;
+  /// md.comp.filled-menu-button.label-text.weight
+  static const TokenColorRole labelTextWeight = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.pressed.label-text.color
   static const TokenColorRole pressedLabelTextColor = TokenColorRole.onPrimary;
@@ -105,44 +113,47 @@ class TokenFilledMenuButton {
   static const TokenColorRole pressedStateLayerColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.pressed.state-layer.opacity
-  static const double pressedStateLayerOpacity = 0.10;
+  static const TokenColorRole pressedStateLayerOpacity =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.pressed.trailing-icon.color
-  static const TokenColorRole pressedTrailingIconColor = TokenColorRole.onPrimary;
+  static const TokenColorRole pressedTrailingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.shape
-  static const ShapeStruct shape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole shape = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.trailing-icon.color
   static const TokenColorRole trailingIconColor = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.trailing-icon.size
-  static const double trailingIconSize = 18.00;
+  static const TokenColorRole trailingIconSize = TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.disabled.leading-icon.color
-  static const TokenColorRole withIconDisabledLeadingIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconDisabledLeadingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.disabled.leading-icon.opacity
-  static const double withIconDisabledLeadingIconOpacity = 0.38;
+  static const TokenColorRole withIconDisabledLeadingIconOpacity =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.focus.leading-icon.color
-  static const TokenColorRole withIconFocusLeadingIconColor = TokenColorRole.onPrimary;
+  static const TokenColorRole withIconFocusLeadingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.hover.leading-icon.color
-  static const TokenColorRole withIconHoverLeadingIconColor = TokenColorRole.onPrimary;
+  static const TokenColorRole withIconHoverLeadingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.leading-icon.color
-  static const TokenColorRole withIconLeadingIconColor = TokenColorRole.onPrimary;
+  static const TokenColorRole withIconLeadingIconColor =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.leading-icon.size
-  static const double withIconLeadingIconSize = 18.00;
+  static const TokenColorRole withIconLeadingIconSize =
+      TokenColorRole.onPrimary;
 
   /// md.comp.filled-menu-button.with-icon.pressed.leading-icon.color
-  static const TokenColorRole withIconPressedLeadingIconColor = TokenColorRole.onPrimary;
+  static const TokenColorRole withIconPressedLeadingIconColor =
+      TokenColorRole.onPrimary;
 }

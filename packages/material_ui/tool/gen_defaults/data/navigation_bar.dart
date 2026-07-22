@@ -2,150 +2,175 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
-import 'shape_struct.dart';
 
 class TokenNavigationBar {
   /// md.comp.navigation-bar.active.focus.icon.color
-  static const TokenColorRole activeFocusIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeFocusIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.focus.label-text.color
-  static const TokenColorRole activeFocusLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeFocusLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.focus.state-layer.color
-  static const TokenColorRole activeFocusStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeFocusStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.hover.icon.color
-  static const TokenColorRole activeHoverIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeHoverIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.hover.label-text.color
-  static const TokenColorRole activeHoverLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeHoverLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.hover.state-layer.color
-  static const TokenColorRole activeHoverStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeHoverStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.icon.color
-  static const TokenColorRole activeIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activeIconColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active-indicator.color
-  static const TokenColorRole activeIndicatorColor = TokenColorRole.secondaryContainer;
+  static const TokenColorRole activeIndicatorColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active-indicator.height
-  static const double activeIndicatorHeight = 32.00;
+  static const TokenColorRole activeIndicatorHeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active-indicator.shape
-  static const ShapeStruct activeIndicatorShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole activeIndicatorShape =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active-indicator.width
-  static const double activeIndicatorWidth = 64.00;
+  static const TokenColorRole activeIndicatorWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.label-text.color
-  static const TokenColorRole activeLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.navigation-bar.active.label-text.weight
+  static const TokenColorRole activeLabelTextWeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.pressed.icon.color
-  static const TokenColorRole activePressedIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole activePressedIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.pressed.label-text.color
-  static const TokenColorRole activePressedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole activePressedLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.active.pressed.state-layer.color
-  static const TokenColorRole activePressedStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole activePressedStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surfaceContainer;
+  static const TokenColorRole containerColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.container.elevation
-  static const double containerElevation = 3.00;
+  static const TokenColorRole containerElevation =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.container.height
-  static const double containerHeight = 80.00;
+  static const TokenColorRole containerHeight = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.container.shape
-  static const ShapeStruct containerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole containerShape = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.focus.indicator.color
-  static const TokenColorRole focusIndicatorColor = TokenColorRole.secondary;
+  static const TokenColorRole focusIndicatorColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.focus.indicator.outline.offset
-  static const double focusIndicatorOutlineOffset = -3.00;
+  static const TokenColorRole focusIndicatorOutlineOffset =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.focus.indicator.thickness
-  static const double focusIndicatorThickness = 3.00;
+  static const TokenColorRole focusIndicatorThickness =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.focus.state-layer.opacity
-  static const double focusStateLayerOpacity = 0.10;
+  static const TokenColorRole focusStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.hover.state-layer.opacity
-  static const double hoverStateLayerOpacity = 0.08;
+  static const TokenColorRole hoverStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.icon.size
-  static const double iconSize = 24.00;
+  static const TokenColorRole iconSize = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.focus.icon.color
-  static const TokenColorRole inactiveFocusIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveFocusIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.focus.label-text.color
-  static const TokenColorRole inactiveFocusLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveFocusLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.focus.state-layer.color
-  static const TokenColorRole inactiveFocusStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveFocusStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.hover.icon.color
-  static const TokenColorRole inactiveHoverIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveHoverIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.hover.label-text.color
-  static const TokenColorRole inactiveHoverLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveHoverLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.hover.state-layer.color
-  static const TokenColorRole inactiveHoverStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactiveHoverStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.icon.color
-  static const TokenColorRole inactiveIconColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole inactiveIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.label-text.color
-  static const TokenColorRole inactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole inactiveLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.pressed.icon.color
-  static const TokenColorRole inactivePressedIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.pressed.label-text.color
-  static const TokenColorRole inactivePressedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.inactive.pressed.state-layer.color
-  static const TokenColorRole inactivePressedStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole inactivePressedStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.label-text.font
-  static const String labelTextFont = 'Roboto';
+  static const TokenColorRole labelTextFont = TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.navigation-bar.label-text.line-height
+  static const TokenColorRole labelTextLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.navigation-bar.label-text.size
+  static const TokenColorRole labelTextSize = TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.navigation-bar.label-text.tracking
+  static const TokenColorRole labelTextTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.label-text.type
-  static const String labelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole labelTextType = TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.navigation-bar.label-text.type
-  static const double labelTextTypeFontSize = 12.00;
-
-  /// md.comp.navigation-bar.label-text.type
-  static const double labelTextTypeFontWeight = 500;
-
-  /// md.comp.navigation-bar.label-text.type
-  static const double labelTextTypeLetterSpacing = 0.50;
-
-  /// md.comp.navigation-bar.label-text.type
-  static const double labelTextTypeLineHeight = 16.00;
+  /// md.comp.navigation-bar.label-text.weight
+  static const TokenColorRole labelTextWeight = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.navigation-bar.pressed.state-layer.opacity
-  static const double pressedStateLayerOpacity = 0.10;
+  static const TokenColorRole pressedStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 }

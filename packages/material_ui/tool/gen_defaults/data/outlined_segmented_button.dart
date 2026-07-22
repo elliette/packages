@@ -2,153 +2,191 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
-import 'shape_struct.dart';
 
 class TokenOutlinedSegmentedButton {
   /// md.comp.outlined-segmented-button.container.height
-  static const double containerHeight = 40.00;
+  static const TokenColorRole containerHeight =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.icon.color
-  static const TokenColorRole disabledIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.icon.opacity
-  static const double disabledIconOpacity = 0.38;
+  static const TokenColorRole disabledIconOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.label-text.color
-  static const TokenColorRole disabledLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.label-text.opacity
-  static const double disabledLabelTextOpacity = 0.38;
+  static const TokenColorRole disabledLabelTextOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.outline.color
-  static const TokenColorRole disabledOutlineColor = TokenColorRole.onSurface;
+  static const TokenColorRole disabledOutlineColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.disabled.outline.opacity
-  static const double disabledOutlineOpacity = 0.12;
+  static const TokenColorRole disabledOutlineOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.focus.indicator.color
-  static const TokenColorRole focusIndicatorColor = TokenColorRole.secondary;
+  static const TokenColorRole focusIndicatorColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.focus.indicator.outline.offset
-  static const double focusIndicatorOutlineOffset = 2.00;
+  static const TokenColorRole focusIndicatorOutlineOffset =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.focus.indicator.thickness
-  static const double focusIndicatorThickness = 3.00;
+  static const TokenColorRole focusIndicatorThickness =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.focus.state-layer.opacity
-  static const double focusStateLayerOpacity = 0.10;
+  static const TokenColorRole focusStateLayerOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.hover.state-layer.opacity
-  static const double hoverStateLayerOpacity = 0.08;
+  static const TokenColorRole hoverStateLayerOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.label-text.font
-  static const String labelTextFont = 'Roboto';
+  static const TokenColorRole labelTextFont =
+      TokenColorRole.onSecondaryContainer;
+
+  /// md.comp.outlined-segmented-button.label-text.line-height
+  static const TokenColorRole labelTextLineHeight =
+      TokenColorRole.onSecondaryContainer;
+
+  /// md.comp.outlined-segmented-button.label-text.size
+  static const TokenColorRole labelTextSize =
+      TokenColorRole.onSecondaryContainer;
+
+  /// md.comp.outlined-segmented-button.label-text.tracking
+  static const TokenColorRole labelTextTracking =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.label-text.type
-  static const String labelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole labelTextType =
+      TokenColorRole.onSecondaryContainer;
 
-  /// md.comp.outlined-segmented-button.label-text.type
-  static const double labelTextTypeFontSize = 14.00;
-
-  /// md.comp.outlined-segmented-button.label-text.type
-  static const double labelTextTypeFontWeight = 500;
-
-  /// md.comp.outlined-segmented-button.label-text.type
-  static const double labelTextTypeLetterSpacing = 0.10;
-
-  /// md.comp.outlined-segmented-button.label-text.type
-  static const double labelTextTypeLineHeight = 20.00;
+  /// md.comp.outlined-segmented-button.label-text.weight
+  static const TokenColorRole labelTextWeight =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.outline.color
-  static const TokenColorRole outlineColor = TokenColorRole.outline;
+  static const TokenColorRole outlineColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.outline.width
-  static const double outlineWidth = 1.00;
+  static const TokenColorRole outlineWidth =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.pressed.state-layer.opacity
-  static const double pressedStateLayerOpacity = 0.10;
+  static const TokenColorRole pressedStateLayerOpacity =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.container.color
-  static const TokenColorRole selectedContainerColor = TokenColorRole.secondaryContainer;
+  static const TokenColorRole selectedContainerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.focus.icon.color
-  static const TokenColorRole selectedFocusIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedFocusIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.focus.label-text.color
-  static const TokenColorRole selectedFocusLabelTextColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedFocusLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.focus.state-layer.color
-  static const TokenColorRole selectedFocusStateLayerColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedFocusStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.hover.icon.color
-  static const TokenColorRole selectedHoverIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedHoverIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.hover.label-text.color
-  static const TokenColorRole selectedHoverLabelTextColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedHoverLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.hover.state-layer.color
-  static const TokenColorRole selectedHoverStateLayerColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedHoverStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.label-text.color
-  static const TokenColorRole selectedLabelTextColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.pressed.icon.color
-  static const TokenColorRole selectedPressedIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedPressedIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.pressed.label-text.color
-  static const TokenColorRole selectedPressedLabelTextColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedPressedLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.pressed.state-layer.color
-  static const TokenColorRole selectedPressedStateLayerColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedPressedStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.selected.with-icon.icon.color
-  static const TokenColorRole selectedWithIconIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole selectedWithIconIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.shape
-  static const ShapeStruct shape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole shape = TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.focus.icon.color
-  static const TokenColorRole unselectedFocusIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedFocusIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.focus.label-text.color
-  static const TokenColorRole unselectedFocusLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedFocusLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.focus.state-layer.color
-  static const TokenColorRole unselectedFocusStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedFocusStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.hover.icon.color
-  static const TokenColorRole unselectedHoverIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedHoverIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.hover.label-text.color
-  static const TokenColorRole unselectedHoverLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedHoverLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.hover.state-layer.color
-  static const TokenColorRole unselectedHoverStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedHoverStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.label-text.color
-  static const TokenColorRole unselectedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.pressed.icon.color
-  static const TokenColorRole unselectedPressedIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedPressedIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.pressed.label-text.color
-  static const TokenColorRole unselectedPressedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedPressedLabelTextColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.pressed.state-layer.color
-  static const TokenColorRole unselectedPressedStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedPressedStateLayerColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.unselected.with-icon.icon.color
-  static const TokenColorRole unselectedWithIconIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole unselectedWithIconIconColor =
+      TokenColorRole.onSecondaryContainer;
 
   /// md.comp.outlined-segmented-button.with-icon.icon.size
-  static const double withIconIconSize = 18.00;
+  static const TokenColorRole withIconIconSize =
+      TokenColorRole.onSecondaryContainer;
 }

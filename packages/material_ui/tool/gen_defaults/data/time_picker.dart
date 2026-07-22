@@ -2,202 +2,205 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
-import 'shape_struct.dart';
 
 class TokenTimePicker {
   /// md.comp.time-picker.clock-dial.color
-  static const TokenColorRole clockDialColor = TokenColorRole.surfaceContainerHighest;
+  static const TokenColorRole clockDialColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.container.size
-  static const double clockDialContainerSize = 256.00;
+  static const TokenColorRole clockDialContainerSize =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.label-text.font
-  static const String clockDialLabelTextFont = 'Roboto';
+  static const TokenColorRole clockDialLabelTextFont =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.clock-dial.label-text.line-height
+  static const TokenColorRole clockDialLabelTextLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.clock-dial.label-text.size
+  static const TokenColorRole clockDialLabelTextSize =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.clock-dial.label-text.tracking
+  static const TokenColorRole clockDialLabelTextTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.label-text.type
-  static const String clockDialLabelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole clockDialLabelTextType =
+      TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.time-picker.clock-dial.label-text.type
-  static const double clockDialLabelTextTypeFontSize = 16.00;
-
-  /// md.comp.time-picker.clock-dial.label-text.type
-  static const double clockDialLabelTextTypeFontWeight = 400;
-
-  /// md.comp.time-picker.clock-dial.label-text.type
-  static const double clockDialLabelTextTypeLetterSpacing = 0.50;
-
-  /// md.comp.time-picker.clock-dial.label-text.type
-  static const double clockDialLabelTextTypeLineHeight = 24.00;
+  /// md.comp.time-picker.clock-dial.label-text.weight
+  static const TokenColorRole clockDialLabelTextWeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selected.label-text.color
-  static const TokenColorRole clockDialSelectedLabelTextColor = TokenColorRole.onPrimary;
+  static const TokenColorRole clockDialSelectedLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.center.container.color
-  static const TokenColorRole clockDialSelectorCenterContainerColor = TokenColorRole.primary;
+  static const TokenColorRole clockDialSelectorCenterContainerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.center.container.shape
-  static const ShapeStruct clockDialSelectorCenterContainerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole clockDialSelectorCenterContainerShape =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.center.container.size
-  static const double clockDialSelectorCenterContainerSize = 8.00;
+  static const TokenColorRole clockDialSelectorCenterContainerSize =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.handle.container.color
-  static const TokenColorRole clockDialSelectorHandleContainerColor = TokenColorRole.primary;
+  static const TokenColorRole clockDialSelectorHandleContainerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.handle.container.shape
-  static const ShapeStruct clockDialSelectorHandleContainerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole clockDialSelectorHandleContainerShape =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.handle.container.size
-  static const double clockDialSelectorHandleContainerSize = 48.00;
+  static const TokenColorRole clockDialSelectorHandleContainerSize =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.track.container.color
-  static const TokenColorRole clockDialSelectorTrackContainerColor = TokenColorRole.primary;
+  static const TokenColorRole clockDialSelectorTrackContainerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.selector.track.container.width
-  static const double clockDialSelectorTrackContainerWidth = 2.00;
+  static const TokenColorRole clockDialSelectorTrackContainerWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.shape
-  static const ShapeStruct clockDialShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_CIRCULAR',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole clockDialShape = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.clock-dial.unselected.label-text.color
-  static const TokenColorRole clockDialUnselectedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole clockDialUnselectedLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surfaceContainerHigh;
+  static const TokenColorRole containerColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.container.elevation
-  static const double containerElevation = 6.00;
+  static const TokenColorRole containerElevation =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.container.shape
-  static const ShapeStruct containerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 28.00,
-    topRight: 28.00,
-    bottomLeft: 28.00,
-    bottomRight: 28.00,
-  );
+  static const TokenColorRole containerShape = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.headline.color
   static const TokenColorRole headlineColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.headline.font
-  static const String headlineFont = 'Roboto';
+  static const TokenColorRole headlineFont = TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.headline.line-height
+  static const TokenColorRole headlineLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.headline.size
+  static const TokenColorRole headlineSize = TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.headline.tracking
+  static const TokenColorRole headlineTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.headline.type
-  static const String headlineTypeFontFamily = 'Roboto';
+  static const TokenColorRole headlineType = TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.time-picker.headline.type
-  static const double headlineTypeFontSize = 12.00;
-
-  /// md.comp.time-picker.headline.type
-  static const double headlineTypeFontWeight = 500;
-
-  /// md.comp.time-picker.headline.type
-  static const double headlineTypeLetterSpacing = 0.50;
-
-  /// md.comp.time-picker.headline.type
-  static const double headlineTypeLineHeight = 16.00;
+  /// md.comp.time-picker.headline.weight
+  static const TokenColorRole headlineWeight = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.container.shape
-  static const ShapeStruct periodSelectorContainerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 8.00,
-    topRight: 8.00,
-    bottomLeft: 8.00,
-    bottomRight: 8.00,
-  );
+  static const TokenColorRole periodSelectorContainerShape =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.focus.state-layer.opacity
-  static const double periodSelectorFocusStateLayerOpacity = 0.10;
+  static const TokenColorRole periodSelectorFocusStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.horizontal.container.height
-  static const double periodSelectorHorizontalContainerHeight = 38.00;
+  static const TokenColorRole periodSelectorHorizontalContainerHeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.horizontal.container.width
-  static const double periodSelectorHorizontalContainerWidth = 216.00;
+  static const TokenColorRole periodSelectorHorizontalContainerWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.hover.state-layer.opacity
-  static const double periodSelectorHoverStateLayerOpacity = 0.08;
+  static const TokenColorRole periodSelectorHoverStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.label-text.font
-  static const String periodSelectorLabelTextFont = 'Roboto';
+  static const TokenColorRole periodSelectorLabelTextFont =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.period-selector.label-text.line-height
+  static const TokenColorRole periodSelectorLabelTextLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.period-selector.label-text.size
+  static const TokenColorRole periodSelectorLabelTextSize =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.period-selector.label-text.tracking
+  static const TokenColorRole periodSelectorLabelTextTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.label-text.type
-  static const String periodSelectorLabelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole periodSelectorLabelTextType =
+      TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.time-picker.period-selector.label-text.type
-  static const double periodSelectorLabelTextTypeFontSize = 16.00;
-
-  /// md.comp.time-picker.period-selector.label-text.type
-  static const double periodSelectorLabelTextTypeFontWeight = 500;
-
-  /// md.comp.time-picker.period-selector.label-text.type
-  static const double periodSelectorLabelTextTypeLetterSpacing = 0.15;
-
-  /// md.comp.time-picker.period-selector.label-text.type
-  static const double periodSelectorLabelTextTypeLineHeight = 24.00;
+  /// md.comp.time-picker.period-selector.label-text.weight
+  static const TokenColorRole periodSelectorLabelTextWeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.outline.color
-  static const TokenColorRole periodSelectorOutlineColor = TokenColorRole.outline;
+  static const TokenColorRole periodSelectorOutlineColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.outline.width
-  static const double periodSelectorOutlineWidth = 1.00;
+  static const TokenColorRole periodSelectorOutlineWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.pressed.state-layer.opacity
-  static const double periodSelectorPressedStateLayerOpacity = 0.10;
+  static const TokenColorRole periodSelectorPressedStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.container.color
   static const TokenColorRole periodSelectorSelectedContainerColor =
-      TokenColorRole.tertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.focus.label-text.color
   static const TokenColorRole periodSelectorSelectedFocusLabelTextColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.focus.state-layer.color
   static const TokenColorRole periodSelectorSelectedFocusStateLayerColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.hover.label-text.color
   static const TokenColorRole periodSelectorSelectedHoverLabelTextColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.hover.state-layer.color
   static const TokenColorRole periodSelectorSelectedHoverStateLayerColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.label-text.color
   static const TokenColorRole periodSelectorSelectedLabelTextColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.pressed.label-text.color
   static const TokenColorRole periodSelectorSelectedPressedLabelTextColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.selected.pressed.state-layer.color
   static const TokenColorRole periodSelectorSelectedPressedStateLayerColor =
-      TokenColorRole.onTertiaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.unselected.focus.label-text.color
   static const TokenColorRole periodSelectorUnselectedFocusLabelTextColor =
@@ -228,132 +231,154 @@ class TokenTimePicker {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.vertical.container.height
-  static const double periodSelectorVerticalContainerHeight = 80.00;
+  static const TokenColorRole periodSelectorVerticalContainerHeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.period-selector.vertical.container.width
-  static const double periodSelectorVerticalContainerWidth = 52.00;
+  static const TokenColorRole periodSelectorVerticalContainerWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.24h-vertical.container.width
-  static const double timeSelector24hVerticalContainerWidth = 114.00;
+  static const TokenColorRole timeSelector24hVerticalContainerWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.container.height
-  static const double timeSelectorContainerHeight = 80.00;
+  static const TokenColorRole timeSelectorContainerHeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.container.shape
-  static const ShapeStruct timeSelectorContainerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 8.00,
-    topRight: 8.00,
-    bottomLeft: 8.00,
-    bottomRight: 8.00,
-  );
+  static const TokenColorRole timeSelectorContainerShape =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.container.width
-  static const double timeSelectorContainerWidth = 96.00;
+  static const TokenColorRole timeSelectorContainerWidth =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.focus.state-layer.opacity
-  static const double timeSelectorFocusStateLayerOpacity = 0.10;
+  static const TokenColorRole timeSelectorFocusStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.hover.state-layer.opacity
-  static const double timeSelectorHoverStateLayerOpacity = 0.08;
+  static const TokenColorRole timeSelectorHoverStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.label-text.font
-  static const String timeSelectorLabelTextFont = 'Roboto';
+  static const TokenColorRole timeSelectorLabelTextFont =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.label-text.line-height
+  static const TokenColorRole timeSelectorLabelTextLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.label-text.size
+  static const TokenColorRole timeSelectorLabelTextSize =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.label-text.tracking
+  static const TokenColorRole timeSelectorLabelTextTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.label-text.type
-  static const String timeSelectorLabelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole timeSelectorLabelTextType =
+      TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.time-picker.time-selector.label-text.type
-  static const double timeSelectorLabelTextTypeFontSize = 57.00;
-
-  /// md.comp.time-picker.time-selector.label-text.type
-  static const double timeSelectorLabelTextTypeFontWeight = 400;
-
-  /// md.comp.time-picker.time-selector.label-text.type
-  static const double timeSelectorLabelTextTypeLetterSpacing = -0.25;
-
-  /// md.comp.time-picker.time-selector.label-text.type
-  static const double timeSelectorLabelTextTypeLineHeight = 64.00;
+  /// md.comp.time-picker.time-selector.label-text.weight
+  static const TokenColorRole timeSelectorLabelTextWeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.pressed.state-layer.opacity
-  static const double timeSelectorPressedStateLayerOpacity = 0.10;
+  static const TokenColorRole timeSelectorPressedStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.container.color
-  static const TokenColorRole timeSelectorSelectedContainerColor = TokenColorRole.primaryContainer;
+  static const TokenColorRole timeSelectorSelectedContainerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.focus.label-text.color
   static const TokenColorRole timeSelectorSelectedFocusLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.focus.state-layer.color
   static const TokenColorRole timeSelectorSelectedFocusStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.hover.label-text.color
   static const TokenColorRole timeSelectorSelectedHoverLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.hover.state-layer.color
   static const TokenColorRole timeSelectorSelectedHoverStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.label-text.color
   static const TokenColorRole timeSelectorSelectedLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.pressed.label-text.color
   static const TokenColorRole timeSelectorSelectedPressedLabelTextColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.selected.pressed.state-layer.color
   static const TokenColorRole timeSelectorSelectedPressedStateLayerColor =
-      TokenColorRole.onPrimaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.separator.color
-  static const TokenColorRole timeSelectorSeparatorColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorSeparatorColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.separator.font
-  static const String timeSelectorSeparatorFont = 'Roboto';
+  static const TokenColorRole timeSelectorSeparatorFont =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.separator.line-height
+  static const TokenColorRole timeSelectorSeparatorLineHeight =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.separator.size
+  static const TokenColorRole timeSelectorSeparatorSize =
+      TokenColorRole.onSurfaceVariant;
+
+  /// md.comp.time-picker.time-selector.separator.tracking
+  static const TokenColorRole timeSelectorSeparatorTracking =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.separator.type
-  static const String timeSelectorSeparatorTypeFontFamily = 'Roboto';
+  static const TokenColorRole timeSelectorSeparatorType =
+      TokenColorRole.onSurfaceVariant;
 
-  /// md.comp.time-picker.time-selector.separator.type
-  static const double timeSelectorSeparatorTypeFontSize = 57.00;
-
-  /// md.comp.time-picker.time-selector.separator.type
-  static const double timeSelectorSeparatorTypeFontWeight = 400;
-
-  /// md.comp.time-picker.time-selector.separator.type
-  static const double timeSelectorSeparatorTypeLetterSpacing = -0.25;
-
-  /// md.comp.time-picker.time-selector.separator.type
-  static const double timeSelectorSeparatorTypeLineHeight = 64.00;
+  /// md.comp.time-picker.time-selector.separator.weight
+  static const TokenColorRole timeSelectorSeparatorWeight =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.container.color
   static const TokenColorRole timeSelectorUnselectedContainerColor =
-      TokenColorRole.surfaceContainerHighest;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.focus.label-text.color
-  static const TokenColorRole timeSelectorUnselectedFocusLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorUnselectedFocusLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.focus.state-layer.color
-  static const TokenColorRole timeSelectorUnselectedFocusStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorUnselectedFocusStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.hover.label-text.color
-  static const TokenColorRole timeSelectorUnselectedHoverLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorUnselectedHoverLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.hover.state-layer.color
-  static const TokenColorRole timeSelectorUnselectedHoverStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorUnselectedHoverStateLayerColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.label-text.color
-  static const TokenColorRole timeSelectorUnselectedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole timeSelectorUnselectedLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.pressed.label-text.color
   static const TokenColorRole timeSelectorUnselectedPressedLabelTextColor =
-      TokenColorRole.onSurface;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.time-picker.time-selector.unselected.pressed.state-layer.color
   static const TokenColorRole timeSelectorUnselectedPressedStateLayerColor =
-      TokenColorRole.onSurface;
+      TokenColorRole.onSurfaceVariant;
 }

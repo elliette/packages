@@ -2,114 +2,113 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
-import 'shape_struct.dart';
 
 class TokenSecondaryNavigationTab {
   /// md.comp.secondary-navigation-tab.active-indicator.color
-  static const TokenColorRole activeIndicatorColor = TokenColorRole.primary;
+  static const TokenColorRole activeIndicatorColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.active-indicator.height
-  static const double activeIndicatorHeight = 2.00;
+  static const TokenColorRole activeIndicatorHeight = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.active.label-text.color
-  static const TokenColorRole activeLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole activeLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.container.color
-  static const TokenColorRole containerColor = TokenColorRole.surface;
+  static const TokenColorRole containerColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.container.elevation
-  static const double containerElevation = 0.00;
+  static const TokenColorRole containerElevation = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.container.height
-  static const double containerHeight = 48.00;
+  static const TokenColorRole containerHeight = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.container.shadow-color
-  static const TokenColorRole containerShadowColor = TokenColorRole.shadow;
+  static const TokenColorRole containerShadowColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.container.shape
-  static const ShapeStruct containerShape = ShapeStruct(
-    family: 'SHAPE_FAMILY_ROUNDED_CORNERS',
-    topLeft: 0.00,
-    topRight: 0.00,
-    bottomLeft: 0.00,
-    bottomRight: 0.00,
-  );
+  static const TokenColorRole containerShape = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.indicator.color
   static const TokenColorRole focusIndicatorColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.indicator.outline.offset
-  static const double focusIndicatorOutlineOffset = -3.00;
+  static const TokenColorRole focusIndicatorOutlineOffset =
+      TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.indicator.thickness
-  static const double focusIndicatorThickness = 3.00;
+  static const TokenColorRole focusIndicatorThickness =
+      TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.label-text.color
-  static const TokenColorRole focusLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole focusLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.state-layer.color
-  static const TokenColorRole focusStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole focusStateLayerColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.focus.state-layer.opacity
-  static const double focusStateLayerOpacity = 0.10;
+  static const TokenColorRole focusStateLayerOpacity = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.hover.label-text.color
-  static const TokenColorRole hoverLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole hoverLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.hover.state-layer.color
-  static const TokenColorRole hoverStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole hoverStateLayerColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.hover.state-layer.opacity
-  static const double hoverStateLayerOpacity = 0.08;
+  static const TokenColorRole hoverStateLayerOpacity = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.inactive.label-text.color
-  static const TokenColorRole inactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole inactiveLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.label-text.font
-  static const String labelTextFont = 'Roboto';
+  static const TokenColorRole labelTextFont = TokenColorRole.secondary;
+
+  /// md.comp.secondary-navigation-tab.label-text.line-height
+  static const TokenColorRole labelTextLineHeight = TokenColorRole.secondary;
+
+  /// md.comp.secondary-navigation-tab.label-text.size
+  static const TokenColorRole labelTextSize = TokenColorRole.secondary;
+
+  /// md.comp.secondary-navigation-tab.label-text.tracking
+  static const TokenColorRole labelTextTracking = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.label-text.type
-  static const String labelTextTypeFontFamily = 'Roboto';
+  static const TokenColorRole labelTextType = TokenColorRole.secondary;
 
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeFontSize = 14.00;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeFontWeight = 500;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeLetterSpacing = 0.10;
-
-  /// md.comp.secondary-navigation-tab.label-text.type
-  static const double labelTextTypeLineHeight = 20.00;
+  /// md.comp.secondary-navigation-tab.label-text.weight
+  static const TokenColorRole labelTextWeight = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.pressed.label-text.color
-  static const TokenColorRole pressedLabelTextColor = TokenColorRole.onSurface;
+  static const TokenColorRole pressedLabelTextColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.pressed.state-layer.color
-  static const TokenColorRole pressedStateLayerColor = TokenColorRole.onSurface;
+  static const TokenColorRole pressedStateLayerColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.pressed.state-layer.opacity
-  static const double pressedStateLayerOpacity = 0.10;
+  static const TokenColorRole pressedStateLayerOpacity =
+      TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.active.icon.color
-  static const TokenColorRole withIconActiveIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconActiveIconColor =
+      TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.focus.icon.color
-  static const TokenColorRole withIconFocusIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconFocusIconColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.hover.icon.color
-  static const TokenColorRole withIconHoverIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconHoverIconColor = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.icon.size
-  static const double withIconIconSize = 24.00;
+  static const TokenColorRole withIconIconSize = TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.inactive.icon.color
-  static const TokenColorRole withIconInactiveIconColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole withIconInactiveIconColor =
+      TokenColorRole.secondary;
 
   /// md.comp.secondary-navigation-tab.with-icon.pressed.icon.color
-  static const TokenColorRole withIconPressedIconColor = TokenColorRole.onSurface;
+  static const TokenColorRole withIconPressedIconColor =
+      TokenColorRole.secondary;
 }

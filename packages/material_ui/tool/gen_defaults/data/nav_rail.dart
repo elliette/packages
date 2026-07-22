@@ -2,56 +2,64 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
 
 class TokenNavRail {
   /// md.comp.nav-rail.item.active.focused.state-layer.color
   static const TokenColorRole itemActiveFocusedStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.focused.state-layer.opacity
-  static const double itemActiveFocusedStateLayerOpacity = 0.10;
+  static const TokenColorRole itemActiveFocusedStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.hovered.state-layer.color
   static const TokenColorRole itemActiveHoveredStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.hovered.state-layer.opacity
-  static const double itemActiveHoveredStateLayerOpacity = 0.08;
+  static const TokenColorRole itemActiveHoveredStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.icon.color
-  static const TokenColorRole itemActiveIconColor = TokenColorRole.onSecondaryContainer;
+  static const TokenColorRole itemActiveIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.indicator.color
-  static const TokenColorRole itemActiveIndicatorColor = TokenColorRole.secondaryContainer;
+  static const TokenColorRole itemActiveIndicatorColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.label-text.color
-  static const TokenColorRole itemActiveLabelTextColor = TokenColorRole.secondary;
+  static const TokenColorRole itemActiveLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.pressed.state-layer.color
   static const TokenColorRole itemActivePressedStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.active.pressed.state-layer.opacity
-  static const double itemActivePressedStateLayerOpacity = 0.10;
+  static const TokenColorRole itemActivePressedStateLayerOpacity =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.focused.state-layer.color
   static const TokenColorRole itemInactiveFocusedStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.hovered.state-layer.color
   static const TokenColorRole itemInactiveHoveredStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.icon.color
-  static const TokenColorRole itemInactiveIconColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole itemInactiveIconColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.label-text.color
-  static const TokenColorRole itemInactiveLabelTextColor = TokenColorRole.onSurfaceVariant;
+  static const TokenColorRole itemInactiveLabelTextColor =
+      TokenColorRole.onSurfaceVariant;
 
   /// md.comp.nav-rail.item.inactive.pressed.state-layer.color
   static const TokenColorRole itemInactivePressedStateLayerColor =
-      TokenColorRole.onSecondaryContainer;
+      TokenColorRole.onSurfaceVariant;
 }
