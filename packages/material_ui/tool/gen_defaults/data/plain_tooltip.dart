@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
 import 'color_role.dart';
 import 'shape_struct.dart';
@@ -21,23 +21,10 @@ class TokenPlainTooltip {
   );
 
   /// md.comp.plain-tooltip.supporting-text.color
-  static const TokenColorRole supportingTextColor = TokenColorRole.inverseOnSurface;
-
-  /// md.comp.plain-tooltip.supporting-text.font
-  static const String supportingTextFont = 'Roboto';
+  static const TokenColorRole supportingTextColor =
+      TokenColorRole.inverseOnSurface;
 
   /// md.comp.plain-tooltip.supporting-text.type
-  static const String supportingTextTypeFontFamily = 'Roboto';
-
-  /// md.comp.plain-tooltip.supporting-text.type
-  static const double supportingTextTypeFontSize = 12.00;
-
-  /// md.comp.plain-tooltip.supporting-text.type
-  static const double supportingTextTypeFontWeight = 400;
-
-  /// md.comp.plain-tooltip.supporting-text.type
-  static const double supportingTextTypeLetterSpacing = 0.40;
-
-  /// md.comp.plain-tooltip.supporting-text.type
-  static const double supportingTextTypeLineHeight = 16.00;
+  static const TypescaleStruct supportingTextType =
+      TokenTypescale.bodySmallSize;
 }
