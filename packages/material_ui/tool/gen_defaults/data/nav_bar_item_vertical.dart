@@ -4,7 +4,7 @@
 
 // Version: 38.1.0
 
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenNavBarItemVertical {
   /// md.comp.nav-bar.item.vertical.active-indicator.height
@@ -20,11 +20,5 @@ class TokenNavBarItemVertical {
   static const double containerBetweenSpace = 6.00;
 
   /// md.comp.nav-bar.item.vertical.label-text.font
-  static const TypescaleStruct labelTextFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelMedium;
 }

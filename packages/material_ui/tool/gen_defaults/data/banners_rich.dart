@@ -5,7 +5,7 @@
 // Version: 38.1.0
 
 import 'shape_struct.dart';
-import 'typescale_struct.dart';
+import 'typescale.dart';
 
 class TokenBannersRich {
   /// md.comp.banners.rich.actions.between-space
@@ -39,13 +39,7 @@ class TokenBannersRich {
   static const double bodyTextTrailingSpace = 48.00;
 
   /// md.comp.banners.rich.body-text.type
-  static const TypescaleStruct bodyTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 400,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct bodyTextType = TokenTypescale.bodyMedium;
 
   /// md.comp.banners.rich.bottom-space
   static const double bottomSpace = 12.00;
@@ -111,13 +105,8 @@ class TokenBannersRich {
   static const double titleTextTrailingSpace = 0.00;
 
   /// md.comp.banners.rich.title-text.type
-  static const TypescaleStruct titleTextType = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 14.00,
-    fontWeight: 500,
-    lineHeight: 20.00,
-    letterSpacing: 0.25,
-  );
+  static const TypescaleStruct titleTextType =
+      TokenTypescale.emphasizedBodyMedium;
 
   /// md.comp.banners.rich.top-space
   static const double topSpace = 12.00;
