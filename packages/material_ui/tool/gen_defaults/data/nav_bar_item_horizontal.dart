@@ -4,8 +4,6 @@
 
 // Version: 38.1.0
 
-import 'typescale_struct.dart';
-
 class TokenNavBarItemHorizontal {
   /// md.comp.nav-bar.item.horizontal.active-indicator.height
   static const double activeIndicatorHeight = 40.00;
@@ -20,11 +18,5 @@ class TokenNavBarItemHorizontal {
   static const double activeIndicatorTrailingSpace = 16.00;
 
   /// md.comp.nav-bar.item.horizontal.label-text.font
-  static const TypescaleStruct labelTextFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelMedium;
 }

@@ -4,8 +4,6 @@
 
 // Version: 38.1.0
 
-import 'typescale_struct.dart';
-
 class TokenNavRailItemVertical {
   /// md.comp.nav-rail.item.vertical.active-indicator.height
   static const double activeIndicatorHeight = 32.00;
@@ -17,13 +15,7 @@ class TokenNavRailItemVertical {
   static const double iconLabelSpace = 4.00;
 
   /// md.comp.nav-rail.item.vertical.label-text.font
-  static const TypescaleStruct labelTextFont = TypescaleStruct(
-    fontFamily: 'Roboto',
-    fontSize: 12.00,
-    fontWeight: 500,
-    lineHeight: 16.00,
-    letterSpacing: 0.50,
-  );
+  static const TypescaleStruct labelTextFont = TokenTypescale.labelMedium;
 
   /// md.comp.nav-rail.item.vertical.leading-space
   static const double leadingSpace = 16.00;
