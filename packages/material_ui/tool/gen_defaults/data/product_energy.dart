@@ -6,19 +6,19 @@
 // Version: v1.1.1 (designSystems/1b063509fc205e38/versions/2a45bb83ea2f5ded)
 // Output format:
 
-enum TokenColorRole {
+class TokenProductEnergy {
   /// goog.sys.product-energy.blue
-  googSysProductEnergyBlue,
+  static const String blue = '0xFF000000';
 
   /// goog.sys.product-energy.green
-  googSysProductEnergyGreen,
+  static const String green = '0xFF000000';
 
   /// goog.sys.product-energy.purple
-  googSysProductEnergyPurple,
+  static const String purple = '0xFF000000';
 
   /// goog.sys.product-energy.red
-  googSysProductEnergyRed,
+  static const String red = '0xFF000000';
 
   /// goog.sys.product-energy.yellow
-  googSysProductEnergyYellow,
+  static const String yellow = '0xFF000000';
 }
