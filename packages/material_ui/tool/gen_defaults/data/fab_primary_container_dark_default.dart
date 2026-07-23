@@ -1,0 +1,31 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.1.2
+
+class TokenFabPrimaryContainerDarkDefault {
+  /// md.comp.fab.primary-container.container.color
+  static const String containerColor = '0xFF4F378B';
+
+  /// md.comp.fab.primary-container.focused.icon.color
+  static const String focusedIconColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.focused.state-layer.color
+  static const String focusedStateLayerColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.hovered.icon.color
+  static const String hoveredIconColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.hovered.state-layer.color
+  static const String hoveredStateLayerColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.icon.color
+  static const String iconColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.pressed.icon.color
+  static const String pressedIconColor = '0xFFEADDFF';
+
+  /// md.comp.fab.primary-container.pressed.state-layer.color
+  static const String pressedStateLayerColor = '0xFFEADDFF';
+}

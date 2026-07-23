@@ -1,0 +1,22 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.1.2
+
+class TokenAppBarLightMediumContrast {
+  /// md.comp.app-bar.leading-icon.color
+  static const String leadingIconColor = '0xFF000000';
+
+  /// md.comp.app-bar.search.label.color
+  static const String searchLabelColor = '0xFF322F37';
+
+  /// md.comp.app-bar.subtitle.color
+  static const String subtitleColor = '0xFF322F37';
+
+  /// md.comp.app-bar.title.color
+  static const String titleColor = '0xFF000000';
+
+  /// md.comp.app-bar.trailing-icon.color
+  static const String trailingIconColor = '0xFF322F37';
+}

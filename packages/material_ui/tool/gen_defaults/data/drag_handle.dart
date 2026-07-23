@@ -2,23 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 36.0.6
+// Version: 38.1.0
 
-import 'color_role.dart';
 import 'shape_struct.dart';
 
 class TokenDragHandle {
-  /// md.comp.drag-handle.color
-  static const TokenColorRole color = TokenColorRole.outline;
-
   /// md.comp.drag-handle.container.width
   static const double containerWidth = 24.00;
 
   /// md.comp.drag-handle.elevation
   static const double elevation = 0.00;
-
-  /// md.comp.drag-handle.focus.state-layer.color
-  static const TokenColorRole focusStateLayerColor = TokenColorRole.inverseOnSurface;
 
   /// md.comp.drag-handle.focus.state-layer.opacity
   static const double focusStateLayerOpacity = 0.10;
@@ -26,14 +19,8 @@ class TokenDragHandle {
   /// md.comp.drag-handle.height
   static const double height = 48.00;
 
-  /// md.comp.drag-handle.hover.state-layer.color
-  static const TokenColorRole hoverStateLayerColor = TokenColorRole.inverseOnSurface;
-
   /// md.comp.drag-handle.hover.state-layer.opacity
   static const double hoverStateLayerOpacity = 0.08;
-
-  /// md.comp.drag-handle.pressed.color
-  static const TokenColorRole pressedColor = TokenColorRole.onSurface;
 
   /// md.comp.drag-handle.pressed.elevation
   static const double pressedElevation = 0.00;

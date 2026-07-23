@@ -1,0 +1,36 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.1.2
+
+import 'shape_struct.dart';
+
+class TokenProgressIndicatorDefault {
+  /// md.comp.progress-indicator.active-indicator.shape
+  static const ShapeStruct activeIndicatorShape = ShapeStruct(
+    family: 'SHAPE_FAMILY_CIRCULAR',
+    topLeft: 0.00,
+    topRight: 0.00,
+    bottomLeft: 0.00,
+    bottomRight: 0.00,
+  );
+
+  /// md.comp.progress-indicator.stop-indicator.shape
+  static const ShapeStruct stopIndicatorShape = ShapeStruct(
+    family: 'SHAPE_FAMILY_CIRCULAR',
+    topLeft: 0.00,
+    topRight: 0.00,
+    bottomLeft: 0.00,
+    bottomRight: 0.00,
+  );
+
+  /// md.comp.progress-indicator.track.shape
+  static const ShapeStruct trackShape = ShapeStruct(
+    family: 'SHAPE_FAMILY_CIRCULAR',
+    topLeft: 0.00,
+    topRight: 0.00,
+    bottomLeft: 0.00,
+    bottomRight: 0.00,
+  );
+}

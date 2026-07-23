@@ -1,0 +1,13 @@
+// Copyright 2013 The Flutter Authors.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Version: 38.1.2
+
+class TokenGlassIconButtonDarkMediumContrast {
+  /// md.comp.glass.icon-button.standard.pressed.state-layer.color
+  static const String standardPressedStateLayerColor = '0xFFE7E0EC';
+
+  /// md.comp.glass.icon-button.standard.unselected.pressed.state-layer.color
+  static const String standardUnselectedPressedStateLayerColor = '0xFFE7E0EC';
+}
