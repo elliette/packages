@@ -2,9 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.2
+// Version: 38.1.12
 
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenNavRailItemHorizontal {
@@ -21,5 +20,11 @@ class TokenNavRailItemHorizontal {
   static const double iconLabelSpace = 8.00;
 
   /// md.comp.nav-rail.item.horizontal.label-text.font
-  static const TypescaleStruct labelTextFont = TokenTypescale.labelLarge;
+  static const TypescaleStruct labelTextFont = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 }
