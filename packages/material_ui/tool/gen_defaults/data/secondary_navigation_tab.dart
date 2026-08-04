@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenSecondaryNavigationTab {
@@ -72,7 +71,13 @@ class TokenSecondaryNavigationTab {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.secondary-navigation-tab.label-text.type
-  static const TypescaleStruct labelTextType = TokenTypescale.titleSmall;
+  static const TypescaleStruct labelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.secondary-navigation-tab.pressed.label-text.color
   static const TokenColorRole pressedLabelTextColor = TokenColorRole.onSurface;

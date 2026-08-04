@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenFilledTextField {
@@ -234,13 +233,25 @@ class TokenFilledTextField {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.filled-text-field.input-text.type
-  static const TypescaleStruct inputTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct inputTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.filled-text-field.label-text.color
   static const TokenColorRole labelTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.filled-text-field.label-text.type
-  static const TypescaleStruct labelTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct labelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.filled-text-field.leading-icon.color
   static const TokenColorRole leadingIconColor =
@@ -254,7 +265,13 @@ class TokenFilledTextField {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.filled-text-field.supporting-text.type
-  static const TypescaleStruct supportingTextType = TokenTypescale.bodySmall;
+  static const TypescaleStruct supportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 12.00,
+    fontWeight: 400,
+    lineHeight: 16.00,
+    letterSpacing: 0.40,
+  );
 
   /// md.comp.filled-text-field.trailing-icon.color
   static const TokenColorRole trailingIconColor =

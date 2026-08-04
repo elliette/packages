@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenFullScreenDialog {
@@ -52,8 +51,13 @@ class TokenFullScreenDialog {
       TokenColorRole.primary;
 
   /// md.comp.full-screen-dialog.header.action.label-text.type
-  static const TypescaleStruct headerActionLabelTextType =
-      TokenTypescale.labelLarge;
+  static const TypescaleStruct headerActionLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.full-screen-dialog.header.action.pressed.label-text.color
   static const TokenColorRole headerActionPressedLabelTextColor =
@@ -79,7 +83,13 @@ class TokenFullScreenDialog {
   static const TokenColorRole headerHeadlineColor = TokenColorRole.onSurface;
 
   /// md.comp.full-screen-dialog.header.headline.type
-  static const TypescaleStruct headerHeadlineType = TokenTypescale.titleLarge;
+  static const TypescaleStruct headerHeadlineType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 22.00,
+    fontWeight: 400,
+    lineHeight: 28.00,
+    letterSpacing: 0.00,
+  );
 
   /// md.comp.full-screen-dialog.header.icon.color
   static const TokenColorRole headerIconColor = TokenColorRole.onSurface;

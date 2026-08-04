@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenSuggestionChip {
@@ -127,7 +126,13 @@ class TokenSuggestionChip {
   static const TokenColorRole labelTextColor = TokenColorRole.onSurfaceVariant;
 
   /// md.comp.suggestion-chip.label-text.type
-  static const TypescaleStruct labelTextType = TokenTypescale.labelLarge;
+  static const TypescaleStruct labelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.suggestion-chip.pressed.label-text.color
   static const TokenColorRole pressedLabelTextColor =

@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenBadge {
@@ -20,7 +19,13 @@ class TokenBadge {
   static const TokenColorRole largeLabelTextColor = TokenColorRole.onError;
 
   /// md.comp.badge.large.label-text.type
-  static const TypescaleStruct largeLabelTextType = TokenTypescale.labelSmall;
+  static const TypescaleStruct largeLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 11.00,
+    fontWeight: 500,
+    lineHeight: 16.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.badge.large.shape
   static const ShapeStruct largeShape = ShapeStruct(

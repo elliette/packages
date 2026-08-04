@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenSearchBar {
@@ -100,7 +99,13 @@ class TokenSearchBar {
   static const TokenColorRole inputTextColor = TokenColorRole.onSurface;
 
   /// md.comp.search-bar.input-text.type
-  static const TypescaleStruct inputTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct inputTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.search-bar.leading-icon.color
   static const TokenColorRole leadingIconColor = TokenColorRole.onSurface;
@@ -126,7 +131,13 @@ class TokenSearchBar {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.search-bar.supporting-text.type
-  static const TypescaleStruct supportingTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct supportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.search-bar.trailing-icon.color
   static const TokenColorRole trailingIconColor =

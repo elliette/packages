@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenDatePickerDocked {
@@ -54,7 +53,13 @@ class TokenDatePickerDocked {
   static const double dateHoverStateLayerOpacity = 0.08;
 
   /// md.comp.date-picker.docked.date.label-text.type
-  static const TypescaleStruct dateLabelTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct dateLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.date-picker.docked.date.pressed.state-layer.opacity
   static const double datePressedStateLayerOpacity = 0.10;
@@ -210,8 +215,13 @@ class TokenDatePickerDocked {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.docked.menu-button.label-text.type
-  static const TypescaleStruct menuButtonLabelTextType =
-      TokenTypescale.labelLarge;
+  static const TypescaleStruct menuButtonLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.date-picker.docked.menu-button.pressed.icon.color
   static const TokenColorRole menuButtonPressedIconColor =
@@ -258,8 +268,13 @@ class TokenDatePickerDocked {
       TokenColorRole.onSurface;
 
   /// md.comp.date-picker.docked.menu.list-item.label-text.type
-  static const TypescaleStruct menuListItemLabelTextType =
-      TokenTypescale.bodyLarge;
+  static const TypescaleStruct menuListItemLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.date-picker.docked.menu.list-item.pressed.label-text.color
   static const TokenColorRole menuListItemPressedLabelTextColor =
@@ -299,5 +314,11 @@ class TokenDatePickerDocked {
   static const TokenColorRole weekdaysLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.date-picker.docked.weekdays.label-text.type
-  static const TypescaleStruct weekdaysLabelTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct weekdaysLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 }

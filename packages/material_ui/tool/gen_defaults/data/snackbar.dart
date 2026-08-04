@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenSnackbar {
@@ -37,7 +36,13 @@ class TokenSnackbar {
       TokenColorRole.inversePrimary;
 
   /// md.comp.snackbar.action.label-text.type
-  static const TypescaleStruct actionLabelTextType = TokenTypescale.labelLarge;
+  static const TypescaleStruct actionLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.snackbar.action.pressed.label-text.color
   static const TokenColorRole actionPressedLabelTextColor =
@@ -112,7 +117,13 @@ class TokenSnackbar {
       TokenColorRole.inverseOnSurface;
 
   /// md.comp.snackbar.supporting-text.type
-  static const TypescaleStruct supportingTextType = TokenTypescale.bodyMedium;
+  static const TypescaleStruct supportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 400,
+    lineHeight: 20.00,
+    letterSpacing: 0.25,
+  );
 
   /// md.comp.snackbar.with-single-line.container.height
   static const double withSingleLineContainerHeight = 48.00;

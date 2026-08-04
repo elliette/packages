@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenSheetSide {
@@ -85,7 +84,13 @@ class TokenSheetSide {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.sheet.side.docked.headline.type
-  static const TypescaleStruct dockedHeadlineType = TokenTypescale.titleLarge;
+  static const TypescaleStruct dockedHeadlineType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 22.00,
+    fontWeight: 400,
+    lineHeight: 28.00,
+    letterSpacing: 0.00,
+  );
 
   /// md.comp.sheet.side.docked.modal.container.color
   static const TokenColorRole dockedModalContainerColor =

@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenDatePickerModal {
@@ -54,7 +53,13 @@ class TokenDatePickerModal {
   static const double dateHoverStateLayerOpacity = 0.08;
 
   /// md.comp.date-picker.modal.date.label-text.type
-  static const TypescaleStruct dateLabelTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct dateLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.date-picker.modal.date.pressed.state-layer.opacity
   static const double datePressedStateLayerOpacity = 0.10;
@@ -143,16 +148,26 @@ class TokenDatePickerModal {
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.header.headline.type
-  static const TypescaleStruct headerHeadlineType =
-      TokenTypescale.headlineLarge;
+  static const TypescaleStruct headerHeadlineType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 32.00,
+    fontWeight: 400,
+    lineHeight: 40.00,
+    letterSpacing: 0.00,
+  );
 
   /// md.comp.date-picker.modal.header.supporting-text.color
   static const TokenColorRole headerSupportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.header.supporting-text.type
-  static const TypescaleStruct headerSupportingTextType =
-      TokenTypescale.labelLarge;
+  static const TypescaleStruct headerSupportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.date-picker.modal.range-selection.active-indicator.container.color
   static const TokenColorRole rangeSelectionActiveIndicatorContainerColor =
@@ -213,21 +228,38 @@ class TokenDatePickerModal {
 
   /// md.comp.date-picker.modal.range-selection.header.headline.type
   static const TypescaleStruct rangeSelectionHeaderHeadlineType =
-      TokenTypescale.titleLarge;
+      TypescaleStruct(
+        fontFamily: 'Roboto',
+        fontSize: 22.00,
+        fontWeight: 400,
+        lineHeight: 28.00,
+        letterSpacing: 0.00,
+      );
 
   /// md.comp.date-picker.modal.range-selection.month.subhead.color
   static const TokenColorRole rangeSelectionMonthSubheadColor =
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.date-picker.modal.range-selection.month.subhead.type
-  static const TypescaleStruct rangeSelectionMonthSubheadType =
-      TokenTypescale.titleSmall;
+  static const TypescaleStruct rangeSelectionMonthSubheadType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.date-picker.modal.weekdays.label-text.color
   static const TokenColorRole weekdaysLabelTextColor = TokenColorRole.onSurface;
 
   /// md.comp.date-picker.modal.weekdays.label-text.type
-  static const TypescaleStruct weekdaysLabelTextType = TokenTypescale.bodyLarge;
+  static const TypescaleStruct weekdaysLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.date-picker.modal.year-selection.year.container.height
   static const double yearSelectionYearContainerHeight = 36.00;
@@ -242,8 +274,13 @@ class TokenDatePickerModal {
   static const double yearSelectionYearHoverStateLayerOpacity = 0.08;
 
   /// md.comp.date-picker.modal.year-selection.year.label-text.type
-  static const TypescaleStruct yearSelectionYearLabelTextType =
-      TokenTypescale.bodyLarge;
+  static const TypescaleStruct yearSelectionYearLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 16.00,
+    fontWeight: 400,
+    lineHeight: 24.00,
+    letterSpacing: 0.50,
+  );
 
   /// md.comp.date-picker.modal.year-selection.year.pressed.state-layer.opacity
   static const double yearSelectionYearPressedStateLayerOpacity = 0.10;

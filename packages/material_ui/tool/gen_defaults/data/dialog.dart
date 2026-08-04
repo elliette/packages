@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenDialog {
@@ -36,7 +35,13 @@ class TokenDialog {
   static const TokenColorRole actionLabelTextColor = TokenColorRole.primary;
 
   /// md.comp.dialog.action.label-text.type
-  static const TypescaleStruct actionLabelTextType = TokenTypescale.labelLarge;
+  static const TypescaleStruct actionLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 
   /// md.comp.dialog.action.pressed.label-text.color
   static const TokenColorRole actionPressedLabelTextColor =
@@ -69,14 +74,26 @@ class TokenDialog {
   static const TokenColorRole headlineColor = TokenColorRole.onSurface;
 
   /// md.comp.dialog.headline.type
-  static const TypescaleStruct headlineType = TokenTypescale.headlineSmall;
+  static const TypescaleStruct headlineType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 24.00,
+    fontWeight: 400,
+    lineHeight: 32.00,
+    letterSpacing: 0.00,
+  );
 
   /// md.comp.dialog.supporting-text.color
   static const TokenColorRole supportingTextColor =
       TokenColorRole.onSurfaceVariant;
 
   /// md.comp.dialog.supporting-text.type
-  static const TypescaleStruct supportingTextType = TokenTypescale.bodyMedium;
+  static const TypescaleStruct supportingTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 400,
+    lineHeight: 20.00,
+    letterSpacing: 0.25,
+  );
 
   /// md.comp.dialog.with-icon.icon.color
   static const TokenColorRole withIconIconColor = TokenColorRole.secondary;

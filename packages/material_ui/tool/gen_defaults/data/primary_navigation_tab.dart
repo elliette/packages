@@ -2,11 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.1.12
+// Version: 38.1.23
 
 import 'color_role.dart';
 import 'shape_struct.dart';
-import 'typescale.dart';
 import 'typescale_struct.dart';
 
 class TokenPrimaryNavigationTab {
@@ -164,6 +163,11 @@ class TokenPrimaryNavigationTab {
       TokenColorRole.onSurface;
 
   /// md.comp.primary-navigation-tab.with-label-text.label-text.type
-  static const TypescaleStruct withLabelTextLabelTextType =
-      TokenTypescale.titleSmall;
+  static const TypescaleStruct withLabelTextLabelTextType = TypescaleStruct(
+    fontFamily: 'Roboto',
+    fontSize: 14.00,
+    fontWeight: 500,
+    lineHeight: 20.00,
+    letterSpacing: 0.10,
+  );
 }
