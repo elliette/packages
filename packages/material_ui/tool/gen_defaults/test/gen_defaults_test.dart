@@ -5,14 +5,15 @@
 import 'dart:io';
 
 import 'package:test/test.dart';
+
 import '../data/color_role.dart';
 import '../data/shape_struct.dart';
 import '../data/typescale.dart';
 import '../data/typescale_emphasized.dart';
 import '../templates/action_chip_template.dart';
 import '../templates/app_bar_template.dart';
-import '../templates/banner_template.dart';
 import '../templates/badge_template.dart';
+import '../templates/banner_template.dart';
 import '../templates/bottom_sheet_template.dart';
 import '../templates/template.dart';
 import 'test_fixtures/test_templates.dart';
@@ -89,6 +90,15 @@ void main() {
       expect(
         template.textStyle(TokenTypescaleEmphasized.titleMedium, '_textTheme'),
         '_textTheme.titleMediumEmphasized',
+      );
+    });
+
+    test('formatTypeName formats token names into camelCase', () {
+      final template = IconButtonTemplateM3(testPath());
+      expect(template.formatTypeName('body-large'), 'bodyLarge');
+      expect(
+        template.formatTypeName('md.sys.typescale.emphasized.body-large'),
+        'bodyLargeEmphasized',
       );
     });
 
