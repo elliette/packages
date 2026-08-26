@@ -63,7 +63,23 @@ In these instructions, placeholders are used for the component name. Please subs
    // END GENERATED TOKEN PROPERTIES - ComponentName
    ```
 
-5. Make the necessary changes to `tool/gen_defaults/templates/{{COMPONENT_NAME}}_template.dart`.
+5. Mark the generated code as part of the parent file.
+   After the copyright header, add the following:
+
+   ```dart
+   // Do not edit by hand. The code is generated from data in the Material
+   // Design token database by the script:
+   //   packages/material_ui/tool/gen_defaults/bin/gen_defaults.dart.
+   part of '../{{PARENT_FILE}}.dart';
+   ```
+
+6. Commit creating the part files for the parent and child.
+   ```bash
+   git add -A
+   git commit -m "Mark generated code as a part file"
+   ```
+
+7. Make the necessary changes to `tool/gen_defaults/templates/{{COMPONENT_NAME}}_template.dart`.
 
    These include:
    - Template class extends `TokenTemplateM3` instead of `TokenTemplate`

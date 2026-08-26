@@ -4,6 +4,8 @@
 
 import 'template.dart';
 
+part 'generated/typography_defaults_m3.g.dart';
+
 class TypographyTemplate extends TokenTemplate {
   const TypographyTemplate(super.blockName, super.fileName, super.tokens);
 
