@@ -931,6 +931,142 @@ skip/b
         ]),
       );
     });
+
+    group('custom-sharding-cost', () {
+      test('topLevelOnly only loops over top-level packages assigned to shard', () async {
+        final RepositoryPackage pkg1 = createFakePackage('package1', packagesDir);
+        final RepositoryPackage pkg2 = createFakePackage(
+          'package2',
+          packagesDir,
+          examples: <String>[],
+        );
+
+        final File costFile = packagesDir.parent.childFile('costs.yaml');
+        costFile.writeAsStringSync('''
+package1: 50
+package1/example: 30
+package2: 20
+''');
+
+        // Shard 0 gets package1 (50)
+        // Shard 1 gets package1/example (30), package2 (20)
+        final TestPackageLoopingCommand shard0Command = createTestCommand();
+        await runCommand(
+          shard0Command,
+          arguments: <String>[
+            '--shardIndex=0',
+            '--shardCount=2',
+            '--custom-sharding-cost=${costFile.path}',
+          ],
+        );
+        expect(shard0Command.checkedPackages, <String>[pkg1.path]);
+
+        final TestPackageLoopingCommand shard1Command = createTestCommand();
+        await runCommand(
+          shard1Command,
+          arguments: <String>[
+            '--shardIndex=1',
+            '--shardCount=2',
+            '--custom-sharding-cost=${costFile.path}',
+          ],
+        );
+        // Shard 1 only has pkg2 as top level (pkg1/example is an example subpackage, not top level).
+        expect(shard1Command.checkedPackages, <String>[pkg2.path]);
+      });
+
+      test(
+        'includeExamples loops over top-level packages and examples assigned to shard',
+        () async {
+          final RepositoryPackage pkg1 = createFakePackage('package1', packagesDir);
+          final RepositoryPackage pkg1Example = pkg1.getExamples().first;
+          final RepositoryPackage pkg2 = createFakePackage(
+            'package2',
+            packagesDir,
+            examples: <String>[],
+          );
+
+          final File costFile = packagesDir.parent.childFile('costs.yaml');
+          costFile.writeAsStringSync('''
+package1: 50
+package1/example: 30
+package2: 20
+''');
+
+          // Shard 0 gets package1 (50)
+          // Shard 1 gets package1/example (30), package2 (20)
+          final TestPackageLoopingCommand shard0Command = createTestCommand(
+            packageLoopingType: PackageLoopingType.includeExamples,
+          );
+          await runCommand(
+            shard0Command,
+            arguments: <String>[
+              '--shardIndex=0',
+              '--shardCount=2',
+              '--custom-sharding-cost=${costFile.path}',
+            ],
+          );
+          expect(shard0Command.checkedPackages, <String>[pkg1.path]);
+
+          final TestPackageLoopingCommand shard1Command = createTestCommand(
+            packageLoopingType: PackageLoopingType.includeExamples,
+          );
+          await runCommand(
+            shard1Command,
+            arguments: <String>[
+              '--shardIndex=1',
+              '--shardCount=2',
+              '--custom-sharding-cost=${costFile.path}',
+            ],
+          );
+          expect(shard1Command.checkedPackages, <String>[pkg1Example.path, pkg2.path]);
+        },
+      );
+
+      test('includeAllSubpackages loops over all packages assigned to shard', () async {
+        final RepositoryPackage pkg1 = createFakePackage('package1', packagesDir);
+        final RepositoryPackage pkg1Example = pkg1.getExamples().first;
+        final RepositoryPackage pkg2 = createFakePackage(
+          'package2',
+          packagesDir,
+          examples: <String>[],
+        );
+
+        final File costFile = packagesDir.parent.childFile('costs.yaml');
+        costFile.writeAsStringSync('''
+package1: 50
+package1/example: 30
+package2: 20
+''');
+
+        // Shard 0 gets package1 (50)
+        // Shard 1 gets package1/example (30), package2 (20)
+        final TestPackageLoopingCommand shard0Command = createTestCommand(
+          packageLoopingType: PackageLoopingType.includeAllSubpackages,
+        );
+        await runCommand(
+          shard0Command,
+          arguments: <String>[
+            '--shardIndex=0',
+            '--shardCount=2',
+            '--custom-sharding-cost=${costFile.path}',
+          ],
+        );
+        expect(shard0Command.checkedPackages, <String>[pkg1.path]);
+
+        final TestPackageLoopingCommand shard1Command = createTestCommand(
+          packageLoopingType: PackageLoopingType.includeAllSubpackages,
+        );
+        await runCommand(
+          shard1Command,
+          arguments: <String>[
+            '--shardIndex=1',
+            '--shardCount=2',
+            '--custom-sharding-cost=${costFile.path}',
+          ],
+        );
+        expect(shard1Command.checkedPackages, <String>[pkg1Example.path, pkg2.path]);
+      });
+    });
   });
 }
 

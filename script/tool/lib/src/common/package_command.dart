@@ -10,6 +10,7 @@ import 'package:file/file.dart';
 import 'package:git/git.dart';
 import 'package:path/path.dart' as p;
 import 'package:platform/platform.dart';
+import 'package:yaml/yaml.dart';
 
 import 'core.dart';
 import 'file_utils.dart';
@@ -69,6 +70,16 @@ abstract class PackageCommand extends Command<void> {
       help: 'Specifies the number of shards into which packages are divided.',
       valueHelp: 'n',
       defaultsTo: '1',
+    );
+    argParser.addOption(
+      _customShardingCostArg,
+      help:
+          'A path to a YAML file mapping package/subpackage names or relative '
+          'paths to relative cost units for weighted sharding.\n\n'
+          'Unlisted packages default to a cost of 1.0. When provided, packages '
+          'and subpackages are sharded using cost-weighted greedy bin-packing.',
+      valueHelp: 'path/to/cost_map.yaml',
+      aliases: <String>[_shardWeightsAliasArg],
     );
     argParser.addFlag(
       _exactMatchOnlyArg,
@@ -186,6 +197,8 @@ abstract class PackageCommand extends Command<void> {
   // Sharding.
   static const String _shardCountArg = 'shardCount';
   static const String _shardIndexArg = 'shardIndex';
+  static const String _customShardingCostArg = 'custom-sharding-cost';
+  static const String _shardWeightsAliasArg = 'shard-weights';
   // Utility.
   static const String _logTimingArg = 'log-timing';
 
@@ -336,6 +349,108 @@ abstract class PackageCommand extends Command<void> {
     return excludedPackages;
   }
 
+  Map<String, double>? _customShardingCosts;
+  bool _customShardingCostsParsed = false;
+
+  /// Returns the custom sharding cost map, if provided.
+  Map<String, double>? get customShardingCosts {
+    if (_customShardingCostsParsed) {
+      return _customShardingCosts;
+    }
+    _customShardingCostsParsed = true;
+    final String? costFilePath = getNullableStringArg(_customShardingCostArg);
+    if (costFilePath == null) {
+      return null;
+    }
+    final File costFile = rootDir.fileSystem.file(costFilePath);
+    if (!costFile.existsSync()) {
+      printError('Cost file "$costFilePath" does not exist.');
+      throw ToolExit(exitInvalidArguments);
+    }
+    final Object? yamlContent = loadYaml(costFile.readAsStringSync());
+    if (yamlContent is! YamlMap) {
+      printError('Cost file "$costFilePath" must be a YAML map of package names to numeric costs.');
+      throw ToolExit(exitInvalidArguments);
+    }
+    final costs = <String, double>{};
+    for (final MapEntry<dynamic, dynamic> entry in yamlContent.entries) {
+      final key = entry.key.toString();
+      final val = entry.value as num?;
+      if (val != null) {
+        costs[key] = val.toDouble();
+      }
+    }
+    _customShardingCosts = costs;
+    return _customShardingCosts;
+  }
+
+  double _getPackageCost(RepositoryPackage package, Map<String, double> costs) {
+    final String relPackages = path.relative(package.path, from: packagesDir.path);
+    final String relRoot = path.relative(package.path, from: rootDir.path);
+    final String base = path.basename(package.path);
+    final String display = package.displayName;
+
+    for (final candidate in <String>[display, relPackages, relRoot, base]) {
+      if (costs.containsKey(candidate)) {
+        return costs[candidate]!;
+      }
+    }
+    return 1.0;
+  }
+
+  List<PackageEnumerationEntry> _shardPackageEntries(
+    List<PackageEnumerationEntry> entries, {
+    Map<String, double>? costs,
+  }) {
+    if (entries.isEmpty || shardCount == 1) {
+      return shardIndex == 0 ? entries : <PackageEnumerationEntry>[];
+    }
+
+    if (costs == null) {
+      final int shardSize =
+          entries.length ~/ shardCount + (entries.length % shardCount == 0 ? 0 : 1);
+      final int start = min(shardIndex * shardSize, entries.length);
+      final int end = min(start + shardSize, entries.length);
+      return entries.sublist(start, end);
+    }
+
+    // Weighted Greedy LPT (Longest Processing Time first)
+    final List<({PackageEnumerationEntry entry, double cost})> weighted = entries.map((entry) {
+      return (entry: entry, cost: _getPackageCost(entry.package, costs));
+    }).toList();
+
+    weighted.sort((a, b) {
+      final int costComparison = b.cost.compareTo(a.cost);
+      if (costComparison != 0) {
+        return costComparison;
+      }
+      return a.entry.package.path.compareTo(b.entry.package.path);
+    });
+
+    final shardCosts = List<double>.filled(shardCount, 0.0);
+    final shardBuckets = List<List<PackageEnumerationEntry>>.generate(
+      shardCount,
+      (_) => <PackageEnumerationEntry>[],
+    );
+
+    for (final item in weighted) {
+      var minShard = 0;
+      double minCost = shardCosts[0];
+      for (var i = 1; i < shardCount; ++i) {
+        if (shardCosts[i] < minCost) {
+          minCost = shardCosts[i];
+          minShard = i;
+        }
+      }
+      shardBuckets[minShard].add(item.entry);
+      shardCosts[minShard] += item.cost;
+    }
+
+    final List<PackageEnumerationEntry> myShard = shardBuckets[shardIndex];
+    myShard.sort((a, b) => a.package.path.compareTo(b.package.path));
+    return myShard;
+  }
+
   /// Returns the root diretories of the packages involved in this command
   /// execution.
   ///
@@ -346,23 +461,32 @@ abstract class PackageCommand extends Command<void> {
   /// By default, packages excluded via --exclude will not be in the stream, but
   /// they can be included by passing false for [filterExcluded].
   Stream<PackageEnumerationEntry> getTargetPackages({bool filterExcluded = true}) async* {
-    // To avoid assuming consistency of `Directory.list` across command
-    // invocations, we collect and sort the package folders before sharding.
-    // This is considered an implementation detail which is why the API still
-    // uses streams.
-    final List<PackageEnumerationEntry> allPackages = await _getAllPackages().toList();
-    allPackages.sort(
-      (PackageEnumerationEntry p1, PackageEnumerationEntry p2) =>
-          p1.package.path.compareTo(p2.package.path),
-    );
-    final int shardSize =
-        allPackages.length ~/ shardCount + (allPackages.length % shardCount == 0 ? 0 : 1);
-    final int start = min(shardIndex * shardSize, allPackages.length);
-    final int end = min(start + shardSize, allPackages.length);
-
-    for (final PackageEnumerationEntry package in allPackages.sublist(start, end)) {
-      if (!(filterExcluded && package.excluded)) {
-        yield package;
+    final Map<String, double>? costs = customShardingCosts;
+    if (costs == null) {
+      final List<PackageEnumerationEntry> allPackages = await _getAllPackages().toList();
+      allPackages.sort(
+        (PackageEnumerationEntry p1, PackageEnumerationEntry p2) =>
+            p1.package.path.compareTo(p2.package.path),
+      );
+      final List<PackageEnumerationEntry> sharded = _shardPackageEntries(allPackages);
+      for (final package in sharded) {
+        if (!(filterExcluded && package.excluded)) {
+          yield package;
+        }
+      }
+    } else {
+      final List<PackageEnumerationEntry> allPackagesAndSubpackages =
+          await _getAllPackagesAndSubpackages().toList();
+      final List<PackageEnumerationEntry> sharded = _shardPackageEntries(
+        allPackagesAndSubpackages,
+        costs: costs,
+      );
+      for (final entry in sharded) {
+        if (entry.package.isTopLevel) {
+          if (!(filterExcluded && entry.excluded)) {
+            yield entry;
+          }
+        }
       }
     }
   }
@@ -600,9 +724,36 @@ abstract class PackageCommand extends Command<void> {
   Stream<PackageEnumerationEntry> getTargetPackagesAndSubpackages({
     bool filterExcluded = true,
   }) async* {
-    await for (final PackageEnumerationEntry package in getTargetPackages(
-      filterExcluded: filterExcluded,
-    )) {
+    final Map<String, double>? costs = customShardingCosts;
+    if (costs == null) {
+      await for (final PackageEnumerationEntry package in getTargetPackages(
+        filterExcluded: filterExcluded,
+      )) {
+        yield package;
+        yield* Stream<PackageEnumerationEntry>.fromIterable(
+          package.package.getSubpackages().map(
+            (RepositoryPackage subPackage) =>
+                PackageEnumerationEntry(subPackage, excluded: package.excluded),
+          ),
+        );
+      }
+    } else {
+      final List<PackageEnumerationEntry> allPackagesAndSubpackages =
+          await _getAllPackagesAndSubpackages().toList();
+      final List<PackageEnumerationEntry> sharded = _shardPackageEntries(
+        allPackagesAndSubpackages,
+        costs: costs,
+      );
+      for (final entry in sharded) {
+        if (!(filterExcluded && entry.excluded)) {
+          yield entry;
+        }
+      }
+    }
+  }
+
+  Stream<PackageEnumerationEntry> _getAllPackagesAndSubpackages() async* {
+    await for (final PackageEnumerationEntry package in _getAllPackages()) {
       yield package;
       yield* Stream<PackageEnumerationEntry>.fromIterable(
         package.package.getSubpackages().map(

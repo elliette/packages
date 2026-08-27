@@ -1,6 +1,7 @@
 ## NEXT
 
 * Adds support for batch release of pre-1.0 packages.
+* Adds `--custom-sharding-cost` argument to support cost-weighted greedy sharding of packages and subpackages.
 
 ## 0.14.4
 

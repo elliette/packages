@@ -189,7 +189,7 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: master
       version_file: flutter_master.version
-      package_sharding: "--shardIndex 0 --shardCount 3"
+      package_sharding: "--shardIndex 0 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
 
   - name: Linux_web web_dart_unit_test_shard_2 master
     recipe: packages/packages
@@ -198,7 +198,7 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: master
       version_file: flutter_master.version
-      package_sharding: "--shardIndex 1 --shardCount 3"
+      package_sharding: "--shardIndex 1 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
 
   - name: Linux_web web_dart_unit_test_shard_3 master
     recipe: packages/packages
@@ -207,7 +207,37 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: master
       version_file: flutter_master.version
-      package_sharding: "--shardIndex 2 --shardCount 3"
+      package_sharding: "--shardIndex 2 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+
+  - name: Linux_web web_dart_unit_test_shard_4 master
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: master
+      version_file: flutter_master.version
+      package_sharding: "--shardIndex 3 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+
+  - name: Linux_web web_dart_unit_test_shard_5 master
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: master
+      version_file: flutter_master.version
+      package_sharding: "--shardIndex 4 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+
+  - name: Linux_web web_dart_unit_test_shard_6 master
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: master
+      version_file: flutter_master.version
+      package_sharding: "--shardIndex 5 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
 
   - name: Linux_web web_dart_unit_test_shard_1 stable
     recipe: packages/packages
@@ -216,12 +246,12 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: stable
       version_file: flutter_stable.version
-      package_sharding: "--shardIndex 0 --shardCount 3"
+      package_sharding: "--shardIndex 0 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
       # TODO(mdebbar): Upgrade to Chrome 145 once Flutter stable includes the
       # upstream flutter_tools fixes for Chrome 145 (flutter/flutter#190155 and
       # flutter/flutter#190584) which pass --disable-search-engine-choice-screen
       # and --disable-background-timer-throttling; see https://github.com/flutter/flutter/issues/191299
-      dependencies: >-
+      dependencies: &chrome_and_driver_stable >-
         [
           {"dependency": "chrome_and_driver", "version": "version:125.0.6422.141"}
         ]
@@ -233,15 +263,8 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: stable
       version_file: flutter_stable.version
-      package_sharding: "--shardIndex 1 --shardCount 3"
-      # TODO(mdebbar): Upgrade to Chrome 145 once Flutter stable includes the
-      # upstream flutter_tools fixes for Chrome 145 (flutter/flutter#190155 and
-      # flutter/flutter#190584) which pass --disable-search-engine-choice-screen
-      # and --disable-background-timer-throttling; see https://github.com/flutter/flutter/issues/191299
-      dependencies: >-
-        [
-          {"dependency": "chrome_and_driver", "version": "version:125.0.6422.141"}
-        ]
+      package_sharding: "--shardIndex 1 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+      dependencies: *chrome_and_driver_stable
 
   - name: Linux_web web_dart_unit_test_shard_3 stable
     recipe: packages/packages
@@ -250,15 +273,41 @@ targets:
       target_file: web_dart_unit_tests.yaml
       channel: stable
       version_file: flutter_stable.version
-      package_sharding: "--shardIndex 2 --shardCount 3"
-      # TODO(mdebbar): Upgrade to Chrome 145 once Flutter stable includes the
-      # upstream flutter_tools fixes for Chrome 145 (flutter/flutter#190155 and
-      # flutter/flutter#190584) which pass --disable-search-engine-choice-screen
-      # and --disable-background-timer-throttling; see https://github.com/flutter/flutter/issues/191299
-      dependencies: >-
-        [
-          {"dependency": "chrome_and_driver", "version": "version:125.0.6422.141"}
-        ]
+      package_sharding: "--shardIndex 2 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+      dependencies: *chrome_and_driver_stable
+
+  - name: Linux_web web_dart_unit_test_shard_4 stable
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: stable
+      version_file: flutter_stable.version
+      package_sharding: "--shardIndex 3 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+      dependencies: *chrome_and_driver_stable
+
+  - name: Linux_web web_dart_unit_test_shard_5 stable
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: stable
+      version_file: flutter_stable.version
+      package_sharding: "--shardIndex 4 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+      dependencies: *chrome_and_driver_stable
+
+  - name: Linux_web web_dart_unit_test_shard_6 stable
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests.yaml
+      channel: stable
+      version_file: flutter_stable.version
+      package_sharding: "--shardIndex 5 --shardCount 6 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+      dependencies: *chrome_and_driver_stable
 
   # Wasm unit tests in master
   # TODO(stuartmorgan): Switch to testing wasm on master and stable and non-wasm
@@ -272,7 +321,7 @@ targets:
       target_file: web_dart_unit_tests_wasm.yaml
       channel: master
       version_file: flutter_master.version
-      package_sharding: "--shardIndex 0 --shardCount 2"
+      package_sharding: "--shardIndex 0 --shardCount 2 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
 
   - name: Linux_web web_dart_unit_test_wasm_shard_2 master
     recipe: packages/packages
@@ -281,7 +330,17 @@ targets:
       target_file: web_dart_unit_tests_wasm.yaml
       channel: master
       version_file: flutter_master.version
-      package_sharding: "--shardIndex 1 --shardCount 2"
+      package_sharding: "--shardIndex 1 --shardCount 2 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
+
+  - name: Linux_web web_dart_unit_test_wasm_shard_3 master
+    bringup: true
+    recipe: packages/packages
+    timeout: 60
+    properties:
+      target_file: web_dart_unit_tests_wasm.yaml
+      channel: master
+      version_file: flutter_master.version
+      package_sharding: "--shardIndex 2 --shardCount 3 --custom-sharding-cost=script/configs/dart_unit_tests_web_cost.yaml"
 
   - name: Linux analyze master
     recipe: packages/packages

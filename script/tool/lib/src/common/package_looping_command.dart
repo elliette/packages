@@ -135,23 +135,40 @@ abstract class PackageLoopingCommand extends PackageCommand {
   /// Note: Consistent behavior across commands whenever possibel is a goal for
   /// this tool, so this should be overridden only in rare cases.
   Stream<PackageEnumerationEntry> getPackagesToProcess() async* {
-    switch (packageLoopingType) {
-      case PackageLoopingType.topLevelOnly:
-        yield* getTargetPackages(filterExcluded: false);
-      case PackageLoopingType.includeExamples:
-        await for (final PackageEnumerationEntry packageEntry in getTargetPackages(
-          filterExcluded: false,
-        )) {
-          yield packageEntry;
-          yield* Stream<PackageEnumerationEntry>.fromIterable(
-            packageEntry.package.getExamples().map(
-              (RepositoryPackage package) =>
-                  PackageEnumerationEntry(package, excluded: packageEntry.excluded),
-            ),
-          );
-        }
-      case PackageLoopingType.includeAllSubpackages:
-        yield* getTargetPackagesAndSubpackages(filterExcluded: false);
+    if (customShardingCosts != null) {
+      switch (packageLoopingType) {
+        case PackageLoopingType.topLevelOnly:
+          yield* getTargetPackages(filterExcluded: false);
+        case PackageLoopingType.includeExamples:
+          await for (final PackageEnumerationEntry packageEntry in getTargetPackagesAndSubpackages(
+            filterExcluded: false,
+          )) {
+            if (packageEntry.package.isTopLevel || packageEntry.package.isExample) {
+              yield packageEntry;
+            }
+          }
+        case PackageLoopingType.includeAllSubpackages:
+          yield* getTargetPackagesAndSubpackages(filterExcluded: false);
+      }
+    } else {
+      switch (packageLoopingType) {
+        case PackageLoopingType.topLevelOnly:
+          yield* getTargetPackages(filterExcluded: false);
+        case PackageLoopingType.includeExamples:
+          await for (final PackageEnumerationEntry packageEntry in getTargetPackages(
+            filterExcluded: false,
+          )) {
+            yield packageEntry;
+            yield* Stream<PackageEnumerationEntry>.fromIterable(
+              packageEntry.package.getExamples().map(
+                (RepositoryPackage package) =>
+                    PackageEnumerationEntry(package, excluded: packageEntry.excluded),
+              ),
+            );
+          }
+        case PackageLoopingType.includeAllSubpackages:
+          yield* getTargetPackagesAndSubpackages(filterExcluded: false);
+      }
     }
   }
 

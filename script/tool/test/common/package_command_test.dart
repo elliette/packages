@@ -1414,6 +1414,95 @@ packages/b_package/lib/src/foo.dart
         );
       }
     });
+
+    test('distributes packages and subpackages according to custom cost map', () async {
+      final RepositoryPackage pkg1 = createFakePackage('package1', packagesDir);
+      final RepositoryPackage pkg1Example = pkg1.getExamples().first;
+      final RepositoryPackage pkg2 = createFakePackage(
+        'package2',
+        packagesDir,
+        examples: <String>[],
+      );
+      final RepositoryPackage pkg3 = createFakePackage(
+        'package3',
+        packagesDir,
+        examples: <String>[],
+      );
+      final RepositoryPackage pkg4 = createFakePackage(
+        'package4',
+        packagesDir,
+        examples: <String>[],
+      );
+
+      final File costFile = packagesDir.parent.childFile('costs.yaml');
+      costFile.writeAsStringSync('''
+package1: 50
+package1/example: 30
+package2: 20
+package3: 10
+''');
+
+      // Shard 0: package1 (50), package3 (10)
+      // Shard 1: package1/example (30), package2 (20), package4 (1, unlisted default)
+      final expectedShards = <List<RepositoryPackage>>[
+        <RepositoryPackage>[pkg1, pkg3],
+        <RepositoryPackage>[pkg1Example, pkg2, pkg4],
+      ];
+
+      for (var i = 0; i < expectedShards.length; ++i) {
+        final SamplePackageCommand localCommand = configureCommand(includeSubpackages: true);
+        final localRunner = CommandRunner<void>('common_command', 'Shard testing');
+        localRunner.addCommand(localCommand);
+
+        await runCapturingPrint(localRunner, <String>[
+          'sample',
+          '--shardIndex=$i',
+          '--shardCount=2',
+          '--custom-sharding-cost=${costFile.path}',
+        ]);
+        expect(
+          localCommand.plugins,
+          unorderedEquals(
+            expectedShards[i].map((RepositoryPackage package) => package.path).toList(),
+          ),
+        );
+      }
+    });
+
+    test('custom-sharding-cost throws ToolExit if cost file does not exist', () async {
+      final SamplePackageCommand localCommand = configureCommand();
+      final localRunner = CommandRunner<void>('common_command', 'Shard testing');
+      localRunner.addCommand(localCommand);
+
+      expect(
+        () => runCapturingPrint(localRunner, <String>[
+          'sample',
+          '--shardIndex=0',
+          '--shardCount=2',
+          '--custom-sharding-cost=non_existent_file.yaml',
+        ]),
+        throwsA(isA<ToolExit>()),
+      );
+    });
+
+    test('custom-sharding-cost throws ToolExit if cost file is not a map', () async {
+      final File costFile = packagesDir.parent.childFile('invalid_costs.yaml');
+      costFile.writeAsStringSync('- a\n- b\n');
+
+      final SamplePackageCommand localCommand = configureCommand();
+      final localRunner = CommandRunner<void>('common_command', 'Shard testing');
+      localRunner.addCommand(localCommand);
+
+      expect(
+        () => runCapturingPrint(localRunner, <String>[
+          'sample',
+          '--shardIndex=0',
+          '--shardCount=2',
+          '--custom-sharding-cost=${costFile.path}',
+        ]),
+        throwsA(isA<ToolExit>()),
+      );
+    });
   });
 }
 
