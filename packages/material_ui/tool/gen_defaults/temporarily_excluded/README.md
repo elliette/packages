@@ -61,7 +61,18 @@ In these instructions, placeholders are used for the component name. Please subs
    // END GENERATED TOKEN PROPERTIES - ComponentName
    ```
 
-5. Make the necessary changes to `tool/gen_defaults/templates/{{COMPONENT_NAME}}_template.dart`.
+5. Mark the generated code a part of the parent component.
+
+   In `lib/src/generated/{{COMPONENT_NAME}}_defaults_m3.g.dart` add the following below the copyright header:
+
+   ```dart
+   // Do not edit by hand. The code is generated from data in the Material
+   // Design token database by the script:
+   //   packages/material_ui/tool/gen_defaults/bin/gen_defaults.dart.
+   part of '../{{COMPONENT_NAME}}.dart';
+   ```
+
+6. Make the necessary changes to `tool/gen_defaults/templates/{{COMPONENT_NAME}}_template.dart`.
 
    These include:
    - Template class extends `TokenTemplateM3` instead of `TokenTemplate`
@@ -84,7 +95,7 @@ In these instructions, placeholders are used for the component name. Please subs
    > a TODO comment like: `// TODO(username): Using hard-coded value due to
    > missing token`. Hard-coded values should only be used as a last resort.
 
-6. Once the template compiles, uncomment it and its respective import in `packages/material_ui/tool/gen_defaults/bin/gen_defaults.dart`:
+7. Once the template compiles, uncomment it and its respective import in `packages/material_ui/tool/gen_defaults/bin/gen_defaults.dart`:
 
    ```dart
    import '../templates/{{COMPONENT_NAME}}_template.dart';
@@ -92,10 +103,10 @@ In these instructions, placeholders are used for the component name. Please subs
    const ComponentNameTemplateM3().generateFile(verbose: verbose);
    ```
 
-7. From `packages/material_ui`, run `gen_defaults` and compare the generated code.
+8. From `packages/material_ui`, run `gen_defaults` and compare the generated code.
 
    ```bash
    dart run tool/gen_defaults/bin/gen_defaults.dart
    ```
 
-8. Fill in the appropriate test case in `packages/material_ui/tool/gen_defaults/test/gen_defaults_test.dart`.
+9. Fill in the appropriate test case in `packages/material_ui/tool/gen_defaults/test/gen_defaults_test.dart`.

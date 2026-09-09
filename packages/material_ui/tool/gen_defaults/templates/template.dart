@@ -160,10 +160,20 @@ abstract class TokenTemplate {
 
   /// Generate a [TextTheme] text style name for the given component token.
   String textStyle(TypescaleStruct token, String prefix) {
-    final List<String> nameAttributes = token.name.split('.');
+    return '$prefix.${formatTypeName(token.name)}';
+  }
+
+  /// Formats a typescale token name into camelCase.
+  ///
+  /// Examples:
+  /// - `'body-large'` -> `'bodyLarge'`
+  /// - `'md.sys.typescale.body-large'` -> `'bodyLarge'`
+  /// - `'md.sys.typescale.emphasized.body-large'` -> `'bodyLargeEmphasized'`
+  String formatTypeName(String tokenName) {
+    final List<String> nameAttributes = tokenName.split('.');
     final String baseName = _joinAsCamelCase(nameAttributes.last.split('-'));
     final bool isEmphasized = nameAttributes.contains('emphasized');
-    return '$prefix.$baseName${isEmphasized ? 'Emphasized' : ''}';
+    return '$baseName${isEmphasized ? 'Emphasized' : ''}';
   }
 
   /// Converts a list of sub-strings into a single camelcased string.

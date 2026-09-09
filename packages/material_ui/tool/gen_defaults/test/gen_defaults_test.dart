@@ -48,10 +48,10 @@ import '../templates/bottom_sheet_template.dart';
 // import '../templates/surface_tint_template.dart';
 // import '../templates/switch_template.dart';
 // import '../templates/tabs_template.dart';
+import '../templates/template.dart';
 // import '../templates/text_field_template.dart';
 // import '../templates/time_picker_template.dart';
-// import '../templates/typography_template.dart';
-import '../templates/template.dart';
+import '../templates/typography_template.dart';
 import 'test_fixtures/test_templates.dart';
 
 void main() {
@@ -210,6 +210,15 @@ void main() {
             'Unsupported shape family type: SHAPE_FAMILY_UNKNOWN',
           ),
         ),
+      );
+    });
+
+    test('formatTypeName formats token names into camelCase', () {
+      final template = IconButtonTemplateM3(testPath());
+      expect(template.formatTypeName('body-large'), 'bodyLarge');
+      expect(
+        template.formatTypeName('md.sys.typescale.emphasized.body-large'),
+        'bodyLargeEmphasized',
       );
     });
 
@@ -467,8 +476,11 @@ void main() {
     });
 
     test('TypographyTemplateM3 emits M3 Typography defaults from tokens', () {
-      // Intentionally empty, will be implemented during migration. See:
-      // https://github.com/flutter/flutter/issues/187899
+      final String contents = const TypographyTemplateM3().generateContents('_M3Typography');
+      expect(contents, contains('class _M3Typography extends Typography'));
+      expect(contents, contains('static const TextTheme englishLike = TextTheme'));
+      expect(contents, contains('static const TextTheme dense = TextTheme'));
+      expect(contents, contains('static const TextTheme tall = TextTheme'));
     });
 
     test('will run dart format over the generated file', () {
