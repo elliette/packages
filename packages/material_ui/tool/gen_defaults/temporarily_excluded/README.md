@@ -12,8 +12,6 @@ In these instructions, placeholders are used for the component name. Please subs
 - `ComponentName`: the PascalCase name (e.g., `IconButton`).
 - `Component Name`: the title case name (e.g., `Icon Button`).
 
-> Currently all `gen_defaults` migration PRs should be branched off of and rebased against the `m3e_migration` branch, not `main`.
-
 > Please only format the files you edit.
 
 1. Select an unmigrated component listed in https://github.com/flutter/flutter/issues/187899.
