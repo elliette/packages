@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.2.31
+// Version: 38.2.82
 
 // dart format off
 import 'color_role.dart';
+import 'motion.dart';
 import 'shape_struct.dart';
 import 'typescale.dart';
 import 'typescale_struct.dart';
@@ -99,6 +100,9 @@ class TokenChips {
     bottomLeft: 8.00,
     bottomRight: 8.00,
   );
+
+  /// md.comp.chips.pressed.shape.motion
+  static const TokenMotion pressedShapeMotion = TokenMotion.springFastSpatial;
 
   /// md.comp.chips.selected.container.color
   static const TokenColorRole selectedContainerColor =

@@ -2,10 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Version: 38.2.31
+// Version: 38.2.82
 
 // dart format off
 import 'color_role.dart';
+import 'motion.dart';
 import 'shape_struct.dart';
 import 'typescale.dart';
 import 'typescale_struct.dart';
@@ -34,6 +35,10 @@ class TokenSearchBar {
 
   /// md.comp.search-bar.contained.leading-space
   static const double containedLeadingSpace = 4.00;
+
+  /// md.comp.search-bar.contained.motion.spring
+  static const TokenMotion containedMotionSpring =
+      TokenMotion.springFastSpatial;
 
   /// md.comp.search-bar.contained.no-actions.leading-space
   static const double containedNoActionsLeadingSpace = 16.00;
