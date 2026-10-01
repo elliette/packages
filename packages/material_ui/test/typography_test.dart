@@ -432,4 +432,236 @@ void main() {
     expect(textTheme.labelMedium!.color, light);
     expect(textTheme.labelSmall!.color, light);
   });
+
+  group('Material 3 Expressive', () {
+    TextStyle? emphasizedOf(TextTheme theme, String name) => switch (name) {
+      'displayLarge' => theme.displayLargeEmphasized,
+      'displayMedium' => theme.displayMediumEmphasized,
+      'displaySmall' => theme.displaySmallEmphasized,
+      'headlineLarge' => theme.headlineLargeEmphasized,
+      'headlineMedium' => theme.headlineMediumEmphasized,
+      'headlineSmall' => theme.headlineSmallEmphasized,
+      'titleLarge' => theme.titleLargeEmphasized,
+      'titleMedium' => theme.titleMediumEmphasized,
+      'titleSmall' => theme.titleSmallEmphasized,
+      'bodyLarge' => theme.bodyLargeEmphasized,
+      'bodyMedium' => theme.bodyMediumEmphasized,
+      'bodySmall' => theme.bodySmallEmphasized,
+      'labelLarge' => theme.labelLargeEmphasized,
+      'labelMedium' => theme.labelMediumEmphasized,
+      'labelSmall' => theme.labelSmallEmphasized,
+      _ => throw ArgumentError(name),
+    };
+
+    TextStyle? baselineOf(TextTheme theme, String name) => switch (name) {
+      'displayLarge' => theme.displayLarge,
+      'displayMedium' => theme.displayMedium,
+      'displaySmall' => theme.displaySmall,
+      'headlineLarge' => theme.headlineLarge,
+      'headlineMedium' => theme.headlineMedium,
+      'headlineSmall' => theme.headlineSmall,
+      'titleLarge' => theme.titleLarge,
+      'titleMedium' => theme.titleMedium,
+      'titleSmall' => theme.titleSmall,
+      'bodyLarge' => theme.bodyLarge,
+      'bodyMedium' => theme.bodyMedium,
+      'bodySmall' => theme.bodySmall,
+      'labelLarge' => theme.labelLarge,
+      'labelMedium' => theme.labelMedium,
+      'labelSmall' => theme.labelSmall,
+      _ => throw ArgumentError(name),
+    };
+
+    // Emphasized (name, fontSize, fontWeight, letterSpacing, height) values
+    // from https://m3.material.io/styles/typography/type-scale-tokens.
+    //
+    // This may need to be updated if the token values change.
+    const emphasizedSpec = <(String, double, FontWeight, double, double)>[
+      ('displayLarge', 57.0, FontWeight.w500, -0.25, 1.12),
+      ('displayMedium', 45.0, FontWeight.w500, 0.0, 1.16),
+      ('displaySmall', 36.0, FontWeight.w500, 0.0, 1.22),
+      ('headlineLarge', 32.0, FontWeight.w500, 0.0, 1.25),
+      ('headlineMedium', 28.0, FontWeight.w500, 0.0, 1.29),
+      ('headlineSmall', 24.0, FontWeight.w500, 0.0, 1.33),
+      ('titleLarge', 22.0, FontWeight.w500, 0.0, 1.27),
+      ('titleMedium', 16.0, FontWeight.w700, 0.15, 1.50),
+      ('titleSmall', 14.0, FontWeight.w700, 0.1, 1.43),
+      ('bodyLarge', 16.0, FontWeight.w500, 0.5, 1.50),
+      ('bodyMedium', 14.0, FontWeight.w500, 0.25, 1.43),
+      ('bodySmall', 12.0, FontWeight.w500, 0.4, 1.33),
+      ('labelLarge', 14.0, FontWeight.w700, 0.1, 1.43),
+      ('labelMedium', 12.0, FontWeight.w700, 0.5, 1.33),
+      ('labelSmall', 11.0, FontWeight.w700, 0.5, 1.45),
+    ];
+
+    test('alphabetic2026 baseline styles match englishLike2021 geometry', () {
+      for (final (String name, _, _, _, _) in emphasizedSpec) {
+        final TextStyle m3 = baselineOf(Typography.englishLike2021, name)!;
+        final TextStyle m3e = baselineOf(Typography.alphabetic2026, name)!;
+        expect(m3e.inherit, isFalse, reason: name);
+        expect(m3e.fontSize, m3.fontSize, reason: name);
+        expect(m3e.fontWeight, m3.fontWeight, reason: name);
+        expect(m3e.letterSpacing, m3.letterSpacing, reason: name);
+        expect(m3e.height, m3.height, reason: name);
+        expect(m3e.textBaseline, TextBaseline.alphabetic, reason: name);
+        expect(m3e.leadingDistribution, TextLeadingDistribution.even, reason: name);
+      }
+    });
+
+    test('alphabetic2026 emphasized styles match Material 3 Expressive spec', () {
+      for (final (String name, double size, FontWeight weight, double spacing, double height)
+          in emphasizedSpec) {
+        final TextStyle style = emphasizedOf(Typography.alphabetic2026, name)!;
+        expect(style.inherit, isFalse, reason: name);
+        expect(style.fontSize, size, reason: name);
+        expect(style.fontWeight, weight, reason: name);
+        expect(style.letterSpacing, spacing, reason: name);
+        expect(style.height, height, reason: name);
+        expect(style.textBaseline, TextBaseline.alphabetic, reason: name);
+        expect(style.leadingDistribution, TextLeadingDistribution.even, reason: name);
+      }
+    });
+
+    test('ideographic2026 matches alphabetic2026 except for the text baseline', () {
+      for (final (String name, _, _, _, _) in emphasizedSpec) {
+        for (final getter in <TextStyle? Function(TextTheme, String)>[baselineOf, emphasizedOf]) {
+          final TextStyle alphabetic = getter(Typography.alphabetic2026, name)!;
+          final TextStyle ideographic = getter(Typography.ideographic2026, name)!;
+          expect(ideographic.textBaseline, TextBaseline.ideographic, reason: name);
+          expect(
+            ideographic.copyWith(
+              textBaseline: TextBaseline.alphabetic,
+              debugLabel: alphabetic.debugLabel,
+            ),
+            alphabetic,
+            reason: name,
+          );
+        }
+      }
+    });
+
+    test('material2026 maps englishLike and tall to alphabetic, dense to ideographic', () {
+      final typography = Typography.material2026();
+      expect(typography.englishLike, Typography.alphabetic2026);
+      expect(typography.tall, Typography.alphabetic2026);
+      expect(typography.dense, Typography.ideographic2026);
+      expect(typography.geometryThemeFor(ScriptCategory.englishLike), Typography.alphabetic2026);
+      expect(typography.geometryThemeFor(ScriptCategory.tall), Typography.alphabetic2026);
+      expect(typography.geometryThemeFor(ScriptCategory.dense), Typography.ideographic2026);
+
+      const custom = TextTheme(bodyLarge: TextStyle(fontSize: 99));
+      const customIdeographic = TextTheme(bodyLarge: TextStyle(fontSize: 98));
+      final customTypography = Typography.material2026(
+        alphabetic: custom,
+        ideographic: customIdeographic,
+      );
+      expect(customTypography.englishLike, custom);
+      expect(customTypography.tall, custom);
+      expect(customTypography.dense, customIdeographic);
+    });
+
+    test('material2026 is defined for all target platforms', () {
+      for (final TargetPlatform platform in TargetPlatform.values) {
+        final typography = Typography.material2026(platform: platform);
+        final m3 = Typography.material2021(platform: platform);
+        for (final (String name, _, _, _, _) in emphasizedSpec) {
+          for (final (TextTheme m3eTheme, TextTheme m3Theme) in <(TextTheme, TextTheme)>[
+            (typography.black, m3.black),
+            (typography.white, m3.white),
+          ]) {
+            final TextStyle baseline = baselineOf(m3eTheme, name)!;
+            final TextStyle emphasized = emphasizedOf(m3eTheme, name)!;
+            // Emphasized styles use the same platform font as baseline styles.
+            expect(emphasized.fontFamily, baseline.fontFamily, reason: '$platform $name');
+            expect(
+              emphasized.fontFamilyFallback,
+              baseline.fontFamilyFallback,
+              reason: '$platform $name',
+            );
+            expect(emphasized.color, baseline.color, reason: '$platform $name');
+            expect(emphasized.debugLabel, contains('${name}Emphasized'), reason: '$platform $name');
+            // Baseline color styles are the same as M3.
+            expect(baseline, baselineOf(m3Theme, name), reason: '$platform $name');
+          }
+        }
+      }
+    });
+
+    test('material2026 preserves user-provided emphasized color styles', () {
+      const emphasized = TextStyle(fontFamily: 'Custom', color: Color(0xFF00FF00));
+      final typography = Typography.material2026(
+        black: Typography.blackMountainView.copyWith(titleMediumEmphasized: emphasized),
+      );
+      expect(typography.black.titleMediumEmphasized!.fontFamily, 'Custom');
+      expect(typography.black.titleSmallEmphasized!.fontFamily, 'Roboto');
+    });
+
+    test('material2026 colors all styles using the color scheme', () {
+      for (final Brightness brightness in Brightness.values) {
+        final colorScheme = ColorScheme.fromSeed(
+          seedColor: const Color(0xFF6750A4),
+          brightness: brightness,
+        );
+        final typography = Typography.material2026(colorScheme: colorScheme);
+        final TextTheme textTheme = brightness == Brightness.light
+            ? typography.black
+            : typography.white;
+        for (final (String name, _, _, _, _) in emphasizedSpec) {
+          expect(baselineOf(textTheme, name)!.color, colorScheme.onSurface, reason: name);
+          expect(emphasizedOf(textTheme, name)!.color, colorScheme.onSurface, reason: name);
+        }
+      }
+    });
+
+    test('material2021 does not include emphasized styles', () {
+      final typography = Typography.material2021();
+      for (final theme in <TextTheme>[
+        typography.black,
+        typography.white,
+        typography.englishLike,
+        typography.dense,
+        typography.tall,
+      ]) {
+        for (final (String name, _, _, _, _) in emphasizedSpec) {
+          expect(emphasizedOf(theme, name), isNull, reason: name);
+        }
+      }
+      for (final (String name, _, _, _, _) in emphasizedSpec) {
+        expect(emphasizedOf(ThemeData().textTheme, name), isNull, reason: name);
+      }
+    });
+
+    testWidgets('Theme.of resolves emphasized styles when opted into material2026', (
+      WidgetTester tester,
+    ) async {
+      final colorScheme = ColorScheme.fromSeed(seedColor: const Color(0xFF6750A4));
+      late TextTheme textTheme;
+      await tester.pumpWidget(
+        Theme(
+          data: ThemeData(
+            colorScheme: colorScheme,
+            typography: Typography.material2026(colorScheme: colorScheme),
+          ),
+          child: Builder(
+            builder: (BuildContext context) {
+              textTheme = Theme.of(context).textTheme;
+              return const SizedBox();
+            },
+          ),
+        ),
+      );
+
+      final TextStyle titleMediumEmphasized = textTheme.titleMediumEmphasized!;
+      expect(titleMediumEmphasized.fontFamily, 'Roboto');
+      expect(titleMediumEmphasized.fontSize, 16.0);
+      expect(titleMediumEmphasized.fontWeight, FontWeight.w700);
+      expect(titleMediumEmphasized.letterSpacing, 0.15);
+      expect(titleMediumEmphasized.color, colorScheme.onSurface);
+      expect(titleMediumEmphasized.textBaseline, TextBaseline.alphabetic);
+
+      final TextStyle titleMedium = textTheme.titleMedium!;
+      expect(titleMedium.fontWeight, FontWeight.w500);
+      expect(titleMedium.color, colorScheme.onSurface);
+    });
+  });
 }

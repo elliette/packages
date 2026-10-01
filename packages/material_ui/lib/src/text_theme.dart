@@ -57,6 +57,37 @@ import 'typography.dart';
 ///
 /// ...where "regular" is `FontWeight.w400` and "medium" is `FontWeight.w500`.
 ///
+/// The Material 3 Expressive (**2026**) spec adds an emphasized variant for
+/// each of the fifteen 2021 text styles (for example, [titleMediumEmphasized]
+/// for [titleMedium]). Emphasized styles share the size, height and spacing of
+/// their baseline style, but use a heavier weight:
+///
+/// | NAME                     | SIZE |  HEIGHT |  WEIGHT |  SPACING |       |
+/// |--------------------------|------|---------|---------|----------|-------|
+/// | displayLargeEmphasized   | 57.0 |   64.0  | medium  | -0.25    |       |
+/// | displayMediumEmphasized  | 45.0 |   52.0  | medium  |  0.0     |       |
+/// | displaySmallEmphasized   | 36.0 |   44.0  | medium  |  0.0     |       |
+/// | headlineLargeEmphasized  | 32.0 |   40.0  | medium  |  0.0     |       |
+/// | headlineMediumEmphasized | 28.0 |   36.0  | medium  |  0.0     |       |
+/// | headlineSmallEmphasized  | 24.0 |   32.0  | medium  |  0.0     |       |
+/// | titleLargeEmphasized     | 22.0 |   28.0  | medium  |  0.0     |       |
+/// | titleMediumEmphasized    | 16.0 |   24.0  | bold    |  0.15    |       |
+/// | titleSmallEmphasized     | 14.0 |   20.0  | bold    |  0.1     |       |
+/// | bodyLargeEmphasized      | 16.0 |   24.0  | medium  |  0.5     |       |
+/// | bodyMediumEmphasized     | 14.0 |   20.0  | medium  |  0.25    |       |
+/// | bodySmallEmphasized      | 12.0 |   16.0  | medium  |  0.4     |       |
+/// | labelLargeEmphasized     | 14.0 |   20.0  | bold    |  0.1     |       |
+/// | labelMediumEmphasized    | 12.0 |   16.0  | bold    |  0.5     |       |
+/// | labelSmallEmphasized     | 11.0 |   16.0  | bold    |  0.5     |       |
+///
+/// ...where "medium" is `FontWeight.w500` and "bold" is `FontWeight.w700`.
+///
+/// Emphasized styles are intended to be used for bold, selection, and other
+/// areas of emphasis, alongside their baseline counterparts. Material
+/// components don't use emphasized styles by default. The emphasized styles
+/// are only populated when [ThemeData.typography] is created with
+/// [Typography.material2026]; otherwise they are null.
+///
 /// The names of the 2018 TextTheme properties match this table from the
 /// [Material Design spec](https://material.io/design/typography/the-type-system.html#type-scale)
 /// with a few exceptions: the styles called H1-H6 in the spec are
@@ -134,6 +165,21 @@ class TextTheme with Diagnosticable {
     this.labelLarge,
     this.labelMedium,
     this.labelSmall,
+    this.displayLargeEmphasized,
+    this.displayMediumEmphasized,
+    this.displaySmallEmphasized,
+    this.headlineLargeEmphasized,
+    this.headlineMediumEmphasized,
+    this.headlineSmallEmphasized,
+    this.titleLargeEmphasized,
+    this.titleMediumEmphasized,
+    this.titleSmallEmphasized,
+    this.bodyLargeEmphasized,
+    this.bodyMediumEmphasized,
+    this.bodySmallEmphasized,
+    this.labelLargeEmphasized,
+    this.labelMediumEmphasized,
+    this.labelSmallEmphasized,
   });
 
   /// Largest of the display styles.
@@ -230,6 +276,88 @@ class TextTheme with Diagnosticable {
   /// content body, like captions.
   final TextStyle? labelSmall;
 
+  /// The emphasized variant of [displayLarge].
+  ///
+  /// {@template material_ui.TextTheme.emphasized}
+  /// Emphasized styles are intended to be used for bold, selection, and other
+  /// areas of emphasis. They are meant to be used together with their baseline
+  /// counterpart. Material components don't use emphasized styles by default.
+  ///
+  /// This is only provided by default when [ThemeData.typography] is
+  /// [Typography.material2026].
+  /// {@endtemplate}
+  final TextStyle? displayLargeEmphasized;
+
+  /// The emphasized variant of [displayMedium].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? displayMediumEmphasized;
+
+  /// The emphasized variant of [displaySmall].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? displaySmallEmphasized;
+
+  /// The emphasized variant of [headlineLarge].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? headlineLargeEmphasized;
+
+  /// The emphasized variant of [headlineMedium].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? headlineMediumEmphasized;
+
+  /// The emphasized variant of [headlineSmall].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? headlineSmallEmphasized;
+
+  /// The emphasized variant of [titleLarge].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? titleLargeEmphasized;
+
+  /// The emphasized variant of [titleMedium].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? titleMediumEmphasized;
+
+  /// The emphasized variant of [titleSmall].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? titleSmallEmphasized;
+
+  /// The emphasized variant of [bodyLarge].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? bodyLargeEmphasized;
+
+  /// The emphasized variant of [bodyMedium].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? bodyMediumEmphasized;
+
+  /// The emphasized variant of [bodySmall].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? bodySmallEmphasized;
+
+  /// The emphasized variant of [labelLarge].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? labelLargeEmphasized;
+
+  /// The emphasized variant of [labelMedium].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? labelMediumEmphasized;
+
+  /// The emphasized variant of [labelSmall].
+  ///
+  /// {@macro material_ui.TextTheme.emphasized}
+  final TextStyle? labelSmallEmphasized;
+
   /// Creates a copy of this text theme but with the given fields replaced with
   /// the new values.
   ///
@@ -290,6 +418,21 @@ class TextTheme with Diagnosticable {
     TextStyle? labelLarge,
     TextStyle? labelMedium,
     TextStyle? labelSmall,
+    TextStyle? displayLargeEmphasized,
+    TextStyle? displayMediumEmphasized,
+    TextStyle? displaySmallEmphasized,
+    TextStyle? headlineLargeEmphasized,
+    TextStyle? headlineMediumEmphasized,
+    TextStyle? headlineSmallEmphasized,
+    TextStyle? titleLargeEmphasized,
+    TextStyle? titleMediumEmphasized,
+    TextStyle? titleSmallEmphasized,
+    TextStyle? bodyLargeEmphasized,
+    TextStyle? bodyMediumEmphasized,
+    TextStyle? bodySmallEmphasized,
+    TextStyle? labelLargeEmphasized,
+    TextStyle? labelMediumEmphasized,
+    TextStyle? labelSmallEmphasized,
   }) {
     return TextTheme(
       displayLarge: displayLarge ?? this.displayLarge,
@@ -307,6 +450,21 @@ class TextTheme with Diagnosticable {
       labelLarge: labelLarge ?? this.labelLarge,
       labelMedium: labelMedium ?? this.labelMedium,
       labelSmall: labelSmall ?? this.labelSmall,
+      displayLargeEmphasized: displayLargeEmphasized ?? this.displayLargeEmphasized,
+      displayMediumEmphasized: displayMediumEmphasized ?? this.displayMediumEmphasized,
+      displaySmallEmphasized: displaySmallEmphasized ?? this.displaySmallEmphasized,
+      headlineLargeEmphasized: headlineLargeEmphasized ?? this.headlineLargeEmphasized,
+      headlineMediumEmphasized: headlineMediumEmphasized ?? this.headlineMediumEmphasized,
+      headlineSmallEmphasized: headlineSmallEmphasized ?? this.headlineSmallEmphasized,
+      titleLargeEmphasized: titleLargeEmphasized ?? this.titleLargeEmphasized,
+      titleMediumEmphasized: titleMediumEmphasized ?? this.titleMediumEmphasized,
+      titleSmallEmphasized: titleSmallEmphasized ?? this.titleSmallEmphasized,
+      bodyLargeEmphasized: bodyLargeEmphasized ?? this.bodyLargeEmphasized,
+      bodyMediumEmphasized: bodyMediumEmphasized ?? this.bodyMediumEmphasized,
+      bodySmallEmphasized: bodySmallEmphasized ?? this.bodySmallEmphasized,
+      labelLargeEmphasized: labelLargeEmphasized ?? this.labelLargeEmphasized,
+      labelMediumEmphasized: labelMediumEmphasized ?? this.labelMediumEmphasized,
+      labelSmallEmphasized: labelSmallEmphasized ?? this.labelSmallEmphasized,
     );
   }
 
@@ -385,6 +543,42 @@ class TextTheme with Diagnosticable {
       labelLarge: labelLarge?.merge(other.labelLarge) ?? other.labelLarge,
       labelMedium: labelMedium?.merge(other.labelMedium) ?? other.labelMedium,
       labelSmall: labelSmall?.merge(other.labelSmall) ?? other.labelSmall,
+      displayLargeEmphasized:
+          displayLargeEmphasized?.merge(other.displayLargeEmphasized) ??
+          other.displayLargeEmphasized,
+      displayMediumEmphasized:
+          displayMediumEmphasized?.merge(other.displayMediumEmphasized) ??
+          other.displayMediumEmphasized,
+      displaySmallEmphasized:
+          displaySmallEmphasized?.merge(other.displaySmallEmphasized) ??
+          other.displaySmallEmphasized,
+      headlineLargeEmphasized:
+          headlineLargeEmphasized?.merge(other.headlineLargeEmphasized) ??
+          other.headlineLargeEmphasized,
+      headlineMediumEmphasized:
+          headlineMediumEmphasized?.merge(other.headlineMediumEmphasized) ??
+          other.headlineMediumEmphasized,
+      headlineSmallEmphasized:
+          headlineSmallEmphasized?.merge(other.headlineSmallEmphasized) ??
+          other.headlineSmallEmphasized,
+      titleLargeEmphasized:
+          titleLargeEmphasized?.merge(other.titleLargeEmphasized) ?? other.titleLargeEmphasized,
+      titleMediumEmphasized:
+          titleMediumEmphasized?.merge(other.titleMediumEmphasized) ?? other.titleMediumEmphasized,
+      titleSmallEmphasized:
+          titleSmallEmphasized?.merge(other.titleSmallEmphasized) ?? other.titleSmallEmphasized,
+      bodyLargeEmphasized:
+          bodyLargeEmphasized?.merge(other.bodyLargeEmphasized) ?? other.bodyLargeEmphasized,
+      bodyMediumEmphasized:
+          bodyMediumEmphasized?.merge(other.bodyMediumEmphasized) ?? other.bodyMediumEmphasized,
+      bodySmallEmphasized:
+          bodySmallEmphasized?.merge(other.bodySmallEmphasized) ?? other.bodySmallEmphasized,
+      labelLargeEmphasized:
+          labelLargeEmphasized?.merge(other.labelLargeEmphasized) ?? other.labelLargeEmphasized,
+      labelMediumEmphasized:
+          labelMediumEmphasized?.merge(other.labelMediumEmphasized) ?? other.labelMediumEmphasized,
+      labelSmallEmphasized:
+          labelSmallEmphasized?.merge(other.labelSmallEmphasized) ?? other.labelSmallEmphasized,
     );
   }
 
@@ -393,7 +587,9 @@ class TextTheme with Diagnosticable {
   ///
   /// The `displayColor` is applied to [displayLarge], [displayMedium],
   /// [displaySmall], [headlineLarge], [headlineMedium], and [bodySmall]. The
-  /// `bodyColor` is applied to the remaining text styles.
+  /// `bodyColor` is applied to the remaining text styles. Each emphasized
+  /// style (e.g. [displayLargeEmphasized]) receives the same color as its
+  /// baseline style.
   ///
   /// Consider using [Typography.black] or [Typography.white], which implement
   /// the typography styles in the Material Design specification, as a starting
@@ -418,292 +614,57 @@ class TextTheme with Diagnosticable {
     List<FontFeature>? fontFeatures,
     List<FontVariation>? fontVariations,
   }) {
+    TextStyle? applyTo(TextStyle? style, Color? color) => style?.apply(
+      color: color,
+      decoration: decoration,
+      decorationColor: decorationColor,
+      decorationStyle: decorationStyle,
+      fontFamily: fontFamily,
+      fontFamilyFallback: fontFamilyFallback,
+      fontSizeFactor: fontSizeFactor,
+      fontSizeDelta: fontSizeDelta,
+      letterSpacingDelta: letterSpacingDelta,
+      letterSpacingFactor: letterSpacingFactor,
+      wordSpacingDelta: wordSpacingDelta,
+      wordSpacingFactor: wordSpacingFactor,
+      heightFactor: heightFactor,
+      heightDelta: heightDelta,
+      package: package,
+      fontFeatures: fontFeatures,
+      fontVariations: fontVariations,
+    );
+
     return TextTheme(
-      displayLarge: displayLarge?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      displayMedium: displayMedium?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      displaySmall: displaySmall?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      headlineLarge: headlineLarge?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      headlineMedium: headlineMedium?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      headlineSmall: headlineSmall?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      titleLarge: titleLarge?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      titleMedium: titleMedium?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      titleSmall: titleSmall?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      bodyLarge: bodyLarge?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      bodyMedium: bodyMedium?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      bodySmall: bodySmall?.apply(
-        color: displayColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      labelLarge: labelLarge?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      labelMedium: labelMedium?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
-      labelSmall: labelSmall?.apply(
-        color: bodyColor,
-        decoration: decoration,
-        decorationColor: decorationColor,
-        decorationStyle: decorationStyle,
-        fontFamily: fontFamily,
-        fontFamilyFallback: fontFamilyFallback,
-        fontSizeFactor: fontSizeFactor,
-        fontSizeDelta: fontSizeDelta,
-        letterSpacingDelta: letterSpacingDelta,
-        letterSpacingFactor: letterSpacingFactor,
-        wordSpacingDelta: wordSpacingDelta,
-        wordSpacingFactor: wordSpacingFactor,
-        heightFactor: heightFactor,
-        heightDelta: heightDelta,
-        package: package,
-        fontFeatures: fontFeatures,
-        fontVariations: fontVariations,
-      ),
+      displayLarge: applyTo(displayLarge, displayColor),
+      displayMedium: applyTo(displayMedium, displayColor),
+      displaySmall: applyTo(displaySmall, displayColor),
+      headlineLarge: applyTo(headlineLarge, displayColor),
+      headlineMedium: applyTo(headlineMedium, displayColor),
+      headlineSmall: applyTo(headlineSmall, bodyColor),
+      titleLarge: applyTo(titleLarge, bodyColor),
+      titleMedium: applyTo(titleMedium, bodyColor),
+      titleSmall: applyTo(titleSmall, bodyColor),
+      bodyLarge: applyTo(bodyLarge, bodyColor),
+      bodyMedium: applyTo(bodyMedium, bodyColor),
+      bodySmall: applyTo(bodySmall, displayColor),
+      labelLarge: applyTo(labelLarge, bodyColor),
+      labelMedium: applyTo(labelMedium, bodyColor),
+      labelSmall: applyTo(labelSmall, bodyColor),
+      displayLargeEmphasized: applyTo(displayLargeEmphasized, displayColor),
+      displayMediumEmphasized: applyTo(displayMediumEmphasized, displayColor),
+      displaySmallEmphasized: applyTo(displaySmallEmphasized, displayColor),
+      headlineLargeEmphasized: applyTo(headlineLargeEmphasized, displayColor),
+      headlineMediumEmphasized: applyTo(headlineMediumEmphasized, displayColor),
+      headlineSmallEmphasized: applyTo(headlineSmallEmphasized, bodyColor),
+      titleLargeEmphasized: applyTo(titleLargeEmphasized, bodyColor),
+      titleMediumEmphasized: applyTo(titleMediumEmphasized, bodyColor),
+      titleSmallEmphasized: applyTo(titleSmallEmphasized, bodyColor),
+      bodyLargeEmphasized: applyTo(bodyLargeEmphasized, bodyColor),
+      bodyMediumEmphasized: applyTo(bodyMediumEmphasized, bodyColor),
+      bodySmallEmphasized: applyTo(bodySmallEmphasized, displayColor),
+      labelLargeEmphasized: applyTo(labelLargeEmphasized, bodyColor),
+      labelMediumEmphasized: applyTo(labelMediumEmphasized, bodyColor),
+      labelSmallEmphasized: applyTo(labelSmallEmphasized, bodyColor),
     );
   }
 
@@ -730,6 +691,45 @@ class TextTheme with Diagnosticable {
       labelLarge: TextStyle.lerp(a?.labelLarge, b?.labelLarge, t),
       labelMedium: TextStyle.lerp(a?.labelMedium, b?.labelMedium, t),
       labelSmall: TextStyle.lerp(a?.labelSmall, b?.labelSmall, t),
+      displayLargeEmphasized: TextStyle.lerp(
+        a?.displayLargeEmphasized,
+        b?.displayLargeEmphasized,
+        t,
+      ),
+      displayMediumEmphasized: TextStyle.lerp(
+        a?.displayMediumEmphasized,
+        b?.displayMediumEmphasized,
+        t,
+      ),
+      displaySmallEmphasized: TextStyle.lerp(
+        a?.displaySmallEmphasized,
+        b?.displaySmallEmphasized,
+        t,
+      ),
+      headlineLargeEmphasized: TextStyle.lerp(
+        a?.headlineLargeEmphasized,
+        b?.headlineLargeEmphasized,
+        t,
+      ),
+      headlineMediumEmphasized: TextStyle.lerp(
+        a?.headlineMediumEmphasized,
+        b?.headlineMediumEmphasized,
+        t,
+      ),
+      headlineSmallEmphasized: TextStyle.lerp(
+        a?.headlineSmallEmphasized,
+        b?.headlineSmallEmphasized,
+        t,
+      ),
+      titleLargeEmphasized: TextStyle.lerp(a?.titleLargeEmphasized, b?.titleLargeEmphasized, t),
+      titleMediumEmphasized: TextStyle.lerp(a?.titleMediumEmphasized, b?.titleMediumEmphasized, t),
+      titleSmallEmphasized: TextStyle.lerp(a?.titleSmallEmphasized, b?.titleSmallEmphasized, t),
+      bodyLargeEmphasized: TextStyle.lerp(a?.bodyLargeEmphasized, b?.bodyLargeEmphasized, t),
+      bodyMediumEmphasized: TextStyle.lerp(a?.bodyMediumEmphasized, b?.bodyMediumEmphasized, t),
+      bodySmallEmphasized: TextStyle.lerp(a?.bodySmallEmphasized, b?.bodySmallEmphasized, t),
+      labelLargeEmphasized: TextStyle.lerp(a?.labelLargeEmphasized, b?.labelLargeEmphasized, t),
+      labelMediumEmphasized: TextStyle.lerp(a?.labelMediumEmphasized, b?.labelMediumEmphasized, t),
+      labelSmallEmphasized: TextStyle.lerp(a?.labelSmallEmphasized, b?.labelSmallEmphasized, t),
     );
   }
 
@@ -775,11 +775,26 @@ class TextTheme with Diagnosticable {
         bodySmall == other.bodySmall &&
         labelLarge == other.labelLarge &&
         labelMedium == other.labelMedium &&
-        labelSmall == other.labelSmall;
+        labelSmall == other.labelSmall &&
+        displayLargeEmphasized == other.displayLargeEmphasized &&
+        displayMediumEmphasized == other.displayMediumEmphasized &&
+        displaySmallEmphasized == other.displaySmallEmphasized &&
+        headlineLargeEmphasized == other.headlineLargeEmphasized &&
+        headlineMediumEmphasized == other.headlineMediumEmphasized &&
+        headlineSmallEmphasized == other.headlineSmallEmphasized &&
+        titleLargeEmphasized == other.titleLargeEmphasized &&
+        titleMediumEmphasized == other.titleMediumEmphasized &&
+        titleSmallEmphasized == other.titleSmallEmphasized &&
+        bodyLargeEmphasized == other.bodyLargeEmphasized &&
+        bodyMediumEmphasized == other.bodyMediumEmphasized &&
+        bodySmallEmphasized == other.bodySmallEmphasized &&
+        labelLargeEmphasized == other.labelLargeEmphasized &&
+        labelMediumEmphasized == other.labelMediumEmphasized &&
+        labelSmallEmphasized == other.labelSmallEmphasized;
   }
 
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll(<Object?>[
     displayLarge,
     displayMedium,
     displaySmall,
@@ -795,7 +810,22 @@ class TextTheme with Diagnosticable {
     labelLarge,
     labelMedium,
     labelSmall,
-  );
+    displayLargeEmphasized,
+    displayMediumEmphasized,
+    displaySmallEmphasized,
+    headlineLargeEmphasized,
+    headlineMediumEmphasized,
+    headlineSmallEmphasized,
+    titleLargeEmphasized,
+    titleMediumEmphasized,
+    titleSmallEmphasized,
+    bodyLargeEmphasized,
+    bodyMediumEmphasized,
+    bodySmallEmphasized,
+    labelLargeEmphasized,
+    labelMediumEmphasized,
+    labelSmallEmphasized,
+  ]);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -896,6 +926,111 @@ class TextTheme with Diagnosticable {
         'labelSmall',
         labelSmall,
         defaultValue: defaultTheme.labelSmall,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'displayLargeEmphasized',
+        displayLargeEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'displayMediumEmphasized',
+        displayMediumEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'displaySmallEmphasized',
+        displaySmallEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'headlineLargeEmphasized',
+        headlineLargeEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'headlineMediumEmphasized',
+        headlineMediumEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'headlineSmallEmphasized',
+        headlineSmallEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'titleLargeEmphasized',
+        titleLargeEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'titleMediumEmphasized',
+        titleMediumEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'titleSmallEmphasized',
+        titleSmallEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'bodyLargeEmphasized',
+        bodyLargeEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'bodyMediumEmphasized',
+        bodyMediumEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'bodySmallEmphasized',
+        bodySmallEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'labelLargeEmphasized',
+        labelLargeEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'labelMediumEmphasized',
+        labelMediumEmphasized,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<TextStyle>(
+        'labelSmallEmphasized',
+        labelSmallEmphasized,
+        defaultValue: null,
       ),
     );
   }

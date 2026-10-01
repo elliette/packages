@@ -1,0 +1,3 @@
+changelog: |
+  - Adds Material 3 Expressive typography. Adds emphasized type styles to `TextTheme` (e.g. `TextTheme.titleMediumEmphasized`) and `Typography.material2026`, `Typography.alphabetic2026` and `Typography.ideographic2026`. Opt in with `ThemeData(typography: Typography.material2026())`.
+version: minor

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -492,5 +493,138 @@ void main() {
     final TextTheme actualTextTheme = TextTheme.primaryOf(context);
 
     expect(actualTextTheme, equals(expectedTextTheme));
+  });
+
+  group('emphasized styles', () {
+    const style = TextStyle(fontSize: 10);
+    const emphasizedTheme = TextTheme(
+      displayLargeEmphasized: TextStyle(debugLabel: 'displayLargeEmphasized'),
+      displayMediumEmphasized: TextStyle(debugLabel: 'displayMediumEmphasized'),
+      displaySmallEmphasized: TextStyle(debugLabel: 'displaySmallEmphasized'),
+      headlineLargeEmphasized: TextStyle(debugLabel: 'headlineLargeEmphasized'),
+      headlineMediumEmphasized: TextStyle(debugLabel: 'headlineMediumEmphasized'),
+      headlineSmallEmphasized: TextStyle(debugLabel: 'headlineSmallEmphasized'),
+      titleLargeEmphasized: TextStyle(debugLabel: 'titleLargeEmphasized'),
+      titleMediumEmphasized: TextStyle(debugLabel: 'titleMediumEmphasized'),
+      titleSmallEmphasized: TextStyle(debugLabel: 'titleSmallEmphasized'),
+      bodyLargeEmphasized: TextStyle(debugLabel: 'bodyLargeEmphasized'),
+      bodyMediumEmphasized: TextStyle(debugLabel: 'bodyMediumEmphasized'),
+      bodySmallEmphasized: TextStyle(debugLabel: 'bodySmallEmphasized'),
+      labelLargeEmphasized: TextStyle(debugLabel: 'labelLargeEmphasized'),
+      labelMediumEmphasized: TextStyle(debugLabel: 'labelMediumEmphasized'),
+      labelSmallEmphasized: TextStyle(debugLabel: 'labelSmallEmphasized'),
+    );
+
+    List<TextStyle?> emphasizedStyles(TextTheme theme) => <TextStyle?>[
+      theme.displayLargeEmphasized,
+      theme.displayMediumEmphasized,
+      theme.displaySmallEmphasized,
+      theme.headlineLargeEmphasized,
+      theme.headlineMediumEmphasized,
+      theme.headlineSmallEmphasized,
+      theme.titleLargeEmphasized,
+      theme.titleMediumEmphasized,
+      theme.titleSmallEmphasized,
+      theme.bodyLargeEmphasized,
+      theme.bodyMediumEmphasized,
+      theme.bodySmallEmphasized,
+      theme.labelLargeEmphasized,
+      theme.labelMediumEmphasized,
+      theme.labelSmallEmphasized,
+    ];
+
+    test('copyWith', () {
+      expect(emphasizedTheme.copyWith(), emphasizedTheme);
+      final TextTheme copy = const TextTheme().copyWith(
+        displayLargeEmphasized: style,
+        displayMediumEmphasized: style,
+        displaySmallEmphasized: style,
+        headlineLargeEmphasized: style,
+        headlineMediumEmphasized: style,
+        headlineSmallEmphasized: style,
+        titleLargeEmphasized: style,
+        titleMediumEmphasized: style,
+        titleSmallEmphasized: style,
+        bodyLargeEmphasized: style,
+        bodyMediumEmphasized: style,
+        bodySmallEmphasized: style,
+        labelLargeEmphasized: style,
+        labelMediumEmphasized: style,
+        labelSmallEmphasized: style,
+      );
+      expect(emphasizedStyles(copy), everyElement(style));
+    });
+
+    test('merge', () {
+      const colorTheme = TextTheme(
+        displayLargeEmphasized: TextStyle(color: Color(0xff000001)),
+        titleMediumEmphasized: TextStyle(color: Color(0xff000002)),
+      );
+      final TextTheme merged = emphasizedTheme.merge(colorTheme);
+      expect(merged.displayLargeEmphasized!.color, const Color(0xff000001));
+      expect(merged.titleMediumEmphasized!.color, const Color(0xff000002));
+      expect(merged.labelSmallEmphasized, emphasizedTheme.labelSmallEmphasized);
+      expect(const TextTheme().merge(emphasizedTheme), emphasizedTheme);
+    });
+
+    test('apply uses the same color as the baseline style', () {
+      const displayColor = Color(0x00000001);
+      const bodyColor = Color(0x00000002);
+      final TextTheme theme = emphasizedTheme.apply(
+        displayColor: displayColor,
+        bodyColor: bodyColor,
+        fontFamily: 'fontFamily',
+      );
+      expect(theme.displayLargeEmphasized!.color, displayColor);
+      expect(theme.displayMediumEmphasized!.color, displayColor);
+      expect(theme.displaySmallEmphasized!.color, displayColor);
+      expect(theme.headlineLargeEmphasized!.color, displayColor);
+      expect(theme.headlineMediumEmphasized!.color, displayColor);
+      expect(theme.headlineSmallEmphasized!.color, bodyColor);
+      expect(theme.titleLargeEmphasized!.color, bodyColor);
+      expect(theme.titleMediumEmphasized!.color, bodyColor);
+      expect(theme.titleSmallEmphasized!.color, bodyColor);
+      expect(theme.bodyLargeEmphasized!.color, bodyColor);
+      expect(theme.bodyMediumEmphasized!.color, bodyColor);
+      expect(theme.bodySmallEmphasized!.color, displayColor);
+      expect(theme.labelLargeEmphasized!.color, bodyColor);
+      expect(theme.labelMediumEmphasized!.color, bodyColor);
+      expect(theme.labelSmallEmphasized!.color, bodyColor);
+      for (final TextStyle? style in emphasizedStyles(theme)) {
+        expect(style!.fontFamily, 'fontFamily');
+      }
+    });
+
+    test('lerp', () {
+      const a = TextTheme(titleMediumEmphasized: TextStyle(fontSize: 10));
+      const b = TextTheme(titleMediumEmphasized: TextStyle(fontSize: 20));
+      expect(TextTheme.lerp(a, b, 0.5).titleMediumEmphasized!.fontSize, 15);
+      for (final TextStyle? style in emphasizedStyles(
+        TextTheme.lerp(emphasizedTheme, emphasizedTheme.copyWith(), 0.5),
+      )) {
+        expect(style, isNotNull);
+      }
+    });
+
+    test('equality and hashCode', () {
+      expect(emphasizedTheme, emphasizedTheme.copyWith());
+      expect(emphasizedTheme.hashCode, emphasizedTheme.copyWith().hashCode);
+      expect(emphasizedTheme, isNot(const TextTheme()));
+      expect(
+        emphasizedTheme,
+        isNot(emphasizedTheme.copyWith(labelSmallEmphasized: const TextStyle(fontSize: 1))),
+      );
+    });
+
+    test('debugFillProperties', () {
+      final builder = DiagnosticPropertiesBuilder();
+      const TextTheme(titleMediumEmphasized: style).debugFillProperties(builder);
+      final List<String> description = builder.properties
+          .where((DiagnosticsNode node) => !node.isFiltered(DiagnosticLevel.info))
+          .map((DiagnosticsNode node) => node.name!)
+          .toList();
+      expect(description, contains('titleMediumEmphasized'));
+      expect(description, isNot(contains('labelSmallEmphasized')));
+    });
   });
 }

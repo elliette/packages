@@ -826,6 +826,48 @@ void main() {
       expect(contents, contains("debugLabel: 'dense bodySmall 2021'"));
       expect(contents, contains('textBaseline: TextBaseline.ideographic'));
       expect(contents, contains('fontWeight: FontWeight.w500'));
+      expect(contents, isNot(contains('Emphasized')));
+    });
+
+    test('TypographyTemplateM3E emits M3E Typography defaults from tokens', () {
+      const template = TypographyTemplateM3E();
+      expect(template.className, '_M3ETypography');
+      expect(template.outputFileName, 'typography_defaults_m3e.g.dart');
+
+      final String contents = _generateContents(template);
+      expect(contents, contains('abstract final class _M3ETypography'));
+      expect(contents, contains('static const TextTheme alphabetic = TextTheme('));
+      expect(contents, contains('static const TextTheme ideographic = TextTheme('));
+      expect(contents, isNot(contains('englishLike')));
+      expect(contents, isNot(contains('dense')));
+      expect(contents, isNot(contains('tall')));
+      expect(
+        contents,
+        contains(
+          "displayLarge: TextStyle(debugLabel: 'alphabetic displayLarge 2026', inherit: false, "
+          'fontSize: 57.0, fontWeight: FontWeight.w400, letterSpacing: -0.25, height: 1.12, '
+          'textBaseline: TextBaseline.alphabetic, leadingDistribution: TextLeadingDistribution.even)',
+        ),
+      );
+      expect(
+        contents,
+        contains(
+          "titleMediumEmphasized: TextStyle(debugLabel: 'alphabetic titleMediumEmphasized 2026', "
+          'inherit: false, fontSize: 16.0, fontWeight: FontWeight.w700, letterSpacing: 0.15, '
+          'height: 1.50, textBaseline: TextBaseline.alphabetic, '
+          'leadingDistribution: TextLeadingDistribution.even)',
+        ),
+      );
+      expect(
+        contents,
+        contains(
+          "displayLargeEmphasized: TextStyle(debugLabel: 'ideographic displayLargeEmphasized 2026', "
+          'inherit: false, fontSize: 57.0, fontWeight: FontWeight.w500, letterSpacing: -0.25, '
+          'height: 1.12, textBaseline: TextBaseline.ideographic, '
+          'leadingDistribution: TextLeadingDistribution.even)',
+        ),
+      );
+      expect(RegExp('Emphasized: TextStyle').allMatches(contents), hasLength(30));
     });
 
     test('will run dart format over the generated file', () {
