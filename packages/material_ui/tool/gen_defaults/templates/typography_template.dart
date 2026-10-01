@@ -2,15 +2,44 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import '../data/typescale.dart';
+import '../data/typescale_struct.dart';
 import 'template.dart';
 
-class TypographyTemplate extends TokenTemplate {
-  const TypographyTemplate(super.blockName, super.fileName, super.tokens);
+class TypographyTemplateM3 extends TokenTemplateM3 {
+  const TypographyTemplateM3();
 
   @override
-  String generate() =>
+  String get name => 'Typography';
+
+  @override
+  String get parentFilePath => 'typography.dart';
+
+  @override
+  String get className => '_M3Typography';
+
+  static const List<(String, TypescaleStruct)> _textStyles = <(String, TypescaleStruct)>[
+    ('displayLarge', TokenTypescale.displayLarge),
+    ('displayMedium', TokenTypescale.displayMedium),
+    ('displaySmall', TokenTypescale.displaySmall),
+    ('headlineLarge', TokenTypescale.headlineLarge),
+    ('headlineMedium', TokenTypescale.headlineMedium),
+    ('headlineSmall', TokenTypescale.headlineSmall),
+    ('titleLarge', TokenTypescale.titleLarge),
+    ('titleMedium', TokenTypescale.titleMedium),
+    ('titleSmall', TokenTypescale.titleSmall),
+    ('labelLarge', TokenTypescale.labelLarge),
+    ('labelMedium', TokenTypescale.labelMedium),
+    ('labelSmall', TokenTypescale.labelSmall),
+    ('bodyLarge', TokenTypescale.bodyLarge),
+    ('bodyMedium', TokenTypescale.bodyMedium),
+    ('bodySmall', TokenTypescale.bodySmall),
+  ];
+
+  @override
+  String generateContents(String className) =>
       '''
-abstract final class _M3Typography {
+abstract final class $className {
   ${_textTheme('englishLike', 'alphabetic')}
 
   ${_textTheme('dense', 'ideographic')}
@@ -21,84 +50,23 @@ abstract final class _M3Typography {
 
   String _textTheme(String name, String baseline) {
     final theme = StringBuffer('static const TextTheme $name = TextTheme(\n');
-    theme.writeln(
-      '    displayLarge: ${_textStyleDef('md.sys.typescale.display-large', '$name displayLarge 2021', baseline)},',
-    );
-    theme.writeln(
-      '    displayMedium: ${_textStyleDef('md.sys.typescale.display-medium', '$name displayMedium 2021', baseline)},',
-    );
-    theme.writeln(
-      '    displaySmall: ${_textStyleDef('md.sys.typescale.display-small', '$name displaySmall 2021', baseline)},',
-    );
-    theme.writeln(
-      '    headlineLarge: ${_textStyleDef('md.sys.typescale.headline-large', '$name headlineLarge 2021', baseline)},',
-    );
-    theme.writeln(
-      '    headlineMedium: ${_textStyleDef('md.sys.typescale.headline-medium', '$name headlineMedium 2021', baseline)},',
-    );
-    theme.writeln(
-      '    headlineSmall: ${_textStyleDef('md.sys.typescale.headline-small', '$name headlineSmall 2021', baseline)},',
-    );
-    theme.writeln(
-      '    titleLarge: ${_textStyleDef('md.sys.typescale.title-large', '$name titleLarge 2021', baseline)},',
-    );
-    theme.writeln(
-      '    titleMedium: ${_textStyleDef('md.sys.typescale.title-medium', '$name titleMedium 2021', baseline)},',
-    );
-    theme.writeln(
-      '    titleSmall: ${_textStyleDef('md.sys.typescale.title-small', '$name titleSmall 2021', baseline)},',
-    );
-    theme.writeln(
-      '    labelLarge: ${_textStyleDef('md.sys.typescale.label-large', '$name labelLarge 2021', baseline)},',
-    );
-    theme.writeln(
-      '    labelMedium: ${_textStyleDef('md.sys.typescale.label-medium', '$name labelMedium 2021', baseline)},',
-    );
-    theme.writeln(
-      '    labelSmall: ${_textStyleDef('md.sys.typescale.label-small', '$name labelSmall 2021', baseline)},',
-    );
-    theme.writeln(
-      '    bodyLarge: ${_textStyleDef('md.sys.typescale.body-large', '$name bodyLarge 2021', baseline)},',
-    );
-    theme.writeln(
-      '    bodyMedium: ${_textStyleDef('md.sys.typescale.body-medium', '$name bodyMedium 2021', baseline)},',
-    );
-    theme.writeln(
-      '    bodySmall: ${_textStyleDef('md.sys.typescale.body-small', '$name bodySmall 2021', baseline)},',
-    );
+    for (final (String styleName, TypescaleStruct token) in _textStyles) {
+      theme.writeln('    $styleName: ${_textStyleDef(token, '$name $styleName 2021', baseline)},');
+    }
     theme.write('  );');
     return theme.toString();
   }
 
-  String _textStyleDef(String tokenPrefix, String debugLabel, String baseline) {
+  String _textStyleDef(TypescaleStruct token, String debugLabel, String baseline) {
     final style = StringBuffer("TextStyle(debugLabel: '$debugLabel'");
     style.write(', inherit: false');
-    style.write(', fontSize: ${_fontSize(tokenPrefix)}');
-    style.write(', fontWeight: ${_fontWeight(tokenPrefix)}');
-    style.write(', letterSpacing: ${_fontSpacing(tokenPrefix)}');
-    style.write(', height: ${_fontHeight(tokenPrefix)}');
+    style.write(', fontSize: ${number(token.fontSize)}');
+    style.write(', fontWeight: FontWeight.w${token.fontWeight.toInt()}');
+    style.write(', letterSpacing: ${number(token.letterSpacing)}');
+    style.write(', height: ${(token.lineHeight / token.fontSize).toStringAsFixed(2)}');
     style.write(', textBaseline: TextBaseline.$baseline');
     style.write(', leadingDistribution: TextLeadingDistribution.even');
     style.write(')');
     return style.toString();
-  }
-
-  String _fontSize(String textStyleTokenName) {
-    return getToken('$textStyleTokenName.size').toString();
-  }
-
-  String _fontWeight(String textStyleTokenName) {
-    final weightValue = getToken(getToken('$textStyleTokenName.weight') as String).toString();
-    return 'FontWeight.w$weightValue';
-  }
-
-  String _fontSpacing(String textStyleTokenName) {
-    return getToken('$textStyleTokenName.tracking').toString();
-  }
-
-  String _fontHeight(String textStyleTokenName) {
-    final size = getToken('$textStyleTokenName.size') as double;
-    final lineHeight = getToken('$textStyleTokenName.line-height') as double;
-    return (lineHeight / size).toStringAsFixed(2);
   }
 }

@@ -54,7 +54,7 @@ import '../templates/list_tile_template.dart';
 // import '../templates/tabs_template.dart';
 // import '../templates/text_field_template.dart';
 // import '../templates/time_picker_template.dart';
-// import '../templates/typography_template.dart';
+import '../templates/typography_template.dart';
 
 Future<void> main(List<String> args) async {
   // Parse arguments
@@ -116,5 +116,5 @@ Future<void> main(List<String> args) async {
   // const TabsTemplateM3().generateFile(verbose: verbose);
   // const TextFieldTemplateM3().generateFile(verbose: verbose);
   // const TimePickerTemplateM3().generateFile(verbose: verbose);
-  // const TypographyTemplateM3().generateFile(verbose: verbose);
+  const TypographyTemplateM3().generateFile(verbose: verbose);
 }
