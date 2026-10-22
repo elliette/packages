@@ -15,6 +15,7 @@ import 'text_theme.dart';
 import 'theme_data.dart';
 
 part 'generated/typography_defaults_m3.g.dart';
+part 'generated/typography_defaults_m3e.g.dart';
 
 // Examples can assume:
 // late TargetPlatform platform;
@@ -70,20 +71,24 @@ enum ScriptCategory {
 /// font](https://developer.apple.com/design/human-interface-guidelines/typography/)
 /// fonts as used by Apple on iOS.
 ///
-/// Three sets of geometry themes are provided: 2014, 2018, and 2021. The 2014
-/// themes correspond to the original version of the Material Design spec. The
-/// 2018 themes correspond to the second iteration of the specification and
+/// Four sets of geometry themes are provided: 2014, 2018, 2021, and 2025. The
+/// 2014 themes correspond to the original version of the Material Design spec.
+/// The 2018 themes correspond to the second iteration of the specification and
 /// feature different font sizes, font weights, and letter spacing values. The
-/// 2021 themes correspond to the Material Design 3 specification.
+/// 2021 themes correspond to the Material Design 3 specification and are the
+/// defaults for [ThemeData.typography]. The 2025 themes correspond to the
+/// Material Design 3 Expressive specification and include emphasized variants
+/// for each of the 2021 text styles.
 ///
-/// By default, [ThemeData.typography] is `Typography.material2021(platform:
-/// platform, colorScheme: colorScheme)` (or `Typography.material2014(platform:
-/// platform)` when [ThemeData.useMaterial3] is false). To use the 2018 text
-/// theme geometries, specify a value using the [Typography.material2018]
-/// constructor:
+/// By default, [ThemeData.typography] is
+/// `Typography.material2021(platform: platform, colorScheme: colorScheme)`
+/// (or `Typography.material2014(platform: platform)` when
+/// [ThemeData.useMaterial3] is false). To use a different set of text theme
+/// geometries, specify a value using one of the [Typography] constructors, such
+/// as [Typography.material2025] or [Typography.material2018]:
 ///
 /// ```dart
-/// typography: Typography.material2018(platform: platform)
+/// typography: Typography.material2025(platform: platform, colorScheme: colorScheme)
 /// ```
 ///
 /// See also:
@@ -192,6 +197,59 @@ class Typography with Diagnosticable {
       englishLike: englishLike ?? englishLike2021,
       dense: dense ?? dense2021,
       tall: tall ?? tall2021,
+      includeEmphasized: false,
+    );
+  }
+
+  /// Creates a typography instance using Material 3 Expressive (2025)
+  /// defaults.
+  ///
+  /// In addition to the fifteen baseline text styles, the resulting text
+  /// themes include the emphasized type styles (e.g.
+  /// [TextTheme.titleMediumEmphasized]).
+  ///
+  /// To opt into Material 3 Expressive typography, pass this to
+  /// [ThemeData.typography]:
+  ///
+  /// ```dart
+  /// ThemeData(
+  ///   typography: Typography.material2025(platform: platform),
+  /// )
+  /// ```
+  ///
+  /// If [platform] is [TargetPlatform.iOS] or [TargetPlatform.macOS], the
+  /// default values for [black] and [white] are [blackCupertino] and
+  /// [whiteCupertino] respectively. Otherwise they are [blackMountainView] and
+  /// [whiteMountainView]. If [platform] is null then both [black] and [white]
+  /// must be specified. Each emphasized style in [black] and [white] that is
+  /// null defaults to its baseline style, so that emphasized text uses the
+  /// same font family as its baseline counterpart. All styles are then colored
+  /// using the [colorScheme].
+  ///
+  /// The default values for [englishLike], [dense], and [tall] are
+  /// [englishLike2025], [dense2025], and [tall2025].
+  ///
+  /// See also:
+  ///  * <https://m3.material.io/styles/typography>
+  factory Typography.material2025({
+    TargetPlatform? platform = TargetPlatform.android,
+    ColorScheme colorScheme = const ColorScheme.light(),
+    TextTheme? black,
+    TextTheme? white,
+    TextTheme? englishLike,
+    TextTheme? dense,
+    TextTheme? tall,
+  }) {
+    assert(platform != null || (black != null && white != null));
+    return Typography._withM3Colors(
+      platform: platform,
+      colorScheme: colorScheme,
+      black: black,
+      white: white,
+      englishLike: englishLike ?? englishLike2025,
+      dense: dense ?? dense2025,
+      tall: tall ?? tall2025,
+      includeEmphasized: true,
     );
   }
 
@@ -219,6 +277,9 @@ class Typography with Diagnosticable {
   /// Creates a typography instance whose [black] and [white] text themes are
   /// uniformly colored based on the [colorScheme], as specified by Material 3
   /// onwards.
+  ///
+  /// If [includeEmphasized] is true, each null emphasized style in [black] and
+  /// [white] is filled in from its baseline style before colors are applied.
   factory Typography._withM3Colors({
     required TargetPlatform? platform,
     required ColorScheme colorScheme,
@@ -227,8 +288,15 @@ class Typography with Diagnosticable {
     required TextTheme englishLike,
     required TextTheme dense,
     required TextTheme tall,
+    required bool includeEmphasized,
   }) {
     final base = Typography._withPlatform(platform, black, white, englishLike, dense, tall);
+    final TextTheme baseBlack = includeEmphasized
+        ? _withEmphasizedFromBaseline(base.black)
+        : base.black;
+    final TextTheme baseWhite = includeEmphasized
+        ? _withEmphasizedFromBaseline(base.white)
+        : base.white;
 
     // Ensure they are all uniformly dark or light, with
     // no color variation based on style as it was in previous
@@ -240,12 +308,58 @@ class Typography with Diagnosticable {
         ? colorScheme.surface
         : colorScheme.onSurface;
     return base.copyWith(
-      black: base.black.apply(displayColor: dark, bodyColor: dark, decorationColor: dark),
-      white: base.white.apply(displayColor: light, bodyColor: light, decorationColor: light),
+      black: baseBlack.apply(displayColor: dark, bodyColor: dark, decorationColor: dark),
+      white: baseWhite.apply(displayColor: light, bodyColor: light, decorationColor: light),
     );
   }
 
   const Typography._(this.black, this.white, this.englishLike, this.dense, this.tall);
+
+  /// Returns a copy of [textTheme] where each null emphasized style is
+  /// replaced by its baseline style.
+  ///
+  /// The platform color text themes (e.g. [blackMountainView]) only define
+  /// baseline styles, so this ensures emphasized styles inherit the same font
+  /// family and other non-geometric properties.
+  static TextTheme _withEmphasizedFromBaseline(TextTheme textTheme) {
+    TextStyle? emphasize(TextStyle? emphasized, TextStyle? baseline) {
+      if (emphasized != null || baseline == null) {
+        return emphasized;
+      }
+      final String? debugLabel = baseline.debugLabel;
+      return baseline.copyWith(debugLabel: debugLabel == null ? null : '${debugLabel}Emphasized');
+    }
+
+    return textTheme.copyWith(
+      displayLargeEmphasized: emphasize(textTheme.displayLargeEmphasized, textTheme.displayLarge),
+      displayMediumEmphasized: emphasize(
+        textTheme.displayMediumEmphasized,
+        textTheme.displayMedium,
+      ),
+      displaySmallEmphasized: emphasize(textTheme.displaySmallEmphasized, textTheme.displaySmall),
+      headlineLargeEmphasized: emphasize(
+        textTheme.headlineLargeEmphasized,
+        textTheme.headlineLarge,
+      ),
+      headlineMediumEmphasized: emphasize(
+        textTheme.headlineMediumEmphasized,
+        textTheme.headlineMedium,
+      ),
+      headlineSmallEmphasized: emphasize(
+        textTheme.headlineSmallEmphasized,
+        textTheme.headlineSmall,
+      ),
+      titleLargeEmphasized: emphasize(textTheme.titleLargeEmphasized, textTheme.titleLarge),
+      titleMediumEmphasized: emphasize(textTheme.titleMediumEmphasized, textTheme.titleMedium),
+      titleSmallEmphasized: emphasize(textTheme.titleSmallEmphasized, textTheme.titleSmall),
+      bodyLargeEmphasized: emphasize(textTheme.bodyLargeEmphasized, textTheme.bodyLarge),
+      bodyMediumEmphasized: emphasize(textTheme.bodyMediumEmphasized, textTheme.bodyMedium),
+      bodySmallEmphasized: emphasize(textTheme.bodySmallEmphasized, textTheme.bodySmall),
+      labelLargeEmphasized: emphasize(textTheme.labelLargeEmphasized, textTheme.labelLarge),
+      labelMediumEmphasized: emphasize(textTheme.labelMediumEmphasized, textTheme.labelMedium),
+      labelSmallEmphasized: emphasize(textTheme.labelSmallEmphasized, textTheme.labelSmall),
+    );
+  }
 
   /// A Material Design text theme with dark glyphs.
   ///
@@ -2100,4 +2214,34 @@ class Typography with Diagnosticable {
   /// The Material Design 3 specification does not include 'tall' text themes,
   /// so this is just here to be consistent with the API.
   static const TextTheme tall2021 = _M3Typography.tall;
+
+  // TODO(elliette): Replace englishLike2025, dense2025, and tall2025 with
+  // alphabetic2025 and ideographic2025 text themes once Material 2 is removed.
+  // Material 3 onwards defines identical geometry for all script categories,
+  // differing only in the text baseline.
+
+  /// Defines text geometry for `ScriptCategory.englishLike` scripts, such as
+  /// English, French, Russian, etc.
+  ///
+  /// The font sizes, weights, and letter spacings in this version match the
+  /// [2025 Material Design 3 Expressive specification](https://m3.material.io/styles/typography/overview),
+  /// and include the emphasized type styles (e.g.
+  /// [TextTheme.titleMediumEmphasized]).
+  static const TextTheme englishLike2025 = _M3ETypography.englishLike;
+
+  /// Defines text geometry for dense scripts, such as Chinese, Japanese
+  /// and Korean.
+  ///
+  /// The Material Design 3 Expressive specification does not include 'dense'
+  /// text themes, so this is just here to be consistent with the API. It is
+  /// identical to [englishLike2025] except that its text styles use
+  /// [TextBaseline.ideographic].
+  static const TextTheme dense2025 = _M3ETypography.dense;
+
+  /// Defines text geometry for tall scripts, such as Farsi, Hindi, and Thai.
+  ///
+  /// The Material Design 3 Expressive specification does not include 'tall'
+  /// text themes, so this is just here to be consistent with the API. It is
+  /// identical to [englishLike2025].
+  static const TextTheme tall2025 = _M3ETypography.tall;
 }

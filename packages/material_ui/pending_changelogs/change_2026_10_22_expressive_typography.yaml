@@ -1,0 +1,3 @@
+changelog: |
+  - Adds Material 3 Expressive typography via `Typography.material2025`, including emphasized text styles (e.g. `TextTheme.titleMediumEmphasized`).
+version: minor
