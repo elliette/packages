@@ -70,6 +70,11 @@ enum ScriptCategory {
 /// font](https://developer.apple.com/design/human-interface-guidelines/typography/)
 /// fonts as used by Apple on iOS.
 ///
+/// The color-free platform text themes, such as [mountainView] and
+/// [cupertino], provide the same font families without any colors. They are
+/// intended for use with [Typography.material2025], which colors text using
+/// its [ColorScheme].
+///
 /// Two sets of geometry themes are provided: 2014 and 2018. The 2014 themes
 /// correspond to the original version of the Material Design spec and are
 /// the defaults. The 2018 themes correspond the second iteration of the
@@ -1377,6 +1382,446 @@ class Typography with Diagnosticable {
       debugLabel: 'whiteRedwoodCity labelSmall',
       fontFamily: '.AppleSystemUIFont',
       color: Colors.white,
+      decoration: TextDecoration.none,
+    ),
+  );
+
+  /// A Material Design text theme based on Roboto.
+  ///
+  /// This [TextTheme] provides the font family and text decoration for
+  /// each style, but neither color nor geometry (font size, weight, etc).
+  /// It is intended for use with [Typography.material2021], which fills in
+  /// text colors from its [ColorScheme].
+  static const TextTheme mountainView = TextTheme(
+    displayLarge: TextStyle(
+      debugLabel: 'mountainView displayLarge',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    displayMedium: TextStyle(
+      debugLabel: 'mountainView displayMedium',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    displaySmall: TextStyle(
+      debugLabel: 'mountainView displaySmall',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    headlineLarge: TextStyle(
+      debugLabel: 'mountainView headlineLarge',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    headlineMedium: TextStyle(
+      debugLabel: 'mountainView headlineMedium',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    headlineSmall: TextStyle(
+      debugLabel: 'mountainView headlineSmall',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    titleLarge: TextStyle(
+      debugLabel: 'mountainView titleLarge',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    titleMedium: TextStyle(
+      debugLabel: 'mountainView titleMedium',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    titleSmall: TextStyle(
+      debugLabel: 'mountainView titleSmall',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    bodyLarge: TextStyle(
+      debugLabel: 'mountainView bodyLarge',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    bodyMedium: TextStyle(
+      debugLabel: 'mountainView bodyMedium',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    bodySmall: TextStyle(
+      debugLabel: 'mountainView bodySmall',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    labelLarge: TextStyle(
+      debugLabel: 'mountainView labelLarge',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    labelMedium: TextStyle(
+      debugLabel: 'mountainView labelMedium',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+    labelSmall: TextStyle(
+      debugLabel: 'mountainView labelSmall',
+      fontFamily: 'Roboto',
+      decoration: TextDecoration.none,
+    ),
+  );
+
+  /// A Material Design text theme based on Segoe UI.
+  ///
+  /// This [TextTheme] provides the font family and text decoration for
+  /// each style, but neither color nor geometry (font size, weight, etc).
+  /// It is intended for use with [Typography.material2021], which fills in
+  /// text colors from its [ColorScheme].
+  static const TextTheme redmond = TextTheme(
+    displayLarge: TextStyle(
+      debugLabel: 'redmond displayLarge',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    displayMedium: TextStyle(
+      debugLabel: 'redmond displayMedium',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    displaySmall: TextStyle(
+      debugLabel: 'redmond displaySmall',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    headlineLarge: TextStyle(
+      debugLabel: 'redmond headlineLarge',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    headlineMedium: TextStyle(
+      debugLabel: 'redmond headlineMedium',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    headlineSmall: TextStyle(
+      debugLabel: 'redmond headlineSmall',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    titleLarge: TextStyle(
+      debugLabel: 'redmond titleLarge',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    titleMedium: TextStyle(
+      debugLabel: 'redmond titleMedium',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    titleSmall: TextStyle(
+      debugLabel: 'redmond titleSmall',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    bodyLarge: TextStyle(
+      debugLabel: 'redmond bodyLarge',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    bodyMedium: TextStyle(
+      debugLabel: 'redmond bodyMedium',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    bodySmall: TextStyle(
+      debugLabel: 'redmond bodySmall',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    labelLarge: TextStyle(
+      debugLabel: 'redmond labelLarge',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    labelMedium: TextStyle(
+      debugLabel: 'redmond labelMedium',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+    labelSmall: TextStyle(
+      debugLabel: 'redmond labelSmall',
+      fontFamily: 'Segoe UI',
+      decoration: TextDecoration.none,
+    ),
+  );
+
+  /// A Material Design text theme based on Roboto, with fallback fonts that are likely
+  /// (but not guaranteed) to be installed on Linux.
+  ///
+  /// This [TextTheme] provides the font family and text decoration for
+  /// each style, but neither color nor geometry (font size, weight, etc).
+  /// It is intended for use with [Typography.material2021], which fills in
+  /// text colors from its [ColorScheme].
+  static const TextTheme helsinki = TextTheme(
+    displayLarge: TextStyle(
+      debugLabel: 'helsinki displayLarge',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    displayMedium: TextStyle(
+      debugLabel: 'helsinki displayMedium',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    displaySmall: TextStyle(
+      debugLabel: 'helsinki displaySmall',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    headlineLarge: TextStyle(
+      debugLabel: 'helsinki headlineLarge',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    headlineMedium: TextStyle(
+      debugLabel: 'helsinki headlineMedium',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    headlineSmall: TextStyle(
+      debugLabel: 'helsinki headlineSmall',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    titleLarge: TextStyle(
+      debugLabel: 'helsinki titleLarge',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    titleMedium: TextStyle(
+      debugLabel: 'helsinki titleMedium',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    titleSmall: TextStyle(
+      debugLabel: 'helsinki titleSmall',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    bodyLarge: TextStyle(
+      debugLabel: 'helsinki bodyLarge',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    bodyMedium: TextStyle(
+      debugLabel: 'helsinki bodyMedium',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    bodySmall: TextStyle(
+      debugLabel: 'helsinki bodySmall',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    labelLarge: TextStyle(
+      debugLabel: 'helsinki labelLarge',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    labelMedium: TextStyle(
+      debugLabel: 'helsinki labelMedium',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+    labelSmall: TextStyle(
+      debugLabel: 'helsinki labelSmall',
+      fontFamily: 'Roboto',
+      fontFamilyFallback: _helsinkiFontFallbacks,
+      decoration: TextDecoration.none,
+    ),
+  );
+
+  /// A Material Design text theme based on San Francisco.
+  ///
+  /// This [TextTheme] provides the font family and text decoration for
+  /// each style, but neither color nor geometry (font size, weight, etc).
+  /// It is intended for use with [Typography.material2021], which fills in
+  /// text colors from its [ColorScheme].
+  ///
+  /// This theme uses the iOS version of the font names.
+  static const TextTheme cupertino = TextTheme(
+    displayLarge: TextStyle(
+      debugLabel: 'cupertino displayLarge',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    displayMedium: TextStyle(
+      debugLabel: 'cupertino displayMedium',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    displaySmall: TextStyle(
+      debugLabel: 'cupertino displaySmall',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    headlineLarge: TextStyle(
+      debugLabel: 'cupertino headlineLarge',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    headlineMedium: TextStyle(
+      debugLabel: 'cupertino headlineMedium',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    headlineSmall: TextStyle(
+      debugLabel: 'cupertino headlineSmall',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    titleLarge: TextStyle(
+      debugLabel: 'cupertino titleLarge',
+      fontFamily: 'CupertinoSystemDisplay',
+      decoration: TextDecoration.none,
+    ),
+    titleMedium: TextStyle(
+      debugLabel: 'cupertino titleMedium',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    titleSmall: TextStyle(
+      debugLabel: 'cupertino titleSmall',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    bodyLarge: TextStyle(
+      debugLabel: 'cupertino bodyLarge',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    bodyMedium: TextStyle(
+      debugLabel: 'cupertino bodyMedium',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    bodySmall: TextStyle(
+      debugLabel: 'cupertino bodySmall',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    labelLarge: TextStyle(
+      debugLabel: 'cupertino labelLarge',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    labelMedium: TextStyle(
+      debugLabel: 'cupertino labelMedium',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+    labelSmall: TextStyle(
+      debugLabel: 'cupertino labelSmall',
+      fontFamily: 'CupertinoSystemText',
+      decoration: TextDecoration.none,
+    ),
+  );
+
+  /// A Material Design text theme based on San Francisco.
+  ///
+  /// This [TextTheme] provides the font family and text decoration for
+  /// each style, but neither color nor geometry (font size, weight, etc).
+  /// It is intended for use with [Typography.material2021], which fills in
+  /// text colors from its [ColorScheme].
+  ///
+  /// This theme uses the macOS version of the font names.
+  static const TextTheme redwoodCity = TextTheme(
+    displayLarge: TextStyle(
+      debugLabel: 'redwoodCity displayLarge',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    displayMedium: TextStyle(
+      debugLabel: 'redwoodCity displayMedium',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    displaySmall: TextStyle(
+      debugLabel: 'redwoodCity displaySmall',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    headlineLarge: TextStyle(
+      debugLabel: 'redwoodCity headlineLarge',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    headlineMedium: TextStyle(
+      debugLabel: 'redwoodCity headlineMedium',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    headlineSmall: TextStyle(
+      debugLabel: 'redwoodCity headlineSmall',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    titleLarge: TextStyle(
+      debugLabel: 'redwoodCity titleLarge',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    titleMedium: TextStyle(
+      debugLabel: 'redwoodCity titleMedium',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    titleSmall: TextStyle(
+      debugLabel: 'redwoodCity titleSmall',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    bodyLarge: TextStyle(
+      debugLabel: 'redwoodCity bodyLarge',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    bodyMedium: TextStyle(
+      debugLabel: 'redwoodCity bodyMedium',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    bodySmall: TextStyle(
+      debugLabel: 'redwoodCity bodySmall',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    labelLarge: TextStyle(
+      debugLabel: 'redwoodCity labelLarge',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    labelMedium: TextStyle(
+      debugLabel: 'redwoodCity labelMedium',
+      fontFamily: '.AppleSystemUIFont',
+      decoration: TextDecoration.none,
+    ),
+    labelSmall: TextStyle(
+      debugLabel: 'redwoodCity labelSmall',
+      fontFamily: '.AppleSystemUIFont',
       decoration: TextDecoration.none,
     ),
   );
