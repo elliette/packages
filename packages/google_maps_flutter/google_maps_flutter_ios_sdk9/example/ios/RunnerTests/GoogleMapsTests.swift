@@ -61,6 +61,7 @@ class MockMapEventHandler: TestMapEventHandler {
 
 class StubPluginRegistrar: NSObject, FlutterPluginRegistrar {
   var viewController: UIViewController? { nil }
+  var engineIdentifier: Int64 { 0 }
   func publish(_ value: NSObject) {}
   func addMethodCallDelegate(_ delegate: any FlutterPlugin, channel: FlutterMethodChannel) {}
   func addApplicationDelegate(_ delegate: any FlutterPlugin) {}

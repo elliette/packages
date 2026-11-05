@@ -612,6 +612,10 @@
   return nil;
 }
 
+- (int64_t)engineIdentifier {
+  return 0;
+}
+
 @end
 
 // This FlutterBinaryMessenger is a protocol, so to make a stub it has to be implemented.
