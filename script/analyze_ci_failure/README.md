@@ -52,3 +52,18 @@ script/analyze_ci_failure/run.sh find_builds [options]
 - `--limit`: Max builds to retrieve (defaults to `400`).
 - `--[no-]failed-only`: Only show non-successful builds.
 - `--[no-]json`: Output as JSON.
+
+---
+
+### `bin/summarize_failures.dart`
+
+Condenses failure logs from one or more Buildbucket IDs.
+
+**Usage:**
+```bash
+script/analyze_ci_failure/run.sh summarize_failures <build_id> [<build_id> ...] [options]
+```
+
+**Options:**
+- `--max-lines`: Signature lines to keep per step (defaults to `12`).
+- `--[no-]json`: Output as JSON.
