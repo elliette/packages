@@ -16,6 +16,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 import 'theme.dart';
+import 'theme_data.dart';
 
 // Examples can assume:
 // late BuildContext context;
@@ -64,6 +65,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     this.extendedPadding,
     this.extendedTextStyle,
     this.mouseCursor,
+    this.variant,
   });
 
   /// Color to be used for the unselected, enabled [FloatingActionButton]'s
@@ -109,6 +111,8 @@ class FloatingActionButtonThemeData with Diagnosticable {
   final double? highlightElevation;
 
   /// The shape to be used for the floating action button's [Material].
+  ///
+  /// In Material 3 Expressive, this must be an [OutlinedBorder].
   final ShapeBorder? shape;
 
   /// If specified, defines the feedback property for [FloatingActionButton].
@@ -147,6 +151,33 @@ class FloatingActionButtonThemeData with Diagnosticable {
   /// If specified, overrides the default value of [FloatingActionButton.mouseCursor].
   final WidgetStateProperty<MouseCursor?>? mouseCursor;
 
+  /// The style variant of Material Design used by [FloatingActionButton].
+  ///
+  /// Set this to [StyleVariant.material3Expressive] to opt floating action
+  /// buttons into the Material 3 Expressive style. This has no effect when
+  /// [ThemeData.useMaterial3] is false.
+  ///
+  /// If null, the variant is inherited from the closest enclosing
+  /// [FloatingActionButtonTheme] that specifies one, and then from
+  /// [ThemeData.floatingActionButtonTheme]. If none of them specify a variant,
+  /// [FloatingActionButton] uses [StyleVariant.material3]. To keep a subtree on
+  /// Material 3 when an ancestor opts into Material 3 Expressive, set this to
+  /// [StyleVariant.material3].
+  ///
+  /// An enclosing [FloatingActionButtonTheme] takes precedence over
+  /// [ThemeData.floatingActionButtonTheme], even when a closer [Theme]
+  /// specifies a different variant. This matches
+  /// [FloatingActionButtonTheme.of], which only uses
+  /// [ThemeData.floatingActionButtonTheme] when there is no enclosing
+  /// [FloatingActionButtonTheme]. To change the variant of a subtree, wrap it
+  /// in a [FloatingActionButtonTheme].
+  ///
+  /// See also:
+  ///
+  ///  * [FloatingActionButtonTheme.variantOf], which returns the variant that
+  ///    applies at a given location.
+  final StyleVariant? variant;
+
   /// Creates a copy of this object with the given fields replaced with the
   /// new values.
   FloatingActionButtonThemeData copyWith({
@@ -171,6 +202,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     EdgeInsetsGeometry? extendedPadding,
     TextStyle? extendedTextStyle,
     WidgetStateProperty<MouseCursor?>? mouseCursor,
+    StyleVariant? variant,
   }) {
     return FloatingActionButtonThemeData(
       foregroundColor: foregroundColor ?? this.foregroundColor,
@@ -194,6 +226,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
       extendedPadding: extendedPadding ?? this.extendedPadding,
       extendedTextStyle: extendedTextStyle ?? this.extendedTextStyle,
       mouseCursor: mouseCursor ?? this.mouseCursor,
+      variant: variant ?? this.variant,
     );
   }
 
@@ -248,6 +281,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
       extendedPadding: EdgeInsetsGeometry.lerp(a?.extendedPadding, b?.extendedPadding, t),
       extendedTextStyle: TextStyle.lerp(a?.extendedTextStyle, b?.extendedTextStyle, t),
       mouseCursor: t < 0.5 ? a?.mouseCursor : b?.mouseCursor,
+      variant: t < 0.5 ? a?.variant : b?.variant,
     );
   }
 
@@ -272,7 +306,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     extendedSizeConstraints,
     extendedIconLabelSpacing,
     extendedPadding,
-    Object.hash(extendedTextStyle, mouseCursor),
+    Object.hash(extendedTextStyle, mouseCursor, variant),
   );
 
   @override
@@ -304,7 +338,8 @@ class FloatingActionButtonThemeData with Diagnosticable {
         other.extendedIconLabelSpacing == extendedIconLabelSpacing &&
         other.extendedPadding == extendedPadding &&
         other.extendedTextStyle == extendedTextStyle &&
-        other.mouseCursor == mouseCursor;
+        other.mouseCursor == mouseCursor &&
+        other.variant == variant;
   }
 
   @override
@@ -368,6 +403,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
         defaultValue: null,
       ),
     );
+    properties.add(EnumProperty<StyleVariant>('variant', variant, defaultValue: null));
   }
 }
 
@@ -390,6 +426,11 @@ class FloatingActionButtonTheme extends InheritedTheme {
   /// If there is no ancestor, it returns [ThemeData.floatingActionButtonTheme]. Applications
   /// can assume that the returned value will not be null.
   ///
+  /// The returned [FloatingActionButtonThemeData.variant] is the value
+  /// specified by that theme, which can be null even when an ancestor
+  /// specifies a variant. Use [variantOf] to get the variant that applies at
+  /// the given [context].
+  ///
   /// Typical usage is as follows:
   ///
   /// ```dart
@@ -399,6 +440,45 @@ class FloatingActionButtonTheme extends InheritedTheme {
     final FloatingActionButtonTheme? fabTheme = context
         .dependOnInheritedWidgetOfExactType<FloatingActionButtonTheme>();
     return fabTheme?.data ?? Theme.of(context).floatingActionButtonTheme;
+  }
+
+  /// Returns the [StyleVariant] that [FloatingActionButton]s use at the given
+  /// [context].
+  ///
+  /// The closest enclosing [FloatingActionButtonTheme] whose
+  /// [FloatingActionButtonThemeData.variant] is non-null determines the
+  /// variant, so a [FloatingActionButtonTheme] that doesn't specify a variant
+  /// inherits it from its ancestors. If none of the enclosing
+  /// [FloatingActionButtonTheme]s specify a variant, the variant of
+  /// [ThemeData.floatingActionButtonTheme] is used. If that is also null,
+  /// [StyleVariant.material3] is returned.
+  ///
+  /// Typical usage is as follows:
+  ///
+  /// ```dart
+  /// final StyleVariant variant = FloatingActionButtonTheme.variantOf(context);
+  /// ```
+  static StyleVariant variantOf(BuildContext context) {
+    InheritedElement? element = context
+        .getElementForInheritedWidgetOfExactType<FloatingActionButtonTheme>();
+    while (element != null) {
+      // Depend on every theme that is visited, so that a change to any of them
+      // rebuilds the dependent.
+      context.dependOnInheritedElement(element);
+      final StyleVariant? variant = (element.widget as FloatingActionButtonTheme).data.variant;
+      if (variant != null) {
+        return variant;
+      }
+      // Calling getElementForInheritedWidgetOfExactType on the element itself
+      // would return the same element, so continue the search from its parent.
+      Element? parent;
+      element.visitAncestorElements((Element ancestor) {
+        parent = ancestor;
+        return false;
+      });
+      element = parent?.getElementForInheritedWidgetOfExactType<FloatingActionButtonTheme>();
+    }
+    return Theme.of(context).floatingActionButtonTheme.variant ?? StyleVariant.material3;
   }
 
   @override

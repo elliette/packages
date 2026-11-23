@@ -1488,6 +1488,477 @@ void main() {
     );
     expect(tester.getSize(find.byType(FloatingActionButton)), Size.zero);
   });
+
+  group('Material 3 Expressive', () {
+    final m3eTheme = ThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        variant: StyleVariant.material3Expressive,
+      ),
+    );
+
+    Finder materialFinder() {
+      return find.descendant(
+        of: find.byType(FloatingActionButton),
+        matching: find.byType(Material),
+      );
+    }
+
+    Material getMaterial(WidgetTester tester) => tester.widget<Material>(materialFinder());
+
+    InkWell getInkWell(WidgetTester tester) {
+      return tester.widget<InkWell>(
+        find.descendant(of: find.byType(FloatingActionButton), matching: find.byType(InkWell)),
+      );
+    }
+
+    Color? getIconColor(WidgetTester tester) {
+      return tester
+          .widget<RichText>(
+            find.descendant(of: find.byIcon(Icons.add), matching: find.byType(RichText)),
+          )
+          .text
+          .style!
+          .color;
+    }
+
+    Future<void> pumpFab(WidgetTester tester, Widget fab, {ThemeData? theme}) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: theme ?? m3eTheme,
+          home: Scaffold(floatingActionButton: fab),
+        ),
+      );
+      // Let the button's implicit animations, such as the icon size, settle.
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('Material 3 remains the default', (WidgetTester tester) async {
+      await pumpFab(tester, FloatingActionButton(onPressed: () {}), theme: ThemeData());
+      expect(find.byType(RawMaterialButton), findsOneWidget);
+    });
+
+    testWidgets('The variant has no effect when useMaterial3 is false', (
+      WidgetTester tester,
+    ) async {
+      await pumpFab(
+        tester,
+        FloatingActionButton(onPressed: () {}),
+        theme: ThemeData(
+          useMaterial3: false,
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            variant: StyleVariant.material3Expressive,
+          ),
+        ),
+      );
+      expect(find.byType(RawMaterialButton), findsOneWidget);
+    });
+
+    testWidgets('A nested FloatingActionButtonTheme can opt a subtree back out', (
+      WidgetTester tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: m3eTheme,
+          home: Scaffold(
+            body: FloatingActionButtonTheme(
+              data: const FloatingActionButtonThemeData(variant: StyleVariant.material3),
+              child: FloatingActionButton(onPressed: () {}, heroTag: 'm3'),
+            ),
+            floatingActionButton: FloatingActionButton(onPressed: () {}),
+          ),
+        ),
+      );
+      expect(find.byType(RawMaterialButton), findsOneWidget);
+      expect(
+        find.descendant(
+          of: find.byType(FloatingActionButtonTheme),
+          matching: find.byType(RawMaterialButton),
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('Default values', (WidgetTester tester) async {
+      const colorScheme = ColorScheme.light();
+      await pumpFab(
+        tester,
+        FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+        theme: ThemeData(
+          colorScheme: colorScheme,
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            variant: StyleVariant.material3Expressive,
+          ),
+        ),
+      );
+
+      expect(find.byType(RawMaterialButton), findsNothing);
+      final Material material = getMaterial(tester);
+      expect(material.color, colorScheme.primaryContainer);
+      expect(material.shadowColor, colorScheme.shadow);
+      expect(material.surfaceTintColor, Colors.transparent);
+      expect(material.elevation, 6.0);
+      expect(
+        material.shape,
+        const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
+      );
+      expect(tester.getSize(materialFinder()), const Size(56.0, 56.0));
+      expect(tester.getSize(find.byIcon(Icons.add)), const Size(24.0, 24.0));
+      expect(getIconColor(tester), colorScheme.onPrimaryContainer);
+
+      final WidgetStateProperty<Color?> overlayColor = getInkWell(tester).overlayColor!;
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.pressed}),
+        colorScheme.onPrimaryContainer.withValues(alpha: 0.1),
+      );
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.hovered}),
+        colorScheme.onPrimaryContainer.withValues(alpha: 0.08),
+      );
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.focused}),
+        colorScheme.onPrimaryContainer.withValues(alpha: 0.1),
+      );
+      expect(overlayColor.resolve(<WidgetState>{}), isNull);
+    });
+
+    testWidgets('Sizes, shapes, and icon sizes', (WidgetTester tester) async {
+      Future<void> expectFab(
+        Widget fab, {
+        required Size size,
+        required double radius,
+        required double iconSize,
+      }) async {
+        await pumpFab(tester, fab);
+        expect(find.byType(RawMaterialButton), findsNothing);
+        expect(tester.getSize(materialFinder()), size);
+        expect(
+          getMaterial(tester).shape,
+          RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(radius))),
+        );
+        expect(tester.getSize(find.byIcon(Icons.add)), Size.square(iconSize));
+      }
+
+      await expectFab(
+        FloatingActionButton.small(onPressed: () {}, child: const Icon(Icons.add)),
+        size: const Size(40.0, 40.0),
+        radius: 12.0,
+        iconSize: 24.0,
+      );
+      await expectFab(
+        FloatingActionButton(mini: true, onPressed: () {}, child: const Icon(Icons.add)),
+        size: const Size(40.0, 40.0),
+        radius: 12.0,
+        iconSize: 24.0,
+      );
+      await expectFab(
+        FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+        size: const Size(56.0, 56.0),
+        radius: 16.0,
+        iconSize: 24.0,
+      );
+      await expectFab(
+        FloatingActionButton.large(onPressed: () {}, child: const Icon(Icons.add)),
+        size: const Size(96.0, 96.0),
+        radius: 28.0,
+        iconSize: 36.0,
+      );
+    });
+
+    testWidgets('The small floating action button has a padded tap target', (
+      WidgetTester tester,
+    ) async {
+      final Key key = UniqueKey();
+      await pumpFab(tester, FloatingActionButton.small(key: key, onPressed: () {}));
+      expect(tester.getSize(find.byKey(key)), const Size(48.0, 48.0));
+      expect(tester.getSize(materialFinder()), const Size(40.0, 40.0));
+    });
+
+    for (final TextDirection textDirection in TextDirection.values) {
+      testWidgets('Extended floating action button defaults in ${textDirection.name}', (
+        WidgetTester tester,
+      ) async {
+        const iconKey = Key('icon');
+        const labelKey = Key('label');
+        await tester.pumpWidget(
+          MaterialApp(
+            theme: m3eTheme,
+            home: Directionality(
+              textDirection: textDirection,
+              child: Scaffold(
+                floatingActionButton: FloatingActionButton.extended(
+                  onPressed: () {},
+                  icon: const Icon(Icons.add, key: iconKey),
+                  label: const Text('Extended', key: labelKey),
+                ),
+              ),
+            ),
+          ),
+        );
+
+        expect(find.byType(RawMaterialButton), findsNothing);
+        final ThemeData theme = Theme.of(tester.element(find.byType(FloatingActionButton)));
+        final Rect materialRect = tester.getRect(materialFinder());
+        expect(materialRect.height, 56.0);
+        expect(
+          getMaterial(tester).shape,
+          const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
+        );
+        expect(
+          getMaterial(tester).textStyle,
+          theme.textTheme.titleMedium!.copyWith(color: theme.colorScheme.onPrimaryContainer),
+        );
+        final Rect iconRect = tester.getRect(find.byKey(iconKey));
+        final Rect labelRect = tester.getRect(find.byKey(labelKey));
+        expect(iconRect.size, const Size(24.0, 24.0));
+        if (textDirection == TextDirection.ltr) {
+          expect(iconRect.left - materialRect.left, 16.0);
+          expect(labelRect.left - iconRect.right, 8.0);
+          expect(materialRect.right - labelRect.right, 16.0);
+        } else {
+          expect(materialRect.right - iconRect.right, 16.0);
+          expect(iconRect.left - labelRect.right, 8.0);
+          expect(labelRect.left - materialRect.left, 16.0);
+        }
+      });
+    }
+
+    testWidgets('Extended floating action button without isExtended shows only the icon', (
+      WidgetTester tester,
+    ) async {
+      await pumpFab(
+        tester,
+        FloatingActionButton.extended(
+          onPressed: () {},
+          isExtended: false,
+          icon: const Icon(Icons.add),
+          label: const Text('Extended'),
+        ),
+      );
+
+      expect(find.text('Extended'), findsNothing);
+      expect(find.byIcon(Icons.add), findsOneWidget);
+    });
+
+    testWidgets('The state layer follows foregroundColor', (WidgetTester tester) async {
+      const foregroundColor = Color(0xFF00FF00);
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () {},
+          foregroundColor: foregroundColor,
+          child: const Icon(Icons.add),
+        ),
+      );
+
+      final WidgetStateProperty<Color?> overlayColor = getInkWell(tester).overlayColor!;
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.pressed}),
+        foregroundColor.withValues(alpha: 0.1),
+      );
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.hovered}),
+        foregroundColor.withValues(alpha: 0.08),
+      );
+      expect(
+        overlayColor.resolve(<WidgetState>{WidgetState.focused}),
+        foregroundColor.withValues(alpha: 0.1),
+      );
+      expect(getIconColor(tester), foregroundColor);
+    });
+
+    testWidgets('Explicit state layer colors take priority over foregroundColor', (
+      WidgetTester tester,
+    ) async {
+      const foregroundColor = Color(0xFF00FF00);
+      const splashColor = Color(0xFF000001);
+      const hoverColor = Color(0xFF000002);
+      const focusColor = Color(0xFF000003);
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () {},
+          foregroundColor: foregroundColor,
+          splashColor: splashColor,
+          hoverColor: hoverColor,
+          focusColor: focusColor,
+          child: const Icon(Icons.add),
+        ),
+      );
+
+      final WidgetStateProperty<Color?> overlayColor = getInkWell(tester).overlayColor!;
+      expect(overlayColor.resolve(<WidgetState>{WidgetState.pressed}), splashColor);
+      expect(overlayColor.resolve(<WidgetState>{WidgetState.hovered}), hoverColor);
+      expect(overlayColor.resolve(<WidgetState>{WidgetState.focused}), focusColor);
+    });
+
+    testWidgets('Material 3 state layer does not follow foregroundColor', (
+      WidgetTester tester,
+    ) async {
+      const colorScheme = ColorScheme.light();
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () {},
+          foregroundColor: const Color(0xFF00FF00),
+          child: const Icon(Icons.add),
+        ),
+        theme: ThemeData(colorScheme: colorScheme),
+      );
+
+      expect(
+        tester.widget<RawMaterialButton>(find.byType(RawMaterialButton)).splashColor,
+        colorScheme.onPrimaryContainer.withOpacity(0.1),
+      );
+    });
+
+    testWidgets('Elevation for each state', (WidgetTester tester) async {
+      final focusNode = FocusNode();
+      addTearDown(focusNode.dispose);
+      await pumpFab(
+        tester,
+        FloatingActionButton(onPressed: () {}, focusNode: focusNode, child: const Icon(Icons.add)),
+      );
+      expect(getMaterial(tester).elevation, 6.0);
+
+      final TestGesture gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
+      await gesture.addPointer();
+      addTearDown(gesture.removePointer);
+      await gesture.moveTo(tester.getCenter(find.byType(FloatingActionButton)));
+      await tester.pumpAndSettle();
+      expect(getMaterial(tester).elevation, 8.0);
+
+      await gesture.down(tester.getCenter(find.byType(FloatingActionButton)));
+      await tester.pump();
+      expect(getMaterial(tester).elevation, 6.0);
+      await gesture.up();
+      await gesture.moveTo(Offset.zero);
+      await tester.pumpAndSettle();
+
+      FocusManager.instance.highlightStrategy = FocusHighlightStrategy.alwaysTraditional;
+      focusNode.requestFocus();
+      await tester.pumpAndSettle();
+      expect(getMaterial(tester).elevation, 6.0);
+      FocusManager.instance.highlightStrategy = FocusHighlightStrategy.automatic;
+    });
+
+    testWidgets('Widget elevations map to each state', (WidgetTester tester) async {
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () {},
+          elevation: 1.0,
+          hoverElevation: 2.0,
+          highlightElevation: 3.0,
+          child: const Icon(Icons.add),
+        ),
+      );
+      expect(getMaterial(tester).elevation, 1.0);
+
+      final TestGesture gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
+      await gesture.addPointer();
+      addTearDown(gesture.removePointer);
+      await gesture.moveTo(tester.getCenter(find.byType(FloatingActionButton)));
+      await tester.pumpAndSettle();
+      expect(getMaterial(tester).elevation, 2.0);
+
+      await gesture.down(tester.getCenter(find.byType(FloatingActionButton)));
+      await tester.pump();
+      expect(getMaterial(tester).elevation, 3.0);
+      await gesture.up();
+    });
+
+    testWidgets('A disabled floating action button uses elevation when disabledElevation is null', (
+      WidgetTester tester,
+    ) async {
+      await pumpFab(tester, const FloatingActionButton(onPressed: null));
+      expect(getMaterial(tester).elevation, 6.0);
+
+      await pumpFab(tester, const FloatingActionButton(onPressed: null, elevation: 3.0));
+      expect(getMaterial(tester).elevation, 3.0);
+
+      await pumpFab(
+        tester,
+        const FloatingActionButton(onPressed: null, elevation: 3.0, disabledElevation: 1.0),
+      );
+      expect(getMaterial(tester).elevation, 1.0);
+    });
+
+    testWidgets('A shape that is not an OutlinedBorder asserts', (WidgetTester tester) async {
+      await pumpFab(tester, FloatingActionButton(onPressed: () {}, shape: Border.all()));
+      expect(tester.takeException(), isAssertionError);
+    });
+
+    testWidgets('Compact visual density does not change the size', (WidgetTester tester) async {
+      await pumpFab(
+        tester,
+        FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+        theme: m3eTheme.copyWith(visualDensity: VisualDensity.compact),
+      );
+      expect(tester.getSize(materialFinder()), const Size(56.0, 56.0));
+    });
+
+    testWidgets('Tooltip, Hero, and semantics are kept', (WidgetTester tester) async {
+      final semantics = SemanticsTester(tester);
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Add tooltip',
+          heroTag: 'fab',
+          child: const Icon(Icons.add, semanticLabel: 'Add'),
+        ),
+      );
+
+      expect(find.byType(Tooltip), findsOneWidget);
+      expect(tester.widget<Hero>(find.byType(Hero)).tag, 'fab');
+      expect(
+        semantics,
+        includesNodeWith(
+          label: 'Add',
+          flags: <SemanticsFlag>[
+            SemanticsFlag.hasEnabledState,
+            SemanticsFlag.isButton,
+            SemanticsFlag.isEnabled,
+            SemanticsFlag.isFocusable,
+          ],
+          actions: <SemanticsAction>[SemanticsAction.tap, SemanticsAction.focus],
+        ),
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('Widget properties are used', (WidgetTester tester) async {
+      var pressed = false;
+      await pumpFab(
+        tester,
+        FloatingActionButton(
+          onPressed: () => pressed = true,
+          backgroundColor: const Color(0xFF000001),
+          shape: const StadiumBorder(),
+          mouseCursor: SystemMouseCursors.text,
+          clipBehavior: Clip.antiAlias,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          child: const Icon(Icons.add),
+        ),
+      );
+
+      expect(getMaterial(tester).color, const Color(0xFF000001));
+      expect(getMaterial(tester).shape, const StadiumBorder());
+      expect(getMaterial(tester).clipBehavior, Clip.antiAlias);
+      await tester.tap(find.byType(FloatingActionButton));
+      expect(pressed, isTrue);
+
+      final TestGesture gesture = await tester.createGesture(kind: PointerDeviceKind.mouse);
+      await gesture.addPointer();
+      addTearDown(gesture.removePointer);
+      await gesture.moveTo(tester.getCenter(find.byType(FloatingActionButton)));
+      await tester.pumpAndSettle();
+      expect(
+        RendererBinding.instance.mouseTracker.debugDeviceActiveCursor(1),
+        SystemMouseCursors.text,
+      );
+    });
+  });
 }
 
 Offset _rightEdgeOfFab(WidgetTester tester) {
