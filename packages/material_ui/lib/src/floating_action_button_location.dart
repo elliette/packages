@@ -38,7 +38,7 @@ const double kFloatingActionButtonTurnInterval = 0.125;
 /// If a [FloatingActionButton] is used on a [Scaffold] in certain positions,
 /// it is moved [kMiniButtonOffsetAdjustment] pixels closer to the edge of the screen.
 ///
-/// This is intended to be used with [FloatingActionButton.mini] set to true,
+/// This is intended to be used with a [FloatingActionButton.mini],
 /// so that the floating action button appears to align with [CircleAvatar]s
 /// in the [ListTile.leading] slot of a [ListTile] in a [ListView] in the
 /// [Scaffold.body].
@@ -179,7 +179,7 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.leading] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniStartTop] and set [FloatingActionButton.mini] to true.
+  /// use [miniStartTop] with a [FloatingActionButton.mini].
   ///
   /// This is unlikely to be a useful location for apps that lack a top [AppBar]
   /// or that use a [SliverAppBar] in the scaffold body itself.
@@ -191,7 +191,7 @@ abstract class FloatingActionButtonLocation {
   /// the [Scaffold.appBar] and the [Scaffold.body], optimized for mini floating
   /// action buttons.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.leading] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].
@@ -212,8 +212,8 @@ abstract class FloatingActionButtonLocation {
   static const FloatingActionButtonLocation centerTop = _CenterTopFabLocation();
 
   /// Centered [FloatingActionButton], floating over the transition between
-  /// the [Scaffold.appBar] and the [Scaffold.body], intended to be used with
-  /// [FloatingActionButton.mini] set to true.
+  /// the [Scaffold.appBar] and the [Scaffold.body], intended to be used with a
+  /// [FloatingActionButton.mini].
   ///
   /// This is unlikely to be a useful location for apps that lack a top [AppBar]
   /// or that use a [SliverAppBar] in the scaffold body itself.
@@ -226,7 +226,7 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.trailing] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniEndTop] and set [FloatingActionButton.mini] to true.
+  /// use [miniEndTop] with a [FloatingActionButton.mini].
   ///
   /// This is unlikely to be a useful location for apps that lack a top [AppBar]
   /// or that use a [SliverAppBar] in the scaffold body itself.
@@ -238,7 +238,7 @@ abstract class FloatingActionButtonLocation {
   /// the [Scaffold.appBar] and the [Scaffold.body], optimized for mini floating
   /// action buttons.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.trailing] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].
@@ -253,7 +253,7 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.leading] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniStartFloat] and set [FloatingActionButton.mini] to true.
+  /// use [miniStartFloat] with a [FloatingActionButton.mini].
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/floating_action_button_location_start_float.png)
   static const FloatingActionButtonLocation startFloat = _StartFloatFabLocation();
@@ -261,7 +261,7 @@ abstract class FloatingActionButtonLocation {
   /// Start-aligned [FloatingActionButton], floating at the bottom of the screen,
   /// optimized for mini floating action buttons.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.leading] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].
@@ -275,8 +275,8 @@ abstract class FloatingActionButtonLocation {
 
   /// Centered [FloatingActionButton], floating at the bottom of the screen.
   ///
-  /// To position a mini floating action button, use [miniCenterFloat] and
-  /// set [FloatingActionButton.mini] to true.
+  /// To position a mini floating action button, use [miniCenterFloat] with a
+  /// [FloatingActionButton.mini].
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/floating_action_button_location_center_float.png)
   static const FloatingActionButtonLocation centerFloat = _CenterFloatFabLocation();
@@ -284,7 +284,7 @@ abstract class FloatingActionButtonLocation {
   /// Centered [FloatingActionButton], floating at the bottom of the screen,
   /// optimized for mini floating action buttons.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align horizontally with
   /// the locations [FloatingActionButtonLocation.miniStartFloat]
   /// and [FloatingActionButtonLocation.miniEndFloat].
@@ -302,7 +302,7 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.trailing] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniEndFloat] and set [FloatingActionButton.mini] to true.
+  /// use [miniEndFloat] with a [FloatingActionButton.mini].
   ///
   /// ![](https://flutter.github.io/assets-for-api-docs/assets/material/floating_action_button_location_end_float.png)
   static const FloatingActionButtonLocation endFloat = _EndFloatFabLocation();
@@ -310,7 +310,7 @@ abstract class FloatingActionButtonLocation {
   /// End-aligned [FloatingActionButton], floating at the bottom of the screen,
   /// optimized for mini floating action buttons.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.trailing] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].
@@ -328,7 +328,7 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.leading] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniStartDocked] and set [FloatingActionButton.mini] to true.
+  /// use [miniStartDocked] with a [FloatingActionButton.mini].
   ///
   /// If the value of [Scaffold.bottomNavigationBar] is a [BottomAppBar],
   /// the bottom app bar can include a "notch" in its shape that accommodates
@@ -349,7 +349,7 @@ abstract class FloatingActionButtonLocation {
   /// the bottom app bar can include a "notch" in its shape that accommodates
   /// the overlapping floating action button.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.leading] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].
@@ -377,7 +377,7 @@ abstract class FloatingActionButtonLocation {
   /// Centered [FloatingActionButton], floating over the
   /// [Scaffold.bottomNavigationBar] so that the center of the floating
   /// action button lines up with the top of the bottom navigation bar;
-  /// intended to be used with [FloatingActionButton.mini] set to true.
+  /// intended to be used with a [FloatingActionButton.mini].
   ///
   /// If the value of [Scaffold.bottomNavigationBar] is a [BottomAppBar],
   /// the bottom app bar can include a "notch" in its shape that accommodates
@@ -410,13 +410,13 @@ abstract class FloatingActionButtonLocation {
   ///
   /// To align a floating action button with [CircleAvatar]s in the
   /// [ListTile.trailing] slots of [ListTile]s in a [ListView] in the [Scaffold.body],
-  /// use [miniEndDocked] and set [FloatingActionButton.mini] to true.
+  /// use [miniEndDocked] with a [FloatingActionButton.mini].
   ///
   /// If the value of [Scaffold.bottomNavigationBar] is a [BottomAppBar],
   /// the bottom app bar can include a "notch" in its shape that accommodates
   /// the overlapping floating action button.
   ///
-  /// This is intended to be used with [FloatingActionButton.mini] set to true,
+  /// This is intended to be used with a [FloatingActionButton.mini],
   /// so that the floating action button appears to align with [CircleAvatar]s
   /// in the [ListTile.trailing] slot of a [ListTile] in a [ListView] in the
   /// [Scaffold.body].

@@ -29,7 +29,7 @@ class _DefaultHeroTag {
   String toString() => '<default FloatingActionButton tag>';
 }
 
-enum _FloatingActionButtonType { regular, small, large, extended }
+enum _FloatingActionButtonType { mini, small, large, extended }
 
 /// A Material Design floating action button.
 ///
@@ -134,20 +134,79 @@ class FloatingActionButton extends StatelessWidget {
        assert(highlightElevation == null || highlightElevation >= 0.0),
        assert(disabledElevation == null || disabledElevation >= 0.0),
        _floatingActionButtonType = mini
-           ? _FloatingActionButtonType.small
-           : _FloatingActionButtonType.regular,
+           ? _FloatingActionButtonType.mini
+           : _FloatingActionButtonType.small,
        _extendedLabel = null,
        extendedIconLabelSpacing = null,
        extendedPadding = null,
        extendedTextStyle = null;
 
-  /// Creates a small circular floating action button.
+  /// Creates a mini circular floating action button.
+  ///
+  /// Mini floating action buttons are 40.0 by 40.0 logical pixels, compared to
+  /// 56.0 by 56.0 logical pixels for the floating action button created by the
+  /// default [FloatingActionButton.new] constructor. This is the same size as
+  /// setting the `mini` property to true.
+  ///
+  /// Material 3 Expressive no longer recommends the mini size. Use a larger
+  /// floating action button instead.
   ///
   /// This constructor overrides the default size constraints of the floating
-  /// action button.
+  /// action button. Use [FloatingActionButtonThemeData.smallSizeConstraints]
+  /// to override its size from a theme.
   ///
   /// The [elevation], [focusElevation], [hoverElevation], [highlightElevation],
   /// and [disabledElevation] parameters, if specified, must be non-negative.
+  const FloatingActionButton.mini({
+    super.key,
+    this.child,
+    this.tooltip,
+    this.foregroundColor,
+    this.backgroundColor,
+    this.focusColor,
+    this.hoverColor,
+    this.splashColor,
+    this.heroTag = const _DefaultHeroTag(),
+    this.elevation,
+    this.focusElevation,
+    this.hoverElevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    required this.onPressed,
+    this.mouseCursor,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    this.materialTapTargetSize,
+    this.enableFeedback,
+  }) : assert(elevation == null || elevation >= 0.0),
+       assert(focusElevation == null || focusElevation >= 0.0),
+       assert(hoverElevation == null || hoverElevation >= 0.0),
+       assert(highlightElevation == null || highlightElevation >= 0.0),
+       assert(disabledElevation == null || disabledElevation >= 0.0),
+       _floatingActionButtonType = _FloatingActionButtonType.mini,
+       mini = true,
+       isExtended = false,
+       _extendedLabel = null,
+       extendedIconLabelSpacing = null,
+       extendedPadding = null,
+       extendedTextStyle = null;
+
+  /// Creates a mini circular floating action button.
+  ///
+  /// This constructor is deprecated. Use [FloatingActionButton.mini], which
+  /// creates the same 40.0 by 40.0 logical pixel floating action button.
+  ///
+  /// The Material 3 Expressive specification uses "small" for a different,
+  /// larger size, so this size is now called "mini".
+  ///
+  /// The [elevation], [focusElevation], [hoverElevation], [highlightElevation],
+  /// and [disabledElevation] parameters, if specified, must be non-negative.
+  @Deprecated(
+    'Use FloatingActionButton.mini instead. '
+    'This feature was deprecated after material_ui v1.11.0.',
+  )
   const FloatingActionButton.small({
     super.key,
     this.child,
@@ -176,7 +235,7 @@ class FloatingActionButton extends StatelessWidget {
        assert(hoverElevation == null || hoverElevation >= 0.0),
        assert(highlightElevation == null || highlightElevation >= 0.0),
        assert(disabledElevation == null || disabledElevation >= 0.0),
-       _floatingActionButtonType = _FloatingActionButtonType.small,
+       _floatingActionButtonType = _FloatingActionButtonType.mini,
        mini = true,
        isExtended = false,
        _extendedLabel = null,
@@ -426,6 +485,8 @@ class FloatingActionButton extends StatelessWidget {
   /// logical pixels. (The extra 4 pixels of padding on each side are added as a
   /// result of the floating action button having [MaterialTapTargetSize.padded]
   /// set on the underlying [RawMaterialButton.materialTapTargetSize].)
+  ///
+  /// The [FloatingActionButton.mini] constructor sets this to true.
   final bool mini;
 
   /// The shape of the button's [Material].
@@ -564,11 +625,11 @@ class FloatingActionButton extends StatelessWidget {
           )
         : child;
     switch (_floatingActionButtonType) {
-      case _FloatingActionButtonType.regular:
-        sizeConstraints = floatingActionButtonTheme.sizeConstraints ?? defaults.sizeConstraints!;
-      case _FloatingActionButtonType.small:
+      case _FloatingActionButtonType.mini:
         sizeConstraints =
             floatingActionButtonTheme.smallSizeConstraints ?? defaults.smallSizeConstraints!;
+      case _FloatingActionButtonType.small:
+        sizeConstraints = floatingActionButtonTheme.sizeConstraints ?? defaults.sizeConstraints!;
       case _FloatingActionButtonType.large:
         sizeConstraints =
             floatingActionButtonTheme.largeSizeConstraints ?? defaults.largeSizeConstraints!;
