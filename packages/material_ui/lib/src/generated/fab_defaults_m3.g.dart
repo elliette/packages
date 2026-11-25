@@ -30,6 +30,9 @@ class _FABDefaultsM3 extends FloatingActionButtonThemeData {
 
   bool get _isExtended => type == _FloatingActionButtonType.extended;
 
+  static const String _mediumError =
+      'FloatingActionButton.medium always uses the Material 3 Expressive defaults.';
+
   @override
   Color? get foregroundColor => _colors.onPrimaryContainer;
   @override
@@ -49,6 +52,8 @@ class _FABDefaultsM3 extends FloatingActionButtonThemeData {
     _FloatingActionButtonType.small => const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(12.0)),
     ),
+    // FloatingActionButton.medium always uses _FABDefaultsM3E.
+    _FloatingActionButtonType.medium => throw StateError(_mediumError),
     _FloatingActionButtonType.large => const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(28.0)),
     ),
@@ -61,6 +66,8 @@ class _FABDefaultsM3 extends FloatingActionButtonThemeData {
   double? get iconSize => switch (type) {
     _FloatingActionButtonType.regular => 24.0,
     _FloatingActionButtonType.small => 24.0,
+    // FloatingActionButton.medium always uses _FABDefaultsM3E.
+    _FloatingActionButtonType.medium => throw StateError(_mediumError),
     _FloatingActionButtonType.large => 36.0,
     _FloatingActionButtonType.extended => 24.0,
   };

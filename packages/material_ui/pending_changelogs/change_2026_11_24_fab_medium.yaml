@@ -1,0 +1,3 @@
+changelog: |
+  - Adds `FloatingActionButton.medium`, which always uses the Material 3 Expressive style, and `FloatingActionButtonThemeData.mediumSizeConstraints`.
+version: minor

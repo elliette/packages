@@ -59,6 +59,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     this.iconSize,
     this.sizeConstraints,
     this.smallSizeConstraints,
+    this.mediumSizeConstraints,
     this.largeSizeConstraints,
     this.extendedSizeConstraints,
     this.extendedIconLabelSpacing,
@@ -130,6 +131,9 @@ class FloatingActionButtonThemeData with Diagnosticable {
   /// Overrides the default size constraints for [FloatingActionButton.small].
   final BoxConstraints? smallSizeConstraints;
 
+  /// Overrides the default size constraints for [FloatingActionButton.medium].
+  final BoxConstraints? mediumSizeConstraints;
+
   /// Overrides the default size constraints for [FloatingActionButton.large].
   final BoxConstraints? largeSizeConstraints;
 
@@ -172,6 +176,9 @@ class FloatingActionButtonThemeData with Diagnosticable {
   /// [FloatingActionButtonTheme]. To change the variant of a subtree, wrap it
   /// in a [FloatingActionButtonTheme].
   ///
+  /// [FloatingActionButton.medium] always uses the Material 3 Expressive
+  /// style, whatever the variant.
+  ///
   /// See also:
   ///
   ///  * [FloatingActionButtonTheme.variantOf], which returns the variant that
@@ -196,6 +203,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     double? iconSize,
     BoxConstraints? sizeConstraints,
     BoxConstraints? smallSizeConstraints,
+    BoxConstraints? mediumSizeConstraints,
     BoxConstraints? largeSizeConstraints,
     BoxConstraints? extendedSizeConstraints,
     double? extendedIconLabelSpacing,
@@ -220,6 +228,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
       iconSize: iconSize ?? this.iconSize,
       sizeConstraints: sizeConstraints ?? this.sizeConstraints,
       smallSizeConstraints: smallSizeConstraints ?? this.smallSizeConstraints,
+      mediumSizeConstraints: mediumSizeConstraints ?? this.mediumSizeConstraints,
       largeSizeConstraints: largeSizeConstraints ?? this.largeSizeConstraints,
       extendedSizeConstraints: extendedSizeConstraints ?? this.extendedSizeConstraints,
       extendedIconLabelSpacing: extendedIconLabelSpacing ?? this.extendedIconLabelSpacing,
@@ -261,6 +270,11 @@ class FloatingActionButtonThemeData with Diagnosticable {
       smallSizeConstraints: BoxConstraints.lerp(
         a?.smallSizeConstraints,
         b?.smallSizeConstraints,
+        t,
+      ),
+      mediumSizeConstraints: BoxConstraints.lerp(
+        a?.mediumSizeConstraints,
+        b?.mediumSizeConstraints,
         t,
       ),
       largeSizeConstraints: BoxConstraints.lerp(
@@ -306,7 +320,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
     extendedSizeConstraints,
     extendedIconLabelSpacing,
     extendedPadding,
-    Object.hash(extendedTextStyle, mouseCursor, variant),
+    Object.hash(extendedTextStyle, mouseCursor, mediumSizeConstraints, variant),
   );
 
   @override
@@ -333,6 +347,7 @@ class FloatingActionButtonThemeData with Diagnosticable {
         other.iconSize == iconSize &&
         other.sizeConstraints == sizeConstraints &&
         other.smallSizeConstraints == smallSizeConstraints &&
+        other.mediumSizeConstraints == mediumSizeConstraints &&
         other.largeSizeConstraints == largeSizeConstraints &&
         other.extendedSizeConstraints == extendedSizeConstraints &&
         other.extendedIconLabelSpacing == extendedIconLabelSpacing &&
@@ -366,6 +381,13 @@ class FloatingActionButtonThemeData with Diagnosticable {
       DiagnosticsProperty<BoxConstraints>(
         'smallSizeConstraints',
         smallSizeConstraints,
+        defaultValue: null,
+      ),
+    );
+    properties.add(
+      DiagnosticsProperty<BoxConstraints>(
+        'mediumSizeConstraints',
+        mediumSizeConstraints,
         defaultValue: null,
       ),
     );

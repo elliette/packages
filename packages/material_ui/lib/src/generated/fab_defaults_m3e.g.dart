@@ -102,6 +102,7 @@ class _FABDefaultsM3E extends ButtonStyle {
   WidgetStateProperty<Size>? get minimumSize => WidgetStatePropertyAll<Size>(switch (type) {
     _FloatingActionButtonType.regular => const Size(56.0, 56.0),
     _FloatingActionButtonType.small => const Size(40.0, 40.0),
+    _FloatingActionButtonType.medium => const Size(80.0, 80.0),
     _FloatingActionButtonType.large => const Size(96.0, 96.0),
     _FloatingActionButtonType.extended => const Size(0.0, 56.0),
   });
@@ -110,6 +111,7 @@ class _FABDefaultsM3E extends ButtonStyle {
   WidgetStateProperty<Size>? get maximumSize => WidgetStatePropertyAll<Size>(switch (type) {
     _FloatingActionButtonType.regular => const Size(56.0, 56.0),
     _FloatingActionButtonType.small => const Size(40.0, 40.0),
+    _FloatingActionButtonType.medium => const Size(80.0, 80.0),
     _FloatingActionButtonType.large => const Size(96.0, 96.0),
     _FloatingActionButtonType.extended => const Size.fromHeight(56.0),
   });
@@ -118,6 +120,7 @@ class _FABDefaultsM3E extends ButtonStyle {
   WidgetStateProperty<double>? get iconSize => WidgetStatePropertyAll<double>(switch (type) {
     _FloatingActionButtonType.regular => 24.0,
     _FloatingActionButtonType.small => 24.0,
+    _FloatingActionButtonType.medium => 28.0,
     _FloatingActionButtonType.large => 36.0,
     _FloatingActionButtonType.extended => 24.0,
   });
@@ -130,6 +133,9 @@ class _FABDefaultsM3E extends ButtonStyle {
         ),
         _FloatingActionButtonType.small => const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12.0)),
+        ),
+        _FloatingActionButtonType.medium => const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
         _FloatingActionButtonType.large => const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(28.0)),

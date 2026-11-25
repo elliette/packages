@@ -7,6 +7,7 @@ import '../data/extended_fab.dart';
 import '../data/extended_fab_small.dart';
 import '../data/fab.dart';
 import '../data/fab_large.dart';
+import '../data/fab_medium.dart';
 import '../data/fab_primary_container.dart';
 import '../data/fab_small.dart';
 import 'template.dart';
@@ -60,6 +61,9 @@ class $className extends FloatingActionButtonThemeData {
 
   bool get _isExtended => type == _FloatingActionButtonType.extended;
 
+  static const String _mediumError =
+      'FloatingActionButton.medium always uses the Material 3 Expressive defaults.';
+
   @override Color? get foregroundColor => ${color(TokenFabPrimaryContainer.iconColor)};
   @override Color? get backgroundColor => ${color(TokenFabPrimaryContainer.containerColor)};
   @override Color? get splashColor => ${colorWithOpacity(TokenFabPrimaryContainer.pressedStateLayerColor, TokenFabPrimaryContainer.pressedStateLayerOpacity)};
@@ -70,6 +74,8 @@ class $className extends FloatingActionButtonThemeData {
   ShapeBorder? get shape => switch (type) {
     _FloatingActionButtonType.regular  => ${shape(TokenFab.containerShape)},
     _FloatingActionButtonType.small    => ${shape(TokenFabSmall.containerShape)},
+    // FloatingActionButton.medium always uses _FABDefaultsM3E.
+    _FloatingActionButtonType.medium   => throw StateError(_mediumError),
     _FloatingActionButtonType.large    => ${shape(TokenFabLarge.containerShape)},
     _FloatingActionButtonType.extended => ${shape(TokenExtendedFab.containerShape)},
   };
@@ -78,6 +84,8 @@ class $className extends FloatingActionButtonThemeData {
   double? get iconSize => switch (type) {
     _FloatingActionButtonType.regular  => ${number(TokenFab.iconSize)},
     _FloatingActionButtonType.small    => ${number(TokenFabSmall.iconSize)},
+    // FloatingActionButton.medium always uses _FABDefaultsM3E.
+    _FloatingActionButtonType.medium   => throw StateError(_mediumError),
     _FloatingActionButtonType.large    => ${number(TokenFabLarge.iconSize)},
     _FloatingActionButtonType.extended => ${number(TokenExtendedFab.iconSize)},
   };
@@ -211,6 +219,7 @@ class $className extends ButtonStyle {
   WidgetStateProperty<Size>? get minimumSize => WidgetStatePropertyAll<Size>(switch (type) {
     _FloatingActionButtonType.regular  => ${_size(TokenFab.containerWidth, TokenFab.containerHeight)},
     _FloatingActionButtonType.small    => ${_size(TokenFabSmall.containerWidth, TokenFabSmall.containerHeight)},
+    _FloatingActionButtonType.medium   => ${_size(TokenFabMedium.containerWidth, TokenFabMedium.containerHeight)},
     _FloatingActionButtonType.large    => ${_size(TokenFabLarge.containerWidth, TokenFabLarge.containerHeight)},
     _FloatingActionButtonType.extended => ${_size(0, TokenExtendedFabSmall.containerHeight)},
   });
@@ -219,6 +228,7 @@ class $className extends ButtonStyle {
   WidgetStateProperty<Size>? get maximumSize => WidgetStatePropertyAll<Size>(switch (type) {
     _FloatingActionButtonType.regular  => ${_size(TokenFab.containerWidth, TokenFab.containerHeight)},
     _FloatingActionButtonType.small    => ${_size(TokenFabSmall.containerWidth, TokenFabSmall.containerHeight)},
+    _FloatingActionButtonType.medium   => ${_size(TokenFabMedium.containerWidth, TokenFabMedium.containerHeight)},
     _FloatingActionButtonType.large    => ${_size(TokenFabLarge.containerWidth, TokenFabLarge.containerHeight)},
     _FloatingActionButtonType.extended => const Size.fromHeight(${number(TokenExtendedFabSmall.containerHeight)}),
   });
@@ -227,6 +237,7 @@ class $className extends ButtonStyle {
   WidgetStateProperty<double>? get iconSize => WidgetStatePropertyAll<double>(switch (type) {
     _FloatingActionButtonType.regular  => ${number(TokenFab.iconSize)},
     _FloatingActionButtonType.small    => ${number(TokenFabSmall.iconSize)},
+    _FloatingActionButtonType.medium   => ${number(TokenFabMedium.iconSize)},
     _FloatingActionButtonType.large    => ${number(TokenFabLarge.iconSize)},
     _FloatingActionButtonType.extended => ${number(TokenExtendedFabSmall.iconSize)},
   });
@@ -235,6 +246,7 @@ class $className extends ButtonStyle {
   WidgetStateProperty<OutlinedBorder>? get shape => WidgetStatePropertyAll<OutlinedBorder>(switch (type) {
     _FloatingActionButtonType.regular  => ${shape(TokenFab.containerShape)},
     _FloatingActionButtonType.small    => ${shape(TokenFabSmall.containerShape)},
+    _FloatingActionButtonType.medium   => ${shape(TokenFabMedium.containerShape)},
     _FloatingActionButtonType.large    => ${shape(TokenFabLarge.containerShape)},
     _FloatingActionButtonType.extended => ${shape(TokenExtendedFabSmall.containerShape)},
   });

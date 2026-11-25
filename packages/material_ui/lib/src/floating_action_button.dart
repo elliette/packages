@@ -36,7 +36,7 @@ class _DefaultHeroTag {
   String toString() => '<default FloatingActionButton tag>';
 }
 
-enum _FloatingActionButtonType { regular, small, large, extended }
+enum _FloatingActionButtonType { regular, small, medium, large, extended }
 
 /// A Material Design floating action button.
 ///
@@ -103,7 +103,8 @@ enum _FloatingActionButtonType { regular, small, large, extended }
 ///
 /// To use the Material 3 Expressive style, set
 /// [FloatingActionButtonThemeData.variant] to
-/// [StyleVariant.material3Expressive].
+/// [StyleVariant.material3Expressive]. [FloatingActionButton.medium] always
+/// uses the Material 3 Expressive style.
 ///
 /// See also:
 ///
@@ -113,6 +114,12 @@ enum _FloatingActionButtonType { regular, small, large, extended }
 ///  * <https://m3.material.io/components/floating-action-button>
 class FloatingActionButton extends StatelessWidget {
   /// Creates a circular floating action button.
+  ///
+  /// If you are building an app for Material 3 Expressive,
+  /// [FloatingActionButton.medium] is the recommended size for most layouts.
+  /// The floating action button created by this constructor is best used in
+  /// compact windows where other actions may be present on screen. See the
+  /// [floating action button guidelines](https://m3.material.io/components/floating-action-button/guidelines).
   ///
   /// The [elevation], [highlightElevation], and [disabledElevation] parameters,
   /// if specified, must be non-negative.
@@ -191,6 +198,59 @@ class FloatingActionButton extends StatelessWidget {
        assert(disabledElevation == null || disabledElevation >= 0.0),
        _floatingActionButtonType = _FloatingActionButtonType.small,
        mini = true,
+       isExtended = false,
+       _extendedLabel = null,
+       extendedIconLabelSpacing = null,
+       extendedPadding = null,
+       extendedTextStyle = null;
+
+  /// Creates a medium circular floating action button.
+  ///
+  /// Medium floating action buttons are 80.0 by 80.0 logical pixels. This is
+  /// the recommended size for most layouts, and it works best in compact and
+  /// medium windows. See the
+  /// [floating action button guidelines](https://m3.material.io/components/floating-action-button/guidelines).
+  ///
+  /// This is a Material 3 Expressive constructor. It always uses the Material 3
+  /// Expressive style, even when [FloatingActionButtonThemeData.variant] isn't
+  /// [StyleVariant.material3Expressive] or [ThemeData.useMaterial3] is false.
+  ///
+  /// This constructor overrides the default size constraints of the floating
+  /// action button. Use [FloatingActionButtonThemeData.mediumSizeConstraints]
+  /// to override its size from a theme.
+  ///
+  /// The [elevation], [focusElevation], [hoverElevation], [highlightElevation],
+  /// and [disabledElevation] parameters, if specified, must be non-negative.
+  const FloatingActionButton.medium({
+    super.key,
+    this.child,
+    this.tooltip,
+    this.foregroundColor,
+    this.backgroundColor,
+    this.focusColor,
+    this.hoverColor,
+    this.splashColor,
+    this.heroTag = const _DefaultHeroTag(),
+    this.elevation,
+    this.focusElevation,
+    this.hoverElevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    required this.onPressed,
+    this.mouseCursor,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    this.materialTapTargetSize,
+    this.enableFeedback,
+  }) : assert(elevation == null || elevation >= 0.0),
+       assert(focusElevation == null || focusElevation >= 0.0),
+       assert(hoverElevation == null || hoverElevation >= 0.0),
+       assert(highlightElevation == null || highlightElevation >= 0.0),
+       assert(disabledElevation == null || disabledElevation >= 0.0),
+       _floatingActionButtonType = _FloatingActionButtonType.medium,
+       mini = false,
        isExtended = false,
        _extendedLabel = null,
        extendedIconLabelSpacing = null,
@@ -534,8 +594,9 @@ class FloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool useMaterial3Expressive =
-        Theme.of(context).useMaterial3 &&
-        FloatingActionButtonTheme.variantOf(context) == StyleVariant.material3Expressive;
+        _floatingActionButtonType == _FloatingActionButtonType.medium ||
+        (Theme.of(context).useMaterial3 &&
+            FloatingActionButtonTheme.variantOf(context) == StyleVariant.material3Expressive);
     Widget result = useMaterial3Expressive
         ? _buildMaterial3Expressive(context)
         : _buildRawMaterialButton(context);
@@ -669,6 +730,10 @@ class FloatingActionButton extends StatelessWidget {
       case _FloatingActionButtonType.small:
         sizeConstraints =
             floatingActionButtonTheme.smallSizeConstraints ?? defaults.smallSizeConstraints!;
+      case _FloatingActionButtonType.medium:
+        throw StateError(
+          'FloatingActionButton.medium always uses the Material 3 Expressive style.',
+        );
       case _FloatingActionButtonType.large:
         sizeConstraints =
             floatingActionButtonTheme.largeSizeConstraints ?? defaults.largeSizeConstraints!;
@@ -885,6 +950,7 @@ class _FloatingActionButtonM3E extends ButtonStyleButton {
       sizeConstraints: switch (type) {
         _FloatingActionButtonType.regular => theme.sizeConstraints,
         _FloatingActionButtonType.small => theme.smallSizeConstraints,
+        _FloatingActionButtonType.medium => theme.mediumSizeConstraints,
         _FloatingActionButtonType.large => theme.largeSizeConstraints,
         _FloatingActionButtonType.extended => theme.extendedSizeConstraints,
       },

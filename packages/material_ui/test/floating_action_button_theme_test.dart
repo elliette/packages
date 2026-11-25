@@ -44,6 +44,36 @@ void main() {
     expect(FloatingActionButtonThemeData.lerp(data, other, 0.75)!.variant, StyleVariant.material3);
   });
 
+  test(
+    'FloatingActionButtonThemeData copyWith, ==, hashCode, and lerp for mediumSizeConstraints',
+    () {
+      const constraints = BoxConstraints.tightFor(width: 100.0, height: 100.0);
+      const data = FloatingActionButtonThemeData(mediumSizeConstraints: constraints);
+      expect(
+        const FloatingActionButtonThemeData().copyWith(mediumSizeConstraints: constraints),
+        data,
+      );
+      expect(
+        const FloatingActionButtonThemeData().copyWith(mediumSizeConstraints: constraints).hashCode,
+        data.hashCode,
+      );
+      expect(
+        data,
+        isNot(data.copyWith(mediumSizeConstraints: const BoxConstraints.tightFor(width: 1.0))),
+      );
+      expect(
+        FloatingActionButtonThemeData.lerp(
+          data,
+          const FloatingActionButtonThemeData(
+            mediumSizeConstraints: BoxConstraints.tightFor(width: 200.0, height: 200.0),
+          ),
+          0.25,
+        )!.mediumSizeConstraints,
+        const BoxConstraints.tightFor(width: 125.0, height: 125.0),
+      );
+    },
+  );
+
   group('FloatingActionButtonTheme.variantOf', () {
     Future<StyleVariant> pumpAndGetVariant(
       WidgetTester tester,
@@ -728,6 +758,7 @@ void main() {
       iconSize: 42,
       sizeConstraints: BoxConstraints.tightFor(width: 100.0, height: 100.0),
       smallSizeConstraints: BoxConstraints.tightFor(width: 101.0, height: 101.0),
+      mediumSizeConstraints: BoxConstraints.tightFor(width: 104.0, height: 104.0),
       largeSizeConstraints: BoxConstraints.tightFor(width: 102.0, height: 102.0),
       extendedSizeConstraints: BoxConstraints(minHeight: 103.0, maxHeight: 103.0),
       extendedIconLabelSpacing: 12,
@@ -758,6 +789,7 @@ void main() {
       'iconSize: 42.0',
       'sizeConstraints: BoxConstraints(w=100.0, h=100.0)',
       'smallSizeConstraints: BoxConstraints(w=101.0, h=101.0)',
+      'mediumSizeConstraints: BoxConstraints(w=104.0, h=104.0)',
       'largeSizeConstraints: BoxConstraints(w=102.0, h=102.0)',
       'extendedSizeConstraints: BoxConstraints(0.0<=w<=Infinity, h=103.0)',
       'extendedIconLabelSpacing: 12.0',
@@ -923,6 +955,41 @@ void main() {
 
       expect(find.byType(RawMaterialButton), findsNothing);
       expect(_getMaterial(tester).color, backgroundColor);
+    });
+
+    testWidgets('FloatingActionButton.medium uses mediumSizeConstraints from the theme', (
+      WidgetTester tester,
+    ) async {
+      const constraints = BoxConstraints.tightFor(width: 100.0, height: 100.0);
+      for (final theme in <ThemeData>[
+        ThemeData(
+          useMaterial3: false,
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            mediumSizeConstraints: constraints,
+          ),
+        ),
+        ThemeData(
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            mediumSizeConstraints: constraints,
+          ),
+        ),
+        ThemeData(floatingActionButtonTheme: m3eTheme.copyWith(mediumSizeConstraints: constraints)),
+      ]) {
+        await tester.pumpWidget(
+          MaterialApp(
+            theme: theme,
+            home: Scaffold(
+              floatingActionButton: FloatingActionButton.medium(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+            ),
+          ),
+        );
+
+        expect(_getMaterialSize(tester), const Size(100.0, 100.0));
+        expect(tester.getSize(find.byIcon(Icons.add)), const Size(28.0, 28.0));
+      }
     });
 
     testWidgets(

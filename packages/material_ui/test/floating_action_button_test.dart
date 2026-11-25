@@ -1657,6 +1657,12 @@ void main() {
         iconSize: 24.0,
       );
       await expectFab(
+        FloatingActionButton.medium(onPressed: () {}, child: const Icon(Icons.add)),
+        size: const Size(80.0, 80.0),
+        radius: 20.0,
+        iconSize: 28.0,
+      );
+      await expectFab(
         FloatingActionButton.large(onPressed: () {}, child: const Icon(Icons.add)),
         size: const Size(96.0, 96.0),
         radius: 28.0,
@@ -1738,6 +1744,38 @@ void main() {
       expect(find.text('Extended'), findsNothing);
       expect(find.byIcon(Icons.add), findsOneWidget);
     });
+
+    for (final (String name, ThemeData theme) in <(String, ThemeData)>[
+      ('Material 2', ThemeData(useMaterial3: false)),
+      ('Material 3', ThemeData()),
+      (
+        'Material 3 Expressive',
+        ThemeData(
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            variant: StyleVariant.material3Expressive,
+          ),
+        ),
+      ),
+    ]) {
+      testWidgets('FloatingActionButton.medium always uses the Material 3 Expressive style in '
+          '$name', (WidgetTester tester) async {
+        await pumpFab(
+          tester,
+          FloatingActionButton.medium(onPressed: () {}, child: const Icon(Icons.add)),
+          theme: theme,
+        );
+
+        expect(find.byType(RawMaterialButton), findsNothing);
+        expect(tester.getSize(materialFinder()), const Size(80.0, 80.0));
+        expect(
+          getMaterial(tester).shape,
+          const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),
+        );
+        expect(getMaterial(tester).color, theme.colorScheme.primaryContainer);
+        expect(tester.getSize(find.byIcon(Icons.add)), const Size(28.0, 28.0));
+        expect(getIconColor(tester), theme.colorScheme.onPrimaryContainer);
+      });
+    }
 
     testWidgets('The state layer follows foregroundColor', (WidgetTester tester) async {
       const foregroundColor = Color(0xFF00FF00);

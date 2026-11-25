@@ -396,10 +396,21 @@ void main() {
       );
       expect(contents, contains('_FloatingActionButtonType.regular  => const Size(56.0, 56.0)'));
       expect(contents, contains('_FloatingActionButtonType.small    => const Size(40.0, 40.0)'));
+      expect(contents, contains('_FloatingActionButtonType.medium   => const Size(80.0, 80.0)'));
       expect(contents, contains('_FloatingActionButtonType.large    => const Size(96.0, 96.0)'));
+      expect(contents, contains('_FloatingActionButtonType.medium   => 28.0'));
+      expect(contents, contains('Radius.circular(20.0)'));
       expect(contents, contains('_textTheme.titleMedium'));
       expect(contents, contains('static const double extendedIconLabelSpacing = 8.0;'));
       expect(contents, contains('VisualDensity? get visualDensity => VisualDensity.standard;'));
+    });
+
+    test('FabTemplateM3 does not define medium floating action button defaults', () {
+      final String contents = _generateContents(const FabTemplateM3());
+      expect(
+        contents,
+        contains('_FloatingActionButtonType.medium   => throw StateError(_mediumError)'),
+      );
     });
 
     test('ButtonTemplateM3E emits M3E ElevatedButton defaults from tokens', () {
