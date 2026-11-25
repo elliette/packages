@@ -89,6 +89,7 @@ Future<void> main(List<String> args) async {
   const DrawerTemplateM3().generateFile(verbose: verbose);
   const ExpansionTileTemplateM3().generateFile(verbose: verbose);
   const FabTemplateM3().generateFile(verbose: verbose);
+  const FabTemplateM3E().generateFile(verbose: verbose);
   const FilterChipTemplateM3().generateFile(verbose: verbose);
   const IconButtonTemplateM3('Icon Button').generateFile(verbose: verbose);
   const IconButtonTemplateM3('Filled Icon Button').generateFile(verbose: verbose);

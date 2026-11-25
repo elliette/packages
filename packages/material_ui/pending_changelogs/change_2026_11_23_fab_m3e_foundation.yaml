@@ -1,0 +1,4 @@
+changelog: |
+  - Adds Material 3 Expressive support to `FloatingActionButton`. Opt in with `FloatingActionButtonThemeData.variant`.
+  - Fixes the default `focusElevation` and `highlightElevation` values in the `FloatingActionButton` documentation.
+version: minor

@@ -14,14 +14,21 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 import 'button.dart';
+import 'button_style.dart';
+import 'button_style_button.dart';
 import 'color_scheme.dart';
+import 'colors.dart';
+import 'constants.dart';
 import 'floating_action_button_theme.dart';
+import 'ink_well.dart';
 import 'scaffold.dart';
 import 'text_theme.dart';
 import 'theme.dart';
+import 'theme_data.dart';
 import 'tooltip.dart';
 
 part 'generated/fab_defaults_m3.g.dart';
+part 'generated/fab_defaults_m3e.g.dart';
 
 class _DefaultHeroTag {
   const _DefaultHeroTag();
@@ -91,6 +98,12 @@ enum _FloatingActionButtonType { regular, small, large, extended }
 /// {@example /example/lib/floating_action_button/floating_action_button.2.dart#body}
 ///
 /// </callout-box>
+///
+/// ## Material 3 Expressive
+///
+/// To use the Material 3 Expressive style, set
+/// [FloatingActionButtonThemeData.variant] to
+/// [StyleVariant.material3Expressive].
 ///
 /// See also:
 ///
@@ -291,6 +304,9 @@ class FloatingActionButton extends StatelessWidget {
   /// null, then the [ColorScheme.onPrimaryContainer] color of [ThemeData.colorScheme]
   /// is used. If [ThemeData.useMaterial3] is set to false, then the
   /// [ColorScheme.onSecondary] color of [ThemeData.colorScheme] is used.
+  ///
+  /// In Material 3 Expressive, the default [splashColor], [focusColor], and
+  /// [hoverColor] are derived from this color.
   final Color? foregroundColor;
 
   /// The button's background color.
@@ -306,6 +322,8 @@ class FloatingActionButton extends StatelessWidget {
   ///
   /// In Material3, defaults to [ColorScheme.onPrimaryContainer] with opacity 0.1.
   /// In Material 2, it defaults to [ThemeData.focusColor] for the current theme.
+  /// In Material 3 Expressive, defaults to the effective [foregroundColor] with
+  /// opacity 0.1.
   final Color? focusColor;
 
   /// The color to use for filling the button when the button has a pointer
@@ -313,13 +331,16 @@ class FloatingActionButton extends StatelessWidget {
   ///
   /// Defaults to [ThemeData.hoverColor] for the current theme in Material 2. In
   /// Material 3, defaults to [ColorScheme.onPrimaryContainer] with opacity 0.08.
+  /// In Material 3 Expressive, defaults to the effective [foregroundColor] with
+  /// opacity 0.08.
   final Color? hoverColor;
 
   /// The splash color for this [FloatingActionButton]'s [InkWell].
   ///
   /// If null, [FloatingActionButtonThemeData.splashColor] is used, if that is
   /// null, [ThemeData.splashColor] is used in Material 2; [ColorScheme.onPrimaryContainer]
-  /// with opacity 0.1 is used in Material 3.
+  /// with opacity 0.1 is used in Material 3. In Material 3 Expressive, the
+  /// effective [foregroundColor] with opacity 0.1 is used.
   final Color? splashColor;
 
   /// The tag to apply to the button's [Hero] widget.
@@ -365,7 +386,7 @@ class FloatingActionButton extends StatelessWidget {
   ///
   /// This controls the size of the shadow below the floating action button.
   ///
-  /// Defaults to 8, the appropriate elevation for floating action buttons
+  /// Defaults to 6, the appropriate elevation for floating action buttons
   /// while they have focus. The value is always non-negative.
   ///
   /// See also:
@@ -395,8 +416,8 @@ class FloatingActionButton extends StatelessWidget {
   ///
   /// This controls the size of the shadow below the floating action button.
   ///
-  /// Defaults to 12, the appropriate elevation for floating action buttons
-  /// while they are being touched. The value is always non-negative.
+  /// In Material 3 and Material 3 Expressive, defaults to 6. In Material 2,
+  /// defaults to 12. The value is always non-negative.
   ///
   /// See also:
   ///
@@ -433,6 +454,8 @@ class FloatingActionButton extends StatelessWidget {
   /// The button's highlight and splash are clipped to this shape. If the
   /// button has an elevation, then its drop shadow is defined by this
   /// shape as well.
+  ///
+  /// In Material 3 Expressive, this must be an [OutlinedBorder].
   final ShapeBorder? shape;
 
   /// {@macro cupertino_ui.Material.clipBehavior}
@@ -492,13 +515,16 @@ class FloatingActionButton extends StatelessWidget {
   /// is also null, the default is
   /// `EdgeInsetsDirectional.only(start: 16.0, end: 20.0)` if an icon is
   /// provided, and `EdgeInsetsDirectional.only(start: 20.0, end: 20.0)` if not.
+  /// In Material 3 Expressive, the default is
+  /// `EdgeInsetsDirectional.only(start: 16.0, end: 16.0)`.
   final EdgeInsetsGeometry? extendedPadding;
 
   /// The text style for an extended [FloatingActionButton]'s label.
   ///
   /// If null, [FloatingActionButtonThemeData.extendedTextStyle] is used. If
   /// that is also null, then [TextTheme.labelLarge] with a letter spacing of 1.2
-  /// is used.
+  /// is used. In Material 3, [TextTheme.labelLarge] is used. In Material 3
+  /// Expressive, [TextTheme.titleMedium] is used.
   final TextStyle? extendedTextStyle;
 
   final _FloatingActionButtonType _floatingActionButtonType;
@@ -507,6 +533,80 @@ class FloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool useMaterial3Expressive =
+        Theme.of(context).useMaterial3 &&
+        FloatingActionButtonTheme.variantOf(context) == StyleVariant.material3Expressive;
+    Widget result = useMaterial3Expressive
+        ? _buildMaterial3Expressive(context)
+        : _buildRawMaterialButton(context);
+
+    if (tooltip != null) {
+      result = Tooltip(message: tooltip, child: result);
+    }
+
+    if (heroTag != null) {
+      result = Hero(tag: heroTag!, child: result);
+    }
+
+    return MergeSemantics(child: result);
+  }
+
+  Widget _buildMaterial3Expressive(BuildContext context) {
+    assert(
+      shape == null || shape is OutlinedBorder,
+      'In Material 3 Expressive, FloatingActionButton.shape must be an OutlinedBorder.',
+    );
+    Widget? resolvedChild = child;
+    if (_floatingActionButtonType == _FloatingActionButtonType.extended) {
+      final double iconLabelSpacing =
+          extendedIconLabelSpacing ??
+          FloatingActionButtonTheme.of(context).extendedIconLabelSpacing ??
+          _FABDefaultsM3E.extendedIconLabelSpacing;
+      resolvedChild = Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ?child,
+          if (child != null && isExtended) SizedBox(width: iconLabelSpacing),
+          if (isExtended) _extendedLabel!,
+        ],
+      );
+    }
+    final isExtendedType = _floatingActionButtonType == _FloatingActionButtonType.extended;
+    return _FloatingActionButtonM3E(
+      type: _floatingActionButtonType,
+      foregroundColor: foregroundColor,
+      onPressed: onPressed,
+      style: _styleM3E(
+        foregroundColor: foregroundColor,
+        backgroundColor: backgroundColor,
+        focusColor: focusColor,
+        hoverColor: hoverColor,
+        splashColor: splashColor,
+        elevation: elevation,
+        focusElevation: focusElevation,
+        hoverElevation: hoverElevation,
+        highlightElevation: highlightElevation,
+        disabledElevation: disabledElevation,
+        shape: shape,
+        padding: isExtendedType ? extendedPadding : null,
+        textStyle: isExtendedType ? extendedTextStyle : null,
+        mouseCursor: mouseCursor == null
+            ? null
+            : WidgetStateProperty.resolveWith(
+                (Set<WidgetState> states) =>
+                    WidgetStateProperty.resolveAs<MouseCursor?>(mouseCursor, states),
+              ),
+        tapTargetSize: materialTapTargetSize,
+        enableFeedback: enableFeedback,
+      ),
+      focusNode: focusNode,
+      autofocus: autofocus,
+      clipBehavior: clipBehavior,
+      child: resolvedChild,
+    );
+  }
+
+  Widget _buildRawMaterialButton(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final FloatingActionButtonThemeData floatingActionButtonTheme = FloatingActionButtonTheme.of(
       context,
@@ -596,7 +696,7 @@ class FloatingActionButton extends StatelessWidget {
         );
     }
 
-    Widget result = RawMaterialButton(
+    return RawMaterialButton(
       onPressed: onPressed,
       mouseCursor: _EffectiveMouseCursor(mouseCursor, floatingActionButtonTheme.mouseCursor),
       elevation: elevation,
@@ -618,16 +718,6 @@ class FloatingActionButton extends StatelessWidget {
       enableFeedback: enableFeedback,
       child: resolvedChild,
     );
-
-    if (tooltip != null) {
-      result = Tooltip(message: tooltip, child: result);
-    }
-
-    if (heroTag != null) {
-      result = Hero(tag: heroTag!, child: result);
-    }
-
-    return MergeSemantics(child: result);
   }
 
   @override
@@ -655,6 +745,153 @@ class FloatingActionButton extends StatelessWidget {
         materialTapTargetSize,
         defaultValue: null,
       ),
+    );
+  }
+}
+
+// Converts the flat floating action button properties, which are used by the
+// widget and by FloatingActionButtonThemeData, into a ButtonStyle for
+// _FloatingActionButtonM3E.
+ButtonStyle _styleM3E({
+  Color? foregroundColor,
+  Color? backgroundColor,
+  Color? focusColor,
+  Color? hoverColor,
+  Color? splashColor,
+  double? elevation,
+  double? focusElevation,
+  double? hoverElevation,
+  double? highlightElevation,
+  double? disabledElevation,
+  ShapeBorder? shape,
+  double? iconSize,
+  BoxConstraints? sizeConstraints,
+  EdgeInsetsGeometry? padding,
+  TextStyle? textStyle,
+  WidgetStateProperty<MouseCursor?>? mouseCursor,
+  MaterialTapTargetSize? tapTargetSize,
+  bool? enableFeedback,
+}) {
+  final bool hasOverlayColor = focusColor != null || hoverColor != null || splashColor != null;
+  final bool hasElevation =
+      elevation != null ||
+      focusElevation != null ||
+      hoverElevation != null ||
+      highlightElevation != null ||
+      disabledElevation != null;
+  return ButtonStyle(
+    backgroundColor: backgroundColor == null
+        ? null
+        : WidgetStatePropertyAll<Color?>(backgroundColor),
+    foregroundColor: foregroundColor == null
+        ? null
+        : WidgetStatePropertyAll<Color?>(foregroundColor),
+    overlayColor: hasOverlayColor
+        ? WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+            if (states.contains(WidgetState.pressed)) {
+              return splashColor;
+            }
+            if (states.contains(WidgetState.hovered)) {
+              return hoverColor;
+            }
+            if (states.contains(WidgetState.focused)) {
+              return focusColor;
+            }
+            return null;
+          })
+        : null,
+    elevation: hasElevation
+        ? WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+            if (states.contains(WidgetState.disabled)) {
+              return disabledElevation ?? elevation;
+            }
+            if (states.contains(WidgetState.pressed)) {
+              return highlightElevation;
+            }
+            if (states.contains(WidgetState.hovered)) {
+              return hoverElevation;
+            }
+            if (states.contains(WidgetState.focused)) {
+              return focusElevation;
+            }
+            return elevation;
+          })
+        : null,
+    shape: shape is OutlinedBorder ? WidgetStatePropertyAll<OutlinedBorder?>(shape) : null,
+    iconSize: iconSize == null ? null : WidgetStatePropertyAll<double?>(iconSize),
+    minimumSize: sizeConstraints == null
+        ? null
+        : WidgetStatePropertyAll<Size?>(Size(sizeConstraints.minWidth, sizeConstraints.minHeight)),
+    maximumSize: sizeConstraints == null
+        ? null
+        : WidgetStatePropertyAll<Size?>(Size(sizeConstraints.maxWidth, sizeConstraints.maxHeight)),
+    padding: padding == null ? null : WidgetStatePropertyAll<EdgeInsetsGeometry?>(padding),
+    textStyle: textStyle == null ? null : WidgetStatePropertyAll<TextStyle?>(textStyle),
+    mouseCursor: mouseCursor,
+    tapTargetSize: tapTargetSize,
+    enableFeedback: enableFeedback,
+  );
+}
+
+// The Material 3 Expressive floating action button.
+class _FloatingActionButtonM3E extends ButtonStyleButton {
+  const _FloatingActionButtonM3E({
+    required this.type,
+    required this.foregroundColor,
+    required super.onPressed,
+    required super.style,
+    required super.focusNode,
+    required super.autofocus,
+    required Clip super.clipBehavior,
+    required super.child,
+  }) : super(onLongPress: null, onHover: null, onFocusChange: null);
+
+  final _FloatingActionButtonType type;
+
+  // The foreground color specified on the FloatingActionButton, which the
+  // default state layer colors are derived from.
+  final Color? foregroundColor;
+
+  @override
+  ButtonStyle defaultStyleOf(BuildContext context) {
+    return _FABDefaultsM3E(
+      context,
+      type,
+      foregroundColor ?? FloatingActionButtonTheme.of(context).foregroundColor,
+    );
+  }
+
+  @override
+  ButtonStyle? themeStyleOf(BuildContext context) {
+    final FloatingActionButtonThemeData theme = FloatingActionButtonTheme.of(context);
+    assert(
+      theme.shape == null || theme.shape is OutlinedBorder,
+      'In Material 3 Expressive, FloatingActionButtonThemeData.shape must be an OutlinedBorder.',
+    );
+    final isExtended = type == _FloatingActionButtonType.extended;
+    return _styleM3E(
+      foregroundColor: theme.foregroundColor,
+      backgroundColor: theme.backgroundColor,
+      focusColor: theme.focusColor,
+      hoverColor: theme.hoverColor,
+      splashColor: theme.splashColor,
+      elevation: theme.elevation,
+      focusElevation: theme.focusElevation,
+      hoverElevation: theme.hoverElevation,
+      highlightElevation: theme.highlightElevation,
+      disabledElevation: theme.disabledElevation,
+      shape: theme.shape,
+      iconSize: theme.iconSize,
+      sizeConstraints: switch (type) {
+        _FloatingActionButtonType.regular => theme.sizeConstraints,
+        _FloatingActionButtonType.small => theme.smallSizeConstraints,
+        _FloatingActionButtonType.large => theme.largeSizeConstraints,
+        _FloatingActionButtonType.extended => theme.extendedSizeConstraints,
+      },
+      padding: isExtended ? theme.extendedPadding : null,
+      textStyle: isExtended ? theme.extendedTextStyle : null,
+      mouseCursor: theme.mouseCursor,
+      enableFeedback: theme.enableFeedback,
     );
   }
 }

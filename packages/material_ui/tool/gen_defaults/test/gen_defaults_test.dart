@@ -375,6 +375,33 @@ void main() {
       expect(contents, contains('const MaterialStatePropertyAll<OutlinedBorder>(StadiumBorder())'));
     });
 
+    test('FabTemplateM3E emits M3E floating action button defaults from tokens', () {
+      const template = FabTemplateM3E();
+      expect(template.parentFilePath, 'floating_action_button.dart');
+      expect(template.outputFileName, 'fab_defaults_m3e.g.dart');
+
+      final String contents = _generateContents(template);
+      expect(contents, contains('class _FABDefaultsM3E extends ButtonStyle'));
+      expect(contents, contains('WidgetStatePropertyAll<Color?>(_colors.primaryContainer)'));
+      expect(contents, contains('return _colors.onPrimaryContainer;'));
+      expect(
+        contents,
+        contains('return (_foregroundColor ?? _colors.onPrimaryContainer).withValues(alpha: 0.1);'),
+      );
+      expect(
+        contents,
+        contains(
+          'return (_foregroundColor ?? _colors.onPrimaryContainer).withValues(alpha: 0.08);',
+        ),
+      );
+      expect(contents, contains('_FloatingActionButtonType.regular  => const Size(56.0, 56.0)'));
+      expect(contents, contains('_FloatingActionButtonType.small    => const Size(40.0, 40.0)'));
+      expect(contents, contains('_FloatingActionButtonType.large    => const Size(96.0, 96.0)'));
+      expect(contents, contains('_textTheme.titleMedium'));
+      expect(contents, contains('static const double extendedIconLabelSpacing = 8.0;'));
+      expect(contents, contains('VisualDensity? get visualDensity => VisualDensity.standard;'));
+    });
+
     test('ButtonTemplateM3E emits M3E ElevatedButton defaults from tokens', () {
       const template = ButtonTemplateM3E('Elevated Button');
       expect(template.name, 'Elevated Button');
